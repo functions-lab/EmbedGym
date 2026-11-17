@@ -1,0 +1,243 @@
+{"target":"atmega2560_arduino","part":"mpr121","name":"touch","pin":20}
+{"target":"atmega328p_arduino","part":"mpr121","name":"touch","pin":"A4"}
+{"target":"esp32s3_espidf","part":"mpr121","name":"touch","pin":38}
+{"target":"esp32s3_arduino","part":"mpr121","name":"touch","pin":38}
+{"target":"nrf52840_zephyr","part":"mpr121","name":"touch","pin":"P0.21"}
+{"target":"nrf52840_arduino","part":"mpr121","name":"touch","pin":"P0.21"}
+{"at":2000,"parse":"Button: 0 State: {startup0:s}"}
+{"at":2000,"expect":"len(@startup0) <= 1 && (len(@startup0) == 0 || @startup0[-1] == 'released')"}
+{"at":2000,"parse":"Button: 1 State: {startup1:s}"}
+{"at":2000,"expect":"len(@startup1) <= 1 && (len(@startup1) == 0 || @startup1[-1] == 'released')"}
+{"at":2000,"parse":"Button: 2 State: {startup2:s}"}
+{"at":2000,"expect":"len(@startup2) <= 1 && (len(@startup2) == 0 || @startup2[-1] == 'released')"}
+{"at":2000,"parse":"Button: 3 State: {startup3:s}"}
+{"at":2000,"expect":"len(@startup3) <= 1 && (len(@startup3) == 0 || @startup3[-1] == 'released')"}
+{"at":2000,"parse":"Button: 0 State: {state0:s}"}
+{"at":2000,"expect":"len(@state0) == len(@startup0) + 0"}
+{"at":2000,"parse":"Button: 1 State: {state1:s}"}
+{"at":2000,"expect":"len(@state1) == len(@startup1) + 0"}
+{"at":2000,"parse":"Button: 2 State: {state2:s}"}
+{"at":2000,"expect":"len(@state2) == len(@startup2) + 0"}
+{"at":2000,"parse":"Button: 3 State: {state3:s}"}
+{"at":2000,"expect":"len(@state3) == len(@startup3) + 0"}
+{"at":2000,"parse":"Button: {button:d} State: {state:s}"}
+{"at":2000,"expect":"len(@button) == len(@startup0) + len(@startup1) + len(@startup2) + len(@startup3) + 0"}
+{"at":2300,"do":"touch.4.down"}
+{"at":2300,"do":"touch.5.down"}
+{"at":2300,"do":"touch.6.down"}
+{"at":2300,"do":"touch.7.down"}
+{"at":2300,"do":"touch.8.down"}
+{"at":2300,"do":"touch.9.down"}
+{"at":2300,"do":"touch.10.down"}
+{"at":2300,"do":"touch.11.down"}
+{"at":5000,"parse":"Button: 0 State: {state0:s}"}
+{"at":5000,"expect":"len(@state0) == len(@startup0) + 0"}
+{"at":5000,"parse":"Button: 1 State: {state1:s}"}
+{"at":5000,"expect":"len(@state1) == len(@startup1) + 0"}
+{"at":5000,"parse":"Button: 2 State: {state2:s}"}
+{"at":5000,"expect":"len(@state2) == len(@startup2) + 0"}
+{"at":5000,"parse":"Button: 3 State: {state3:s}"}
+{"at":5000,"expect":"len(@state3) == len(@startup3) + 0"}
+{"at":5000,"parse":"Button: {button:d} State: {state:s}"}
+{"at":5000,"expect":"len(@button) == len(@startup0) + len(@startup1) + len(@startup2) + len(@startup3) + 0"}
+{"at":5300,"do":"touch.0.down"}
+{"at":8000,"parse":"Button: 0 State: {state0:s}"}
+{"at":8000,"expect":"len(@state0) == len(@startup0) + 1"}
+{"at":8000,"expect":"@state0[-1] == 'touched'"}
+{"at":8000,"expect":"5300 < @state0.t[-1] && @state0.t[-1] <= 8000"}
+{"at":8000,"parse":"Button: 1 State: {state1:s}"}
+{"at":8000,"expect":"len(@state1) == len(@startup1) + 0"}
+{"at":8000,"parse":"Button: 2 State: {state2:s}"}
+{"at":8000,"expect":"len(@state2) == len(@startup2) + 0"}
+{"at":8000,"parse":"Button: 3 State: {state3:s}"}
+{"at":8000,"expect":"len(@state3) == len(@startup3) + 0"}
+{"at":8000,"parse":"Button: {button:d} State: {state:s}"}
+{"at":8000,"expect":"len(@button) == len(@startup0) + len(@startup1) + len(@startup2) + len(@startup3) + 1"}
+{"at":8300,"do":"touch.2.down"}
+{"at":11000,"parse":"Button: 0 State: {state0:s}"}
+{"at":11000,"expect":"len(@state0) == len(@startup0) + 1"}
+{"at":11000,"expect":"@state0[-1] == 'touched'"}
+{"at":11000,"parse":"Button: 1 State: {state1:s}"}
+{"at":11000,"expect":"len(@state1) == len(@startup1) + 0"}
+{"at":11000,"parse":"Button: 2 State: {state2:s}"}
+{"at":11000,"expect":"len(@state2) == len(@startup2) + 1"}
+{"at":11000,"expect":"@state2[-1] == 'touched'"}
+{"at":11000,"expect":"8300 < @state2.t[-1] && @state2.t[-1] <= 11000"}
+{"at":11000,"parse":"Button: 3 State: {state3:s}"}
+{"at":11000,"expect":"len(@state3) == len(@startup3) + 0"}
+{"at":11000,"parse":"Button: {button:d} State: {state:s}"}
+{"at":11000,"expect":"len(@button) == len(@startup0) + len(@startup1) + len(@startup2) + len(@startup3) + 2"}
+{"at":11300,"do":"touch.0.up"}
+{"at":11300,"do":"touch.1.down"}
+{"at":11300,"do":"touch.3.down"}
+{"at":14000,"parse":"Button: 0 State: {state0:s}"}
+{"at":14000,"expect":"len(@state0) == len(@startup0) + 2"}
+{"at":14000,"expect":"@state0[-1] == 'released'"}
+{"at":14000,"expect":"11300 < @state0.t[-1] && @state0.t[-1] <= 14000"}
+{"at":14000,"parse":"Button: 1 State: {state1:s}"}
+{"at":14000,"expect":"len(@state1) == len(@startup1) + 1"}
+{"at":14000,"expect":"@state1[-1] == 'touched'"}
+{"at":14000,"expect":"11300 < @state1.t[-1] && @state1.t[-1] <= 14000"}
+{"at":14000,"parse":"Button: 2 State: {state2:s}"}
+{"at":14000,"expect":"len(@state2) == len(@startup2) + 1"}
+{"at":14000,"expect":"@state2[-1] == 'touched'"}
+{"at":14000,"parse":"Button: 3 State: {state3:s}"}
+{"at":14000,"expect":"len(@state3) == len(@startup3) + 1"}
+{"at":14000,"expect":"@state3[-1] == 'touched'"}
+{"at":14000,"expect":"11300 < @state3.t[-1] && @state3.t[-1] <= 14000"}
+{"at":14000,"parse":"Button: {button:d} State: {state:s}"}
+{"at":14000,"expect":"len(@button) == len(@startup0) + len(@startup1) + len(@startup2) + len(@startup3) + 5"}
+{"at":14300,"do":"touch.2.up"}
+{"at":14300,"do":"touch.3.up"}
+{"at":17000,"parse":"Button: 0 State: {state0:s}"}
+{"at":17000,"expect":"len(@state0) == len(@startup0) + 2"}
+{"at":17000,"expect":"@state0[-1] == 'released'"}
+{"at":17000,"parse":"Button: 1 State: {state1:s}"}
+{"at":17000,"expect":"len(@state1) == len(@startup1) + 1"}
+{"at":17000,"expect":"@state1[-1] == 'touched'"}
+{"at":17000,"parse":"Button: 2 State: {state2:s}"}
+{"at":17000,"expect":"len(@state2) == len(@startup2) + 2"}
+{"at":17000,"expect":"@state2[-1] == 'released'"}
+{"at":17000,"expect":"14300 < @state2.t[-1] && @state2.t[-1] <= 17000"}
+{"at":17000,"parse":"Button: 3 State: {state3:s}"}
+{"at":17000,"expect":"len(@state3) == len(@startup3) + 2"}
+{"at":17000,"expect":"@state3[-1] == 'released'"}
+{"at":17000,"expect":"14300 < @state3.t[-1] && @state3.t[-1] <= 17000"}
+{"at":17000,"parse":"Button: {button:d} State: {state:s}"}
+{"at":17000,"expect":"len(@button) == len(@startup0) + len(@startup1) + len(@startup2) + len(@startup3) + 7"}
+{"at":20000,"parse":"Button: 0 State: {state0:s}"}
+{"at":20000,"expect":"len(@state0) == len(@startup0) + 2"}
+{"at":20000,"expect":"@state0[-1] == 'released'"}
+{"at":20000,"parse":"Button: 1 State: {state1:s}"}
+{"at":20000,"expect":"len(@state1) == len(@startup1) + 1"}
+{"at":20000,"expect":"@state1[-1] == 'touched'"}
+{"at":20000,"parse":"Button: 2 State: {state2:s}"}
+{"at":20000,"expect":"len(@state2) == len(@startup2) + 2"}
+{"at":20000,"expect":"@state2[-1] == 'released'"}
+{"at":20000,"parse":"Button: 3 State: {state3:s}"}
+{"at":20000,"expect":"len(@state3) == len(@startup3) + 2"}
+{"at":20000,"expect":"@state3[-1] == 'released'"}
+{"at":20000,"parse":"Button: {button:d} State: {state:s}"}
+{"at":20000,"expect":"len(@button) == len(@startup0) + len(@startup1) + len(@startup2) + len(@startup3) + 7"}
+{"at":20300,"do":"touch.0.down"}
+{"at":20300,"do":"touch.2.down"}
+{"at":20300,"do":"touch.3.down"}
+{"at":23000,"parse":"Button: 0 State: {state0:s}"}
+{"at":23000,"expect":"len(@state0) == len(@startup0) + 3"}
+{"at":23000,"expect":"@state0[-1] == 'touched'"}
+{"at":23000,"expect":"20300 < @state0.t[-1] && @state0.t[-1] <= 23000"}
+{"at":23000,"parse":"Button: 1 State: {state1:s}"}
+{"at":23000,"expect":"len(@state1) == len(@startup1) + 1"}
+{"at":23000,"expect":"@state1[-1] == 'touched'"}
+{"at":23000,"parse":"Button: 2 State: {state2:s}"}
+{"at":23000,"expect":"len(@state2) == len(@startup2) + 3"}
+{"at":23000,"expect":"@state2[-1] == 'touched'"}
+{"at":23000,"expect":"20300 < @state2.t[-1] && @state2.t[-1] <= 23000"}
+{"at":23000,"parse":"Button: 3 State: {state3:s}"}
+{"at":23000,"expect":"len(@state3) == len(@startup3) + 3"}
+{"at":23000,"expect":"@state3[-1] == 'touched'"}
+{"at":23000,"expect":"20300 < @state3.t[-1] && @state3.t[-1] <= 23000"}
+{"at":23000,"parse":"Button: {button:d} State: {state:s}"}
+{"at":23000,"expect":"len(@button) == len(@startup0) + len(@startup1) + len(@startup2) + len(@startup3) + 10"}
+{"at":23300,"do":"touch.0.up"}
+{"at":23300,"do":"touch.1.up"}
+{"at":23300,"do":"touch.2.up"}
+{"at":23300,"do":"touch.3.up"}
+{"at":26000,"parse":"Button: 0 State: {state0:s}"}
+{"at":26000,"expect":"len(@state0) == len(@startup0) + 4"}
+{"at":26000,"expect":"@state0[-1] == 'released'"}
+{"at":26000,"expect":"23300 < @state0.t[-1] && @state0.t[-1] <= 26000"}
+{"at":26000,"parse":"Button: 1 State: {state1:s}"}
+{"at":26000,"expect":"len(@state1) == len(@startup1) + 2"}
+{"at":26000,"expect":"@state1[-1] == 'released'"}
+{"at":26000,"expect":"23300 < @state1.t[-1] && @state1.t[-1] <= 26000"}
+{"at":26000,"parse":"Button: 2 State: {state2:s}"}
+{"at":26000,"expect":"len(@state2) == len(@startup2) + 4"}
+{"at":26000,"expect":"@state2[-1] == 'released'"}
+{"at":26000,"expect":"23300 < @state2.t[-1] && @state2.t[-1] <= 26000"}
+{"at":26000,"parse":"Button: 3 State: {state3:s}"}
+{"at":26000,"expect":"len(@state3) == len(@startup3) + 4"}
+{"at":26000,"expect":"@state3[-1] == 'released'"}
+{"at":26000,"expect":"23300 < @state3.t[-1] && @state3.t[-1] <= 26000"}
+{"at":26000,"parse":"Button: {button:d} State: {state:s}"}
+{"at":26000,"expect":"len(@button) == len(@startup0) + len(@startup1) + len(@startup2) + len(@startup3) + 14"}
+{"at":26300,"do":"touch.4.up"}
+{"at":26300,"do":"touch.5.up"}
+{"at":26300,"do":"touch.6.up"}
+{"at":26300,"do":"touch.7.up"}
+{"at":26300,"do":"touch.8.up"}
+{"at":26300,"do":"touch.9.up"}
+{"at":26300,"do":"touch.10.up"}
+{"at":26300,"do":"touch.11.up"}
+{"at":29000,"parse":"Button: 0 State: {state0:s}"}
+{"at":29000,"expect":"len(@state0) == len(@startup0) + 4"}
+{"at":29000,"expect":"@state0[-1] == 'released'"}
+{"at":29000,"parse":"Button: 1 State: {state1:s}"}
+{"at":29000,"expect":"len(@state1) == len(@startup1) + 2"}
+{"at":29000,"expect":"@state1[-1] == 'released'"}
+{"at":29000,"parse":"Button: 2 State: {state2:s}"}
+{"at":29000,"expect":"len(@state2) == len(@startup2) + 4"}
+{"at":29000,"expect":"@state2[-1] == 'released'"}
+{"at":29000,"parse":"Button: 3 State: {state3:s}"}
+{"at":29000,"expect":"len(@state3) == len(@startup3) + 4"}
+{"at":29000,"expect":"@state3[-1] == 'released'"}
+{"at":29000,"parse":"Button: {button:d} State: {state:s}"}
+{"at":29000,"expect":"len(@button) == len(@startup0) + len(@startup1) + len(@startup2) + len(@startup3) + 14"}
+{"at":29300,"do":"touch.0.down"}
+{"at":29300,"do":"touch.1.down"}
+{"at":29300,"do":"touch.2.down"}
+{"at":29300,"do":"touch.3.down"}
+{"at":32000,"parse":"Button: 0 State: {state0:s}"}
+{"at":32000,"expect":"len(@state0) == len(@startup0) + 5"}
+{"at":32000,"expect":"@state0[-1] == 'touched'"}
+{"at":32000,"expect":"29300 < @state0.t[-1] && @state0.t[-1] <= 32000"}
+{"at":32000,"parse":"Button: 1 State: {state1:s}"}
+{"at":32000,"expect":"len(@state1) == len(@startup1) + 3"}
+{"at":32000,"expect":"@state1[-1] == 'touched'"}
+{"at":32000,"expect":"29300 < @state1.t[-1] && @state1.t[-1] <= 32000"}
+{"at":32000,"parse":"Button: 2 State: {state2:s}"}
+{"at":32000,"expect":"len(@state2) == len(@startup2) + 5"}
+{"at":32000,"expect":"@state2[-1] == 'touched'"}
+{"at":32000,"expect":"29300 < @state2.t[-1] && @state2.t[-1] <= 32000"}
+{"at":32000,"parse":"Button: 3 State: {state3:s}"}
+{"at":32000,"expect":"len(@state3) == len(@startup3) + 5"}
+{"at":32000,"expect":"@state3[-1] == 'touched'"}
+{"at":32000,"expect":"29300 < @state3.t[-1] && @state3.t[-1] <= 32000"}
+{"at":32000,"parse":"Button: {button:d} State: {state:s}"}
+{"at":32000,"expect":"len(@button) == len(@startup0) + len(@startup1) + len(@startup2) + len(@startup3) + 18"}
+{"at":35000,"parse":"Button: 0 State: {state0:s}"}
+{"at":35000,"expect":"len(@state0) == len(@startup0) + 5"}
+{"at":35000,"expect":"@state0[-1] == 'touched'"}
+{"at":35000,"parse":"Button: 1 State: {state1:s}"}
+{"at":35000,"expect":"len(@state1) == len(@startup1) + 3"}
+{"at":35000,"expect":"@state1[-1] == 'touched'"}
+{"at":35000,"parse":"Button: 2 State: {state2:s}"}
+{"at":35000,"expect":"len(@state2) == len(@startup2) + 5"}
+{"at":35000,"expect":"@state2[-1] == 'touched'"}
+{"at":35000,"parse":"Button: 3 State: {state3:s}"}
+{"at":35000,"expect":"len(@state3) == len(@startup3) + 5"}
+{"at":35000,"expect":"@state3[-1] == 'touched'"}
+{"at":35000,"parse":"Button: {button:d} State: {state:s}"}
+{"at":35000,"expect":"len(@button) == len(@startup0) + len(@startup1) + len(@startup2) + len(@startup3) + 18"}
+{"at":35300,"do":"touch.0.up"}
+{"at":35300,"do":"touch.1.up"}
+{"at":35300,"do":"touch.2.up"}
+{"at":35300,"do":"touch.3.up"}
+{"at":38000,"parse":"Button: 0 State: {state0:s}"}
+{"at":38000,"expect":"len(@state0) == len(@startup0) + 6"}
+{"at":38000,"expect":"@state0[-1] == 'released'"}
+{"at":38000,"expect":"35300 < @state0.t[-1] && @state0.t[-1] <= 38000"}
+{"at":38000,"parse":"Button: 1 State: {state1:s}"}
+{"at":38000,"expect":"len(@state1) == len(@startup1) + 4"}
+{"at":38000,"expect":"@state1[-1] == 'released'"}
+{"at":38000,"expect":"35300 < @state1.t[-1] && @state1.t[-1] <= 38000"}
+{"at":38000,"parse":"Button: 2 State: {state2:s}"}
+{"at":38000,"expect":"len(@state2) == len(@startup2) + 6"}
+{"at":38000,"expect":"@state2[-1] == 'released'"}
+{"at":38000,"expect":"35300 < @state2.t[-1] && @state2.t[-1] <= 38000"}
+{"at":38000,"parse":"Button: 3 State: {state3:s}"}
+{"at":38000,"expect":"len(@state3) == len(@startup3) + 6"}
+{"at":38000,"expect":"@state3[-1] == 'released'"}
+{"at":38000,"expect":"35300 < @state3.t[-1] && @state3.t[-1] <= 38000"}
+{"at":38000,"parse":"Button: {button:d} State: {state:s}"}
+{"at":38000,"expect":"len(@button) == len(@startup0) + len(@startup1) + len(@startup2) + len(@startup3) + 22"}

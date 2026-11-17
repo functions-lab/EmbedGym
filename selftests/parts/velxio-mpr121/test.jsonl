@@ -1,0 +1,17 @@
+{"target":"atmega2560_arduino","part":"mpr121","name":"touch","pin":20}
+{"target":"esp32s3_espidf","part":"mpr121","name":"touch","pin":38}
+{"target":"esp32s3_arduino","part":"mpr121","name":"touch","pin":38}
+{"target":"nrf52840_zephyr","part":"mpr121","name":"touch","pin":"P0.21"}
+{"target":"nrf52840_arduino","part":"mpr121","name":"touch","pin":"P0.21"}
+{"at":500,"do":"touch.0.down"}
+{"at":900,"do":"touch.0.up"}
+{"at":1600,"set":"touch.capacitance0 = 14.8"}
+{"at":2800,"set":"touch.capacitance0 = 15"}
+{"at":5800,"set":"touch.rextOvercurrent = true"}
+{"at":6200,"set":"touch.rextOvercurrent = false"}
+{"at":7500,"parse":"FAIL {errors:s}"}
+{"at":7500,"expect":"len(@errors) == 0"}
+{"at":7500,"parse":"failures {failures:d}"}
+{"at":7500,"expect":"len(@failures) == 1 && @failures[0] == 0"}
+{"at":7500,"parse":"init-data {adc:d} baseline {base:d} config {cfg:d} ecr {ecr:d}"}
+{"at":7500,"expect":"@adc[0] == 165 && @base[0] == 41 && @cfg[0] == 32 && @ecr[0] == 193"}

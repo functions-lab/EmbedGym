@@ -1,0 +1,72 @@
+{"target":"atmega2560_arduino","part":"mpr121","name":"touch","pin":20}
+{"target":"esp32s3_espidf","part":"mpr121","name":"touch","pin":38}
+{"target":"nrf52840_zephyr","part":"mpr121","name":"touch","pin":"P0.21"}
+{"at":400,"do":"touch.0.down"}
+{"at":560,"do":"touch.0.up"}
+{"at":900,"do":"touch.0.down"}
+{"at":1000,"do":"touch.0.up"}
+{"at":1100,"do":"touch.1.down"}
+{"at":1200,"do":"touch.1.up"}
+{"at":1300,"do":"touch.2.down"}
+{"at":1400,"do":"touch.2.up"}
+{"at":1500,"do":"touch.3.down"}
+{"at":1600,"do":"touch.3.up"}
+{"at":1700,"do":"touch.4.down"}
+{"at":1800,"do":"touch.4.up"}
+{"at":1900,"do":"touch.5.down"}
+{"at":2000,"do":"touch.5.up"}
+{"at":2100,"do":"touch.6.down"}
+{"at":2200,"do":"touch.6.up"}
+{"at":2300,"do":"touch.7.down"}
+{"at":2400,"do":"touch.7.up"}
+{"at":2500,"do":"touch.8.down"}
+{"at":2600,"do":"touch.8.up"}
+{"at":2700,"do":"touch.9.down"}
+{"at":2800,"do":"touch.9.up"}
+{"at":2900,"do":"touch.10.down"}
+{"at":3000,"do":"touch.10.up"}
+{"at":3100,"do":"touch.11.down"}
+{"at":3200,"do":"touch.11.up"}
+{"at":3600,"do":"touch.11.down"}
+{"at":4000,"do":"touch.11.up"}
+{"at":4200,"do":"touch.0.down"}
+{"at":4200,"do":"touch.11.down"}
+{"at":4400,"parse":"mask {mask:d}"}
+{"at":4400,"expect":"@mask[-1] == 2049 && 27 <= len(@mask) && len(@mask) <= 28"}
+{"at":4500,"do":"touch.0.up"}
+{"at":4500,"do":"touch.11.up"}
+{"at":4900,"parse":"FAIL {errors:s}"}
+{"at":4900,"expect":"len(@errors) == 0"}
+{"at":4900,"parse":"failures {failures:d}"}
+{"at":4900,"expect":"len(@failures) == 1 && @failures[0] == 0"}
+{"at":4900,"parse":"mask {mask:d}"}
+{"at":4900,"expect":"28 <= len(@mask) && len(@mask) <= 30"}
+{"at":4900,"expect":"@mask[0] == 1"}
+{"at":4900,"expect":"@mask[1] == 0"}
+{"at":4900,"expect":"@mask[2] == 2"}
+{"at":4900,"expect":"@mask[3] == 0"}
+{"at":4900,"expect":"@mask[4] == 4"}
+{"at":4900,"expect":"@mask[5] == 0"}
+{"at":4900,"expect":"@mask[6] == 8"}
+{"at":4900,"expect":"@mask[7] == 0"}
+{"at":4900,"expect":"@mask[8] == 16"}
+{"at":4900,"expect":"@mask[9] == 0"}
+{"at":4900,"expect":"@mask[10] == 32"}
+{"at":4900,"expect":"@mask[11] == 0"}
+{"at":4900,"expect":"@mask[12] == 64"}
+{"at":4900,"expect":"@mask[13] == 0"}
+{"at":4900,"expect":"@mask[14] == 128"}
+{"at":4900,"expect":"@mask[15] == 0"}
+{"at":4900,"expect":"@mask[16] == 256"}
+{"at":4900,"expect":"@mask[17] == 0"}
+{"at":4900,"expect":"@mask[18] == 512"}
+{"at":4900,"expect":"@mask[19] == 0"}
+{"at":4900,"expect":"@mask[20] == 1024"}
+{"at":4900,"expect":"@mask[21] == 0"}
+{"at":4900,"expect":"@mask[22] == 2048"}
+{"at":4900,"expect":"@mask[23] == 0"}
+{"at":4900,"expect":"@mask[24] == 2048"}
+{"at":4900,"expect":"@mask[25] == 0"}
+{"at":4900,"expect":"@mask[26] == 2049"}
+{"at":4900,"expect":"@mask[-1] == 0"}
+{"at":4900,"expect":"900 < @mask.t[0] && @mask.t[0] < 980 && 4500 < @mask.t[-1] && @mask.t[-1] < 4600"}

@@ -1,0 +1,40 @@
+/ {
+    aliases {
+        shock-sensor = &shock_sensor;
+        my-button = &my_button;
+        d-7 = &D_7;
+        d-6 = &D_6;
+        d-5 = &D_5;
+        d-4 = &D_4;
+        rs = &RS;
+        e = &E;
+    };
+
+    keypad_pins {
+        compatible = "gpio-keys";
+        shock_sensor: shock_sensor {
+            gpios = <&gpio0 3 (GPIO_ACTIVE_HIGH)>;
+        };
+        my_button: my_button {
+            gpios = <&gpio1 11 (GPIO_ACTIVE_HIGH)>;
+        };
+        RS: RS {
+            gpios = <&gpio0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        E: E {
+            gpios = <&gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        D_7: D_7 {
+            gpios = <&gpio0 30 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        D_6: D_6 {
+            gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        D_5: D_5 {
+            gpios = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        D_4: D_4 {
+            gpios = <&gpio0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+    };
+};

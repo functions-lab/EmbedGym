@@ -1,0 +1,5 @@
+{"target":"atmega2560_arduino","part":"mpr121","name":"touch","pin":20}
+{"target":"esp32s3_espidf","part":"mpr121","name":"touch","pin":38}
+{"target":"nrf52840_zephyr","part":"mpr121","name":"touch","pin":"P0.21"}
+{"at":100,"parse":"failures {failures:d}"}
+{"at":100,"expect":"len(@failures) == 1 && @failures[0] == 0"}

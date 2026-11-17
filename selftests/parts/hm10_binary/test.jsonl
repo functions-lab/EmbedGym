@@ -1,0 +1,24 @@
+{"target":"atmega2560_arduino","part":"hm10","name":"radio","pin":18}
+{"target":"atmega328p_arduino","part":"hm10","name":"radio","pin":7}
+{"target":"esp32s3_espidf","part":"hm10","name":"radio","pin":4}
+{"target":"nrf52840_zephyr","part":"hm10","name":"radio","pin":"P1.01"}
+{"at":100,"expect":"serial.txHex == ''"}
+{"at":100,"expect":"radio.remoteRxHex == ''"}
+{"at":300,"do":"radio.remoteOn"}
+{"at":300,"do":"radio.connect"}
+{"at":300,"do":"radio.subscribe"}
+{"at":400,"send":"radio.remote","bytes":[0,13,10,255,65]}
+{"at":450,"expect":"serial.txHex == '000d0aff41'"}
+{"at":450,"expect":"radio.remoteRxHex == '000d0aff41'"}
+{"at":500,"send":"serial","bytes":[66,0,128]}
+{"at":700,"expect":"radio.remoteRxHex == '000d0aff41420080'"}
+{"at":700,"do":"radio.readRemote"}
+{"at":700,"expect":"radio.remoteReadHex == '00112233abcd'"}
+{"at":800,"do":"radio.resetDown"}
+{"at":920,"expect":"radio.connected == false"}
+{"at":930,"do":"radio.resetUp"}
+{"at":960,"do":"radio.connect"}
+{"at":960,"do":"radio.subscribe"}
+{"at":1000,"send":"radio.remote","bytes":[67]}
+{"at":1050,"expect":"serial.txHex == '000d0aff4143'"}
+{"at":1050,"expect":"radio.remoteRxHex == '000d0aff4142008043'"}

@@ -1,0 +1,5 @@
+{"target":"atmega2560_arduino","part":"led","name":"led","pin":4}
+{"target":"atmega328p_arduino","part":"led","name":"led","pin":4}
+{"at":200,"parse":"addr {addr:d} -> {result:d}"}
+{"at":200,"expect":"len(@addr) == 3 && @addr[0] == 72 && @addr[1] == 80 && @addr[2] == 104"}
+{"at":200,"expect":"@result[0] == 2 && @result[1] == 2 && @result[2] == 2"}

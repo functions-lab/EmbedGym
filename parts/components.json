@@ -1,0 +1,1351 @@
+[
+  {
+    "id": "mpr121",
+    "tagName": "velxio-mpr121",
+    "name": "MPR121 Capacitive Touch",
+    "category": "sensors",
+    "description": "12 electrodes, proximity sensing and electrode GPIO/LED control over I2C.",
+    "keywords": [
+      "touch",
+      "capacitive",
+      "mpr121"
+    ],
+    "thumbnail": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"64\" height=\"64\" viewBox=\"0 -26.16 124.8 124.8\">\n  <defs>\n    <mask id=\"mpr121-board-holes\">\n      <rect width=\"124.8\" height=\"72.48\" fill=\"white\"/>\n      <g fill=\"black\">\n        <circle cx=\"9.6\" cy=\"62.4\" r=\"4.72\"/><circle cx=\"115.2\" cy=\"62.4\" r=\"4.72\"/>\n        <circle cx=\"4.8\" cy=\"4.8\" r=\"1.89\"/><circle cx=\"14.4\" cy=\"4.8\" r=\"1.89\"/>\n        <circle cx=\"24\" cy=\"4.8\" r=\"1.89\"/><circle cx=\"33.6\" cy=\"4.8\" r=\"1.89\"/>\n        <circle cx=\"43.2\" cy=\"4.8\" r=\"1.89\"/><circle cx=\"52.8\" cy=\"4.8\" r=\"1.89\"/>\n        <circle cx=\"62.4\" cy=\"4.8\" r=\"1.89\"/><circle cx=\"72\" cy=\"4.8\" r=\"1.89\"/>\n        <circle cx=\"81.6\" cy=\"4.8\" r=\"1.89\"/><circle cx=\"91.2\" cy=\"4.8\" r=\"1.89\"/>\n        <circle cx=\"100.8\" cy=\"4.8\" r=\"1.89\"/><circle cx=\"110.4\" cy=\"4.8\" r=\"1.89\"/>\n        <circle cx=\"120\" cy=\"4.8\" r=\"1.89\"/>\n        <circle cx=\"33.6\" cy=\"62.4\" r=\"1.89\"/><circle cx=\"43.2\" cy=\"62.4\" r=\"1.89\"/>\n        <circle cx=\"52.8\" cy=\"62.4\" r=\"1.89\"/><circle cx=\"62.4\" cy=\"62.4\" r=\"1.89\"/>\n        <circle cx=\"72\" cy=\"62.4\" r=\"1.89\"/><circle cx=\"81.6\" cy=\"62.4\" r=\"1.89\"/>\n        <circle cx=\"91.2\" cy=\"62.4\" r=\"1.89\"/>\n      </g>\n    </mask>\n  </defs>\n  <g mask=\"url(#mpr121-board-holes)\">\n    <path d=\"M0.5 0.5H124.3V62.88A9.1 9.1 0 0 1 115.2 71.98H9.6A9.1 9.1 0 0 1 0.5 62.88Z\" fill=\"#282a2b\" stroke=\"#a6a6a0\" stroke-width=\"1\"/>\n    <g fill=\"#d9c18a\" stroke=\"#e6e2d7\" stroke-width=\"0.8\">\n      <circle cx=\"9.6\" cy=\"62.4\" r=\"6.7\"/><circle cx=\"115.2\" cy=\"62.4\" r=\"6.7\"/>\n    </g>\n    <g fill=\"#d9bc7c\" stroke=\"#ddd8c8\" stroke-width=\"0.4\">\n      <circle cx=\"4.8\" cy=\"4.8\" r=\"3.168\"/><circle cx=\"14.4\" cy=\"4.8\" r=\"3.168\"/>\n      <circle cx=\"24\" cy=\"4.8\" r=\"3.168\"/><circle cx=\"33.6\" cy=\"4.8\" r=\"3.168\"/>\n      <circle cx=\"43.2\" cy=\"4.8\" r=\"3.168\"/><circle cx=\"52.8\" cy=\"4.8\" r=\"3.168\"/>\n      <circle cx=\"62.4\" cy=\"4.8\" r=\"3.168\"/><circle cx=\"72\" cy=\"4.8\" r=\"3.168\"/>\n      <circle cx=\"81.6\" cy=\"4.8\" r=\"3.168\"/><circle cx=\"91.2\" cy=\"4.8\" r=\"3.168\"/>\n      <circle cx=\"100.8\" cy=\"4.8\" r=\"3.168\"/><circle cx=\"110.4\" cy=\"4.8\" r=\"3.168\"/>\n      <circle cx=\"120\" cy=\"4.8\" r=\"3.168\"/>\n      <circle cx=\"33.6\" cy=\"62.4\" r=\"3.36\"/><circle cx=\"43.2\" cy=\"62.4\" r=\"3.36\"/>\n      <circle cx=\"52.8\" cy=\"62.4\" r=\"3.36\"/><circle cx=\"62.4\" cy=\"62.4\" r=\"3.36\"/>\n      <circle cx=\"72\" cy=\"62.4\" r=\"3.36\"/><circle cx=\"81.6\" cy=\"62.4\" r=\"3.36\"/>\n      <circle cx=\"91.2\" cy=\"62.4\" r=\"3.36\"/>\n    </g>\n  </g>\n  <g font-family=\"Arial, sans-serif\" fill=\"#eeeae2\" text-anchor=\"middle\">\n    <g font-size=\"4.3\">\n      <text x=\"4.8\" y=\"13.1\">11</text><text x=\"14.4\" y=\"13.1\">10</text>\n      <text x=\"24\" y=\"13.1\">9</text><text x=\"33.6\" y=\"13.1\">8</text>\n      <text x=\"43.2\" y=\"13.1\">7</text><text x=\"52.8\" y=\"13.1\">6</text>\n      <text x=\"62.4\" y=\"13.1\">5</text><text x=\"72\" y=\"13.1\">4</text>\n      <text x=\"81.6\" y=\"13.1\">3</text><text x=\"91.2\" y=\"13.1\">2</text>\n      <text x=\"100.8\" y=\"13.1\">1</text><text x=\"110.4\" y=\"13.1\">0</text>\n      <text x=\"120\" y=\"16.6\" transform=\"rotate(-90 120 16.6)\">GND</text>\n      <text x=\"33.6\" y=\"70.4\">VIN</text><text x=\"43.2\" y=\"58.1\">3Vo</text>\n      <text x=\"52.8\" y=\"70.4\">GND</text><text x=\"62.4\" y=\"58.1\">SCL</text>\n      <text x=\"72\" y=\"70.4\">SDA</text><text x=\"81.6\" y=\"58.1\">INT</text>\n      <text x=\"91.2\" y=\"70.4\">ADDR</text>\n    </g>\n    <text x=\"62.4\" y=\"20.4\" font-size=\"5.8\">12 Capacitive Touch Sensors</text>\n    <text x=\"62.4\" y=\"27.1\" font-size=\"5.8\">MPR121</text>\n    <text x=\"4.7\" y=\"21.5\" font-size=\"4.3\">on</text>\n  </g>\n  <g fill=\"#c9caca\">\n    <rect x=\"14\" y=\"32\" width=\"4.5\" height=\"1.5\"/><rect x=\"14\" y=\"35.8\" width=\"4.5\" height=\"1.5\"/>\n    <rect x=\"14\" y=\"39.6\" width=\"4.5\" height=\"1.5\"/><rect x=\"14\" y=\"43.4\" width=\"4.5\" height=\"1.5\"/>\n    <rect x=\"106.3\" y=\"32\" width=\"4.5\" height=\"1.5\"/><rect x=\"106.3\" y=\"35.8\" width=\"4.5\" height=\"1.5\"/>\n    <rect x=\"106.3\" y=\"39.6\" width=\"4.5\" height=\"1.5\"/><rect x=\"106.3\" y=\"43.4\" width=\"4.5\" height=\"1.5\"/>\n  </g>\n  <rect x=\"0.8\" y=\"27\" width=\"14.8\" height=\"22.8\" rx=\"0.8\" fill=\"#e9e4d3\" stroke=\"#c5c0b1\" stroke-width=\"0.6\"/>\n  <rect x=\"109.2\" y=\"27\" width=\"14.8\" height=\"22.8\" rx=\"0.8\" fill=\"#e9e4d3\" stroke=\"#c5c0b1\" stroke-width=\"0.6\"/>\n  <g fill=\"#c8c9c5\">\n    <rect x=\"57.8\" y=\"29.1\" width=\"1.3\" height=\"14.8\"/><rect x=\"59.7\" y=\"29.1\" width=\"1.3\" height=\"14.8\"/>\n    <rect x=\"61.8\" y=\"29.1\" width=\"1.3\" height=\"14.8\"/><rect x=\"63.8\" y=\"29.1\" width=\"1.3\" height=\"14.8\"/>\n    <rect x=\"65.8\" y=\"29.1\" width=\"1.3\" height=\"14.8\"/>\n    <rect x=\"55\" y=\"31.9\" width=\"14.8\" height=\"1.3\"/><rect x=\"55\" y=\"33.8\" width=\"14.8\" height=\"1.3\"/>\n    <rect x=\"55\" y=\"35.9\" width=\"14.8\" height=\"1.3\"/><rect x=\"55\" y=\"37.9\" width=\"14.8\" height=\"1.3\"/>\n    <rect x=\"55\" y=\"39.9\" width=\"14.8\" height=\"1.3\"/>\n  </g>\n  <rect x=\"56.73\" y=\"30.81\" width=\"11.34\" height=\"11.34\" fill=\"#414444\" stroke=\"#171a19\" stroke-width=\"0.6\"/>\n  <circle cx=\"58.2\" cy=\"32.2\" r=\"0.55\" fill=\"#999e9c\"/>\n  <text x=\"62.4\" y=\"37.4\" font-family=\"Arial, sans-serif\" font-size=\"2.6\" fill=\"#bbc0bd\" text-anchor=\"middle\">M121</text>\n  <g stroke=\"#c8c9c5\" stroke-width=\"0.6\">\n    <rect x=\"21.8\" y=\"51\" width=\"9.2\" height=\"4.4\" fill=\"#c5a47b\"/>\n    <rect x=\"25.2\" y=\"30.4\" width=\"9.2\" height=\"4.4\" fill=\"#c5a47b\"/>\n    <rect x=\"43.5\" y=\"39.9\" width=\"7\" height=\"3.4\" fill=\"#c5a47b\"/>\n    <rect x=\"72.6\" y=\"44.6\" width=\"7\" height=\"3.4\" fill=\"#c5a47b\"/>\n    <rect x=\"72.6\" y=\"50.6\" width=\"7\" height=\"3.4\" fill=\"#414444\"/>\n    <rect x=\"72.6\" y=\"37.7\" width=\"7\" height=\"3.4\" fill=\"#414444\"/>\n    <rect x=\"47.5\" y=\"49.7\" width=\"7\" height=\"3.4\" fill=\"#414444\"/>\n    <rect x=\"85.4\" y=\"34.7\" width=\"3.4\" height=\"7\" fill=\"#414444\"/>\n    <rect x=\"20.9\" y=\"25.2\" width=\"7\" height=\"3.4\" fill=\"#414444\"/>\n    <rect x=\"87.4\" y=\"25.6\" width=\"7\" height=\"3.4\" fill=\"#c5a47b\"/>\n  </g>\n  <g fill=\"#c8c9c5\">\n    <rect x=\"21.8\" y=\"51\" width=\"1.4\" height=\"4.4\"/><rect x=\"29.6\" y=\"51\" width=\"1.4\" height=\"4.4\"/>\n    <rect x=\"25.2\" y=\"30.4\" width=\"1.4\" height=\"4.4\"/><rect x=\"33\" y=\"30.4\" width=\"1.4\" height=\"4.4\"/>\n    <rect x=\"43.5\" y=\"39.9\" width=\"1.2\" height=\"3.4\"/><rect x=\"49.3\" y=\"39.9\" width=\"1.2\" height=\"3.4\"/>\n    <rect x=\"72.6\" y=\"44.6\" width=\"1.2\" height=\"3.4\"/><rect x=\"78.4\" y=\"44.6\" width=\"1.2\" height=\"3.4\"/>\n    <rect x=\"29.7\" y=\"40\" width=\"5.9\" height=\"1.3\"/><rect x=\"29.7\" y=\"44\" width=\"5.9\" height=\"1.3\"/>\n    <rect x=\"90.5\" y=\"29\" width=\"1.3\" height=\"8.6\"/><rect x=\"94.5\" y=\"29\" width=\"1.3\" height=\"8.6\"/>\n    <rect x=\"90.5\" y=\"48.1\" width=\"1.3\" height=\"8.6\"/><rect x=\"94.5\" y=\"48.1\" width=\"1.3\" height=\"8.6\"/>\n  </g>\n  <rect x=\"28.9\" y=\"41.3\" width=\"7.4\" height=\"4\" fill=\"#414444\" stroke=\"#171a19\" stroke-width=\"0.5\"/>\n  <rect x=\"88.9\" y=\"31\" width=\"8.6\" height=\"4.5\" fill=\"#414444\" stroke=\"#171a19\" stroke-width=\"0.5\"/>\n  <rect x=\"88.9\" y=\"50.1\" width=\"8.6\" height=\"4.5\" fill=\"#414444\" stroke=\"#171a19\" stroke-width=\"0.5\"/>\n  <rect x=\"4.6\" y=\"23\" width=\"3\" height=\"1.9\" rx=\"0.2\" fill=\"#6f9361\" stroke=\"#c8c9c5\" stroke-width=\"0.5\"/>\n  <rect x=\"83.9\" y=\"46.8\" width=\"3\" height=\"1.9\" rx=\"0.2\" transform=\"rotate(90 85.4 47.75)\" fill=\"#779786\" stroke=\"#c8c9c5\" stroke-width=\"0.5\"/>\n</svg>\n",
+    "pins": [
+      {
+        "name": "VIN",
+        "x": 33.6,
+        "y": 62.4,
+        "number": 1,
+        "signals": [
+          {
+            "type": "power",
+            "signal": "VCC"
+          }
+        ]
+      },
+      {
+        "name": "3Vo",
+        "x": 43.2,
+        "y": 62.4,
+        "number": 2,
+        "signals": [
+          {
+            "type": "power",
+            "signal": "VCC"
+          }
+        ]
+      },
+      {
+        "name": "GND",
+        "x": 52.8,
+        "y": 62.4,
+        "number": 3,
+        "signals": [
+          {
+            "type": "power",
+            "signal": "GND"
+          }
+        ]
+      },
+      {
+        "name": "SCL",
+        "x": 62.4,
+        "y": 62.4,
+        "number": 4,
+        "signals": []
+      },
+      {
+        "name": "SDA",
+        "x": 72.0,
+        "y": 62.4,
+        "number": 5,
+        "signals": []
+      },
+      {
+        "name": "INT",
+        "x": 81.6,
+        "y": 62.4,
+        "number": 6,
+        "signals": []
+      },
+      {
+        "name": "ADDR",
+        "x": 91.2,
+        "y": 62.4,
+        "number": 7,
+        "signals": []
+      },
+      {
+        "name": "11",
+        "x": 4.8,
+        "y": 4.8,
+        "number": 8,
+        "signals": []
+      },
+      {
+        "name": "10",
+        "x": 14.4,
+        "y": 4.8,
+        "number": 9,
+        "signals": []
+      },
+      {
+        "name": "9",
+        "x": 24.0,
+        "y": 4.8,
+        "number": 10,
+        "signals": []
+      },
+      {
+        "name": "8",
+        "x": 33.6,
+        "y": 4.8,
+        "number": 11,
+        "signals": []
+      },
+      {
+        "name": "7",
+        "x": 43.2,
+        "y": 4.8,
+        "number": 12,
+        "signals": []
+      },
+      {
+        "name": "6",
+        "x": 52.8,
+        "y": 4.8,
+        "number": 13,
+        "signals": []
+      },
+      {
+        "name": "5",
+        "x": 62.4,
+        "y": 4.8,
+        "number": 14,
+        "signals": []
+      },
+      {
+        "name": "4",
+        "x": 72.0,
+        "y": 4.8,
+        "number": 15,
+        "signals": []
+      },
+      {
+        "name": "3",
+        "x": 81.6,
+        "y": 4.8,
+        "number": 16,
+        "signals": []
+      },
+      {
+        "name": "2",
+        "x": 91.2,
+        "y": 4.8,
+        "number": 17,
+        "signals": []
+      },
+      {
+        "name": "1",
+        "x": 100.8,
+        "y": 4.8,
+        "number": 18,
+        "signals": []
+      },
+      {
+        "name": "0",
+        "x": 110.4,
+        "y": 4.8,
+        "number": 19,
+        "signals": []
+      }
+    ],
+    "properties": [],
+    "defaultValues": {
+      "capacitance0": 15,
+      "capacitance1": 15,
+      "capacitance2": 15,
+      "capacitance3": 15,
+      "capacitance4": 15,
+      "capacitance5": 15,
+      "capacitance6": 15,
+      "capacitance7": 15,
+      "capacitance8": 15,
+      "capacitance9": 15,
+      "capacitance10": 15,
+      "capacitance11": 15,
+      "rextOvercurrent": false
+    },
+    "pinCount": 19
+  },
+  {
+    "id": "amg8833",
+    "tagName": "velxio-amg8833",
+    "name": "AMG8833 Thermal Camera",
+    "category": "sensors",
+    "pinCount": 6,
+    "tags": [
+      "sensor",
+      "i2c",
+      "thermal",
+      "infrared",
+      "amg8833"
+    ],
+    "thumbnail": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"64\" height=\"64\" viewBox=\"0 0 96 96\">\n  <defs>\n    <mask id=\"amg8833-board-holes\">\n      <rect width=\"96\" height=\"96\" fill=\"white\"/>\n      <g fill=\"black\">\n        <circle cx=\"9.6\" cy=\"9.6\" r=\"4.72\"/><circle cx=\"86.4\" cy=\"9.6\" r=\"4.72\"/>\n        <circle cx=\"9.6\" cy=\"86.4\" r=\"4.72\"/><circle cx=\"86.4\" cy=\"86.4\" r=\"4.72\"/>\n        <circle cx=\"24\" cy=\"9.6\" r=\"1.89\"/><circle cx=\"33.6\" cy=\"9.6\" r=\"1.89\"/>\n        <circle cx=\"43.2\" cy=\"9.6\" r=\"1.89\"/><circle cx=\"52.8\" cy=\"9.6\" r=\"1.89\"/>\n        <circle cx=\"62.4\" cy=\"9.6\" r=\"1.89\"/><circle cx=\"72\" cy=\"9.6\" r=\"1.89\"/>\n        <circle cx=\"24\" cy=\"86.4\" r=\"1.89\"/><circle cx=\"33.6\" cy=\"86.4\" r=\"1.89\"/>\n        <circle cx=\"43.2\" cy=\"86.4\" r=\"1.89\"/><circle cx=\"52.8\" cy=\"86.4\" r=\"1.89\"/>\n        <circle cx=\"62.4\" cy=\"86.4\" r=\"1.89\"/><circle cx=\"72\" cy=\"86.4\" r=\"1.89\"/>\n      </g>\n    </mask>\n  </defs>\n  <g mask=\"url(#amg8833-board-holes)\">\n    <rect x=\"0.5\" y=\"0.5\" width=\"95\" height=\"95\" rx=\"9.1\" fill=\"#282a2b\" stroke=\"#a6a6a0\" stroke-width=\"1\"/>\n    <g fill=\"#d9c18a\" stroke=\"#e6e2d7\" stroke-width=\"0.8\">\n      <circle cx=\"9.6\" cy=\"9.6\" r=\"6.7\"/><circle cx=\"86.4\" cy=\"9.6\" r=\"6.7\"/>\n      <circle cx=\"9.6\" cy=\"86.4\" r=\"6.7\"/><circle cx=\"86.4\" cy=\"86.4\" r=\"6.7\"/>\n    </g>\n    <g fill=\"#d9bc7c\" stroke=\"#ddd8c8\" stroke-width=\"0.4\">\n      <circle cx=\"24\" cy=\"9.6\" r=\"3.36\"/><circle cx=\"33.6\" cy=\"9.6\" r=\"3.36\"/>\n      <circle cx=\"43.2\" cy=\"9.6\" r=\"3.36\"/><circle cx=\"52.8\" cy=\"9.6\" r=\"3.36\"/>\n      <circle cx=\"62.4\" cy=\"9.6\" r=\"3.36\"/><circle cx=\"72\" cy=\"9.6\" r=\"3.36\"/>\n      <circle cx=\"24\" cy=\"86.4\" r=\"3.36\"/><circle cx=\"33.6\" cy=\"86.4\" r=\"3.36\"/>\n      <circle cx=\"43.2\" cy=\"86.4\" r=\"3.36\"/><circle cx=\"52.8\" cy=\"86.4\" r=\"3.36\"/>\n      <circle cx=\"62.4\" cy=\"86.4\" r=\"3.36\"/><circle cx=\"72\" cy=\"86.4\" r=\"3.36\"/>\n    </g>\n  </g>\n  <g font-family=\"Arial, sans-serif\" fill=\"#eeeae2\" text-anchor=\"middle\">\n    <text x=\"48\" y=\"5.6\" font-size=\"5.6\">AMG8833</text>\n    <text x=\"48\" y=\"20.2\" font-size=\"5.6\">8x8 IR</text>\n    <g font-size=\"4.3\">\n      <text x=\"24\" y=\"94\">VIN</text><text x=\"33.6\" y=\"81.4\">3Vo</text>\n      <text x=\"43.2\" y=\"94\">GND</text><text x=\"52.8\" y=\"81.4\">SCL</text>\n      <text x=\"62.4\" y=\"94\">SDA</text><text x=\"72\" y=\"81.4\">INT</text>\n    </g>\n  </g>\n  <g fill=\"#c9caca\">\n    <rect x=\"13\" y=\"42.7\" width=\"4.5\" height=\"1.5\"/><rect x=\"13\" y=\"46.5\" width=\"4.5\" height=\"1.5\"/>\n    <rect x=\"13\" y=\"50.3\" width=\"4.5\" height=\"1.5\"/><rect x=\"13\" y=\"54.1\" width=\"4.5\" height=\"1.5\"/>\n    <rect x=\"78.5\" y=\"42.7\" width=\"4.5\" height=\"1.5\"/><rect x=\"78.5\" y=\"46.5\" width=\"4.5\" height=\"1.5\"/>\n    <rect x=\"78.5\" y=\"50.3\" width=\"4.5\" height=\"1.5\"/><rect x=\"78.5\" y=\"54.1\" width=\"4.5\" height=\"1.5\"/>\n  </g>\n  <rect x=\"0.8\" y=\"36.6\" width=\"13.6\" height=\"22.8\" rx=\"0.8\" fill=\"#e9e4d3\" stroke=\"#c5c0b1\" stroke-width=\"0.6\"/>\n  <rect x=\"81.6\" y=\"36.6\" width=\"13.6\" height=\"22.8\" rx=\"0.8\" fill=\"#e9e4d3\" stroke=\"#c5c0b1\" stroke-width=\"0.6\"/>\n  <g fill=\"#bcbec0\">\n    <rect x=\"31\" y=\"30.7\" width=\"3\" height=\"2.6\"/>\n    <rect x=\"31\" y=\"43.1\" width=\"3\" height=\"2.6\"/><rect x=\"31\" y=\"48\" width=\"3\" height=\"2.6\"/>\n    <rect x=\"31\" y=\"52.8\" width=\"3\" height=\"2.6\"/><rect x=\"31\" y=\"57.6\" width=\"3\" height=\"2.6\"/>\n    <rect x=\"31\" y=\"62.4\" width=\"3\" height=\"2.6\"/><rect x=\"31\" y=\"72.3\" width=\"3\" height=\"2.6\"/>\n    <rect x=\"62\" y=\"30.7\" width=\"3\" height=\"2.6\"/>\n    <rect x=\"62\" y=\"43.1\" width=\"3\" height=\"2.6\"/><rect x=\"62\" y=\"48\" width=\"3\" height=\"2.6\"/>\n    <rect x=\"62\" y=\"52.8\" width=\"3\" height=\"2.6\"/><rect x=\"62\" y=\"57.6\" width=\"3\" height=\"2.6\"/>\n    <rect x=\"62\" y=\"62.4\" width=\"3\" height=\"2.6\"/><rect x=\"62\" y=\"72.3\" width=\"3\" height=\"2.6\"/>\n  </g>\n  <rect x=\"32.4\" y=\"30.4\" width=\"31.2\" height=\"44.8\" rx=\"1.2\" fill=\"#bcaa78\" stroke=\"#ede5cf\" stroke-width=\"0.6\"/>\n  <rect x=\"33.6\" y=\"31.6\" width=\"28.8\" height=\"42.4\" rx=\"1.2\" fill=\"#e0e1df\" stroke=\"#858989\" stroke-width=\"0.8\"/>\n  <rect x=\"36.8\" y=\"34.4\" width=\"22.4\" height=\"36.4\" rx=\"2.6\" fill=\"#babfbd\" stroke=\"#707775\" stroke-width=\"0.9\"/>\n  <rect x=\"42.5\" y=\"39.7\" width=\"11\" height=\"11\" rx=\"1.2\" fill=\"#e1e1dc\" stroke=\"#8a908c\" stroke-width=\"0.6\"/>\n  <rect x=\"43.1\" y=\"40.3\" width=\"9.8\" height=\"9.8\" rx=\"0.8\" fill=\"#385852\" stroke=\"#6c7e76\" stroke-width=\"0.5\"/>\n  <g stroke=\"#c8c9c5\" stroke-width=\"0.6\">\n    <rect x=\"32.1\" y=\"24.5\" width=\"6.8\" height=\"3.8\" fill=\"#c5a47b\"/>\n    <rect x=\"43.4\" y=\"24.3\" width=\"9.2\" height=\"4.4\" fill=\"#c5a47b\"/>\n    <rect x=\"7.9\" y=\"29.2\" width=\"7\" height=\"3.8\" fill=\"#c5a47b\"/>\n    <rect x=\"19.5\" y=\"61.2\" width=\"9.2\" height=\"4.4\" fill=\"#c5a47b\"/>\n    <rect x=\"24.4\" y=\"66.4\" width=\"4.4\" height=\"9.2\" fill=\"#c5a47b\"/>\n    <rect x=\"2.6\" y=\"63.5\" width=\"4.4\" height=\"9.2\" fill=\"#c5a47b\"/>\n    <rect x=\"69.8\" y=\"73.1\" width=\"7\" height=\"3.3\" fill=\"#3e4242\"/>\n    <rect x=\"71.6\" y=\"47.5\" width=\"3.3\" height=\"7\" fill=\"#3e4242\"/>\n    <rect x=\"22.7\" y=\"28.5\" width=\"3.3\" height=\"7\" fill=\"#3e4242\"/>\n    <rect x=\"26.7\" y=\"45.8\" width=\"3.3\" height=\"7\" fill=\"#c5a47b\"/>\n  </g>\n  <g fill=\"#c8c9c5\">\n    <rect x=\"32.1\" y=\"24.5\" width=\"1.4\" height=\"3.8\"/><rect x=\"37.5\" y=\"24.5\" width=\"1.4\" height=\"3.8\"/>\n    <rect x=\"43.4\" y=\"24.3\" width=\"1.4\" height=\"4.4\"/><rect x=\"51.2\" y=\"24.3\" width=\"1.4\" height=\"4.4\"/>\n    <rect x=\"2.6\" y=\"63.5\" width=\"4.4\" height=\"1.4\"/><rect x=\"2.6\" y=\"71.3\" width=\"4.4\" height=\"1.4\"/>\n    <rect x=\"24.4\" y=\"66.4\" width=\"4.4\" height=\"1.4\"/><rect x=\"24.4\" y=\"74.2\" width=\"4.4\" height=\"1.4\"/>\n    <rect x=\"19.5\" y=\"61.2\" width=\"1.4\" height=\"4.4\"/><rect x=\"27.3\" y=\"61.2\" width=\"1.4\" height=\"4.4\"/>\n  </g>\n  <g fill=\"#c8c9c5\">\n    <rect x=\"8.8\" y=\"67\" width=\"12.5\" height=\"1.3\"/><rect x=\"8.8\" y=\"70.8\" width=\"12.5\" height=\"1.3\"/>\n    <rect x=\"19.5\" y=\"43\" width=\"6.5\" height=\"1.3\"/><rect x=\"19.5\" y=\"46.8\" width=\"6.5\" height=\"1.3\"/>\n    <rect x=\"68.8\" y=\"32.1\" width=\"6.5\" height=\"1.3\"/><rect x=\"68.8\" y=\"35.9\" width=\"6.5\" height=\"1.3\"/>\n    <rect x=\"83.4\" y=\"22.8\" width=\"6\" height=\"1.3\"/><rect x=\"83.4\" y=\"26.6\" width=\"6\" height=\"1.3\"/>\n  </g>\n  <rect x=\"11.5\" y=\"65.5\" width=\"7\" height=\"8.5\" fill=\"#444747\" stroke=\"#171a19\" stroke-width=\"0.5\"/>\n  <rect x=\"20.5\" y=\"41.6\" width=\"4.5\" height=\"7.8\" fill=\"#444747\" stroke=\"#171a19\" stroke-width=\"0.5\"/>\n  <rect x=\"69.8\" y=\"30.7\" width=\"4.5\" height=\"7.8\" fill=\"#444747\" stroke=\"#171a19\" stroke-width=\"0.5\"/>\n  <rect x=\"84.5\" y=\"21.4\" width=\"3.8\" height=\"7.8\" fill=\"#444747\" stroke=\"#171a19\" stroke-width=\"0.5\"/>\n  <rect x=\"7.2\" y=\"28\" width=\"2.6\" height=\"1.8\" rx=\"0.2\" fill=\"#74a067\"/>\n  <text x=\"4.4\" y=\"32\" font-family=\"Arial, sans-serif\" font-size=\"3.4\" fill=\"#eeeae2\" text-anchor=\"middle\">on</text>\n</svg>",
+    "properties": [
+      {
+        "name": "address",
+        "type": "string",
+        "options": [
+          "0x69",
+          "0x68"
+        ],
+        "defaultValue": "0x69",
+        "control": "select",
+        "description": "Rear address jumper"
+      }
+    ],
+    "defaultValues": {
+      "address": "0x69",
+      "thermistorTemperature": 25,
+      "pixelAdcOverflow": false,
+      "pixel0": 25,
+      "pixel1": 25,
+      "pixel2": 25,
+      "pixel3": 25,
+      "pixel4": 25,
+      "pixel5": 25,
+      "pixel6": 25,
+      "pixel7": 25,
+      "pixel8": 25,
+      "pixel9": 25,
+      "pixel10": 25,
+      "pixel11": 25,
+      "pixel12": 25,
+      "pixel13": 25,
+      "pixel14": 25,
+      "pixel15": 25,
+      "pixel16": 25,
+      "pixel17": 25,
+      "pixel18": 25,
+      "pixel19": 25,
+      "pixel20": 25,
+      "pixel21": 25,
+      "pixel22": 25,
+      "pixel23": 25,
+      "pixel24": 25,
+      "pixel25": 25,
+      "pixel26": 25,
+      "pixel27": 25,
+      "pixel28": 25,
+      "pixel29": 25,
+      "pixel30": 25,
+      "pixel31": 25,
+      "pixel32": 25,
+      "pixel33": 25,
+      "pixel34": 25,
+      "pixel35": 25,
+      "pixel36": 25,
+      "pixel37": 25,
+      "pixel38": 25,
+      "pixel39": 25,
+      "pixel40": 25,
+      "pixel41": 25,
+      "pixel42": 25,
+      "pixel43": 25,
+      "pixel44": 25,
+      "pixel45": 25,
+      "pixel46": 25,
+      "pixel47": 25,
+      "pixel48": 25,
+      "pixel49": 25,
+      "pixel50": 25,
+      "pixel51": 25,
+      "pixel52": 25,
+      "pixel53": 25,
+      "pixel54": 25,
+      "pixel55": 25,
+      "pixel56": 25,
+      "pixel57": 25,
+      "pixel58": 25,
+      "pixel59": 25,
+      "pixel60": 25,
+      "pixel61": 25,
+      "pixel62": 25,
+      "pixel63": 25
+    }
+  },
+  {
+    "id": "hmc5883l",
+    "tagName": "velxio-hmc5883l",
+    "name": "HMC5883L Magnetometer",
+    "category": "sensors",
+    "pinCount": 5,
+    "tags": [
+      "sensor",
+      "i2c",
+      "magnetometer",
+      "compass",
+      "hmc5883l",
+      "0x1e"
+    ],
+    "thumbnail": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"64\" height=\"64\" viewBox=\"0 0 64 64\"><rect width=\"64\" height=\"64\" rx=\"4\" fill=\"#1a2332\"/><g transform=\"translate(12 4.4) scale(.8)\">\n  <path d=\"M.6.6H49.4V68.4H.6Z M14 8.6A6 6 0 1 0 2 8.6A6 6 0 1 0 14 8.6Z M48 8.6A6 6 0 1 0 36 8.6A6 6 0 1 0 48 8.6Z\" fill=\"#075087\" fill-rule=\"evenodd\" stroke=\"#247b96\" stroke-width=\"1.2\"/>\n  <g fill=\"none\" stroke=\"#afb9be\" stroke-width=\".9\">\n    <circle cx=\"8\" cy=\"8.6\" r=\"6.5\"/>\n    <circle cx=\"42\" cy=\"8.6\" r=\"6.5\"/>\n  </g>\n  <g fill=\"#c5c7c8\">\n    <rect x=\"20\" y=\"12\" width=\"9\" height=\"3.2\" rx=\".3\"/>\n    <rect x=\"20\" y=\"17.3\" width=\"9\" height=\"3.2\" rx=\".3\"/>\n    <path d=\"M21 24H22.2V27H21Z M23.4 24H24.6V27H23.4Z M25.8 24H27V27H25.8Z M28.2 24H29.4V27H28.2Z M21 36H22.2V39H21Z M23.4 36H24.6V39H23.4Z M25.8 36H27V39H25.8Z M28.2 36H29.4V39H28.2Z M18 28H21V29.2H18Z M18 30.4H21V31.6H18Z M18 32.8H21V34H18Z M18 35.2H21V36.4H18Z M29 28H32V29.2H29Z M29 30.4H32V31.6H29Z M29 32.8H32V34H29Z M29 35.2H32V36.4H29Z\"/>\n  </g>\n  <g fill=\"#bda781\">\n    <rect x=\"21.7\" y=\"12\" width=\"5.6\" height=\"3.2\"/>\n    <rect x=\"21.7\" y=\"17.3\" width=\"5.6\" height=\"3.2\"/>\n  </g>\n  <rect x=\"20\" y=\"26\" width=\"10.2\" height=\"11.7\" rx=\".6\" fill=\"#292b2e\"/>\n  <circle cx=\"21.7\" cy=\"27.7\" r=\".55\" fill=\"#6b6d6e\"/>\n  <g fill=\"#c5c7c8\">\n    <rect x=\"4\" y=\"45.4\" width=\"3\" height=\"8\" rx=\".3\"/>\n    <rect x=\"9.8\" y=\"45.4\" width=\"3\" height=\"8\" rx=\".3\"/>\n    <rect x=\"15.6\" y=\"45.4\" width=\"3\" height=\"8\" rx=\".3\"/>\n    <rect x=\"21.4\" y=\"45.4\" width=\"3\" height=\"8\" rx=\".3\"/>\n    <rect x=\"41.3\" y=\"45.4\" width=\"3\" height=\"8\" rx=\".3\"/>\n    <rect x=\"28\" y=\"45\" width=\"3\" height=\"3\"/>\n    <rect x=\"28\" y=\"53\" width=\"3\" height=\"3\"/>\n    <rect x=\"35\" y=\"49\" width=\"4\" height=\"3\"/>\n  </g>\n  <g fill=\"#282a2d\">\n    <rect x=\"4\" y=\"47\" width=\"3\" height=\"4.8\"/>\n    <rect x=\"9.8\" y=\"47\" width=\"3\" height=\"4.8\"/>\n    <rect x=\"30\" y=\"46.3\" width=\"6.2\" height=\"8.3\" rx=\".5\"/>\n  </g>\n  <g fill=\"#bda781\">\n    <rect x=\"15.6\" y=\"47\" width=\"3\" height=\"4.8\"/>\n    <rect x=\"21.4\" y=\"47\" width=\"3\" height=\"4.8\"/>\n    <rect x=\"41.3\" y=\"47\" width=\"3\" height=\"4.8\"/>\n  </g>\n  <g fill=\"#e9f2ef\" font-family=\"Arial,sans-serif\">\n    <text x=\"5\" y=\"17\" font-size=\"4.2\" transform=\"rotate(90 5 17)\">HMC5883L</text>\n    <text x=\"45.4\" y=\"30\" font-size=\"3.5\">X</text>\n    <text x=\"34\" y=\"24.3\" font-size=\"3.5\">Y</text>\n    <text x=\"33.8\" y=\"39.1\" font-size=\"3.5\">Z</text>\n  </g>\n  <path d=\"M37.2 34.5V26.5M37.2 26.5L35.7 28M37.2 26.5L38.7 28M37.2 34.5H46M46 34.5L44.5 33M46 34.5L44.5 36\" fill=\"none\" stroke=\"#e9f2ef\" stroke-width=\".9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n  <circle cx=\"37.2\" cy=\"34.5\" r=\"1.1\" fill=\"#e9f2ef\"/>\n  <g fill=\"#e9f2ef\" font-family=\"Arial,sans-serif\" font-size=\"3\" text-anchor=\"middle\">\n    <text x=\"5.8\" y=\"59\">VCC</text>\n    <text x=\"15.4\" y=\"59\">GND</text>\n    <text x=\"25\" y=\"59\">SCL</text>\n    <text x=\"34.6\" y=\"59\">SDA</text>\n    <text x=\"44.2\" y=\"59\">DRDY</text>\n  </g>\n  <g fill=\"#c9ced0\" stroke=\"#a2abad\" stroke-width=\".45\">\n    <circle cx=\"5.8\" cy=\"63.5\" r=\"3.7\"/>\n    <circle cx=\"15.4\" cy=\"63.5\" r=\"3.7\"/>\n    <circle cx=\"25\" cy=\"63.5\" r=\"3.7\"/>\n    <circle cx=\"34.6\" cy=\"63.5\" r=\"3.7\"/>\n    <circle cx=\"44.2\" cy=\"63.5\" r=\"3.7\"/>\n  </g>\n  <g fill=\"#1f2e35\">\n    <circle cx=\"5.8\" cy=\"63.5\" r=\"1.6\"/>\n    <circle cx=\"15.4\" cy=\"63.5\" r=\"1.6\"/>\n    <circle cx=\"25\" cy=\"63.5\" r=\"1.6\"/>\n    <circle cx=\"34.6\" cy=\"63.5\" r=\"1.6\"/>\n    <circle cx=\"44.2\" cy=\"63.5\" r=\"1.6\"/>\n  </g>\n</g></svg>",
+    "properties": [],
+    "defaultValues": {
+      "magneticX": 0.3,
+      "magneticY": -0.2,
+      "magneticZ": 0.1
+    }
+  },
+  {
+    "id": "mlx90614",
+    "tagName": "velxio-mlx90614",
+    "name": "MLX90614 IR Thermometer (GY-906)",
+    "category": "sensors",
+    "pinCount": 4,
+    "tags": [
+      "sensor",
+      "i2c",
+      "infrared",
+      "thermometer",
+      "temperature",
+      "mlx90614",
+      "gy-906",
+      "0x5a"
+    ],
+    "thumbnail": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"64\" height=\"64\" viewBox=\"0 0 64 64\"><rect width=\"64\" height=\"64\" rx=\"4\" fill=\"#1a2332\"/><g transform=\"translate(13.7 3.95) scale(.85)\">\n  <rect x=\"0.6\" y=\"0.6\" width=\"41.8\" height=\"64.8\" fill=\"#075087\" stroke=\"#247b96\" stroke-width=\"1.2\"/>\n  <g fill=\"#d8b366\" stroke=\"#f2e2af\" stroke-width=\"0.5\">\n    <circle cx=\"8.3\" cy=\"8.3\" r=\"6.6\"/>\n    <circle cx=\"34.7\" cy=\"8.3\" r=\"6.6\"/>\n  </g>\n  <g fill=\"#111315\">\n    <circle cx=\"8.3\" cy=\"8.3\" r=\"5\"/>\n    <circle cx=\"34.7\" cy=\"8.3\" r=\"5\"/>\n  </g>\n  <circle cx=\"21.5\" cy=\"31.2\" r=\"17.6\" fill=\"#aeb4b9\" stroke=\"#868d93\" stroke-width=\"0.6\"/>\n  <circle cx=\"21.5\" cy=\"31.2\" r=\"15.4\" fill=\"#d3d7da\" stroke=\"#9aa1a7\" stroke-width=\"0.6\"/>\n  <circle cx=\"21.5\" cy=\"31.2\" r=\"11.4\" fill=\"#c4c9cd\" stroke=\"#a3aab0\" stroke-width=\"0.6\"/>\n  <circle cx=\"21.5\" cy=\"31.2\" r=\"7\" fill=\"#97a598\" stroke=\"#77857a\" stroke-width=\"0.6\"/>\n  <g fill=\"#e9f2ef\" font-family=\"Arial, sans-serif\" font-size=\"3.2\" font-weight=\"bold\" text-anchor=\"middle\">\n    <text x=\"7.1\" y=\"56.4\">VIN</text>\n    <text x=\"16.7\" y=\"56.4\">GND</text>\n    <text x=\"26.3\" y=\"56.4\">SCL</text>\n    <text x=\"35.9\" y=\"56.4\">SDA</text>\n  </g>\n  <g fill=\"#d8b366\" stroke=\"#f2e2af\" stroke-width=\"0.5\">\n    <circle cx=\"7.1\" cy=\"61.6\" r=\"3.3\"/>\n    <circle cx=\"16.7\" cy=\"61.6\" r=\"3.3\"/>\n    <circle cx=\"26.3\" cy=\"61.6\" r=\"3.3\"/>\n    <rect x=\"32.7\" y=\"58.4\" width=\"6.4\" height=\"6.4\"/>\n  </g>\n  <g fill=\"#111315\">\n    <circle cx=\"7.1\" cy=\"61.6\" r=\"1.8\"/>\n    <circle cx=\"16.7\" cy=\"61.6\" r=\"1.8\"/>\n    <circle cx=\"26.3\" cy=\"61.6\" r=\"1.8\"/>\n    <circle cx=\"35.9\" cy=\"61.6\" r=\"1.8\"/>\n  </g>\n</g></svg>",
+    "properties": [],
+    "defaultValues": {
+      "objectTemperature": 25,
+      "ambientTemperature": 25
+    }
+  },
+  {
+    "id": "drv2605l",
+    "tagName": "velxio-drv2605l",
+    "name": "DRV2605L Haptic Driver with ERM Motor",
+    "category": "output",
+    "pinCount": 5,
+    "tags": [
+      "output",
+      "i2c",
+      "haptic",
+      "vibration",
+      "motor",
+      "erm",
+      "drv2605l",
+      "0x5a"
+    ],
+    "thumbnail": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"64\" height=\"64\" viewBox=\"0 0 64 64\"><g transform=\"translate(5.60 1.42) scale(0.55)\">\n  <g id=\"motor\">\n    <circle cx=\"48\" cy=\"20\" r=\"18.9\" fill=\"#c3c7cb\" stroke=\"#8d9297\" stroke-width=\"0.8\"/>\n    <circle cx=\"48\" cy=\"20\" r=\"15.6\" fill=\"none\" stroke=\"#a6abb0\" stroke-width=\"0.6\"/>\n    <circle cx=\"48\" cy=\"20\" r=\"5.2\" fill=\"#b3b8bd\" stroke=\"#969ba0\" stroke-width=\"0.6\"/>\n    <rect x=\"44.2\" y=\"36\" width=\"7.6\" height=\"4\" rx=\"0.6\" fill=\"#3b3f43\"/>\n  </g>\n\n  <g transform=\"translate(0 44)\">\n    <rect x=\"0.4\" y=\"0.4\" width=\"95.2\" height=\"66.4\" rx=\"4\" fill=\"#252729\" stroke=\"#bcc0c0\" stroke-width=\"0.8\"/>\n\n    <g fill=\"none\" stroke=\"#efefeb\" stroke-width=\"0.8\">\n      <circle cx=\"9.6\" cy=\"9.6\" r=\"7.4\"/>\n      <circle cx=\"86.4\" cy=\"9.6\" r=\"7.4\"/>\n      <circle cx=\"9.6\" cy=\"57.6\" r=\"7.4\"/>\n      <circle cx=\"86.4\" cy=\"57.6\" r=\"7.4\"/>\n    </g>\n    <g fill=\"#d8b366\" stroke=\"#f2e2af\" stroke-width=\"0.5\">\n      <circle cx=\"9.6\" cy=\"9.6\" r=\"6.4\"/>\n      <circle cx=\"86.4\" cy=\"9.6\" r=\"6.4\"/>\n      <circle cx=\"9.6\" cy=\"57.6\" r=\"6.4\"/>\n      <circle cx=\"86.4\" cy=\"57.6\" r=\"6.4\"/>\n    </g>\n    <g fill=\"#111315\">\n      <circle cx=\"9.6\" cy=\"9.6\" r=\"4.6\"/>\n      <circle cx=\"86.4\" cy=\"9.6\" r=\"4.6\"/>\n      <circle cx=\"9.6\" cy=\"57.6\" r=\"4.6\"/>\n      <circle cx=\"86.4\" cy=\"57.6\" r=\"4.6\"/>\n    </g>\n\n    <g fill=\"none\" stroke=\"#efefeb\" stroke-width=\"0.6\">\n      <rect x=\"33.6\" y=\"1.6\" width=\"10.6\" height=\"10.6\"/>\n      <rect x=\"51.8\" y=\"1.6\" width=\"10.6\" height=\"10.6\"/>\n      <circle cx=\"38.1\" cy=\"15.2\" r=\"2.3\"/>\n      <circle cx=\"57.9\" cy=\"15.2\" r=\"2.3\"/>\n    </g>\n    <g stroke=\"#efefeb\" stroke-width=\"0.7\">\n      <path d=\"M36.7 15.2h2.8\"/>\n      <path d=\"M56.5 15.2h2.8M57.9 13.8v2.8\"/>\n    </g>\n    <g fill=\"#d8b366\" stroke=\"#f2e2af\" stroke-width=\"0.5\">\n      <rect x=\"35.1\" y=\"3.1\" width=\"7.6\" height=\"7.6\"/>\n      <rect x=\"53.3\" y=\"3.1\" width=\"7.6\" height=\"7.6\"/>\n      <rect x=\"26.3\" y=\"3.1\" width=\"5.8\" height=\"10.6\" rx=\"2.9\"/>\n      <rect x=\"64.7\" y=\"3.1\" width=\"5.8\" height=\"10.6\" rx=\"2.9\"/>\n      <circle cx=\"75.4\" cy=\"13.3\" r=\"2.6\"/>\n      <circle cx=\"22.4\" cy=\"47.2\" r=\"2.6\"/>\n    </g>\n    <g fill=\"#111315\">\n      <circle cx=\"38.9\" cy=\"6.9\" r=\"1.2\"/>\n      <circle cx=\"57.1\" cy=\"6.9\" r=\"1.2\"/>\n      <circle cx=\"29.2\" cy=\"8.4\" r=\"1.4\"/>\n      <circle cx=\"67.6\" cy=\"8.4\" r=\"1.4\"/>\n    </g>\n\n    <text x=\"1.8\" y=\"19.4\" font-family=\"Arial, sans-serif\" font-size=\"4.4\" font-weight=\"bold\" fill=\"#efefeb\">on</text>\n    <rect x=\"10.4\" y=\"17.1\" width=\"7\" height=\"3\" fill=\"#aeb3b4\"/>\n    <rect x=\"12.2\" y=\"17.3\" width=\"3.4\" height=\"2.6\" fill=\"#e9e4c8\"/>\n\n    <g fill=\"#aeb3b4\">\n      <rect x=\"16.4\" y=\"26.3\" width=\"6.6\" height=\"1.6\"/>\n      <rect x=\"16.4\" y=\"30.1\" width=\"6.6\" height=\"1.6\"/>\n      <rect x=\"16.4\" y=\"33.9\" width=\"6.6\" height=\"1.6\"/>\n      <rect x=\"16.4\" y=\"37.7\" width=\"6.6\" height=\"1.6\"/>\n      <rect x=\"73\" y=\"26.3\" width=\"6.6\" height=\"1.6\"/>\n      <rect x=\"73\" y=\"30.1\" width=\"6.6\" height=\"1.6\"/>\n      <rect x=\"73\" y=\"33.9\" width=\"6.6\" height=\"1.6\"/>\n      <rect x=\"73\" y=\"37.7\" width=\"6.6\" height=\"1.6\"/>\n      <rect x=\"15.6\" y=\"20.6\" width=\"3\" height=\"2.2\"/>\n      <rect x=\"15.6\" y=\"43.8\" width=\"3\" height=\"2.2\"/>\n      <rect x=\"77.4\" y=\"20.6\" width=\"3\" height=\"2.2\"/>\n      <rect x=\"77.4\" y=\"43.8\" width=\"3\" height=\"2.2\"/>\n    </g>\n    <g fill=\"#cdd0ce\" stroke=\"#909594\" stroke-width=\"0.5\">\n      <path d=\"M1.1 20.4h14.4v3.4h1.6v18.6h-1.6v3.4H1.1z\"/>\n      <path d=\"M94.9 20.4H80.5v3.4h-1.6v18.6h1.6v3.4h14.4z\"/>\n    </g>\n    <g fill=\"#e3e5e4\">\n      <rect x=\"1.1\" y=\"20.4\" width=\"14.4\" height=\"1.6\"/>\n      <rect x=\"80.5\" y=\"20.4\" width=\"14.4\" height=\"1.6\"/>\n    </g>\n\n    <rect x=\"24.1\" y=\"27.4\" width=\"11.7\" height=\"15.6\" fill=\"none\" stroke=\"#efefeb\" stroke-width=\"0.5\"/>\n    <g fill=\"#c4c8c7\">\n      <rect x=\"24.8\" y=\"29.8\" width=\"2.4\" height=\"1.4\"/>\n      <rect x=\"24.8\" y=\"32.5\" width=\"2.4\" height=\"1.4\"/>\n      <rect x=\"24.8\" y=\"35.3\" width=\"2.4\" height=\"1.4\"/>\n      <rect x=\"24.8\" y=\"38\" width=\"2.4\" height=\"1.4\"/>\n      <rect x=\"32.7\" y=\"29.8\" width=\"2.4\" height=\"1.4\"/>\n      <rect x=\"32.7\" y=\"32.5\" width=\"2.4\" height=\"1.4\"/>\n      <rect x=\"32.7\" y=\"35.3\" width=\"2.4\" height=\"1.4\"/>\n      <rect x=\"32.7\" y=\"38\" width=\"2.4\" height=\"1.4\"/>\n    </g>\n    <rect x=\"26.6\" y=\"28.6\" width=\"6.7\" height=\"12\" fill=\"#2e3133\"/>\n    <text transform=\"translate(31.2 34.6) rotate(90)\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"3.2\" fill=\"#d0d3d2\">103</text>\n\n    <g fill=\"#c4c8c7\">\n      <rect x=\"44.4\" y=\"26.8\" width=\"1\" height=\"3.2\"/>\n      <rect x=\"46.3\" y=\"26.8\" width=\"1\" height=\"3.2\"/>\n      <rect x=\"48.1\" y=\"26.8\" width=\"1\" height=\"3.2\"/>\n      <rect x=\"49.9\" y=\"26.8\" width=\"1\" height=\"3.2\"/>\n      <rect x=\"51.8\" y=\"26.8\" width=\"1\" height=\"3.2\"/>\n      <rect x=\"44.4\" y=\"41.6\" width=\"1\" height=\"3.2\"/>\n      <rect x=\"46.3\" y=\"41.6\" width=\"1\" height=\"3.2\"/>\n      <rect x=\"48.1\" y=\"41.6\" width=\"1\" height=\"3.2\"/>\n      <rect x=\"49.9\" y=\"41.6\" width=\"1\" height=\"3.2\"/>\n      <rect x=\"51.8\" y=\"41.6\" width=\"1\" height=\"3.2\"/>\n    </g>\n    <rect x=\"42.6\" y=\"29.7\" width=\"11.4\" height=\"12.2\" rx=\"0.4\" fill=\"#484b4c\" stroke=\"#181b1c\" stroke-width=\"0.5\"/>\n    <circle cx=\"44.3\" cy=\"40.2\" r=\"0.6\" fill=\"#969b9b\"/>\n\n    <g fill=\"#c4c8c7\">\n      <rect x=\"37.4\" y=\"32\" width=\"3.9\" height=\"2.6\"/>\n      <rect x=\"37.4\" y=\"40.3\" width=\"3.9\" height=\"2.6\"/>\n      <rect x=\"55.6\" y=\"29.4\" width=\"3.8\" height=\"2.4\"/>\n      <rect x=\"55.6\" y=\"37.2\" width=\"3.8\" height=\"2.4\"/>\n      <rect x=\"61.3\" y=\"29.4\" width=\"3.8\" height=\"2.4\"/>\n      <rect x=\"61.3\" y=\"37.2\" width=\"3.8\" height=\"2.4\"/>\n      <rect x=\"66.3\" y=\"29.4\" width=\"6.4\" height=\"2.6\"/>\n      <rect x=\"66.3\" y=\"37\" width=\"6.4\" height=\"2.6\"/>\n    </g>\n    <g fill=\"#c7ab70\">\n      <rect x=\"37.7\" y=\"34.6\" width=\"3.3\" height=\"5.7\"/>\n      <rect x=\"55.9\" y=\"31.8\" width=\"3.2\" height=\"5.4\"/>\n      <rect x=\"61.6\" y=\"31.8\" width=\"3.2\" height=\"5.4\"/>\n      <rect x=\"66.6\" y=\"32\" width=\"5.8\" height=\"5\"/>\n    </g>\n    <circle cx=\"41.6\" cy=\"45.3\" r=\"0.9\" fill=\"#efefeb\"/>\n\n    <text x=\"55.6\" y=\"24.4\" text-anchor=\"middle\" textLength=\"32\" lengthAdjust=\"spacingAndGlyphs\" font-family=\"Arial, sans-serif\" font-size=\"8.2\" font-weight=\"bold\" fill=\"#efefeb\">DRV2605L</text>\n    <text x=\"72.2\" y=\"49.7\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"5.2\" font-weight=\"bold\" fill=\"#efefeb\">Haptic</text>\n\n    <g font-family=\"Arial, sans-serif\" font-size=\"5\" font-weight=\"bold\" fill=\"#efefeb\" text-anchor=\"middle\">\n      <text x=\"38.4\" y=\"53\">GND</text>\n      <text x=\"57.6\" y=\"53\">SDA</text>\n      <text x=\"28.8\" y=\"65.2\">VIN</text>\n      <text x=\"48\" y=\"65.2\">SCL</text>\n      <text x=\"67.2\" y=\"65.2\">INT</text>\n    </g>\n    <g fill=\"#d8b366\" stroke=\"#f2e2af\" stroke-width=\"0.5\">\n      <circle cx=\"28.8\" cy=\"57.6\" r=\"3.3\"/>\n      <circle cx=\"38.4\" cy=\"57.6\" r=\"3.3\"/>\n      <circle cx=\"48\" cy=\"57.6\" r=\"3.3\"/>\n      <circle cx=\"57.6\" cy=\"57.6\" r=\"3.3\"/>\n      <circle cx=\"67.2\" cy=\"57.6\" r=\"3.3\"/>\n    </g>\n    <g fill=\"#111315\">\n      <circle cx=\"28.8\" cy=\"57.6\" r=\"1.9\"/>\n      <circle cx=\"38.4\" cy=\"57.6\" r=\"1.9\"/>\n      <circle cx=\"48\" cy=\"57.6\" r=\"1.9\"/>\n      <circle cx=\"57.6\" cy=\"57.6\" r=\"1.9\"/>\n      <circle cx=\"67.2\" cy=\"57.6\" r=\"1.9\"/>\n    </g>\n  </g>\n\n  <g fill=\"none\" stroke-width=\"1.4\" stroke-linecap=\"round\">\n    <path d=\"M45.6 39.5C45.6 45 38.9 45 38.9 50.9\" stroke=\"#2f6fd6\"/>\n    <path d=\"M50.4 39.5C50.4 45 57.1 45 57.1 50.9\" stroke=\"#d93025\"/>\n  </g>\n  <g fill=\"#b9bdc0\" stroke=\"#8d9297\" stroke-width=\"0.4\">\n    <circle cx=\"38.9\" cy=\"50.9\" r=\"1.7\"/>\n    <circle cx=\"57.1\" cy=\"50.9\" r=\"1.7\"/>\n  </g>\n</g></svg>",
+    "properties": [],
+    "defaultValues": {}
+  },
+  {
+    "id": "dht11",
+    "tagName": "velxio-dht11",
+    "name": "DHT11 (Temp + Humidity)",
+    "category": "sensors",
+    "thumbnail": "<svg width=\"64\" height=\"64\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"64\" height=\"64\" rx=\"4\" fill=\"#0d1730\"/><rect x=\"12\" y=\"6\" width=\"40\" height=\"40\" rx=\"3\" fill=\"#3a6ea5\" stroke=\"#27507a\" stroke-width=\"1.5\"/><circle cx=\"20\" cy=\"15\" r=\"2.4\" fill=\"#1b3a5c\"/><circle cx=\"20\" cy=\"23\" r=\"2.4\" fill=\"#1b3a5c\"/><circle cx=\"20\" cy=\"31\" r=\"2.4\" fill=\"#1b3a5c\"/><circle cx=\"28\" cy=\"15\" r=\"2.4\" fill=\"#1b3a5c\"/><circle cx=\"28\" cy=\"23\" r=\"2.4\" fill=\"#1b3a5c\"/><circle cx=\"28\" cy=\"31\" r=\"2.4\" fill=\"#1b3a5c\"/><circle cx=\"36\" cy=\"15\" r=\"2.4\" fill=\"#1b3a5c\"/><circle cx=\"36\" cy=\"23\" r=\"2.4\" fill=\"#1b3a5c\"/><circle cx=\"36\" cy=\"31\" r=\"2.4\" fill=\"#1b3a5c\"/><circle cx=\"44\" cy=\"15\" r=\"2.4\" fill=\"#1b3a5c\"/><circle cx=\"44\" cy=\"23\" r=\"2.4\" fill=\"#1b3a5c\"/><circle cx=\"44\" cy=\"31\" r=\"2.4\" fill=\"#1b3a5c\"/><text x=\"32\" y=\"42\" text-anchor=\"middle\" font-size=\"7\" font-family=\"monospace\" font-weight=\"bold\" fill=\"#eaf2fa\">DHT11</text><line x1=\"22\" y1=\"46\" x2=\"22\" y2=\"60\" stroke=\"#b8b8b8\" stroke-width=\"2.5\"/><line x1=\"32\" y1=\"46\" x2=\"32\" y2=\"60\" stroke=\"#b8b8b8\" stroke-width=\"2.5\"/><line x1=\"42\" y1=\"46\" x2=\"42\" y2=\"60\" stroke=\"#b8b8b8\" stroke-width=\"2.5\"/></svg>",
+    "properties": [],
+    "defaultValues": {},
+    "pinCount": 3,
+    "tags": [
+      "sensor",
+      "temperature",
+      "humidity",
+      "dht11",
+      "dht"
+    ]
+  },
+  {
+    "id": "tmp36",
+    "tagName": "velxio-tmp36",
+    "name": "TMP36 (Temperature)",
+    "category": "sensors",
+    "thumbnail": "<svg width=\"64\" height=\"64\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"64\" height=\"64\" rx=\"4\" fill=\"#0d1730\"/><path d=\"M 16 30 A 20 22 0 0 1 48 30 L 48 42 L 16 42 Z\" fill=\"#2b2b2b\" stroke=\"#6f6f6f\" stroke-width=\"1.5\"/><text x=\"32\" y=\"27\" text-anchor=\"middle\" font-size=\"8\" font-family=\"monospace\" font-weight=\"bold\" fill=\"#d0d0d0\">TMP36</text><line x1=\"23\" y1=\"42\" x2=\"23\" y2=\"58\" stroke=\"#b8b8b8\" stroke-width=\"2.5\"/><line x1=\"32\" y1=\"42\" x2=\"32\" y2=\"58\" stroke=\"#b8b8b8\" stroke-width=\"2.5\"/><line x1=\"41\" y1=\"42\" x2=\"41\" y2=\"58\" stroke=\"#b8b8b8\" stroke-width=\"2.5\"/></svg>",
+    "properties": [],
+    "defaultValues": {},
+    "pinCount": 3,
+    "tags": [
+      "sensor",
+      "analog",
+      "temperature",
+      "tmp36",
+      "thermometer"
+    ]
+  },
+  {
+    "id": "ky-020-tilt-switch",
+    "tagName": "velxio-ky-020-tilt-switch",
+    "name": "KY-020 Tilt Switch",
+    "category": "sensors",
+    "thumbnail": "<svg width=\"64\" height=\"64\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"64\" height=\"64\" rx=\"4\" fill=\"#1e5b2f\"/><rect x=\"18\" y=\"24\" width=\"28\" height=\"16\" rx=\"8\" fill=\"#8c8c8c\" stroke=\"#c9c9c9\" stroke-width=\"1.2\"/><circle cx=\"26\" cy=\"32\" r=\"4\" fill=\"#3b3b3b\"/><text x=\"32\" y=\"16\" text-anchor=\"middle\" font-size=\"8\" font-family=\"monospace\" font-weight=\"bold\" fill=\"#e5e7eb\">KY-020</text><line x1=\"20\" y1=\"48\" x2=\"20\" y2=\"58\" stroke=\"#d4a017\" stroke-width=\"2.5\"/><line x1=\"32\" y1=\"48\" x2=\"32\" y2=\"58\" stroke=\"#d4a017\" stroke-width=\"2.5\"/><line x1=\"44\" y1=\"48\" x2=\"44\" y2=\"58\" stroke=\"#d4a017\" stroke-width=\"2.5\"/></svg>",
+    "properties": [],
+    "defaultValues": {},
+    "pinCount": 3,
+    "tags": [
+      "sensor",
+      "digital",
+      "tilt",
+      "ky-020",
+      "switch",
+      "orientation"
+    ]
+  },
+  {
+    "id": "ky-018-photoresistor",
+    "tagName": "velxio-ky-018-photoresistor",
+    "name": "KY-018 Photoresistor",
+    "category": "sensors",
+    "thumbnail": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"57\" height=\"64\" viewBox=\"0 0 548 618\"><image href=\"/component-svgs/ky-018.svg\" width=\"548\" height=\"618\"/></svg>",
+    "properties": [],
+    "defaultValues": {},
+    "pinCount": 3,
+    "tags": [
+      "sensor",
+      "analog",
+      "light",
+      "photoresistor",
+      "ldr",
+      "ky-018"
+    ]
+  },
+  {
+    "id": "relay-module",
+    "tagName": "velxio-relay-module",
+    "name": "Relay Module",
+    "category": "output",
+    "thumbnail": "<svg width=\"64\" height=\"64\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"2\" y=\"16\" width=\"60\" height=\"32\" rx=\"3\" fill=\"#1d4ed8\" stroke=\"#172f8a\" stroke-width=\"1.5\"/><rect x=\"3\" y=\"20\" width=\"10\" height=\"24\" rx=\"1\" fill=\"#3b82f6\"/><circle cx=\"8\" cy=\"24\" r=\"2.2\" fill=\"#cbd5e1\"/><circle cx=\"8\" cy=\"32\" r=\"2.2\" fill=\"#cbd5e1\"/><circle cx=\"8\" cy=\"40\" r=\"2.2\" fill=\"#cbd5e1\"/><rect x=\"20\" y=\"20\" width=\"22\" height=\"24\" rx=\"2\" fill=\"#1e3a8a\" stroke=\"#0f1f5c\" stroke-width=\"1\"/><circle cx=\"25\" cy=\"28\" r=\"1.5\" fill=\"#9ca3af\"/><circle cx=\"37\" cy=\"28\" r=\"1.5\" fill=\"#9ca3af\"/><circle cx=\"31\" cy=\"38\" r=\"1.5\" fill=\"#9ca3af\"/><line x1=\"31\" y1=\"38\" x2=\"36\" y2=\"28\" stroke=\"#e5e7eb\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><circle cx=\"48\" cy=\"21\" r=\"2\" fill=\"#ff4444\"/><circle cx=\"48\" cy=\"43\" r=\"2\" fill=\"#14401a\"/><rect x=\"54\" y=\"22\" width=\"5\" height=\"20\" fill=\"#111827\"/><line x1=\"56\" y1=\"26\" x2=\"63\" y2=\"26\" stroke=\"#d4a017\" stroke-width=\"2\"/><line x1=\"56\" y1=\"32\" x2=\"63\" y2=\"32\" stroke=\"#d4a017\" stroke-width=\"2\"/><line x1=\"56\" y1=\"38\" x2=\"63\" y2=\"38\" stroke=\"#d4a017\" stroke-width=\"2\"/></svg>",
+    "properties": [],
+    "defaultValues": {},
+    "pinCount": 6,
+    "tags": [
+      "relay",
+      "module",
+      "switch",
+      "actuator",
+      "spdt"
+    ]
+  },
+  {
+    "id": "ky-038-sound-sensor",
+    "tagName": "velxio-ky-038-sound-sensor",
+    "name": "KY-038 Sound Sensor",
+    "category": "sensors",
+    "thumbnail": "<svg width=\"64\" height=\"64\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"64\" height=\"64\" rx=\"4\" fill=\"#1e5b2f\"/><circle cx=\"24\" cy=\"28\" r=\"11\" fill=\"#9ca3af\" stroke=\"#4b5563\" stroke-width=\"1.2\"/><circle cx=\"24\" cy=\"28\" r=\"3.5\" fill=\"#4b5563\"/><rect x=\"42\" y=\"20\" width=\"14\" height=\"14\" rx=\"2\" fill=\"#2563eb\" stroke=\"#1e3a8a\" stroke-width=\"1.2\"/><text x=\"32\" y=\"13\" text-anchor=\"middle\" font-size=\"8\" font-family=\"monospace\" font-weight=\"bold\" fill=\"#e5e7eb\">KY-038</text><line x1=\"16\" y1=\"46\" x2=\"16\" y2=\"58\" stroke=\"#d4a017\" stroke-width=\"2.5\"/><line x1=\"32\" y1=\"46\" x2=\"32\" y2=\"58\" stroke=\"#d4a017\" stroke-width=\"2.5\"/><line x1=\"48\" y1=\"46\" x2=\"48\" y2=\"58\" stroke=\"#d4a017\" stroke-width=\"2.5\"/></svg>",
+    "properties": [],
+    "defaultValues": {},
+    "pinCount": 4,
+    "tags": [
+      "sensor",
+      "sound",
+      "microphone",
+      "ky-038",
+      "clap",
+      "analog",
+      "digital"
+    ]
+  },
+  {
+    "id": "mq2",
+    "tagName": "velxio-mq2",
+    "name": "MQ-2 Gas Sensor",
+    "category": "sensors",
+    "thumbnail": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"64\" height=\"64\" viewBox=\"0 -49.5 176 176\"><defs><pattern id=\"mq2-thumb-mesh\" width=\"1.6\" height=\"1.6\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45 44.6 38.5)\"><path d=\"M0 0.4H1.6M0.4 0V1.6\" stroke=\"#767d84\" stroke-width=\"0.45\"/></pattern></defs><path d=\"M1.6 0.4H149.6A1.2 1.2 0 0 1 150.8 1.6V75.4A1.2 1.2 0 0 1 149.6 76.6H1.6A1.2 1.2 0 0 1 0.4 75.4V1.6A1.2 1.2 0 0 1 1.6 0.4Z M12.9 9.2A3.3 3.3 0 1 0 6.3 9.2A3.3 3.3 0 1 0 12.9 9.2Z M145.3 9.2A3.3 3.3 0 1 0 138.7 9.2A3.3 3.3 0 1 0 145.3 9.2Z M12.9 67.8A3.3 3.3 0 1 0 6.3 67.8A3.3 3.3 0 1 0 12.9 67.8Z M145.3 67.8A3.3 3.3 0 1 0 138.7 67.8A3.3 3.3 0 1 0 145.3 67.8Z\" fill=\"#1f3d9e\" fill-rule=\"evenodd\" stroke=\"#14296e\" stroke-width=\"0.8\"/><g fill=\"none\" stroke=\"#dfe2e6\" stroke-width=\"1.4\"><circle cx=\"9.6\" cy=\"9.2\" r=\"4\"/><circle cx=\"142\" cy=\"9.2\" r=\"4\"/><circle cx=\"9.6\" cy=\"67.8\" r=\"4\"/><circle cx=\"142\" cy=\"67.8\" r=\"4\"/></g><circle cx=\"44.6\" cy=\"38.5\" r=\"37.6\" fill=\"#c9cdd1\" stroke=\"#7d848b\" stroke-width=\"0.8\"/><circle cx=\"44.6\" cy=\"38.5\" r=\"33.6\" fill=\"none\" stroke=\"#8d949a\" stroke-width=\"0.8\"/><circle cx=\"44.6\" cy=\"38.5\" r=\"32.4\" fill=\"#b7bcc1\" stroke=\"#7d848b\" stroke-width=\"0.6\"/><circle cx=\"44.6\" cy=\"38.5\" r=\"29.2\" fill=\"#9ba1a7\" stroke=\"#6c737a\" stroke-width=\"0.7\"/><circle cx=\"44.6\" cy=\"38.5\" r=\"29.2\" fill=\"url(#mq2-thumb-mesh)\"/><g fill=\"#f2f4f8\" font-family=\"Arial, Helvetica, sans-serif\" font-weight=\"bold\"><text x=\"91\" y=\"18.6\" font-size=\"6.2\" text-anchor=\"middle\">MQ-2</text><text x=\"102\" y=\"71.6\" font-size=\"7.4\" text-anchor=\"middle\">Gas Sensor</text><g font-size=\"4.3\" font-weight=\"normal\" text-anchor=\"end\"><text x=\"111.6\" y=\"18.4\">DAT</text><text x=\"111.6\" y=\"63\">PWR</text></g><g font-size=\"5.2\" text-anchor=\"end\"><text x=\"132.6\" y=\"26\">DO</text><text x=\"132.6\" y=\"35.6\">AO</text><text x=\"132.6\" y=\"45.2\">GND</text><text x=\"132.6\" y=\"54.8\">VCC</text></g></g><g fill=\"none\" stroke=\"#f2f4f8\" stroke-width=\"0.7\"><rect x=\"113.4\" y=\"12.6\" width=\"16\" height=\"6.6\" rx=\"0.6\"/><rect x=\"113.4\" y=\"57.6\" width=\"16\" height=\"6.6\" rx=\"0.6\"/><path d=\"M151 19.1H136A2.2 2.2 0 0 0 133.8 21.3V55.5A2.2 2.2 0 0 0 136 57.7H151M133.8 48.1H141.3\"/></g><g fill=\"#c8cacd\"><rect x=\"116.6\" y=\"14.2\" width=\"2.2\" height=\"3.4\"/><rect x=\"124\" y=\"14.2\" width=\"2.2\" height=\"3.4\"/><rect x=\"116.6\" y=\"59.2\" width=\"2.2\" height=\"3.4\"/><rect x=\"124\" y=\"59.2\" width=\"2.2\" height=\"3.4\"/></g><rect x=\"118.8\" y=\"14.2\" width=\"5.2\" height=\"3.4\" fill=\"#f4f1e6\"/><rect x=\"118.8\" y=\"59.2\" width=\"5.2\" height=\"3.4\" fill=\"#f4f1e6\"/><g fill=\"#d6d9dc\" stroke=\"#9aa0a6\" stroke-width=\"0.4\"><circle cx=\"138.8\" cy=\"24.1\" r=\"2.6\"/><circle cx=\"138.8\" cy=\"33.7\" r=\"2.6\"/><circle cx=\"138.8\" cy=\"43.3\" r=\"2.6\"/><circle cx=\"138.8\" cy=\"52.9\" r=\"2.6\"/></g><rect x=\"141.3\" y=\"19.3\" width=\"9.9\" height=\"38.4\" fill=\"#1c1c1e\"/><g stroke=\"#3a3a3d\" stroke-width=\"0.5\"><path d=\"M141.3 28.9H151.2M141.3 38.5H151.2M141.3 48.1H151.2\"/></g><g fill=\"#9aa0a6\"><circle cx=\"138.8\" cy=\"24.1\" r=\"1.1\"/><circle cx=\"138.8\" cy=\"33.7\" r=\"1.1\"/><circle cx=\"138.8\" cy=\"43.3\" r=\"1.1\"/><circle cx=\"138.8\" cy=\"52.9\" r=\"1.1\"/></g><g stroke=\"#b9bcbf\" stroke-width=\"2.2\"><path d=\"M151.2 24.1H176M151.2 33.7H176M151.2 43.3H176M151.2 52.9H176\"/></g></svg>",
+    "properties": [],
+    "defaultValues": {},
+    "pinCount": 4,
+    "tags": [
+      "sensor",
+      "gas",
+      "smoke",
+      "lpg",
+      "mq-2",
+      "mq2",
+      "analog",
+      "digital"
+    ]
+  },
+  {
+    "id": "sen0244",
+    "tagName": "velxio-sen0244",
+    "name": "SEN0244 TDS Sensor",
+    "category": "sensors",
+    "thumbnail": "<svg width=\"64\" height=\"64\" viewBox=\"0 -34.5 224 224\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"scale(3.7795) translate(12.5 0)\" font-family=\"Arial, Helvetica, sans-serif\"><path d=\"M-5.6 16H-6.9A3 3 0 0 0 -9.9 19V34.5A3 3 0 0 0 -6.9 37.5H-5.4\" fill=\"none\" stroke=\"#1c1c1c\" stroke-width=\"3.0\"/><path d=\"M3 0.1H39A2.9 2.9 0 0 1 41.9 3V29A2.9 2.9 0 0 1 39 31.9H3A2.9 2.9 0 0 1 0.1 29V3A2.9 2.9 0 0 1 3 0.1Z M5.1 3.5A1.6 1.6 0 1 0 1.9 3.5A1.6 1.6 0 1 0 5.1 3.5Z M40.1 3.5A1.6 1.6 0 1 0 36.9 3.5A1.6 1.6 0 1 0 40.1 3.5Z M5.1 28.5A1.6 1.6 0 1 0 1.9 28.5A1.6 1.6 0 1 0 5.1 28.5Z M40.1 28.5A1.6 1.6 0 1 0 36.9 28.5A1.6 1.6 0 1 0 40.1 28.5Z\" fill=\"#161616\" fill-rule=\"evenodd\" stroke=\"#000\" stroke-width=\"0.2\"/><circle cx=\"3.5\" cy=\"3.5\" r=\"2.35\" fill=\"none\" stroke=\"#c9a54a\" stroke-width=\"1.3\"/><circle cx=\"5.67\" cy=\"4.40\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"4.40\" cy=\"5.67\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"2.60\" cy=\"5.67\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"1.33\" cy=\"4.40\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"1.33\" cy=\"2.60\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"2.60\" cy=\"1.33\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"4.40\" cy=\"1.33\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"5.67\" cy=\"2.60\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"38.5\" cy=\"3.5\" r=\"2.35\" fill=\"none\" stroke=\"#c9a54a\" stroke-width=\"1.3\"/><circle cx=\"40.67\" cy=\"4.40\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"39.40\" cy=\"5.67\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"37.60\" cy=\"5.67\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"36.33\" cy=\"4.40\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"36.33\" cy=\"2.60\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"37.60\" cy=\"1.33\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"39.40\" cy=\"1.33\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"40.67\" cy=\"2.60\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"3.5\" cy=\"28.5\" r=\"2.35\" fill=\"none\" stroke=\"#c9a54a\" stroke-width=\"1.3\"/><circle cx=\"5.67\" cy=\"29.40\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"4.40\" cy=\"30.67\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"2.60\" cy=\"30.67\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"1.33\" cy=\"29.40\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"1.33\" cy=\"27.60\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"2.60\" cy=\"26.33\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"4.40\" cy=\"26.33\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"5.67\" cy=\"27.60\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"38.5\" cy=\"28.5\" r=\"2.35\" fill=\"none\" stroke=\"#c9a54a\" stroke-width=\"1.3\"/><circle cx=\"40.67\" cy=\"29.40\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"39.40\" cy=\"30.67\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"37.60\" cy=\"30.67\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"36.33\" cy=\"29.40\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"36.33\" cy=\"27.60\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"37.60\" cy=\"26.33\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"39.40\" cy=\"26.33\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"40.67\" cy=\"27.60\" r=\"0.28\" fill=\"#8a6d22\"/><circle cx=\"8.3\" cy=\"1.9\" r=\"0.75\" fill=\"#c9a54a\"/><circle cx=\"8.3\" cy=\"1.9\" r=\"0.35\" fill=\"#8a6d22\"/><circle cx=\"40.1\" cy=\"23.9\" r=\"0.75\" fill=\"#c9a54a\"/><circle cx=\"40.1\" cy=\"23.9\" r=\"0.35\" fill=\"#8a6d22\"/><rect x=\"16.9\" y=\"1.2\" width=\"8.5\" height=\"2.35\" fill=\"#f2f2f2\"/><text x=\"21.15\" y=\"3.0\" font-size=\"2.05\" fill=\"#111\" text-anchor=\"middle\" textLength=\"7.6\" lengthAdjust=\"spacingAndGlyphs\">Gravity</text><text x=\"21.1\" y=\"6.15\" font-size=\"2.35\" font-weight=\"bold\" fill=\"#c9a54a\" text-anchor=\"middle\" textLength=\"18.6\" lengthAdjust=\"spacingAndGlyphs\">TDS Meter V1.0</text><rect x=\"39.0\" y=\"7.6\" width=\"2.6\" height=\"2.8\" fill=\"#f2f2f2\"/><text x=\"40.3\" y=\"9.0\" font-size=\"2.4\" font-weight=\"bold\" fill=\"#111\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><rect x=\"32.3\" y=\"4.1\" width=\"0.8\" height=\"1.8\" fill=\"#c8cacd\"/><rect x=\"32.3\" y=\"4.55\" width=\"0.8\" height=\"0.9\" fill=\"#e9efe4\"/><rect x=\"9.35\" y=\"8.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"9.35\" y=\"8.55\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"10.85\" y=\"8.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"10.85\" y=\"8.55\" width=\"0.9\" height=\"0.9\" fill=\"#a88b5e\"/><rect x=\"12.45\" y=\"8.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"12.45\" y=\"8.55\" width=\"0.9\" height=\"0.9\" fill=\"#a88b5e\"/><rect x=\"14.05\" y=\"8.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"14.05\" y=\"8.55\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"19.25\" y=\"8.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"19.25\" y=\"8.55\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"20.85\" y=\"8.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"20.85\" y=\"8.55\" width=\"0.9\" height=\"0.9\" fill=\"#a88b5e\"/><rect x=\"22.45\" y=\"8.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"22.45\" y=\"8.55\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"24.05\" y=\"8.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"24.05\" y=\"8.55\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"25.75\" y=\"8.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"25.75\" y=\"8.55\" width=\"0.9\" height=\"0.9\" fill=\"#a88b5e\"/><rect x=\"27.45\" y=\"8.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"27.45\" y=\"8.55\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"29.05\" y=\"8.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"29.05\" y=\"8.55\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"30.55\" y=\"8.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"30.55\" y=\"8.55\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"32.15\" y=\"8.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"32.15\" y=\"8.55\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"16.05\" y=\"9.80\" width=\"0.4\" height=\"0.7\" fill=\"#c8cacd\"/><rect x=\"17.95\" y=\"9.80\" width=\"0.4\" height=\"0.7\" fill=\"#c8cacd\"/><rect x=\"17.00\" y=\"7.90\" width=\"0.4\" height=\"0.7\" fill=\"#c8cacd\"/><rect x=\"15.75\" y=\"8.50\" width=\"2.9\" height=\"1.4\" fill=\"#2e2e2e\" stroke=\"#4a4a4a\" stroke-width=\"0.1\"/><rect x=\"16.35\" y=\"11.55\" width=\"1.7\" height=\"0.9\" fill=\"#c8cacd\"/><rect x=\"16.75\" y=\"11.55\" width=\"0.9\" height=\"0.9\" fill=\"#a88b5e\"/><rect x=\"13.40\" y=\"13.82\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"18.30\" y=\"13.82\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"13.40\" y=\"15.09\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"18.30\" y=\"15.09\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"13.40\" y=\"16.36\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"18.30\" y=\"16.36\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"13.40\" y=\"17.63\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"18.30\" y=\"17.63\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"13.40\" y=\"18.90\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"18.30\" y=\"18.90\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"13.40\" y=\"20.17\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"18.30\" y=\"20.17\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"13.40\" y=\"21.44\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"18.30\" y=\"21.44\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"14.4\" y=\"13.4\" width=\"3.9\" height=\"8.9\" fill=\"#2e2e2e\" stroke=\"#4a4a4a\" stroke-width=\"0.12\"/><circle cx=\"15.10\" cy=\"14.10\" r=\"0.3\" fill=\"#1e1e1e\"/><text x=\"16.35\" y=\"17.85\" font-size=\"1.05\" fill=\"#8d8d8d\" text-anchor=\"middle\" dominant-baseline=\"central\" transform=\"rotate(90 16.35 17.85)\">LMV324</text><rect x=\"22.30\" y=\"13.23\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"27.30\" y=\"13.23\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"22.30\" y=\"14.50\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"27.30\" y=\"14.50\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"22.30\" y=\"15.78\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"27.30\" y=\"15.78\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"22.30\" y=\"17.05\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"27.30\" y=\"17.05\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"22.30\" y=\"18.32\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"27.30\" y=\"18.32\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"22.30\" y=\"19.59\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"27.30\" y=\"19.59\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"22.30\" y=\"20.86\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"27.30\" y=\"20.86\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"22.30\" y=\"22.12\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"27.30\" y=\"22.12\" width=\"1.0\" height=\"0.44\" fill=\"#c8cacd\"/><rect x=\"23.3\" y=\"12.8\" width=\"4.0\" height=\"10.2\" fill=\"#2e2e2e\" stroke=\"#4a4a4a\" stroke-width=\"0.12\"/><circle cx=\"24.00\" cy=\"13.50\" r=\"0.3\" fill=\"#1e1e1e\"/><text x=\"25.30\" y=\"17.90\" font-size=\"1.05\" fill=\"#8d8d8d\" text-anchor=\"middle\" dominant-baseline=\"central\" transform=\"rotate(90 25.30 17.90)\">CD4060</text><rect x=\"30.15\" y=\"21.95\" width=\"1.7\" height=\"0.9\" fill=\"#c8cacd\"/><rect x=\"30.55\" y=\"21.95\" width=\"0.9\" height=\"0.9\" fill=\"#a88b5e\"/><rect x=\"7.75\" y=\"24.35\" width=\"1.7\" height=\"0.9\" fill=\"#c8cacd\"/><rect x=\"8.15\" y=\"24.35\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"10.75\" y=\"24.35\" width=\"1.7\" height=\"0.9\" fill=\"#c8cacd\"/><rect x=\"11.15\" y=\"24.35\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"13.75\" y=\"24.35\" width=\"1.7\" height=\"0.9\" fill=\"#c8cacd\"/><rect x=\"14.15\" y=\"24.35\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"16.55\" y=\"24.35\" width=\"1.7\" height=\"0.9\" fill=\"#c8cacd\"/><rect x=\"16.95\" y=\"24.35\" width=\"0.9\" height=\"0.9\" fill=\"#a88b5e\"/><rect x=\"19.45\" y=\"24.35\" width=\"1.7\" height=\"0.9\" fill=\"#c8cacd\"/><rect x=\"19.85\" y=\"24.35\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"22.75\" y=\"24.35\" width=\"1.7\" height=\"0.9\" fill=\"#c8cacd\"/><rect x=\"23.15\" y=\"24.35\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"26.55\" y=\"24.35\" width=\"1.7\" height=\"0.9\" fill=\"#c8cacd\"/><rect x=\"26.95\" y=\"24.35\" width=\"0.9\" height=\"0.9\" fill=\"#a88b5e\"/><rect x=\"29.55\" y=\"24.35\" width=\"1.7\" height=\"0.9\" fill=\"#c8cacd\"/><rect x=\"29.95\" y=\"24.35\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"32.55\" y=\"24.35\" width=\"1.7\" height=\"0.9\" fill=\"#c8cacd\"/><rect x=\"32.95\" y=\"24.35\" width=\"0.9\" height=\"0.9\" fill=\"#a88b5e\"/><rect x=\"7.95\" y=\"27.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"7.95\" y=\"27.55\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"10.05\" y=\"27.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"10.05\" y=\"27.55\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"12.05\" y=\"27.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"12.05\" y=\"27.55\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"13.95\" y=\"27.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"13.95\" y=\"27.55\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"15.85\" y=\"27.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"15.85\" y=\"27.55\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"17.75\" y=\"27.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"17.75\" y=\"27.55\" width=\"0.9\" height=\"0.9\" fill=\"#a88b5e\"/><rect x=\"19.55\" y=\"27.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"19.55\" y=\"27.55\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"21.25\" y=\"27.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"21.25\" y=\"27.55\" width=\"0.9\" height=\"0.9\" fill=\"#a88b5e\"/><rect x=\"22.95\" y=\"27.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"22.95\" y=\"27.55\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"24.75\" y=\"27.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"24.75\" y=\"27.55\" width=\"0.9\" height=\"0.9\" fill=\"#a88b5e\"/><rect x=\"26.45\" y=\"27.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"26.45\" y=\"27.55\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"28.05\" y=\"27.15\" width=\"0.9\" height=\"1.7\" fill=\"#c8cacd\"/><rect x=\"28.05\" y=\"27.55\" width=\"0.9\" height=\"0.9\" fill=\"#262626\"/><rect x=\"30.35\" y=\"28.70\" width=\"0.4\" height=\"0.7\" fill=\"#c8cacd\"/><rect x=\"32.25\" y=\"28.70\" width=\"0.4\" height=\"0.7\" fill=\"#c8cacd\"/><rect x=\"31.30\" y=\"26.80\" width=\"0.4\" height=\"0.7\" fill=\"#c8cacd\"/><rect x=\"30.05\" y=\"27.40\" width=\"2.9\" height=\"1.4\" fill=\"#2e2e2e\" stroke=\"#4a4a4a\" stroke-width=\"0.1\"/><rect x=\"32.9\" y=\"13.45\" width=\"1.9\" height=\"1.1\" fill=\"#c9a54a\"/><rect x=\"33.1\" y=\"13.68\" width=\"1.6\" height=\"0.64\" fill=\"#c8cacd\"/><rect x=\"32.9\" y=\"15.45\" width=\"1.9\" height=\"1.1\" fill=\"#c9a54a\"/><rect x=\"33.1\" y=\"15.68\" width=\"1.6\" height=\"0.64\" fill=\"#c8cacd\"/><rect x=\"32.9\" y=\"17.45\" width=\"1.9\" height=\"1.1\" fill=\"#c9a54a\"/><rect x=\"33.1\" y=\"17.68\" width=\"1.6\" height=\"0.64\" fill=\"#c8cacd\"/><rect x=\"34.6\" y=\"11.0\" width=\"7.7\" height=\"10.0\" fill=\"#efe3c6\" stroke=\"#d9c9a4\" stroke-width=\"0.2\"/><rect x=\"37.3\" y=\"12.6\" width=\"3.7\" height=\"6.8\" fill=\"#d9c9a4\"/><rect x=\"34.6\" y=\"12.6\" width=\"1.2\" height=\"6.8\" fill=\"#d9c9a4\"/><rect x=\"41.3\" y=\"12.6\" width=\"1.0\" height=\"6.8\" fill=\"#e6d6b2\"/><text x=\"31.6\" y=\"14.0\" font-size=\"1.7\" font-weight=\"bold\" fill=\"#f2f2f2\" text-anchor=\"middle\" dominant-baseline=\"central\">−</text><text x=\"31.6\" y=\"16.0\" font-size=\"1.7\" font-weight=\"bold\" fill=\"#f2f2f2\" text-anchor=\"middle\" dominant-baseline=\"central\">+</text><text x=\"31.6\" y=\"18.0\" font-size=\"1.7\" font-weight=\"bold\" fill=\"#f2f2f2\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><rect x=\"7.3\" y=\"14.15\" width=\"3.2\" height=\"1.2\" fill=\"#c9a54a\"/><rect x=\"7.4\" y=\"14.43\" width=\"2.9\" height=\"0.64\" fill=\"#c8cacd\"/><rect x=\"7.3\" y=\"16.65\" width=\"3.2\" height=\"1.2\" fill=\"#c9a54a\"/><rect x=\"7.4\" y=\"16.93\" width=\"2.9\" height=\"0.64\" fill=\"#c8cacd\"/><rect x=\"-0.8\" y=\"11.0\" width=\"7.4\" height=\"10.2\" fill=\"#efe3c6\" stroke=\"#d9c9a4\" stroke-width=\"0.2\"/><rect x=\"5.4\" y=\"11.6\" width=\"1.2\" height=\"9.0\" fill=\"#d9c9a4\"/><rect x=\"-4.4\" y=\"12.9\" width=\"7.0\" height=\"6.2\" fill=\"#f7f0de\" stroke=\"#d9c9a4\" stroke-width=\"0.2\"/><rect x=\"0.2\" y=\"13.6\" width=\"2.0\" height=\"4.8\" fill=\"#d9c9a4\"/><path d=\"M-4.4 14.75H-5.9\" stroke=\"#d63a2f\" stroke-width=\"1.0\"/><path d=\"M-4.4 17.25H-5.9\" stroke=\"#2f6fd6\" stroke-width=\"1.0\"/><path d=\"M-6 35.7L13.6 34.6V40.4L-6 39.3Z\" fill=\"#1c1c1c\"/><path d=\"M-3.50 35.4V39.6M-1.90 35.4V39.6M-0.30 35.4V39.6M1.30 35.4V39.6M2.90 35.4V39.6M4.50 35.4V39.6M6.10 35.4V39.6M7.70 35.4V39.6M9.30 35.4V39.6\" stroke=\"#3a3a3a\" stroke-width=\"0.5\"/><rect x=\"13.6\" y=\"34.4\" width=\"22.6\" height=\"6.2\" rx=\"0.6\" fill=\"#1c1c1c\"/><path d=\"M14.4 35.3H35.4\" stroke=\"#333\" stroke-width=\"0.5\"/><rect x=\"36.0\" y=\"35.2\" width=\"1.8\" height=\"4.6\" rx=\"0.4\" fill=\"#2a2a2a\"/><rect x=\"37.6\" y=\"35.9\" width=\"6.6\" height=\"0.8\" rx=\"0.4\" fill=\"#c8cacd\" stroke=\"#8f959b\" stroke-width=\"0.1\"/><rect x=\"37.6\" y=\"38.300000000000004\" width=\"6.6\" height=\"0.8\" rx=\"0.4\" fill=\"#c8cacd\" stroke=\"#8f959b\" stroke-width=\"0.1\"/></g><g stroke=\"#b9bcbf\" stroke-width=\"2.2\"><path d=\"M207.1 50.9H224\"/><path d=\"M207.1 60.5H224\"/><path d=\"M207.1 70.1H224\"/></g></svg>",
+    "properties": [],
+    "defaultValues": {},
+    "pinCount": 3,
+    "tags": [
+      "sensor",
+      "tds",
+      "water",
+      "quality",
+      "conductivity",
+      "sen0244",
+      "gravity",
+      "analog"
+    ]
+  },
+  {
+    "id": "bme280",
+    "tagName": "velxio-bme280",
+    "name": "BME280 (Temp/Pressure/Humidity)",
+    "category": "sensors",
+    "thumbnail": "<svg width=\"64\" height=\"64\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"64\" height=\"64\" rx=\"4\" fill=\"#5b21b6\"/><rect x=\"14\" y=\"14\" width=\"18\" height=\"18\" rx=\"2\" fill=\"#c0c0c0\" stroke=\"#6f6f6f\" stroke-width=\"1.2\"/><circle cx=\"27\" cy=\"19\" r=\"1.8\" fill=\"#6f6f6f\"/><text x=\"32\" y=\"46\" text-anchor=\"middle\" font-size=\"9\" font-family=\"monospace\" font-weight=\"bold\" fill=\"#e5e7eb\">BME280</text><line x1=\"16\" y1=\"50\" x2=\"16\" y2=\"60\" stroke=\"#d4a017\" stroke-width=\"2\"/><line x1=\"28\" y1=\"50\" x2=\"28\" y2=\"60\" stroke=\"#d4a017\" stroke-width=\"2\"/><line x1=\"40\" y1=\"50\" x2=\"40\" y2=\"60\" stroke=\"#d4a017\" stroke-width=\"2\"/><line x1=\"52\" y1=\"50\" x2=\"52\" y2=\"60\" stroke=\"#d4a017\" stroke-width=\"2\"/></svg>",
+    "properties": [
+      {
+        "name": "address",
+        "type": "string",
+        "defaultValue": "0x76",
+        "control": "select",
+        "options": [
+          "0x76",
+          "0x77"
+        ],
+        "description": "I2C address (SDO strap)"
+      }
+    ],
+    "defaultValues": {
+      "address": "0x76"
+    },
+    "pinCount": 8,
+    "tags": [
+      "sensor",
+      "i2c",
+      "spi",
+      "temperature",
+      "pressure",
+      "humidity",
+      "bme280",
+      "bosch"
+    ]
+  },
+  {
+    "id": "ds18b20",
+    "tagName": "velxio-ds18b20",
+    "name": "DS18B20 (1-Wire Temperature)",
+    "category": "sensors",
+    "thumbnail": "<svg width=\"64\" height=\"64\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"64\" height=\"64\" rx=\"4\" fill=\"#0d1730\"/><path d=\"M 16 30 A 20 22 0 0 1 48 30 L 48 42 L 16 42 Z\" fill=\"#2b2b2b\" stroke=\"#6f6f6f\" stroke-width=\"1.5\"/><text x=\"32\" y=\"26\" text-anchor=\"middle\" font-size=\"6\" font-family=\"monospace\" font-weight=\"bold\" fill=\"#d0d0d0\">DS18B20</text><line x1=\"23\" y1=\"42\" x2=\"23\" y2=\"58\" stroke=\"#b8b8b8\" stroke-width=\"2.5\"/><line x1=\"32\" y1=\"42\" x2=\"32\" y2=\"58\" stroke=\"#b8b8b8\" stroke-width=\"2.5\"/><line x1=\"41\" y1=\"42\" x2=\"41\" y2=\"58\" stroke=\"#b8b8b8\" stroke-width=\"2.5\"/></svg>",
+    "properties": [],
+    "defaultValues": {},
+    "pinCount": 3,
+    "tags": [
+      "sensor",
+      "temperature",
+      "1-wire",
+      "onewire",
+      "ds18b20",
+      "dallas"
+    ]
+  },
+  {
+    "id": "ky-008",
+    "tagName": "velxio-ky-008",
+    "name": "KY-008 Laser Emitter",
+    "category": "output",
+    "thumbnail": "<svg width=\"64\" height=\"64\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"64\" height=\"64\" rx=\"4\" fill=\"#7f1d1d\"/><rect x=\"12\" y=\"24\" width=\"26\" height=\"12\" rx=\"3\" fill=\"#d4a017\" stroke=\"#8a6a0f\" stroke-width=\"1.2\"/><rect x=\"38\" y=\"27\" width=\"6\" height=\"6\" fill=\"#8a6a0f\"/><line x1=\"44\" y1=\"30\" x2=\"62\" y2=\"30\" stroke=\"#ff2020\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><text x=\"32\" y=\"14\" text-anchor=\"middle\" font-size=\"8\" font-family=\"monospace\" font-weight=\"bold\" fill=\"#e5e7eb\">KY-008</text><line x1=\"20\" y1=\"48\" x2=\"20\" y2=\"58\" stroke=\"#d4a017\" stroke-width=\"2.5\"/><line x1=\"32\" y1=\"48\" x2=\"32\" y2=\"58\" stroke=\"#d4a017\" stroke-width=\"2.5\"/><line x1=\"44\" y1=\"48\" x2=\"44\" y2=\"58\" stroke=\"#d4a017\" stroke-width=\"2.5\"/></svg>",
+    "properties": [],
+    "defaultValues": {},
+    "pinCount": 3,
+    "tags": [
+      "laser",
+      "emitter",
+      "ky-008",
+      "output",
+      "digital"
+    ]
+  },
+  {
+    "id": "active-buzzer",
+    "tagName": "velxio-active-buzzer",
+    "name": "Active Buzzer",
+    "category": "output",
+    "thumbnail": "<svg width=\"64\" height=\"64\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"64\" height=\"64\" rx=\"4\" fill=\"#e5e7eb\"/><line x1=\"28\" y1=\"50\" x2=\"28\" y2=\"61\" stroke=\"#f00\" stroke-width=\"2\"/><line x1=\"36\" y1=\"50\" x2=\"36\" y2=\"61\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"32\" cy=\"29\" r=\"24\" fill=\"#1a1a1a\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"32\" cy=\"29\" r=\"19.5\" fill=\"#262626\" stroke=\"#0d0d0d\" stroke-width=\"1\"/><circle cx=\"32\" cy=\"29\" r=\"2.2\" fill=\"#000\" stroke=\"#4d4d4d\" stroke-width=\"0.8\"/><text x=\"32\" y=\"21\" text-anchor=\"middle\" font-size=\"6.5\" font-family=\"Arial, Helvetica, sans-serif\" font-weight=\"bold\" fill=\"#e6e6e6\">ACTIVE</text><path d=\"M27 38.5v6M24 41.5h6\" stroke=\"#e6e6e6\" stroke-width=\"1.5\"/></svg>",
+    "properties": [],
+    "defaultValues": {},
+    "pinCount": 2,
+    "tags": [
+      "buzzer",
+      "active",
+      "beeper",
+      "output",
+      "digital"
+    ]
+  },
+  {
+    "id": "shock-sensor",
+    "tagName": "velxio-shock-sensor",
+    "name": "Shock Sensor",
+    "category": "sensors",
+    "thumbnail": "<svg width=\"64\" height=\"64\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"64\" height=\"64\" rx=\"4\" fill=\"#1e5b2f\"/><circle cx=\"12\" cy=\"10\" r=\"2.2\" fill=\"#c9ccd1\"/><circle cx=\"52\" cy=\"10\" r=\"2.2\" fill=\"#c9ccd1\"/><circle cx=\"14\" cy=\"42\" r=\"2.2\" fill=\"#c9ccd1\"/><circle cx=\"50\" cy=\"42\" r=\"2.2\" fill=\"#c9ccd1\"/><rect x=\"20\" y=\"4\" width=\"24\" height=\"34\" rx=\"4\" fill=\"#1f2937\" stroke=\"#6b7280\" stroke-width=\"1.2\"/><rect x=\"22\" y=\"4.5\" width=\"20\" height=\"3\" rx=\"1.5\" fill=\"#4b5563\"/><rect x=\"25\" y=\"37\" width=\"5\" height=\"3\" fill=\"#b87333\"/><rect x=\"34\" y=\"37\" width=\"5\" height=\"3\" fill=\"#b87333\"/><rect x=\"49\" y=\"17\" width=\"7\" height=\"12\" rx=\"1\" fill=\"#2b2b2b\"/><line x1=\"20\" y1=\"48\" x2=\"20\" y2=\"58\" stroke=\"#d4a017\" stroke-width=\"2.5\"/><line x1=\"32\" y1=\"48\" x2=\"32\" y2=\"58\" stroke=\"#d4a017\" stroke-width=\"2.5\"/><line x1=\"44\" y1=\"48\" x2=\"44\" y2=\"58\" stroke=\"#d4a017\" stroke-width=\"2.5\"/></svg>",
+    "properties": [],
+    "defaultValues": {},
+    "pinCount": 3,
+    "tags": [
+      "sensor",
+      "shock",
+      "vibration",
+      "ky-002",
+      "digital"
+    ]
+  },
+  {
+    "id": "bounce-button",
+    "tagName": "velxio-bounce-button",
+    "name": "Bounce Button",
+    "category": "input",
+    "thumbnail": "<svg width=\"64\" height=\"64\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"64\" height=\"64\" rx=\"4\" fill=\"#e0e0e0\"/><rect x=\"2\" y=\"19\" width=\"10\" height=\"3\" fill=\"#999999\"/><rect x=\"2\" y=\"42\" width=\"10\" height=\"3\" fill=\"#999999\"/><rect x=\"52\" y=\"19\" width=\"10\" height=\"3\" fill=\"#999999\"/><rect x=\"52\" y=\"42\" width=\"10\" height=\"3\" fill=\"#999999\"/><rect x=\"12\" y=\"12\" width=\"40\" height=\"40\" rx=\"1.5\" fill=\"#464646\"/><rect x=\"14.5\" y=\"14.5\" width=\"35\" height=\"35\" rx=\"0.7\" fill=\"#eaeaea\"/><circle cx=\"32\" cy=\"32\" r=\"12.7\" fill=\"#f2b705\" stroke=\"#2f2f2f\" stroke-width=\"0.4\"/><polyline points=\"25,34 27.3,29.3 29.7,34.7 32,28.7 34.3,34.7 36.7,29.3 39,34\" fill=\"none\" stroke=\"#2f2f2f\" stroke-width=\"0.9\" stroke-linejoin=\"round\"/></svg>",
+    "properties": [],
+    "defaultValues": {},
+    "pinCount": 4,
+    "tags": [
+      "button",
+      "pushbutton",
+      "tactile",
+      "switch",
+      "bounce",
+      "debounce",
+      "digital",
+      "input"
+    ]
+  },
+  {
+    "id": "water-level-sensor",
+    "tagName": "velxio-water-level-sensor",
+    "name": "Water Level Sensor",
+    "category": "sensors",
+    "thumbnail": "<svg width=\"64\" height=\"64\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"2\" y=\"20\" width=\"60\" height=\"24\" rx=\"2.5\" fill=\"#c62828\" stroke=\"#7f1d1d\" stroke-width=\"1.2\"/><line x1=\"0\" y1=\"26\" x2=\"8\" y2=\"26\" stroke=\"#d4a017\" stroke-width=\"2\"/><line x1=\"0\" y1=\"32\" x2=\"8\" y2=\"32\" stroke=\"#d4a017\" stroke-width=\"2\"/><line x1=\"0\" y1=\"38\" x2=\"8\" y2=\"38\" stroke=\"#d4a017\" stroke-width=\"2\"/><rect x=\"6\" y=\"23\" width=\"5\" height=\"18\" fill=\"#111827\"/><circle cx=\"15\" cy=\"23.5\" r=\"1.6\" fill=\"#f1f5f9\"/><circle cx=\"15\" cy=\"40.5\" r=\"1.6\" fill=\"#f1f5f9\"/><rect x=\"18\" y=\"26\" width=\"3\" height=\"2\" fill=\"#4ade80\"/><path d=\"M 26 24 H 58 M 26 28 H 58 M 26 32 H 58 M 26 36 H 58 M 26 40 H 58\" stroke=\"#c0c4cc\" stroke-width=\"1.4\" fill=\"none\"/><path d=\"M 29 26 H 58 M 29 30 H 58 M 29 34 H 58 M 29 38 H 58\" stroke=\"#c0c4cc\" stroke-width=\"1.4\" fill=\"none\"/><circle cx=\"26\" cy=\"24\" r=\"1.1\" fill=\"#c0c4cc\"/><circle cx=\"26\" cy=\"28\" r=\"1.1\" fill=\"#c0c4cc\"/><circle cx=\"26\" cy=\"32\" r=\"1.1\" fill=\"#c0c4cc\"/><circle cx=\"26\" cy=\"36\" r=\"1.1\" fill=\"#c0c4cc\"/><circle cx=\"26\" cy=\"40\" r=\"1.1\" fill=\"#c0c4cc\"/></svg>",
+    "properties": [],
+    "defaultValues": {},
+    "pinCount": 3,
+    "tags": [
+      "sensor",
+      "water",
+      "level",
+      "analog",
+      "liquid"
+    ]
+  },
+  {
+    "id": "joystick",
+    "tagName": "velxio-joystick",
+    "name": "KY-023 Joystick",
+    "category": "input",
+    "thumbnail": "<svg width=\"64\" height=\"64\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"64\" height=\"64\" rx=\"4\" fill=\"#1e5b2f\"/><rect x=\"16\" y=\"8\" width=\"32\" height=\"32\" rx=\"4\" fill=\"#111827\"/><circle cx=\"32\" cy=\"24\" r=\"12\" fill=\"#374151\"/><circle cx=\"32\" cy=\"24\" r=\"7\" fill=\"#6b7280\"/><text x=\"32\" y=\"52\" text-anchor=\"middle\" font-size=\"7\" font-family=\"monospace\" font-weight=\"bold\" fill=\"#e5e7eb\">KY-023</text><line x1=\"20\" y1=\"54\" x2=\"20\" y2=\"62\" stroke=\"#d4a017\" stroke-width=\"2\"/><line x1=\"32\" y1=\"54\" x2=\"32\" y2=\"62\" stroke=\"#d4a017\" stroke-width=\"2\"/><line x1=\"44\" y1=\"54\" x2=\"44\" y2=\"62\" stroke=\"#d4a017\" stroke-width=\"2\"/></svg>",
+    "properties": [],
+    "defaultValues": {},
+    "pinCount": 5,
+    "tags": [
+      "joystick",
+      "ky-023",
+      "analog",
+      "input",
+      "axis"
+    ]
+  },
+  {
+    "$comment": "Velxio-native UART GPS: PA1616S / Adafruit Ultimate GPS Breakout v3 (MTK3339). Streams NMEA on Mega Serial1.",
+    "id": "pa1616s",
+    "tagName": "velxio-pa1616s",
+    "name": "PA1616S GPS (Ultimate GPS v3)",
+    "category": "sensors",
+    "pinCount": 9,
+    "tags": [
+      "sensor",
+      "gps",
+      "uart",
+      "nmea",
+      "pa1616s",
+      "mtk3339",
+      "location",
+      "adafruit"
+    ],
+    "thumbnail": "<svg width=\"64\" height=\"64\" xmlns=\"http://www.w3.org/2000/svg\"> <rect width=\"64\" height=\"64\" fill=\"#1a2332\" rx=\"4\"/> <rect x=\"12\" y=\"4\" width=\"40\" height=\"56\" rx=\"4\" fill=\"#1e56a8\" stroke=\"#143a75\" stroke-width=\"1\"/> <circle cx=\"18\" cy=\"9\" r=\"2.4\" fill=\"none\" stroke=\"#e8eef7\" stroke-width=\"0.9\"/> <circle cx=\"46\" cy=\"9\" r=\"2.4\" fill=\"none\" stroke=\"#e8eef7\" stroke-width=\"0.9\"/> <text x=\"32\" y=\"18\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"5.5\" font-weight=\"bold\" fill=\"#ffffff\">GPS</text> <rect x=\"20\" y=\"21\" width=\"24\" height=\"24\" rx=\"1\" fill=\"#dcc79c\" stroke=\"#b39b6e\" stroke-width=\"1\"/> <rect x=\"25\" y=\"25\" width=\"15\" height=\"16\" fill=\"#f4f4f2\"/> <circle cx=\"31\" cy=\"32\" r=\"4\" fill=\"#2b2b2b\"/> <circle cx=\"31\" cy=\"32\" r=\"1.6\" fill=\"#c9ced6\"/> <circle cx=\"17\" cy=\"26\" r=\"1.7\" fill=\"#d33b2f\"/> <g fill=\"#d4a017\"> <circle cx=\"17\" cy=\"54\" r=\"1.8\"/> <circle cx=\"22\" cy=\"54\" r=\"1.8\"/> <circle cx=\"27\" cy=\"54\" r=\"1.8\"/> <circle cx=\"32\" cy=\"54\" r=\"1.8\"/> <circle cx=\"37\" cy=\"54\" r=\"1.8\"/> <circle cx=\"42\" cy=\"54\" r=\"1.8\"/> <circle cx=\"47\" cy=\"54\" r=\"1.8\"/> </g> </svg>",
+    "properties": [],
+    "defaultValues": {}
+  },
+  {
+    "$comment": "Velxio-native I2C ToF ranging sensor: VL53L0X breakout (Adafruit-style), address 0x29, 50-2000 mm.",
+    "id": "vl53l0x",
+    "tagName": "velxio-vl53l0x",
+    "name": "VL53L0X (ToF Distance)",
+    "category": "sensors",
+    "pinCount": 6,
+    "tags": [
+      "sensor",
+      "i2c",
+      "distance",
+      "tof",
+      "laser",
+      "vl53l0x",
+      "ranging",
+      "0x29"
+    ],
+    "thumbnail": "<svg width=\"64\" height=\"64\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"64\" height=\"64\" rx=\"4\" fill=\"#1a2332\"/><rect x=\"3\" y=\"12\" width=\"58\" height=\"40\" rx=\"4\" fill=\"#1c1c1c\" stroke=\"#000000\" stroke-width=\"1\"/><circle cx=\"9\" cy=\"18\" r=\"2.6\" fill=\"#d4a017\"/><circle cx=\"9\" cy=\"18\" r=\"1.3\" fill=\"#0d0d0d\"/><circle cx=\"55\" cy=\"18\" r=\"2.6\" fill=\"#d4a017\"/><circle cx=\"55\" cy=\"18\" r=\"1.3\" fill=\"#0d0d0d\"/><circle cx=\"9\" cy=\"46\" r=\"2.6\" fill=\"#d4a017\"/><circle cx=\"9\" cy=\"46\" r=\"1.3\" fill=\"#0d0d0d\"/><circle cx=\"55\" cy=\"46\" r=\"2.6\" fill=\"#d4a017\"/><circle cx=\"55\" cy=\"46\" r=\"1.3\" fill=\"#0d0d0d\"/><text x=\"32\" y=\"21\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"6\" font-weight=\"bold\" fill=\"#ffffff\">VL53L0X</text><rect x=\"26\" y=\"24\" width=\"12\" height=\"17\" rx=\"1\" fill=\"#2e2e2e\" stroke=\"#4a4a4a\" stroke-width=\"0.8\"/><circle cx=\"32\" cy=\"29\" r=\"1.5\" fill=\"#000000\"/><circle cx=\"32\" cy=\"36\" r=\"1.5\" fill=\"#000000\"/><rect x=\"15\" y=\"27\" width=\"7\" height=\"5\" fill=\"#c9a06a\"/><rect x=\"43\" y=\"27\" width=\"7\" height=\"5\" fill=\"#3a3f46\"/><g fill=\"#d4a017\"><circle cx=\"17\" cy=\"46\" r=\"2\"/><circle cx=\"23\" cy=\"46\" r=\"2\"/><circle cx=\"29\" cy=\"46\" r=\"2\"/><circle cx=\"35\" cy=\"46\" r=\"2\"/><circle cx=\"41\" cy=\"46\" r=\"2\"/><circle cx=\"47\" cy=\"46\" r=\"2\"/></g></svg>",
+    "properties": [],
+    "defaultValues": {}
+  },
+  {
+    "$comment": "Velxio-native I2C particulate-matter sensor: PMSA003I breakout (Adafruit-style), address 0x12, streams the 32-byte Plantower frame.",
+    "id": "pmsa003i",
+    "tagName": "velxio-pmsa003i",
+    "name": "PMSA003I (PM2.5 Air Quality)",
+    "category": "sensors",
+    "pinCount": 7,
+    "tags": [
+      "sensor",
+      "i2c",
+      "air quality",
+      "pm25",
+      "particulate",
+      "pmsa003i",
+      "dust",
+      "0x12"
+    ],
+    "thumbnail": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"64\" height=\"64\" viewBox=\"0 0 64 64\"><rect x=\"6\" y=\"2\" width=\"52\" height=\"60\" rx=\"3\" fill=\"#17161c\"/><!-- sensor can --><rect x=\"9\" y=\"4\" width=\"46\" height=\"42\" rx=\"2\" fill=\"#1e1e22\"/><path d=\"M36 6 H52 a1 1 0 0 1 1 1 V43 a1 1 0 0 1-1 1 H12 a1 1 0 0 1-1-1 V28 a1 1 0 0 1 1-1 H34 a2 2 0 0 0 2-2 Z\" fill=\"#2b8fd6\"/><!-- black fan-inlet module --><rect x=\"9\" y=\"4\" width=\"26\" height=\"22\" rx=\"1.5\" fill=\"#232327\"/><rect x=\"14\" y=\"8\" width=\"16\" height=\"14\" rx=\"1\" fill=\"#0a0a0c\"/><!-- PCB strip: connectors + pads --><rect x=\"6\" y=\"47\" width=\"5\" height=\"8\" rx=\"1\" fill=\"#e9e2d2\"/><rect x=\"53\" y=\"47\" width=\"5\" height=\"8\" rx=\"1\" fill=\"#e9e2d2\"/><g fill=\"#e0b34a\"><circle cx=\"20\" cy=\"56\" r=\"2\"/><circle cx=\"24\" cy=\"56\" r=\"2\"/><circle cx=\"28\" cy=\"56\" r=\"2\"/><circle cx=\"32\" cy=\"56\" r=\"2\"/><circle cx=\"36\" cy=\"56\" r=\"2\"/><circle cx=\"40\" cy=\"56\" r=\"2\"/><circle cx=\"44\" cy=\"56\" r=\"2\"/></g><circle cx=\"12\" cy=\"56\" r=\"2.6\" fill=\"#0a0a0c\" stroke=\"#55555c\" stroke-width=\"1\"/><circle cx=\"52\" cy=\"56\" r=\"2.6\" fill=\"#0a0a0c\" stroke=\"#55555c\" stroke-width=\"1\"/></svg>",
+    "properties": [],
+    "defaultValues": {}
+  },
+  {
+    "$comment": "Velxio-native I2C UV + ambient light sensor: LTR390 breakout (Adafruit-style), address 0x53, 20-bit ALS/UVS counts.",
+    "id": "ltr390",
+    "tagName": "velxio-ltr390",
+    "name": "LTR390 (UV + Ambient Light)",
+    "category": "sensors",
+    "pinCount": 6,
+    "tags": [
+      "sensor",
+      "i2c",
+      "uv",
+      "light",
+      "als",
+      "uvs",
+      "ltr390",
+      "0x53"
+    ],
+    "thumbnail": "<svg width=\"64\" height=\"64\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"64\" height=\"64\" rx=\"4\" fill=\"#1a2332\"/><rect x=\"3\" y=\"12\" width=\"58\" height=\"40\" rx=\"4\" fill=\"#1c1c1c\" stroke=\"#000000\" stroke-width=\"1\"/><circle cx=\"9\" cy=\"18\" r=\"2.6\" fill=\"#d4a017\"/><circle cx=\"9\" cy=\"18\" r=\"1.3\" fill=\"#0d0d0d\"/><circle cx=\"55\" cy=\"18\" r=\"2.6\" fill=\"#d4a017\"/><circle cx=\"55\" cy=\"18\" r=\"1.3\" fill=\"#0d0d0d\"/><circle cx=\"9\" cy=\"46\" r=\"2.6\" fill=\"#d4a017\"/><circle cx=\"9\" cy=\"46\" r=\"1.3\" fill=\"#0d0d0d\"/><circle cx=\"55\" cy=\"46\" r=\"2.6\" fill=\"#d4a017\"/><circle cx=\"55\" cy=\"46\" r=\"1.3\" fill=\"#0d0d0d\"/><text x=\"32\" y=\"21\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"7\" font-weight=\"bold\" fill=\"#ffffff\">LTR390</text><rect x=\"25\" y=\"26\" width=\"14\" height=\"11\" rx=\"1\" fill=\"#8a9c62\" stroke=\"#5c6b40\" stroke-width=\"0.8\"/><rect x=\"26.5\" y=\"27.3\" width=\"11\" height=\"6\" rx=\"0.5\" fill=\"#2b2f26\"/><rect x=\"14\" y=\"28\" width=\"7\" height=\"5\" fill=\"#c9a06a\"/><rect x=\"43\" y=\"28\" width=\"7\" height=\"5\" fill=\"#3a3f46\"/><g fill=\"#d4a017\"><circle cx=\"17\" cy=\"46\" r=\"2\"/><circle cx=\"23\" cy=\"46\" r=\"2\"/><circle cx=\"29\" cy=\"46\" r=\"2\"/><circle cx=\"35\" cy=\"46\" r=\"2\"/><circle cx=\"41\" cy=\"46\" r=\"2\"/><circle cx=\"47\" cy=\"46\" r=\"2\"/></g></svg>",
+    "properties": [],
+    "defaultValues": {}
+  },
+  {
+    "$comment": "Velxio-native I2C VOC gas sensor: SGP40 MOX breakout (Adafruit-style), address 0x59, Sensirion command-word protocol, raw 16-bit SRAW signal.",
+    "id": "sgp40",
+    "tagName": "velxio-sgp40",
+    "name": "SGP40 (VOC Gas)",
+    "category": "sensors",
+    "pinCount": 5,
+    "tags": [
+      "sensor",
+      "i2c",
+      "voc",
+      "gas",
+      "air quality",
+      "mox",
+      "sgp40",
+      "0x59"
+    ],
+    "thumbnail": "<svg width=\"64\" height=\"64\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"64\" height=\"64\" rx=\"4\" fill=\"#1a2332\"/><rect x=\"3\" y=\"12\" width=\"58\" height=\"40\" rx=\"4\" fill=\"#1c1c1c\" stroke=\"#000000\" stroke-width=\"1\"/><circle cx=\"9\" cy=\"18\" r=\"2.6\" fill=\"#d4a017\"/><circle cx=\"9\" cy=\"18\" r=\"1.3\" fill=\"#0d0d0d\"/><circle cx=\"55\" cy=\"18\" r=\"2.6\" fill=\"#d4a017\"/><circle cx=\"55\" cy=\"18\" r=\"1.3\" fill=\"#0d0d0d\"/><circle cx=\"9\" cy=\"46\" r=\"2.6\" fill=\"#d4a017\"/><circle cx=\"9\" cy=\"46\" r=\"1.3\" fill=\"#0d0d0d\"/><circle cx=\"55\" cy=\"46\" r=\"2.6\" fill=\"#d4a017\"/><circle cx=\"55\" cy=\"46\" r=\"1.3\" fill=\"#0d0d0d\"/><text x=\"32\" y=\"21\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"7\" font-weight=\"bold\" fill=\"#ffffff\">SGP40</text><rect x=\"25\" y=\"25\" width=\"14\" height=\"14\" rx=\"1\" fill=\"#8f9296\" stroke=\"#5d6064\" stroke-width=\"0.8\"/><circle cx=\"32\" cy=\"32\" r=\"4\" fill=\"#e6e8ea\" stroke=\"#9aa0a4\" stroke-width=\"0.6\"/><rect x=\"14\" y=\"28\" width=\"7\" height=\"5\" fill=\"#c9a06a\"/><rect x=\"43\" y=\"28\" width=\"7\" height=\"5\" fill=\"#2b2b2b\"/><g fill=\"#d4a017\"><circle cx=\"20\" cy=\"46\" r=\"2\"/><circle cx=\"26\" cy=\"46\" r=\"2\"/><circle cx=\"32\" cy=\"46\" r=\"2\"/><circle cx=\"38\" cy=\"46\" r=\"2\"/><circle cx=\"44\" cy=\"46\" r=\"2\"/></g></svg>",
+    "properties": [],
+    "defaultValues": {}
+  },
+  {
+    "$comment": "Velxio-native I2C pulse oximeter / heart rate sensor: SparkFun MAX30101 optical AFE + MAX32664 biometric sensor hub, address 0x55.",
+    "id": "max32664",
+    "tagName": "velxio-max32664",
+    "name": "MAX32664 (Pulse Oximeter / Heart Rate)",
+    "category": "sensors",
+    "pinCount": 6,
+    "tags": [
+      "sensor",
+      "i2c",
+      "heart rate",
+      "pulse oximeter",
+      "spo2",
+      "max30101",
+      "max32664",
+      "biometric",
+      "0x55"
+    ],
+    "thumbnail": "<svg width=\"64\" height=\"64\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"64\" height=\"64\" rx=\"4\" fill=\"#1a2332\"/><rect x=\"3\" y=\"17\" width=\"58\" height=\"30\" rx=\"3\" fill=\"#b81f24\" stroke=\"#7d1418\" stroke-width=\"1\"/><!-- mounting holes --><circle cx=\"8\" cy=\"22\" r=\"1.8\" fill=\"#d4a017\"/><circle cx=\"8\" cy=\"22\" r=\"0.9\" fill=\"#0d0d0d\"/><circle cx=\"8\" cy=\"42\" r=\"1.8\" fill=\"#d4a017\"/><circle cx=\"8\" cy=\"42\" r=\"0.9\" fill=\"#0d0d0d\"/><!-- Qwiic connector, left edge --><rect x=\"3\" y=\"27\" width=\"4\" height=\"10\" rx=\"0.8\" fill=\"#1c1c1c\" stroke=\"#0d0d0d\" stroke-width=\"0.5\"/><g fill=\"#c9a24a\"><rect x=\"5.2\" y=\"28.5\" width=\"1.6\" height=\"0.8\"/><rect x=\"5.2\" y=\"30.7\" width=\"1.6\" height=\"0.8\"/><rect x=\"5.2\" y=\"32.9\" width=\"1.6\" height=\"0.8\"/><rect x=\"5.2\" y=\"35.1\" width=\"1.6\" height=\"0.8\"/></g><!-- MAX32664 hub --><rect x=\"14\" y=\"29\" width=\"7\" height=\"6\" rx=\"0.5\" fill=\"#2b2b2b\" stroke=\"#151515\" stroke-width=\"0.5\"/><!-- MAX30101 optical package --><rect x=\"25\" y=\"26\" width=\"18\" height=\"12\" rx=\"1\" fill=\"#141414\" stroke=\"#000000\" stroke-width=\"0.6\"/><rect x=\"27\" y=\"28.5\" width=\"5\" height=\"7\" rx=\"0.6\" fill=\"#2c2c2c\" stroke=\"#484848\" stroke-width=\"0.4\"/><circle cx=\"29.5\" cy=\"30.6\" r=\"1\" fill=\"#7a2020\"/><circle cx=\"29.5\" cy=\"33.4\" r=\"1\" fill=\"#7a2020\"/><rect x=\"34\" y=\"28.5\" width=\"6.5\" height=\"7\" rx=\"0.6\" fill=\"#8a7a44\" stroke=\"#5f5428\" stroke-width=\"0.4\"/><!-- title silkscreen --><text x=\"14\" y=\"23\" font-family=\"sans-serif\" font-size=\"4\" font-weight=\"bold\" fill=\"#ffffff\">MAX32664</text><!-- right-edge pin column, 6 pads --><g fill=\"#d4a017\"><circle cx=\"55\" cy=\"20.5\" r=\"2\"/><circle cx=\"55\" cy=\"25.4\" r=\"2\"/><circle cx=\"55\" cy=\"30.3\" r=\"2\"/><circle cx=\"55\" cy=\"35.2\" r=\"2\"/><circle cx=\"55\" cy=\"40.1\" r=\"2\"/><circle cx=\"55\" cy=\"45\" r=\"2\"/></g><g fill=\"#0d0d0d\"><circle cx=\"55\" cy=\"20.5\" r=\"0.9\"/><circle cx=\"55\" cy=\"25.4\" r=\"0.9\"/><circle cx=\"55\" cy=\"30.3\" r=\"0.9\"/><circle cx=\"55\" cy=\"35.2\" r=\"0.9\"/><circle cx=\"55\" cy=\"40.1\" r=\"0.9\"/><circle cx=\"55\" cy=\"45\" r=\"0.9\"/></g></svg>",
+    "properties": [],
+    "defaultValues": {}
+  },
+  {
+    "$comment": "Velxio-native WiFi network (the emulator's fixed AP table, incl. the open AP \"Espressif\"). No pins or wires: placing it on the canvas switches an ESP32 board's WiFi on.",
+    "id": "wifi",
+    "tagName": "velxio-wifi",
+    "name": "WiFi Network",
+    "category": "communication",
+    "pinCount": 0,
+    "tags": [
+      "wifi",
+      "network",
+      "wireless",
+      "access point",
+      "router",
+      "esp32"
+    ],
+    "thumbnail": "<svg width=\"64\" height=\"64\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"64\" height=\"64\" rx=\"4\" fill=\"#1a2332\"/><rect x=\"12\" y=\"8\" width=\"5\" height=\"14\" rx=\"2\" fill=\"#4b5563\"/><rect x=\"47\" y=\"8\" width=\"5\" height=\"14\" rx=\"2\" fill=\"#4b5563\"/><rect x=\"5\" y=\"17\" width=\"54\" height=\"38\" rx=\"6\" fill=\"#2f3b48\" stroke=\"#11181f\" stroke-width=\"1.2\"/><g fill=\"none\" stroke=\"#4fc3f7\" stroke-width=\"2.5\" stroke-linecap=\"round\"><path d=\"M 27.76 37.76 A 6 6 0 0 1 36.24 37.76\"/><path d=\"M 24.22 34.22 A 11 11 0 0 1 39.78 34.22\"/><path d=\"M 20.69 30.69 A 16 16 0 0 1 43.31 30.69\"/></g><circle cx=\"32\" cy=\"42\" r=\"2.4\" fill=\"#4fc3f7\"/><text x=\"32\" y=\"52\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"7\" font-weight=\"bold\" fill=\"#e5e7eb\">WiFi</text></svg>",
+    "properties": [],
+    "defaultValues": {}
+  },
+  {
+    "$comment": "Velxio-native Bluetooth LE air, shared by an nRF52840 and the devices a task describes. No pins or wires: placing it on the canvas switches an nRF52840 board's BLE radio on.",
+    "id": "ble",
+    "tagName": "velxio-ble",
+    "name": "Bluetooth LE",
+    "category": "communication",
+    "pinCount": 0,
+    "tags": [
+      "ble",
+      "bluetooth",
+      "bluetooth le",
+      "wireless",
+      "radio",
+      "nrf52840"
+    ],
+    "thumbnail": "<svg width=\"64\" height=\"64\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"64\" height=\"64\" rx=\"4\" fill=\"#1a2332\"/><rect x=\"5\" y=\"6\" width=\"54\" height=\"52\" rx=\"7\" fill=\"#22324a\" stroke=\"#11181f\" stroke-width=\"1.2\"/><g fill=\"none\" stroke=\"#5ab4ff\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M 18.89 36.18 A 16 16 0 0 1 18.89 17.82\"/><path d=\"M 15.62 38.47 A 20 20 0 0 1 15.62 15.53\"/><path d=\"M 45.11 17.82 A 16 16 0 0 1 45.11 36.18\"/><path d=\"M 48.38 15.53 A 20 20 0 0 1 48.38 38.47\"/></g><circle cx=\"32\" cy=\"27\" r=\"12\" fill=\"#0a84ff\"/><polyline points=\"27.88,22.88 36.13,31.13 32,35.25 32,18.75 36.13,22.88 27.88,31.13\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"32\" y=\"52\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"7\" font-weight=\"bold\" fill=\"#e5e7eb\">BLE</text></svg>",
+    "properties": [],
+    "defaultValues": {}
+  },
+  {
+    "id": "l298n",
+    "tagName": "velxio-l298n",
+    "name": "L298N Dual H-Bridge Module",
+    "category": "sensors",
+    "thumbnail": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"64\" height=\"64\" viewBox=\"-3.5 0 169.52 169.52\">\n  <defs>\n    <mask id=\"l298n-board-holes\">\n      <rect width=\"162.52\" height=\"169.52\" fill=\"white\"/>\n      <g fill=\"black\">\n        <circle cx=\"11.2\" cy=\"18.2\" r=\"6.4\"/><circle cx=\"151.32\" cy=\"18.2\" r=\"6.4\"/>\n        <circle cx=\"11.2\" cy=\"158.32\" r=\"6.4\"/><circle cx=\"151.32\" cy=\"158.32\" r=\"6.4\"/>\n      </g>\n    </mask>\n  </defs>\n  <g mask=\"url(#l298n-board-holes)\">\n    <rect x=\"0.5\" y=\"7.5\" width=\"161.52\" height=\"161.52\" fill=\"#bd2826\" stroke=\"#e4ae91\" stroke-width=\"1\"/>\n    <g fill=\"#c9c8be\" stroke=\"#e9e6dc\" stroke-width=\"0.6\">\n      <circle cx=\"11.2\" cy=\"18.2\" r=\"8.9\"/><circle cx=\"151.32\" cy=\"18.2\" r=\"8.9\"/>\n      <circle cx=\"11.2\" cy=\"158.32\" r=\"8.9\"/><circle cx=\"151.32\" cy=\"158.32\" r=\"8.9\"/>\n    </g>\n  </g>\n  <g fill=\"#bcc0be\">\n    <rect x=\"7.9\" y=\"36.8\" width=\"15.8\" height=\"3.2\"/><rect x=\"7.9\" y=\"49.8\" width=\"15.8\" height=\"3.2\"/>\n    <rect x=\"7.9\" y=\"62.8\" width=\"15.8\" height=\"3.2\"/><rect x=\"7.9\" y=\"75.8\" width=\"15.8\" height=\"3.2\"/>\n    <rect x=\"138.8\" y=\"36.8\" width=\"15.8\" height=\"3.2\"/><rect x=\"138.8\" y=\"49.8\" width=\"15.8\" height=\"3.2\"/>\n    <rect x=\"138.8\" y=\"62.8\" width=\"15.8\" height=\"3.2\"/><rect x=\"138.8\" y=\"75.8\" width=\"15.8\" height=\"3.2\"/>\n  </g>\n  <g fill=\"#282b2a\" stroke=\"#131615\" stroke-width=\"0.5\">\n    <rect x=\"10\" y=\"34.5\" width=\"11.6\" height=\"7.8\"/><rect x=\"10\" y=\"47.5\" width=\"11.6\" height=\"7.8\"/>\n    <rect x=\"10\" y=\"60.5\" width=\"11.6\" height=\"7.8\"/><rect x=\"10\" y=\"73.5\" width=\"11.6\" height=\"7.8\"/>\n    <rect x=\"140.9\" y=\"34.5\" width=\"11.6\" height=\"7.8\"/><rect x=\"140.9\" y=\"47.5\" width=\"11.6\" height=\"7.8\"/>\n    <rect x=\"140.9\" y=\"60.5\" width=\"11.6\" height=\"7.8\"/><rect x=\"140.9\" y=\"73.5\" width=\"11.6\" height=\"7.8\"/>\n  </g>\n  <g fill=\"#adb2ad\">\n    <rect x=\"11\" y=\"34.5\" width=\"1.8\" height=\"7.8\"/><rect x=\"11\" y=\"47.5\" width=\"1.8\" height=\"7.8\"/>\n    <rect x=\"11\" y=\"60.5\" width=\"1.8\" height=\"7.8\"/><rect x=\"11\" y=\"73.5\" width=\"1.8\" height=\"7.8\"/>\n    <rect x=\"141.9\" y=\"34.5\" width=\"1.8\" height=\"7.8\"/><rect x=\"141.9\" y=\"47.5\" width=\"1.8\" height=\"7.8\"/>\n    <rect x=\"141.9\" y=\"60.5\" width=\"1.8\" height=\"7.8\"/><rect x=\"141.9\" y=\"73.5\" width=\"1.8\" height=\"7.8\"/>\n  </g>\n  <g stroke=\"#bbbebb\" stroke-width=\"1.7\">\n    <path d=\"M46 56V76M50.8 56V70M55.6 56V76M60.4 56V70M65.2 56V76M70 56V70M74.8 56V76M79.6 56V70M84.4 56V76M89.2 56V70M94 56V76M98.8 56V70M103.6 56V76M108.4 56V70M113.2 56V76\"/>\n  </g>\n  <rect x=\"38.8\" y=\"30\" width=\"83.2\" height=\"26.6\" fill=\"#171b19\" stroke=\"#060806\" stroke-width=\"0.8\"/>\n  <g fill=\"#202621\">\n    <rect x=\"33.6\" y=\"0\" width=\"3.1\" height=\"35.6\"/><rect x=\"51.3\" y=\"0\" width=\"3.1\" height=\"35.6\"/>\n    <rect x=\"69\" y=\"0\" width=\"3.1\" height=\"35.6\"/><rect x=\"86.7\" y=\"0\" width=\"3.1\" height=\"35.6\"/>\n    <rect x=\"104.4\" y=\"0\" width=\"3.1\" height=\"35.6\"/><rect x=\"122.1\" y=\"0\" width=\"3.1\" height=\"35.6\"/>\n  </g>\n  <rect x=\"40.2\" y=\"36.9\" width=\"80.3\" height=\"7.8\" fill=\"#babcb7\" stroke=\"#e4e5de\" stroke-width=\"0.5\"/>\n  <circle cx=\"43.6\" cy=\"28.7\" r=\"3.3\" fill=\"#d3d5cd\"/>\n  <circle cx=\"118.7\" cy=\"28.7\" r=\"3.3\" fill=\"#d3d5cd\"/>\n  <text x=\"80.4\" y=\"85.2\" font-family=\"Arial, sans-serif\" font-size=\"7\" fill=\"#f0e5d2\" text-anchor=\"middle\">L298N</text>\n  <g fill=\"#bbbfb9\">\n    <rect x=\"47\" y=\"109.5\" width=\"3.1\" height=\"6.4\"/><rect x=\"64\" y=\"109.5\" width=\"3.1\" height=\"6.4\"/>\n    <rect x=\"97.1\" y=\"135.7\" width=\"3.1\" height=\"6.4\"/><rect x=\"114.1\" y=\"135.7\" width=\"3.1\" height=\"6.4\"/>\n  </g>\n  <circle cx=\"57\" cy=\"103.3\" r=\"15.3\" fill=\"#232723\" stroke=\"#c3c5bc\" stroke-width=\"0.6\"/>\n  <circle cx=\"57\" cy=\"103.3\" r=\"12.9\" fill=\"#c7c9be\" stroke=\"#e2e4d9\" stroke-width=\"0.7\"/>\n  <circle cx=\"107.1\" cy=\"128.7\" r=\"15.3\" fill=\"#232723\" stroke=\"#c3c5bc\" stroke-width=\"0.6\"/>\n  <circle cx=\"107.1\" cy=\"128.7\" r=\"12.9\" fill=\"#c7c9be\" stroke=\"#e2e4d9\" stroke-width=\"0.7\"/>\n  <g stroke=\"#5c645a\" stroke-width=\"0.5\" fill=\"none\">\n    <path d=\"M46 103.3H68M57 92.3V114.3M96.1 128.7H118.1M107.1 117.7V139.7\"/>\n  </g>\n  <rect x=\"91.9\" y=\"86.5\" width=\"31.1\" height=\"22.7\" rx=\"1.5\" fill=\"#bdbfb6\"/>\n  <rect x=\"95.4\" y=\"86.5\" width=\"23.6\" height=\"22.7\" fill=\"#232824\" stroke=\"#111512\" stroke-width=\"0.5\"/>\n  <g fill=\"#bec0b7\">\n    <rect x=\"87.2\" y=\"88.3\" width=\"8.2\" height=\"2.3\"/><rect x=\"87.2\" y=\"96.7\" width=\"8.2\" height=\"2.3\"/>\n    <rect x=\"87.2\" y=\"105.1\" width=\"8.2\" height=\"2.3\"/>\n  </g>\n  <g fill=\"#237fbc\" stroke=\"#12598a\" stroke-width=\"0.9\">\n    <rect x=\"1.2\" y=\"92\" width=\"24.8\" height=\"41.6\"/><rect x=\"136.4\" y=\"92\" width=\"24.8\" height=\"41.6\"/>\n    <rect x=\"22.8\" y=\"145.4\" width=\"60.8\" height=\"22.4\"/>\n  </g>\n  <g stroke=\"#5bb7e5\" stroke-width=\"0.6\">\n    <path d=\"M1.2 112.4H26M136.4 112.4H161.2M43.2 145.4V167.8M63.2 145.4V167.8\"/>\n  </g>\n  <g fill=\"#c3cdc9\" stroke=\"#145c87\" stroke-width=\"1.2\">\n    <circle cx=\"13.6\" cy=\"101.6\" r=\"6.4\"/><circle cx=\"13.6\" cy=\"123.2\" r=\"6.4\"/>\n    <circle cx=\"148.8\" cy=\"101.6\" r=\"6.4\"/><circle cx=\"148.8\" cy=\"123.2\" r=\"6.4\"/>\n    <circle cx=\"33.2\" cy=\"156.8\" r=\"6.4\"/><circle cx=\"53.2\" cy=\"156.8\" r=\"6.4\"/>\n    <circle cx=\"73.2\" cy=\"156.8\" r=\"6.4\"/>\n  </g>\n  <g stroke=\"#576967\" stroke-width=\"1\">\n    <path d=\"M8.9 101.6H18.3M8.9 123.2H18.3M144.1 101.6H153.5M144.1 123.2H153.5M33.2 152.1V161.5M53.2 152.1V161.5M73.2 152.1V161.5\"/>\n  </g>\n  <rect x=\"84\" y=\"152.4\" width=\"56.8\" height=\"8.8\" fill=\"#232622\"/>\n  <g fill=\"#cecbb5\" stroke=\"#77786a\" stroke-width=\"0.4\">\n    <rect x=\"86.7\" y=\"155.1\" width=\"3.4\" height=\"3.4\"/><rect x=\"96.3\" y=\"155.1\" width=\"3.4\" height=\"3.4\"/>\n    <rect x=\"105.9\" y=\"155.1\" width=\"3.4\" height=\"3.4\"/><rect x=\"115.5\" y=\"155.1\" width=\"3.4\" height=\"3.4\"/>\n    <rect x=\"125.1\" y=\"155.1\" width=\"3.4\" height=\"3.4\"/><rect x=\"134.7\" y=\"155.1\" width=\"3.4\" height=\"3.4\"/>\n  </g>\n  <g fill=\"#232622\">\n    <rect x=\"84\" y=\"142.8\" width=\"8.8\" height=\"8.8\"/><rect x=\"132\" y=\"142.8\" width=\"8.8\" height=\"8.8\"/>\n    <rect x=\"37.6\" y=\"123.6\" width=\"17.6\" height=\"6.4\"/>\n  </g>\n  <g fill=\"#cecbb5\">\n    <rect x=\"86.7\" y=\"145.5\" width=\"3.4\" height=\"3.4\"/><rect x=\"134.7\" y=\"145.5\" width=\"3.4\" height=\"3.4\"/>\n    <rect x=\"40.3\" y=\"125.1\" width=\"3.4\" height=\"3.4\"/><rect x=\"49.9\" y=\"125.1\" width=\"3.4\" height=\"3.4\"/>\n  </g>\n  <g font-family=\"Arial, sans-serif\" fill=\"#f0e5d2\" text-anchor=\"middle\">\n    <g font-size=\"4.8\">\n      <text x=\"13.6\" y=\"89\">OUT1</text><text x=\"13.6\" y=\"140.2\">OUT2</text>\n      <text x=\"148.8\" y=\"89\">OUT4</text><text x=\"148.8\" y=\"140.2\">OUT3</text>\n      <text x=\"33.2\" y=\"141.5\">+12V</text><text x=\"53.2\" y=\"141.5\">GND</text><text x=\"73.2\" y=\"141.5\">+5V</text>\n      <text x=\"88.4\" y=\"140.5\">+5V</text><text x=\"136.4\" y=\"140.5\">+5V</text>\n    </g>\n    <g font-size=\"4.2\">\n      <text x=\"88.4\" y=\"167.4\">ENA</text><text x=\"98\" y=\"167.4\">IN1</text><text x=\"107.6\" y=\"167.4\">IN2</text>\n      <text x=\"117.2\" y=\"167.4\">IN3</text><text x=\"126.8\" y=\"167.4\">IN4</text><text x=\"136.4\" y=\"167.4\">ENB</text>\n      <text x=\"46.4\" y=\"120.3\">5V EN</text>\n    </g>\n  </g>\n</svg>\n",
+    "description": "Two independent bridges with actual enable and regulator jumpers. Measures CPU-edge drive, brake and coast fractions over sampleWindowMs; nominal unloaded outputs use actual supply rails. No motor speed or load model.",
+    "properties": [
+      {
+        "name": "regulatorJumper",
+        "type": "boolean",
+        "defaultValue": true
+      },
+      {
+        "name": "enaJumper",
+        "type": "boolean",
+        "defaultValue": true
+      },
+      {
+        "name": "enbJumper",
+        "type": "boolean",
+        "defaultValue": true
+      },
+      {
+        "name": "sampleWindowMs",
+        "type": "number",
+        "defaultValue": 100
+      }
+    ],
+    "defaultValues": {
+      "regulatorJumper": true,
+      "enaJumper": true,
+      "enbJumper": true,
+      "sampleWindowMs": 100
+    },
+    "pinCount": 13,
+    "tags": [
+      "motor",
+      "driver",
+      "h-bridge",
+      "l298n"
+    ]
+  },
+  {
+    "id": "line-sensor",
+    "tagName": "velxio-line-sensor",
+    "name": "Three-channel Line Sensor",
+    "category": "sensors",
+    "thumbnail": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"64\" height=\"64\" viewBox=\"0 0 64 64\"><g transform=\"translate(0 16.24) scale(0.2565644417718982)\"><defs><mask id=\"line-board-holes\"><rect width=\"249.45\" height=\"122.83\" fill=\"white\"/><circle cx=\"14.1\" cy=\"84.6\" r=\"5.3\" fill=\"black\"/><circle cx=\"235.3\" cy=\"84.6\" r=\"5.3\" fill=\"black\"/></mask></defs>\n<g mask=\"url(#line-board-holes)\"><path d=\"M.5 17.5L17.5 .5H231.95L248.95 17.5V97.77H.5Z\" fill=\"#292f2d\" stroke=\"#5c635b\" stroke-width=\"1\"/><circle cx=\"14.1\" cy=\"84.6\" r=\"6.5\" fill=\"#b8bab0\"/><circle cx=\"235.3\" cy=\"84.6\" r=\"6.5\" fill=\"#b8bab0\"/></g>\n<g fill=\"#e7e8de\" font-family=\"Arial,sans-serif\"><text x=\"20\" y=\"11.8\" font-size=\"6.2\">Tracker Sensor</text><g fill=\"#a9aeab\" stroke=\"#d3d6d0\" stroke-width=\".6\"><circle cx=\"32.800000000000004\" cy=\"24\" r=\"2.6\"/><circle cx=\"32.800000000000004\" cy=\"43\" r=\"2.6\"/><circle cx=\"42.4\" cy=\"24\" r=\"2.6\"/><circle cx=\"42.4\" cy=\"43\" r=\"2.6\"/></g>\n<g fill=\"#191d1c\"><ellipse cx=\"37.6\" cy=\"33.5\" rx=\"3.6\" ry=\"1.8\"/><ellipse cx=\"37.6\" cy=\"48.5\" rx=\"3.6\" ry=\"1.8\"/></g>\n<g stroke=\"#b7bcb6\" stroke-width=\"1.4\"><path d=\"M35.6 52V58M39.6 52V58\"/></g>\n<circle cx=\"37.6\" cy=\"64\" r=\"6.5\" fill=\"#e4b5a8\"/><circle cx=\"37.6\" cy=\"64\" r=\"5.4\" fill=\"#e64435\" stroke=\"#ed8070\" stroke-width=\".8\"/>\n<text x=\"37.6\" y=\"77\" text-anchor=\"middle\" font-size=\"6.3\">L</text><rect x=\"12.600000000000001\" y=\"26\" width=\"13\" height=\"4.8\" fill=\"#afb6af\"/><rect x=\"15.3\" y=\"26.6\" width=\"7.6\" height=\"3.6\" fill=\"#555d56\" stroke=\"#e1e4d8\" stroke-width=\".4\"/><rect x=\"49.6\" y=\"26\" width=\"13\" height=\"4.8\" fill=\"#afb6af\"/><rect x=\"52.300000000000004\" y=\"26.6\" width=\"7.6\" height=\"3.6\" fill=\"#555d56\" stroke=\"#e1e4d8\" stroke-width=\".4\"/><rect x=\"12.600000000000001\" y=\"46\" width=\"13\" height=\"4.8\" fill=\"#afb6af\"/><rect x=\"15.3\" y=\"46.6\" width=\"7.6\" height=\"3.6\" fill=\"#555d56\" stroke=\"#e1e4d8\" stroke-width=\".4\"/><rect x=\"49.6\" y=\"46\" width=\"13\" height=\"4.8\" fill=\"#afb6af\"/><rect x=\"52.300000000000004\" y=\"46.6\" width=\"7.6\" height=\"3.6\" fill=\"#555d56\" stroke=\"#e1e4d8\" stroke-width=\".4\"/><g fill=\"#a9aeab\" stroke=\"#d3d6d0\" stroke-width=\".6\"><circle cx=\"120\" cy=\"24\" r=\"2.6\"/><circle cx=\"120\" cy=\"43\" r=\"2.6\"/><circle cx=\"129.6\" cy=\"24\" r=\"2.6\"/><circle cx=\"129.6\" cy=\"43\" r=\"2.6\"/></g>\n<g fill=\"#191d1c\"><ellipse cx=\"124.8\" cy=\"33.5\" rx=\"3.6\" ry=\"1.8\"/><ellipse cx=\"124.8\" cy=\"48.5\" rx=\"3.6\" ry=\"1.8\"/></g>\n<g stroke=\"#b7bcb6\" stroke-width=\"1.4\"><path d=\"M122.8 52V58M126.8 52V58\"/></g>\n<circle cx=\"124.8\" cy=\"64\" r=\"6.5\" fill=\"#e4b5a8\"/><circle cx=\"124.8\" cy=\"64\" r=\"5.4\" fill=\"#e64435\" stroke=\"#ed8070\" stroke-width=\".8\"/>\n<text x=\"124.8\" y=\"77\" text-anchor=\"middle\" font-size=\"6.3\">M</text><rect x=\"99.8\" y=\"26\" width=\"13\" height=\"4.8\" fill=\"#afb6af\"/><rect x=\"102.5\" y=\"26.6\" width=\"7.6\" height=\"3.6\" fill=\"#555d56\" stroke=\"#e1e4d8\" stroke-width=\".4\"/><rect x=\"136.8\" y=\"26\" width=\"13\" height=\"4.8\" fill=\"#afb6af\"/><rect x=\"139.5\" y=\"26.6\" width=\"7.6\" height=\"3.6\" fill=\"#555d56\" stroke=\"#e1e4d8\" stroke-width=\".4\"/><rect x=\"99.8\" y=\"46\" width=\"13\" height=\"4.8\" fill=\"#afb6af\"/><rect x=\"102.5\" y=\"46.6\" width=\"7.6\" height=\"3.6\" fill=\"#555d56\" stroke=\"#e1e4d8\" stroke-width=\".4\"/><rect x=\"136.8\" y=\"46\" width=\"13\" height=\"4.8\" fill=\"#afb6af\"/><rect x=\"139.5\" y=\"46.6\" width=\"7.6\" height=\"3.6\" fill=\"#555d56\" stroke=\"#e1e4d8\" stroke-width=\".4\"/><g fill=\"#a9aeab\" stroke=\"#d3d6d0\" stroke-width=\".6\"><circle cx=\"207.2\" cy=\"24\" r=\"2.6\"/><circle cx=\"207.2\" cy=\"43\" r=\"2.6\"/><circle cx=\"216.8\" cy=\"24\" r=\"2.6\"/><circle cx=\"216.8\" cy=\"43\" r=\"2.6\"/></g>\n<g fill=\"#191d1c\"><ellipse cx=\"212\" cy=\"33.5\" rx=\"3.6\" ry=\"1.8\"/><ellipse cx=\"212\" cy=\"48.5\" rx=\"3.6\" ry=\"1.8\"/></g>\n<g stroke=\"#b7bcb6\" stroke-width=\"1.4\"><path d=\"M210 52V58M214 52V58\"/></g>\n<circle cx=\"212\" cy=\"64\" r=\"6.5\" fill=\"#e4b5a8\"/><circle cx=\"212\" cy=\"64\" r=\"5.4\" fill=\"#e64435\" stroke=\"#ed8070\" stroke-width=\".8\"/>\n<text x=\"212\" y=\"77\" text-anchor=\"middle\" font-size=\"6.3\">R</text><rect x=\"187\" y=\"26\" width=\"13\" height=\"4.8\" fill=\"#afb6af\"/><rect x=\"189.7\" y=\"26.6\" width=\"7.6\" height=\"3.6\" fill=\"#555d56\" stroke=\"#e1e4d8\" stroke-width=\".4\"/><rect x=\"224\" y=\"26\" width=\"13\" height=\"4.8\" fill=\"#afb6af\"/><rect x=\"226.7\" y=\"26.6\" width=\"7.6\" height=\"3.6\" fill=\"#555d56\" stroke=\"#e1e4d8\" stroke-width=\".4\"/><rect x=\"187\" y=\"46\" width=\"13\" height=\"4.8\" fill=\"#afb6af\"/><rect x=\"189.7\" y=\"46.6\" width=\"7.6\" height=\"3.6\" fill=\"#555d56\" stroke=\"#e1e4d8\" stroke-width=\".4\"/><rect x=\"224\" y=\"46\" width=\"13\" height=\"4.8\" fill=\"#afb6af\"/><rect x=\"226.7\" y=\"46.6\" width=\"7.6\" height=\"3.6\" fill=\"#555d56\" stroke=\"#e1e4d8\" stroke-width=\".4\"/><rect x=\"91\" y=\"45.6\" width=\"12\" height=\"5.2\" fill=\"#adb5a8\"/><rect x=\"94\" y=\"46.5\" width=\"6\" height=\"3.4\" fill=\"#94b449\"/><text x=\"84\" y=\"50\" font-size=\"4.5\" text-anchor=\"end\">PWR</text>\n<rect x=\"60\" y=\"71\" width=\"26\" height=\"25\" rx=\"1.2\" fill=\"#2169a4\" stroke=\"#669bc2\" stroke-width=\".7\"/><circle cx=\"73\" cy=\"82.5\" r=\"6.1\" fill=\"#bdc0b7\"/><path d=\"M68.6 82.5H77.4M73 78.1V86.9\" fill=\"none\" stroke=\"#4c5350\" stroke-width=\"1.8\"/><rect x=\"170\" y=\"71\" width=\"2\" height=\"8\" fill=\"#bac0b9\"/><rect x=\"170\" y=\"86\" width=\"2\" height=\"8\" fill=\"#bac0b9\"/><rect x=\"174.4\" y=\"71\" width=\"2\" height=\"8\" fill=\"#bac0b9\"/><rect x=\"174.4\" y=\"86\" width=\"2\" height=\"8\" fill=\"#bac0b9\"/><rect x=\"178.8\" y=\"71\" width=\"2\" height=\"8\" fill=\"#bac0b9\"/><rect x=\"178.8\" y=\"86\" width=\"2\" height=\"8\" fill=\"#bac0b9\"/><rect x=\"183.2\" y=\"71\" width=\"2\" height=\"8\" fill=\"#bac0b9\"/><rect x=\"183.2\" y=\"86\" width=\"2\" height=\"8\" fill=\"#bac0b9\"/><rect x=\"187.6\" y=\"71\" width=\"2\" height=\"8\" fill=\"#bac0b9\"/><rect x=\"187.6\" y=\"86\" width=\"2\" height=\"8\" fill=\"#bac0b9\"/><rect x=\"192\" y=\"71\" width=\"2\" height=\"8\" fill=\"#bac0b9\"/><rect x=\"192\" y=\"86\" width=\"2\" height=\"8\" fill=\"#bac0b9\"/><rect x=\"196.4\" y=\"71\" width=\"2\" height=\"8\" fill=\"#bac0b9\"/><rect x=\"196.4\" y=\"86\" width=\"2\" height=\"8\" fill=\"#bac0b9\"/><rect x=\"166.5\" y=\"77\" width=\"36\" height=\"12\" rx=\".7\" fill=\"#242827\" stroke=\"#151817\" stroke-width=\".7\"/><circle cx=\"170.3\" cy=\"80.5\" r=\"1\" fill=\"#646c65\"/>\n<rect x=\"103.6\" y=\"95\" width=\"48\" height=\"7.5\" fill=\"#151b18\" stroke=\"#555e53\" stroke-width=\".6\"/><text x=\"108.4\" y=\"93\" text-anchor=\"middle\" font-size=\"5.2\">VCC</text><rect x=\"107.30000000000001\" y=\"98.8\" width=\"2.2\" height=\"21.4\" fill=\"#b6bcb5\"/><rect x=\"107.80000000000001\" y=\"98.8\" width=\".7\" height=\"21.4\" fill=\"#e0e1d7\"/><text x=\"118\" y=\"93\" text-anchor=\"middle\" font-size=\"5.2\">L</text><rect x=\"116.9\" y=\"98.8\" width=\"2.2\" height=\"21.4\" fill=\"#b6bcb5\"/><rect x=\"117.4\" y=\"98.8\" width=\".7\" height=\"21.4\" fill=\"#e0e1d7\"/><text x=\"127.60000000000001\" y=\"93\" text-anchor=\"middle\" font-size=\"5.2\">M</text><rect x=\"126.50000000000001\" y=\"98.8\" width=\"2.2\" height=\"21.4\" fill=\"#b6bcb5\"/><rect x=\"127.00000000000001\" y=\"98.8\" width=\".7\" height=\"21.4\" fill=\"#e0e1d7\"/><text x=\"137.2\" y=\"93\" text-anchor=\"middle\" font-size=\"5.2\">R</text><rect x=\"136.1\" y=\"98.8\" width=\"2.2\" height=\"21.4\" fill=\"#b6bcb5\"/><rect x=\"136.6\" y=\"98.8\" width=\".7\" height=\"21.4\" fill=\"#e0e1d7\"/><text x=\"146.8\" y=\"93\" text-anchor=\"middle\" font-size=\"5.2\">GND</text><rect x=\"145.70000000000002\" y=\"98.8\" width=\"2.2\" height=\"21.4\" fill=\"#b6bcb5\"/><rect x=\"146.20000000000002\" y=\"98.8\" width=\".7\" height=\"21.4\" fill=\"#e0e1d7\"/></g></g></svg>\n",
+    "width": 249.45,
+    "height": 122.83,
+    "pins": [
+      {
+        "name": "VCC",
+        "x": 108.4,
+        "y": 119,
+        "number": 1,
+        "signals": [
+          {
+            "type": "power",
+            "signal": "VCC"
+          }
+        ]
+      },
+      {
+        "name": "L",
+        "x": 118,
+        "y": 119,
+        "number": 2,
+        "signals": []
+      },
+      {
+        "name": "M",
+        "x": 127.60000000000001,
+        "y": 119,
+        "number": 3,
+        "signals": []
+      },
+      {
+        "name": "R",
+        "x": 137.2,
+        "y": 119,
+        "number": 4,
+        "signals": []
+      },
+      {
+        "name": "GND",
+        "x": 146.8,
+        "y": 119,
+        "number": 5,
+        "signals": [
+          {
+            "type": "power",
+            "signal": "GND"
+          }
+        ]
+      }
+    ],
+    "properties": [],
+    "defaultValues": {
+      "leftPhotocurrentUa": 200,
+      "middlePhotocurrentUa": 200,
+      "rightPhotocurrentUa": 200,
+      "thresholdPosition": 0.5
+    },
+    "tags": [
+      "line",
+      "tracker",
+      "infrared",
+      "tcrt5000",
+      "sensor"
+    ],
+    "pinCount": 5
+  },
+  {
+    "id": "max17048",
+    "tagName": "velxio-max17048",
+    "name": "MAX17048 Lithium Fuel Gauge",
+    "category": "sensors",
+    "pinCount": 8,
+    "tags": [
+      "sensor",
+      "i2c",
+      "battery",
+      "lithium",
+      "max17048",
+      "0x36"
+    ],
+    "thumbnail": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"64\" height=\"64\" viewBox=\"0 0 64 64\"><g transform=\"translate(2 8) scale(0.625)\">\n  <rect x=\"0.7\" y=\"0.7\" width=\"94.6\" height=\"75.4\" rx=\"8\" fill=\"#252729\" stroke=\"#bcc0c0\" stroke-width=\"0.8\"/>\n  <g fill=\"#d8b366\" stroke=\"#f2e2af\" stroke-width=\"0.5\">\n    <circle cx=\"9.6\" cy=\"9.6\" r=\"5.4\"/>\n    <circle cx=\"86.4\" cy=\"9.6\" r=\"5.4\"/>\n    <circle cx=\"9.6\" cy=\"67.2\" r=\"7.1\"/>\n    <circle cx=\"86.4\" cy=\"67.2\" r=\"7.1\"/>\n  </g>\n  <g fill=\"#111315\">\n    <circle cx=\"9.6\" cy=\"9.6\" r=\"4.7\"/>\n    <circle cx=\"86.4\" cy=\"9.6\" r=\"4.7\"/>\n    <circle cx=\"9.6\" cy=\"67.2\" r=\"5.1\"/>\n    <circle cx=\"86.4\" cy=\"67.2\" r=\"5.1\"/>\n  </g>\n  <g fill=\"none\" stroke=\"#efefeb\" stroke-width=\"0.8\">\n    <circle cx=\"9.6\" cy=\"67.2\" r=\"8\"/>\n    <circle cx=\"86.4\" cy=\"67.2\" r=\"8\"/>\n  </g>\n  <g fill=\"#c5c8c7\" stroke=\"#868a89\" stroke-width=\"0.4\">\n    <rect x=\"25.6\" y=\"27.8\" width=\"2.4\" height=\"8.1\" rx=\"0.4\"/>\n    <rect x=\"33.2\" y=\"27.8\" width=\"2.4\" height=\"8.1\" rx=\"0.4\"/>\n    <rect x=\"58.2\" y=\"27.8\" width=\"2.4\" height=\"8.1\" rx=\"0.4\"/>\n    <rect x=\"65.8\" y=\"27.8\" width=\"2.4\" height=\"8.1\" rx=\"0.4\"/>\n  </g>\n  <g fill=\"#65696b\" stroke=\"#a9abaa\" stroke-width=\"0.6\">\n    <rect x=\"15.2\" y=\"1\" width=\"31.3\" height=\"28.2\" rx=\"0.5\"/>\n    <rect x=\"48.4\" y=\"1\" width=\"31.3\" height=\"28.2\" rx=\"0.5\"/>\n  </g>\n  <g fill=\"#aeb1af\">\n    <rect x=\"16.2\" y=\"1\" width=\"2.4\" height=\"3.1\"/>\n    <rect x=\"42.7\" y=\"1\" width=\"2.4\" height=\"3.1\"/>\n    <rect x=\"49.4\" y=\"1\" width=\"2.4\" height=\"3.1\"/>\n    <rect x=\"75.9\" y=\"1\" width=\"2.4\" height=\"3.1\"/>\n    <rect x=\"16.2\" y=\"26\" width=\"2.4\" height=\"4.4\"/>\n    <rect x=\"43.1\" y=\"26\" width=\"2.4\" height=\"4.4\"/>\n    <rect x=\"49.4\" y=\"26\" width=\"2.4\" height=\"4.4\"/>\n    <rect x=\"76.3\" y=\"26\" width=\"2.4\" height=\"4.4\"/>\n  </g>\n  <g fill=\"#111315\">\n    <rect x=\"22.1\" y=\"9.1\" width=\"3.9\" height=\"16.5\"/>\n    <rect x=\"36.6\" y=\"9.1\" width=\"3.9\" height=\"16.5\"/>\n    <rect x=\"55.3\" y=\"9.1\" width=\"3.9\" height=\"16.5\"/>\n    <rect x=\"69.8\" y=\"9.1\" width=\"3.9\" height=\"16.5\"/>\n  </g>\n  <g fill=\"#efefeb\" font-family=\"Arial, sans-serif\" font-size=\"6\" font-weight=\"bold\" text-anchor=\"middle\">\n    <text x=\"22.1\" y=\"29.1\">−</text>\n    <text x=\"40.1\" y=\"29.1\">+</text>\n    <text x=\"55.3\" y=\"29.1\">−</text>\n    <text x=\"73.3\" y=\"29.1\">+</text>\n  </g>\n  <g fill=\"#d8b366\" stroke=\"#f2e2af\" stroke-width=\"0.5\">\n    <circle cx=\"43.2\" cy=\"33.6\" r=\"3.3\"/>\n    <circle cx=\"52.8\" cy=\"33.6\" r=\"3.3\"/>\n  </g>\n  <g fill=\"#111315\">\n    <circle cx=\"43.2\" cy=\"33.6\" r=\"1.9\"/>\n    <circle cx=\"52.8\" cy=\"33.6\" r=\"1.9\"/>\n  </g>\n  <g fill=\"#efefeb\" font-family=\"Arial, sans-serif\" font-size=\"4.5\" font-weight=\"bold\" text-anchor=\"middle\">\n    <text x=\"43.2\" y=\"41\">+</text>\n    <text x=\"52.8\" y=\"41\">−</text>\n  </g>\n  <g fill=\"#aeb3b4\">\n    <rect x=\"0.8\" y=\"31.2\" width=\"3.4\" height=\"3.2\"/>\n    <rect x=\"0.8\" y=\"52.5\" width=\"3.4\" height=\"3.2\"/>\n    <rect x=\"91.8\" y=\"31.2\" width=\"3.4\" height=\"3.2\"/>\n    <rect x=\"91.8\" y=\"52.5\" width=\"3.4\" height=\"3.2\"/>\n    <rect x=\"15.1\" y=\"37\" width=\"5.5\" height=\"1.4\"/>\n    <rect x=\"15.1\" y=\"40.6\" width=\"5.5\" height=\"1.4\"/>\n    <rect x=\"15.1\" y=\"44.2\" width=\"5.5\" height=\"1.4\"/>\n    <rect x=\"15.1\" y=\"47.8\" width=\"5.5\" height=\"1.4\"/>\n    <rect x=\"75.4\" y=\"37\" width=\"5.5\" height=\"1.4\"/>\n    <rect x=\"75.4\" y=\"40.6\" width=\"5.5\" height=\"1.4\"/>\n    <rect x=\"75.4\" y=\"44.2\" width=\"5.5\" height=\"1.4\"/>\n    <rect x=\"75.4\" y=\"47.8\" width=\"5.5\" height=\"1.4\"/>\n  </g>\n  <g fill=\"#cdd0ce\" stroke=\"#909594\" stroke-width=\"0.5\">\n    <path d=\"M1.1 32.7h14.7v3.2h1.7v15.5h-1.7v3.2H1.1z\"/>\n    <path d=\"M94.9 32.7H80.2v3.2h-1.7v15.5h1.7v3.2h14.7z\"/>\n  </g>\n  <g fill=\"#434748\">\n    <rect x=\"13\" y=\"35.2\" width=\"2.9\" height=\"2.1\"/>\n    <rect x=\"80.1\" y=\"35.2\" width=\"2.9\" height=\"2.1\"/>\n  </g>\n  <g fill=\"#c4c8c7\">\n    <rect x=\"28.2\" y=\"39.3\" width=\"8.9\" height=\"3.7\"/>\n    <rect x=\"26.6\" y=\"45.1\" width=\"3.6\" height=\"10.1\"/>\n    <rect x=\"33.7\" y=\"45.1\" width=\"3.6\" height=\"10.1\"/>\n    <rect x=\"41.4\" y=\"42.2\" width=\"13.2\" height=\"1.2\"/>\n    <rect x=\"41.4\" y=\"45\" width=\"13.2\" height=\"1.2\"/>\n    <rect x=\"41.4\" y=\"47.8\" width=\"13.2\" height=\"1.2\"/>\n    <rect x=\"41.4\" y=\"49.7\" width=\"13.2\" height=\"1.2\"/>\n    <rect x=\"61.8\" y=\"42.7\" width=\"10.1\" height=\"3.7\"/>\n    <rect x=\"60.2\" y=\"47.6\" width=\"7.9\" height=\"3.4\"/>\n    <rect x=\"5.4\" y=\"25.3\" width=\"8.6\" height=\"2.8\"/>\n  </g>\n  <rect x=\"30.5\" y=\"39.5\" width=\"4.3\" height=\"3.3\" fill=\"#c7ab70\"/>\n  <rect x=\"28.5\" y=\"46.1\" width=\"6.6\" height=\"8.1\" fill=\"#3e4243\"/>\n  <rect x=\"43.5\" y=\"42\" width=\"9\" height=\"8.8\" rx=\"0.4\" fill=\"#484b4c\" stroke=\"#181b1c\" stroke-width=\"0.5\"/>\n  <circle cx=\"45.1\" cy=\"44\" r=\"0.6\" fill=\"#969b9b\"/>\n  <rect x=\"64.1\" y=\"42.9\" width=\"5.5\" height=\"3.3\" fill=\"#c7ab70\"/>\n  <rect x=\"62.1\" y=\"47.8\" width=\"4.1\" height=\"3\" fill=\"#454849\"/>\n  <rect x=\"8\" y=\"25.5\" width=\"3.4\" height=\"2.4\" fill=\"#759167\"/>\n  <text x=\"55\" y=\"57.8\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"6.4\" font-weight=\"bold\" letter-spacing=\"0.4\" fill=\"#efefeb\">MAX17048</text>\n  <g font-family=\"Arial, sans-serif\" font-size=\"4.5\" font-weight=\"bold\" fill=\"#efefeb\" text-anchor=\"middle\">\n    <text x=\"33.6\" y=\"62.4\">GND</text>\n    <text x=\"52.8\" y=\"62.4\">SDA</text>\n    <text x=\"72\" y=\"62.4\">QStart</text>\n    <text x=\"24\" y=\"75\">VIN</text>\n    <text x=\"43.2\" y=\"75\">SCL</text>\n    <text x=\"62.4\" y=\"75\">INT</text>\n  </g>\n  <g fill=\"#d8b366\" stroke=\"#f2e2af\" stroke-width=\"0.5\">\n    <circle cx=\"24\" cy=\"67.2\" r=\"3.3\"/>\n    <circle cx=\"33.6\" cy=\"67.2\" r=\"3.3\"/>\n    <circle cx=\"43.2\" cy=\"67.2\" r=\"3.3\"/>\n    <circle cx=\"52.8\" cy=\"67.2\" r=\"3.3\"/>\n    <circle cx=\"62.4\" cy=\"67.2\" r=\"3.3\"/>\n    <circle cx=\"72\" cy=\"67.2\" r=\"3.3\"/>\n  </g>\n  <g fill=\"#111315\">\n    <circle cx=\"24\" cy=\"67.2\" r=\"1.9\"/>\n    <circle cx=\"33.6\" cy=\"67.2\" r=\"1.9\"/>\n    <circle cx=\"43.2\" cy=\"67.2\" r=\"1.9\"/>\n    <circle cx=\"52.8\" cy=\"67.2\" r=\"1.9\"/>\n    <circle cx=\"62.4\" cy=\"67.2\" r=\"1.9\"/>\n    <circle cx=\"72\" cy=\"67.2\" r=\"1.9\"/>\n  </g>\n</g></svg>",
+    "properties": [],
+    "defaultValues": {
+      "batteryConnected": false,
+      "cellVoltage": 3.8,
+      "openCircuitVoltage": 3.8,
+      "stateOfCharge": 50,
+      "chargeRate": 0
+    }
+  },
+  {
+    "id": "level-shifter",
+    "tagName": "velxio-level-shifter",
+    "name": "4-channel BSS138 Logic Level Shifter",
+    "category": "logic",
+    "description": "Bidirectional 4-channel logic level converter: per channel a BSS138 with 10 kΩ pull-ups to HV and LV. Power HV from the high-voltage rail and LV from the low-voltage rail; HVn and LVn are one translated signal.",
+    "pinCount": 12,
+    "tags": [
+      "level shifter",
+      "level converter",
+      "logic level",
+      "bss138",
+      "5v",
+      "3.3v",
+      "i2c"
+    ],
+    "thumbnail": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"64\" height=\"64\" viewBox=\"0 0 64 64\"><g transform=\"translate(1.86 5.93) scale(1.1)\"><rect x=\"0.2\" y=\"0.2\" width=\"54.4\" height=\"47\" rx=\"0.4\" fill=\"#0a62c4\" stroke=\"#074a96\" stroke-width=\"0.4\"/><g fill=\"#063f84\" stroke=\"#2f7fd6\" stroke-width=\"0.25\"><circle cx=\"12.1\" cy=\"14.4\" r=\"0.6\"/><circle cx=\"27.9\" cy=\"14.4\" r=\"0.6\"/><circle cx=\"42.3\" cy=\"14.4\" r=\"0.6\"/><circle cx=\"2.5\" cy=\"30\" r=\"0.6\"/><circle cx=\"16.5\" cy=\"30\" r=\"0.6\"/><circle cx=\"30.5\" cy=\"30\" r=\"0.6\"/><circle cx=\"44.5\" cy=\"30\" r=\"0.6\"/></g><g fill=\"#d9dcde\" stroke=\"#8f969c\" stroke-width=\"0.35\"><circle cx=\"3.4\" cy=\"4.5\" r=\"3\"/><circle cx=\"13\" cy=\"4.5\" r=\"3\"/><circle cx=\"22.6\" cy=\"4.5\" r=\"3\"/><circle cx=\"32.2\" cy=\"4.5\" r=\"3\"/><circle cx=\"41.8\" cy=\"4.5\" r=\"3\"/><circle cx=\"51.4\" cy=\"4.5\" r=\"3\"/><circle cx=\"3.4\" cy=\"42.9\" r=\"3\"/><circle cx=\"13\" cy=\"42.9\" r=\"3\"/><circle cx=\"22.6\" cy=\"42.9\" r=\"3\"/><circle cx=\"32.2\" cy=\"42.9\" r=\"3\"/><circle cx=\"41.8\" cy=\"42.9\" r=\"3\"/><circle cx=\"51.4\" cy=\"42.9\" r=\"3\"/></g><g fill=\"#1f2326\"><circle cx=\"3.4\" cy=\"4.5\" r=\"1.9\"/><circle cx=\"13\" cy=\"4.5\" r=\"1.9\"/><circle cx=\"22.6\" cy=\"4.5\" r=\"1.9\"/><circle cx=\"32.2\" cy=\"4.5\" r=\"1.9\"/><circle cx=\"41.8\" cy=\"4.5\" r=\"1.9\"/><circle cx=\"51.4\" cy=\"4.5\" r=\"1.9\"/><circle cx=\"3.4\" cy=\"42.9\" r=\"1.9\"/><circle cx=\"13\" cy=\"42.9\" r=\"1.9\"/><circle cx=\"22.6\" cy=\"42.9\" r=\"1.9\"/><circle cx=\"32.2\" cy=\"42.9\" r=\"1.9\"/><circle cx=\"41.8\" cy=\"42.9\" r=\"1.9\"/><circle cx=\"51.4\" cy=\"42.9\" r=\"1.9\"/></g><g font-family=\"Arial, Helvetica, sans-serif\" font-weight=\"bold\"><g fill=\"#dcdfe1\" stroke=\"#a7adb2\" stroke-width=\"0.25\"><rect x=\"1.45\" y=\"12.7\" width=\"2.9\" height=\"3.6\"/><rect x=\"8.45\" y=\"12.7\" width=\"2.9\" height=\"3.6\"/></g><g fill=\"#b4b6b4\"><rect x=\"3.45\" y=\"13.05\" width=\"1\" height=\"2.9\"/><rect x=\"8.35\" y=\"13.05\" width=\"1\" height=\"2.9\"/></g><rect x=\"4.35\" y=\"13.1\" width=\"4.1\" height=\"2.8\" fill=\"#333436\"/><text x=\"6.4\" y=\"15.4\" transform=\"rotate(180 6.4 14.5)\" font-size=\"2.5\" textLength=\"3.1\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#e6e6e6\" text-anchor=\"middle\">01C</text><g fill=\"#dcdfe1\" stroke=\"#a7adb2\" stroke-width=\"0.25\"><rect x=\"15.45\" y=\"12.7\" width=\"2.9\" height=\"3.6\"/><rect x=\"22.45\" y=\"12.7\" width=\"2.9\" height=\"3.6\"/></g><g fill=\"#b4b6b4\"><rect x=\"17.45\" y=\"13.05\" width=\"1\" height=\"2.9\"/><rect x=\"22.35\" y=\"13.05\" width=\"1\" height=\"2.9\"/></g><rect x=\"18.35\" y=\"13.1\" width=\"4.1\" height=\"2.8\" fill=\"#333436\"/><text x=\"20.4\" y=\"15.4\" transform=\"rotate(180 20.4 14.5)\" font-size=\"2.5\" textLength=\"3.1\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#e6e6e6\" text-anchor=\"middle\">01C</text><g fill=\"#dcdfe1\" stroke=\"#a7adb2\" stroke-width=\"0.25\"><rect x=\"29.45\" y=\"12.7\" width=\"2.9\" height=\"3.6\"/><rect x=\"36.45\" y=\"12.7\" width=\"2.9\" height=\"3.6\"/></g><g fill=\"#b4b6b4\"><rect x=\"31.45\" y=\"13.05\" width=\"1\" height=\"2.9\"/><rect x=\"36.35\" y=\"13.05\" width=\"1\" height=\"2.9\"/></g><rect x=\"32.35\" y=\"13.1\" width=\"4.1\" height=\"2.8\" fill=\"#333436\"/><text x=\"34.4\" y=\"15.4\" transform=\"rotate(180 34.4 14.5)\" font-size=\"2.5\" textLength=\"3.1\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#e6e6e6\" text-anchor=\"middle\">01C</text><g fill=\"#dcdfe1\" stroke=\"#a7adb2\" stroke-width=\"0.25\"><rect x=\"43.45\" y=\"12.7\" width=\"2.9\" height=\"3.6\"/><rect x=\"50.45\" y=\"12.7\" width=\"2.9\" height=\"3.6\"/></g><g fill=\"#b4b6b4\"><rect x=\"45.45\" y=\"13.05\" width=\"1\" height=\"2.9\"/><rect x=\"50.35\" y=\"13.05\" width=\"1\" height=\"2.9\"/></g><rect x=\"46.35\" y=\"13.1\" width=\"4.1\" height=\"2.8\" fill=\"#333436\"/><text x=\"48.4\" y=\"15.4\" transform=\"rotate(180 48.4 14.5)\" font-size=\"2.5\" textLength=\"3.1\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#e6e6e6\" text-anchor=\"middle\">01C</text><g fill=\"#dcdfe1\" stroke=\"#a7adb2\" stroke-width=\"0.25\"><rect x=\"1.45\" y=\"30.4\" width=\"2.9\" height=\"3.6\"/><rect x=\"8.45\" y=\"30.4\" width=\"2.9\" height=\"3.6\"/></g><g fill=\"#b4b6b4\"><rect x=\"3.45\" y=\"30.75\" width=\"1\" height=\"2.9\"/><rect x=\"8.35\" y=\"30.75\" width=\"1\" height=\"2.9\"/></g><rect x=\"4.35\" y=\"30.8\" width=\"4.1\" height=\"2.8\" fill=\"#333436\"/><text x=\"6.4\" y=\"33.1\" transform=\"rotate(180 6.4 32.2)\" font-size=\"2.5\" textLength=\"3.1\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#e6e6e6\" text-anchor=\"middle\">01C</text><g fill=\"#dcdfe1\" stroke=\"#a7adb2\" stroke-width=\"0.25\"><rect x=\"15.45\" y=\"30.4\" width=\"2.9\" height=\"3.6\"/><rect x=\"22.45\" y=\"30.4\" width=\"2.9\" height=\"3.6\"/></g><g fill=\"#b4b6b4\"><rect x=\"17.45\" y=\"30.75\" width=\"1\" height=\"2.9\"/><rect x=\"22.35\" y=\"30.75\" width=\"1\" height=\"2.9\"/></g><rect x=\"18.35\" y=\"30.8\" width=\"4.1\" height=\"2.8\" fill=\"#333436\"/><text x=\"20.4\" y=\"33.1\" transform=\"rotate(180 20.4 32.2)\" font-size=\"2.5\" textLength=\"3.1\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#e6e6e6\" text-anchor=\"middle\">01C</text><g fill=\"#dcdfe1\" stroke=\"#a7adb2\" stroke-width=\"0.25\"><rect x=\"29.45\" y=\"30.4\" width=\"2.9\" height=\"3.6\"/><rect x=\"36.45\" y=\"30.4\" width=\"2.9\" height=\"3.6\"/></g><g fill=\"#b4b6b4\"><rect x=\"31.45\" y=\"30.75\" width=\"1\" height=\"2.9\"/><rect x=\"36.35\" y=\"30.75\" width=\"1\" height=\"2.9\"/></g><rect x=\"32.35\" y=\"30.8\" width=\"4.1\" height=\"2.8\" fill=\"#333436\"/><text x=\"34.4\" y=\"33.1\" transform=\"rotate(180 34.4 32.2)\" font-size=\"2.5\" textLength=\"3.1\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#e6e6e6\" text-anchor=\"middle\">01C</text><g fill=\"#dcdfe1\" stroke=\"#a7adb2\" stroke-width=\"0.25\"><rect x=\"43.45\" y=\"30.4\" width=\"2.9\" height=\"3.6\"/><rect x=\"50.45\" y=\"30.4\" width=\"2.9\" height=\"3.6\"/></g><g fill=\"#b4b6b4\"><rect x=\"45.45\" y=\"30.75\" width=\"1\" height=\"2.9\"/><rect x=\"50.35\" y=\"30.75\" width=\"1\" height=\"2.9\"/></g><rect x=\"46.35\" y=\"30.8\" width=\"4.1\" height=\"2.8\" fill=\"#333436\"/><text x=\"48.4\" y=\"33.1\" font-size=\"2.5\" textLength=\"3.1\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#e6e6e6\" text-anchor=\"middle\">01C</text><g fill=\"#dcdfe1\" stroke=\"#a7adb2\" stroke-width=\"0.25\"><rect x=\"4.7\" y=\"17.8\" width=\"3.4\" height=\"3.3\"/><rect x=\"1.15\" y=\"26\" width=\"3.4\" height=\"3.1\"/><rect x=\"8.25\" y=\"26\" width=\"3.4\" height=\"3.1\"/></g><g fill=\"#a3a8ad\"><rect x=\"5.65\" y=\"19.2\" width=\"1.5\" height=\"1.9\"/><rect x=\"2.1\" y=\"26.2\" width=\"1.5\" height=\"1.8\"/><rect x=\"9.2\" y=\"26.2\" width=\"1.5\" height=\"1.8\"/></g><rect x=\"1.1\" y=\"20.9\" width=\"10.6\" height=\"5.3\" rx=\"0.3\" fill=\"#2f3032\" stroke=\"#1d1e20\" stroke-width=\"0.3\"/><g fill=\"#dcdfe1\" stroke=\"#a7adb2\" stroke-width=\"0.25\"><rect x=\"18.7\" y=\"17.8\" width=\"3.4\" height=\"3.3\"/><rect x=\"15.15\" y=\"26\" width=\"3.4\" height=\"3.1\"/><rect x=\"22.25\" y=\"26\" width=\"3.4\" height=\"3.1\"/></g><g fill=\"#a3a8ad\"><rect x=\"19.65\" y=\"19.2\" width=\"1.5\" height=\"1.9\"/><rect x=\"16.1\" y=\"26.2\" width=\"1.5\" height=\"1.8\"/><rect x=\"23.2\" y=\"26.2\" width=\"1.5\" height=\"1.8\"/></g><rect x=\"15.1\" y=\"20.9\" width=\"10.6\" height=\"5.3\" rx=\"0.3\" fill=\"#2f3032\" stroke=\"#1d1e20\" stroke-width=\"0.3\"/><g fill=\"#dcdfe1\" stroke=\"#a7adb2\" stroke-width=\"0.25\"><rect x=\"32.7\" y=\"17.8\" width=\"3.4\" height=\"3.3\"/><rect x=\"29.15\" y=\"26\" width=\"3.4\" height=\"3.1\"/><rect x=\"36.25\" y=\"26\" width=\"3.4\" height=\"3.1\"/></g><g fill=\"#a3a8ad\"><rect x=\"33.65\" y=\"19.2\" width=\"1.5\" height=\"1.9\"/><rect x=\"30.1\" y=\"26.2\" width=\"1.5\" height=\"1.8\"/><rect x=\"37.2\" y=\"26.2\" width=\"1.5\" height=\"1.8\"/></g><rect x=\"29.1\" y=\"20.9\" width=\"10.6\" height=\"5.3\" rx=\"0.3\" fill=\"#2f3032\" stroke=\"#1d1e20\" stroke-width=\"0.3\"/><g fill=\"#dcdfe1\" stroke=\"#a7adb2\" stroke-width=\"0.25\"><rect x=\"46.7\" y=\"17.8\" width=\"3.4\" height=\"3.3\"/><rect x=\"43.15\" y=\"26\" width=\"3.4\" height=\"3.1\"/><rect x=\"50.25\" y=\"26\" width=\"3.4\" height=\"3.1\"/></g><g fill=\"#a3a8ad\"><rect x=\"47.65\" y=\"19.2\" width=\"1.5\" height=\"1.9\"/><rect x=\"44.1\" y=\"26.2\" width=\"1.5\" height=\"1.8\"/><rect x=\"51.2\" y=\"26.2\" width=\"1.5\" height=\"1.8\"/></g><rect x=\"43.1\" y=\"20.9\" width=\"10.6\" height=\"5.3\" rx=\"0.3\" fill=\"#2f3032\" stroke=\"#1d1e20\" stroke-width=\"0.3\"/><g font-size=\"4.3\" fill=\"#f2f4f6\" text-anchor=\"middle\"><text x=\"3.8\" y=\"11.5\" textLength=\"7.1\" lengthAdjust=\"spacingAndGlyphs\">HV1</text><text x=\"13.5\" y=\"11.5\" textLength=\"7.5\" lengthAdjust=\"spacingAndGlyphs\">HV2</text><text x=\"22.6\" y=\"11.5\" textLength=\"5.4\" lengthAdjust=\"spacingAndGlyphs\">HV</text><text x=\"31.2\" y=\"11.5\" textLength=\"8.7\" lengthAdjust=\"spacingAndGlyphs\">GND</text><text x=\"41.2\" y=\"11.5\" textLength=\"7.6\" lengthAdjust=\"spacingAndGlyphs\">HV3</text><text x=\"50.6\" y=\"11.5\" textLength=\"7.6\" lengthAdjust=\"spacingAndGlyphs\">HV4</text><text x=\"3.4\" y=\"38.2\" textLength=\"6.8\" lengthAdjust=\"spacingAndGlyphs\">LV1</text><text x=\"13.1\" y=\"38.2\" textLength=\"7.1\" lengthAdjust=\"spacingAndGlyphs\">LV2</text><text x=\"22.3\" y=\"38.2\" textLength=\"5\" lengthAdjust=\"spacingAndGlyphs\">LV</text><text x=\"31\" y=\"38.2\" textLength=\"8.8\" lengthAdjust=\"spacingAndGlyphs\">GND</text><text x=\"40.8\" y=\"38.2\" textLength=\"7.2\" lengthAdjust=\"spacingAndGlyphs\">LV3</text><text x=\"50.6\" y=\"38.2\" textLength=\"7.6\" lengthAdjust=\"spacingAndGlyphs\">LV4</text></g></g></g></svg>",
+    "properties": [],
+    "defaultValues": {}
+  },
+  {
+    "id": "hm10",
+    "tagName": "velxio-hm10",
+    "name": "HM-10 BLE module (HMSoft V545)",
+    "category": "communication",
+    "description": "Generic 5V breakout with raw 3.3V UART pins running the HMSoft V545 AT command set. Commands outside V545 raise an error.",
+    "keywords": [
+      "hm10",
+      "hm-10",
+      "ble",
+      "uart"
+    ],
+    "thumbnail": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"64\" height=\"64\" viewBox=\"0 0 64 64\"><g transform=\"translate(20.77 3) scale(.37419355)\">\n<path d=\"M.5 26H59.5V154.5H.5Z\" fill=\"#24282a\" stroke=\"#777d80\" stroke-width=\".6\"/>\n<rect x=\"5.43\" y=\"0.6\" width=\"49.134\" height=\"101.669\" fill=\"#173d86\" stroke=\"#81919b\" stroke-width=\".6\"/>\n<text x=\"30\" y=\"15\" font-family=\"Arial,sans-serif\" font-size=\"5.6\" fill=\"#e4e8e9\" text-anchor=\"middle\">HM-10</text>\n<rect x=\"2.2\" y=\"25.935\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"2.2\" y=\"31.604\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"2.2\" y=\"37.273\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"2.2\" y=\"42.943\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"2.2\" y=\"48.612\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"2.2\" y=\"54.281\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"2.2\" y=\"59.950\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"2.2\" y=\"65.620\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"2.2\" y=\"71.289\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"2.2\" y=\"76.958\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"2.2\" y=\"82.628\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"2.2\" y=\"88.297\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"2.2\" y=\"93.966\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"51.594\" y=\"93.966\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"51.594\" y=\"88.297\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"51.594\" y=\"82.628\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"51.594\" y=\"76.958\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"51.594\" y=\"71.289\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"51.594\" y=\"65.620\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"51.594\" y=\"59.950\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"51.594\" y=\"54.281\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"51.594\" y=\"48.612\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"51.594\" y=\"42.943\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"51.594\" y=\"37.273\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"51.594\" y=\"31.604\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"51.594\" y=\"25.935\" width=\"6.2\" height=\"3\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"11.678\" y=\"100.969\" width=\"3\" height=\"7.2\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"16.478\" y=\"100.969\" width=\"3\" height=\"7.2\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"21.278\" y=\"100.969\" width=\"3\" height=\"7.2\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"26.078\" y=\"100.969\" width=\"3\" height=\"7.2\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"30.878\" y=\"100.969\" width=\"3\" height=\"7.2\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"35.678\" y=\"100.969\" width=\"3\" height=\"7.2\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"40.478\" y=\"100.969\" width=\"3\" height=\"7.2\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"45.278\" y=\"100.969\" width=\"3\" height=\"7.2\" rx=\".25\" fill=\"#c7cbcc\" stroke=\"#9a9fa1\" stroke-width=\".25\"/>\n<rect x=\"13\" y=\"19\" width=\"5.3\" height=\"2.6\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"14\" y=\"19\" width=\"3.3\" height=\"2.6\" fill=\"#496653\"/>\n<rect x=\"20.5\" y=\"19\" width=\"5.3\" height=\"2.6\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"21.5\" y=\"19\" width=\"3.3\" height=\"2.6\" fill=\"#b8a786\"/>\n<rect x=\"27\" y=\"25\" width=\"2.7\" height=\"5.4\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"27\" y=\"26\" width=\"2.7\" height=\"3.4000000000000004\" fill=\"#354146\"/>\n<rect x=\"27\" y=\"32\" width=\"2.7\" height=\"5.4\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"27\" y=\"33\" width=\"2.7\" height=\"3.4000000000000004\" fill=\"#354146\"/>\n<rect x=\"12.4\" y=\"31\" width=\"5.8\" height=\"12.8\" rx=\".7\" fill=\"#d0d0c7\" stroke=\"#a4acae\" stroke-width=\".5\"/>\n<rect x=\"35.2\" y=\"31.5\" width=\"11.3\" height=\"10.7\" rx=\".35\" fill=\"#353a3d\" stroke=\"#879093\" stroke-width=\".5\"/>\n<text x=\"40.8\" y=\"37.9\" fill=\"#c7cccd\" font-size=\"2.4\" font-family=\"Arial,sans-serif\" text-anchor=\"middle\">32K</text>\n<rect x=\"11.5\" y=\"45.5\" width=\"2.7\" height=\"5.2\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"11.5\" y=\"46.5\" width=\"2.7\" height=\"3.2\" fill=\"#333b3e\"/>\n<rect x=\"17.6\" y=\"45.5\" width=\"2.7\" height=\"5.2\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"17.6\" y=\"46.5\" width=\"2.7\" height=\"3.2\" fill=\"#333b3e\"/>\n<rect x=\"23.7\" y=\"45.5\" width=\"2.7\" height=\"5.2\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"23.7\" y=\"46.5\" width=\"2.7\" height=\"3.2\" fill=\"#333b3e\"/>\n<rect x=\"29.8\" y=\"45.5\" width=\"2.7\" height=\"5.2\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"29.8\" y=\"46.5\" width=\"2.7\" height=\"3.2\" fill=\"#333b3e\"/>\n<rect x=\"35.9\" y=\"45.5\" width=\"2.7\" height=\"5.2\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"35.9\" y=\"46.5\" width=\"2.7\" height=\"3.2\" fill=\"#333b3e\"/>\n<rect x=\"42\" y=\"45.5\" width=\"2.7\" height=\"5.2\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"42\" y=\"46.5\" width=\"2.7\" height=\"3.2\" fill=\"#333b3e\"/>\n<path d=\"M20.20 53.2V57 M20.20 78.8V82.6 M16.7 57.30H20.2 M40.6 57.30H44.1\" fill=\"none\" stroke=\"#bfc5c7\" stroke-width=\".85\"/>\n<path d=\"M22.18 53.2V57 M22.18 78.8V82.6 M16.7 59.43H20.2 M40.6 59.43H44.1\" fill=\"none\" stroke=\"#bfc5c7\" stroke-width=\".85\"/>\n<path d=\"M24.16 53.2V57 M24.16 78.8V82.6 M16.7 61.56H20.2 M40.6 61.56H44.1\" fill=\"none\" stroke=\"#bfc5c7\" stroke-width=\".85\"/>\n<path d=\"M26.14 53.2V57 M26.14 78.8V82.6 M16.7 63.69H20.2 M40.6 63.69H44.1\" fill=\"none\" stroke=\"#bfc5c7\" stroke-width=\".85\"/>\n<path d=\"M28.12 53.2V57 M28.12 78.8V82.6 M16.7 65.82H20.2 M40.6 65.82H44.1\" fill=\"none\" stroke=\"#bfc5c7\" stroke-width=\".85\"/>\n<path d=\"M30.10 53.2V57 M30.10 78.8V82.6 M16.7 67.95H20.2 M40.6 67.95H44.1\" fill=\"none\" stroke=\"#bfc5c7\" stroke-width=\".85\"/>\n<path d=\"M32.08 53.2V57 M32.08 78.8V82.6 M16.7 70.08H20.2 M40.6 70.08H44.1\" fill=\"none\" stroke=\"#bfc5c7\" stroke-width=\".85\"/>\n<path d=\"M34.06 53.2V57 M34.06 78.8V82.6 M16.7 72.21H20.2 M40.6 72.21H44.1\" fill=\"none\" stroke=\"#bfc5c7\" stroke-width=\".85\"/>\n<path d=\"M36.04 53.2V57 M36.04 78.8V82.6 M16.7 74.34H20.2 M40.6 74.34H44.1\" fill=\"none\" stroke=\"#bfc5c7\" stroke-width=\".85\"/>\n<path d=\"M38.02 53.2V57 M38.02 78.8V82.6 M16.7 76.47H20.2 M40.6 76.47H44.1\" fill=\"none\" stroke=\"#bfc5c7\" stroke-width=\".85\"/>\n<rect x=\"19.3\" y=\"56.1\" width=\"22.1\" height=\"23.9\" rx=\".6\" fill=\"#383d3f\" stroke=\"#1e2427\" stroke-width=\".7\"/>\n<circle cx=\"21.3\" cy=\"58.2\" r=\".6\" fill=\"#a3aeb0\"/>\n<text x=\"30.3\" y=\"66.4\" font-family=\"Arial,sans-serif\" font-size=\"3.6\" fill=\"#c3c9ca\" text-anchor=\"middle\">CC2541</text>\n<text x=\"30.3\" y=\"72\" font-family=\"Arial,sans-serif\" font-size=\"3.2\" fill=\"#c3c9ca\" text-anchor=\"middle\">F256</text>\n<rect x=\"11.8\" y=\"57\" width=\"2.7\" height=\"5.2\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"11.8\" y=\"58\" width=\"2.7\" height=\"3.2\" fill=\"#b8a786\"/>\n<rect x=\"11.8\" y=\"65\" width=\"2.7\" height=\"5.2\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"11.8\" y=\"66\" width=\"2.7\" height=\"3.2\" fill=\"#333b3e\"/>\n<rect x=\"11.8\" y=\"73\" width=\"2.7\" height=\"5.2\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"11.8\" y=\"74\" width=\"2.7\" height=\"3.2\" fill=\"#333b3e\"/>\n<rect x=\"11.8\" y=\"81\" width=\"2.7\" height=\"5.2\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"11.8\" y=\"82\" width=\"2.7\" height=\"3.2\" fill=\"#333b3e\"/>\n<rect x=\"11.8\" y=\"89\" width=\"2.7\" height=\"5.2\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"11.8\" y=\"90\" width=\"2.7\" height=\"3.2\" fill=\"#333b3e\"/>\n<rect x=\"22\" y=\"91\" width=\"2.7\" height=\"5.2\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"22\" y=\"92\" width=\"2.7\" height=\"3.2\" fill=\"#b8a786\"/>\n<rect x=\"37\" y=\"84\" width=\"5.4\" height=\"2.7\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"38\" y=\"84\" width=\"3.4000000000000004\" height=\"2.7\" fill=\"#b8a786\"/>\n<rect x=\"28.8\" y=\"96.2\" width=\"5.4\" height=\"2.7\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"29.8\" y=\"96.2\" width=\"3.4000000000000004\" height=\"2.7\" fill=\"#333b3e\"/>\n<g fill=\"#bec5c7\"><rect x=\"13\" y=\"112.8\" width=\"1.2\" height=\"10.8\"/><rect x=\"19\" y=\"112.8\" width=\"1.2\" height=\"10.8\"/><rect x=\"23\" y=\"130\" width=\"1\" height=\"8.9\"/><rect x=\"26\" y=\"130\" width=\"1\" height=\"8.9\"/><rect x=\"29\" y=\"130\" width=\"1\" height=\"8.9\"/></g>\n<rect x=\"12\" y=\"116\" width=\"9\" height=\"5.2\" rx=\".3\" fill=\"#393e40\" stroke=\"#1b2021\" stroke-width=\".5\"/>\n<rect x=\"22\" y=\"132.2\" width=\"8.9\" height=\"4.7\" rx=\".3\" fill=\"#393e40\" stroke=\"#1b2021\" stroke-width=\".5\"/>\n<rect x=\"5.5\" y=\"115\" width=\"2.7\" height=\"5.2\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"5.5\" y=\"116\" width=\"2.7\" height=\"3.2\" fill=\"#b8a786\"/>\n<rect x=\"25\" y=\"115\" width=\"2.7\" height=\"5.2\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"25\" y=\"116\" width=\"2.7\" height=\"3.2\" fill=\"#b8a786\"/>\n<rect x=\"32\" y=\"112\" width=\"2.7\" height=\"5.2\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"32\" y=\"113\" width=\"2.7\" height=\"3.2\" fill=\"#333b3e\"/>\n<rect x=\"32\" y=\"120\" width=\"2.7\" height=\"5.2\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"32\" y=\"121\" width=\"2.7\" height=\"3.2\" fill=\"#333b3e\"/>\n<rect x=\"43.5\" y=\"121\" width=\"2.7\" height=\"5.2\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"43.5\" y=\"122\" width=\"2.7\" height=\"3.2\" fill=\"#b8a786\"/>\n<rect x=\"8\" y=\"130\" width=\"2.7\" height=\"5.2\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"8\" y=\"131\" width=\"2.7\" height=\"3.2\" fill=\"#333b3e\"/>\n<rect x=\"15\" y=\"130\" width=\"2.7\" height=\"5.2\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"15\" y=\"131\" width=\"2.7\" height=\"3.2\" fill=\"#333b3e\"/>\n<rect x=\"34\" y=\"130\" width=\"2.7\" height=\"5.2\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"34\" y=\"131\" width=\"2.7\" height=\"3.2\" fill=\"#333b3e\"/>\n<rect x=\"43\" y=\"130\" width=\"2.7\" height=\"5.2\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"43\" y=\"131\" width=\"2.7\" height=\"3.2\" fill=\"#333b3e\"/>\n<rect x=\"52\" y=\"130\" width=\"2.7\" height=\"5.2\" rx=\".25\" fill=\"#bfc5c7\"/>\n<rect x=\"52\" y=\"131\" width=\"2.7\" height=\"3.2\" fill=\"#333b3e\"/>\n<rect x=\"43\" y=\"111.6\" width=\"8\" height=\"4.3\" rx=\".35\" fill=\"#b4b794\" stroke=\"#d4d8cb\" stroke-width=\".55\"/><rect id=\"hm10-status-led\" x=\"45.8\" y=\"112.8\" width=\"2.4\" height=\"1.8\" fill=\"#6c895e\"/>\n<g font-family=\"Arial,sans-serif\" font-size=\"3.4\" text-anchor=\"middle\" fill=\"#e5e8e8\">\n<text x=\"15.6\" y=\"143.6\">VCC</text>\n<text x=\"25.2\" y=\"143.6\">GND</text>\n<text x=\"34.8\" y=\"143.6\">TXD</text>\n<text x=\"44.4\" y=\"143.6\">RXD</text>\n</g>\n<rect x=\"2.6\" y=\"146\" width=\"6.8\" height=\"8.5\" rx=\".6\" fill=\"#343a3d\"/>\n<rect x=\"4.85\" y=\"149\" width=\"2.3\" height=\"6\" fill=\"#c6cacc\" stroke=\"#9ca6a8\" stroke-width=\".25\"/>\n<rect x=\"12.2\" y=\"146\" width=\"6.8\" height=\"8.5\" rx=\".6\" fill=\"#343a3d\"/>\n<rect x=\"14.45\" y=\"149\" width=\"2.3\" height=\"6\" fill=\"#c6cacc\" stroke=\"#9ca6a8\" stroke-width=\".25\"/>\n<rect x=\"21.8\" y=\"146\" width=\"6.8\" height=\"8.5\" rx=\".6\" fill=\"#343a3d\"/>\n<rect x=\"24.05\" y=\"149\" width=\"2.3\" height=\"6\" fill=\"#c6cacc\" stroke=\"#9ca6a8\" stroke-width=\".25\"/>\n<rect x=\"31.4\" y=\"146\" width=\"6.8\" height=\"8.5\" rx=\".6\" fill=\"#343a3d\"/>\n<rect x=\"33.65\" y=\"149\" width=\"2.3\" height=\"6\" fill=\"#c6cacc\" stroke=\"#9ca6a8\" stroke-width=\".25\"/>\n<rect x=\"41.0\" y=\"146\" width=\"6.8\" height=\"8.5\" rx=\".6\" fill=\"#343a3d\"/>\n<rect x=\"43.25\" y=\"149\" width=\"2.3\" height=\"6\" fill=\"#c6cacc\" stroke=\"#9ca6a8\" stroke-width=\".25\"/>\n<rect x=\"50.6\" y=\"146\" width=\"6.8\" height=\"8.5\" rx=\".6\" fill=\"#343a3d\"/>\n<rect x=\"52.85\" y=\"149\" width=\"2.3\" height=\"6\" fill=\"#c6cacc\" stroke=\"#9ca6a8\" stroke-width=\".25\"/>\n</g></svg>",
+    "pins": [
+      {
+        "name": "VCC",
+        "x": 15.6,
+        "y": 155,
+        "signals": []
+      },
+      {
+        "name": "GND",
+        "x": 25.2,
+        "y": 155,
+        "signals": []
+      },
+      {
+        "name": "TXD",
+        "x": 34.8,
+        "y": 155,
+        "signals": []
+      },
+      {
+        "name": "RXD",
+        "x": 44.4,
+        "y": 155,
+        "signals": []
+      },
+      {
+        "number": 1,
+        "x": 2.2,
+        "y": 27.435,
+        "name": "UART_TX",
+        "signals": []
+      },
+      {
+        "number": 2,
+        "x": 2.2,
+        "y": 33.104,
+        "name": "UART_RX",
+        "signals": []
+      },
+      {
+        "number": 3,
+        "x": 2.2,
+        "y": 38.773,
+        "name": "UART_CTS",
+        "signals": []
+      },
+      {
+        "number": 4,
+        "x": 2.2,
+        "y": 44.443,
+        "name": "UART_RTS",
+        "signals": []
+      },
+      {
+        "number": 11,
+        "x": 2.2,
+        "y": 84.128,
+        "name": "RESETB",
+        "signals": []
+      },
+      {
+        "number": 12,
+        "x": 2.2,
+        "y": 89.797,
+        "name": "VCC12",
+        "signals": []
+      },
+      {
+        "number": 13,
+        "x": 2.2,
+        "y": 95.466,
+        "name": "GND13",
+        "signals": []
+      },
+      {
+        "number": 14,
+        "x": 13.178,
+        "y": 108.169,
+        "name": "GND14",
+        "signals": []
+      },
+      {
+        "number": 21,
+        "x": 46.778,
+        "y": 108.169,
+        "name": "GND21",
+        "signals": []
+      },
+      {
+        "number": 22,
+        "x": 57.794,
+        "y": 95.466,
+        "name": "GND22",
+        "signals": []
+      },
+      {
+        "number": 23,
+        "x": 57.794,
+        "y": 89.797,
+        "name": "PIO0",
+        "signals": []
+      },
+      {
+        "number": 24,
+        "x": 57.794,
+        "y": 84.128,
+        "name": "PIO1",
+        "signals": []
+      },
+      {
+        "number": 25,
+        "x": 57.794,
+        "y": 78.458,
+        "name": "PIO2",
+        "signals": []
+      },
+      {
+        "number": 26,
+        "x": 57.794,
+        "y": 72.789,
+        "name": "PIO3",
+        "signals": []
+      },
+      {
+        "number": 27,
+        "x": 57.794,
+        "y": 67.12,
+        "name": "PIO4",
+        "signals": []
+      },
+      {
+        "number": 28,
+        "x": 57.794,
+        "y": 61.45,
+        "name": "PIO5",
+        "signals": []
+      },
+      {
+        "number": 29,
+        "x": 57.794,
+        "y": 55.781,
+        "name": "PIO6",
+        "signals": []
+      },
+      {
+        "number": 30,
+        "x": 57.794,
+        "y": 50.112,
+        "name": "PIO7",
+        "signals": []
+      },
+      {
+        "number": 31,
+        "x": 57.794,
+        "y": 44.443,
+        "name": "PIO8",
+        "signals": []
+      },
+      {
+        "number": 32,
+        "x": 57.794,
+        "y": 38.773,
+        "name": "PIO9",
+        "signals": []
+      },
+      {
+        "number": 33,
+        "x": 57.794,
+        "y": 33.104,
+        "name": "PIO10",
+        "signals": []
+      },
+      {
+        "number": 34,
+        "x": 57.794,
+        "y": 27.435,
+        "name": "PIO11",
+        "signals": []
+      }
+    ],
+    "properties": [
+      {
+        "name": "startupConfiguration",
+        "type": "string",
+        "defaultValue": "{}",
+        "description": "Saved V545 settings as a JSON object. Applied when simulation starts."
+      },
+      {
+        "name": "savedMode",
+        "label": "Saved work mode",
+        "type": "number",
+        "defaultValue": 0
+      },
+      {
+        "name": "savedRole",
+        "label": "Saved role",
+        "type": "number",
+        "defaultValue": 0
+      },
+      {
+        "name": "savedSecurity",
+        "label": "Saved security type",
+        "type": "number",
+        "defaultValue": 0
+      },
+      {
+        "name": "savedPin",
+        "label": "Saved PIN",
+        "type": "string",
+        "defaultValue": "000000"
+      },
+      {
+        "name": "savedUuid",
+        "label": "Saved service UUID",
+        "type": "number",
+        "defaultValue": 65504
+      },
+      {
+        "name": "savedCharacteristic",
+        "label": "Saved characteristic UUID",
+        "type": "number",
+        "defaultValue": 65505
+      },
+      {
+        "name": "savedSecondCharacteristic",
+        "label": "Separate write characteristic",
+        "type": "boolean",
+        "defaultValue": false
+      },
+      {
+        "name": "savedWriteResponse",
+        "label": "Write with response only",
+        "type": "boolean",
+        "defaultValue": false
+      },
+      {
+        "name": "identity",
+        "label": "Module address",
+        "type": "string",
+        "defaultValue": "00112233ABCD"
+      },
+      {
+        "name": "remoteAddress",
+        "label": "Remote address",
+        "type": "string",
+        "defaultValue": "A1B2C3D4E5F6"
+      },
+      {
+        "name": "remotePin",
+        "label": "Remote PIN",
+        "type": "string",
+        "defaultValue": "000000"
+      },
+      {
+        "name": "remoteAuthenticated",
+        "label": "Authenticated remote",
+        "type": "boolean",
+        "defaultValue": true
+      },
+      {
+        "name": "remoteIntervalMs",
+        "label": "Remote connection interval (ms)",
+        "type": "number",
+        "defaultValue": 30
+      },
+      {
+        "name": "remoteBonding",
+        "label": "Remote accepts bonding",
+        "type": "boolean",
+        "defaultValue": true
+      },
+      {
+        "name": "remoteAncs",
+        "label": "Remote is an ANCS provider",
+        "type": "boolean",
+        "defaultValue": false
+      },
+      {
+        "name": "ancsEventId",
+        "label": "ANCS EventID",
+        "type": "number",
+        "defaultValue": 0
+      },
+      {
+        "name": "ancsEventFlags",
+        "label": "ANCS EventFlags",
+        "type": "number",
+        "defaultValue": 0
+      },
+      {
+        "name": "ancsCategoryId",
+        "label": "ANCS CategoryID",
+        "type": "number",
+        "defaultValue": 1
+      },
+      {
+        "name": "ancsCategoryCount",
+        "label": "ANCS CategoryCount",
+        "type": "number",
+        "defaultValue": 1
+      },
+      {
+        "name": "ancsUid",
+        "label": "ANCS NotificationUID",
+        "type": "number",
+        "defaultValue": 0
+      },
+      {
+        "name": "ancsAppIdentifier",
+        "label": "ANCS app identifier",
+        "type": "string",
+        "defaultValue": "com.apple.mobilephone"
+      },
+      {
+        "name": "ancsTitle",
+        "label": "ANCS title",
+        "type": "string",
+        "defaultValue": "Caller"
+      },
+      {
+        "name": "ancsSubtitle",
+        "label": "ANCS subtitle",
+        "type": "string",
+        "defaultValue": ""
+      },
+      {
+        "name": "ancsMessage",
+        "label": "ANCS message",
+        "type": "string",
+        "defaultValue": "Incoming call"
+      },
+      {
+        "name": "ancsDate",
+        "label": "ANCS date",
+        "type": "string",
+        "defaultValue": "20260101T120000"
+      }
+    ],
+    "defaultValues": {
+      "savedMode": 0,
+      "savedRole": 0,
+      "savedSecurity": 0,
+      "savedPin": "000000",
+      "savedUuid": 65504,
+      "savedCharacteristic": 65505,
+      "savedSecondCharacteristic": false,
+      "savedWriteResponse": false,
+      "identity": "00112233ABCD",
+      "remoteAddress": "A1B2C3D4E5F6",
+      "remotePin": "000000",
+      "remoteAuthenticated": true,
+      "remoteIntervalMs": 30,
+      "remoteBonding": true,
+      "remoteAncs": false,
+      "ancsEventId": 0,
+      "ancsEventFlags": 0,
+      "ancsCategoryId": 1,
+      "ancsCategoryCount": 1,
+      "ancsUid": 0,
+      "ancsAppIdentifier": "com.apple.mobilephone",
+      "ancsTitle": "Caller",
+      "ancsSubtitle": "",
+      "ancsMessage": "Incoming call",
+      "ancsDate": "20260101T120000",
+      "startupConfiguration": "{}"
+    },
+    "pinCount": 26
+  }
+]

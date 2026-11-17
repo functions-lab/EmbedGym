@@ -1,0 +1,11 @@
+{"target": "atmega2560_arduino", "part": "max32664", "name": "bio", "pin": 20}
+{"target": "nrf52840_zephyr", "part": "max32664", "name": "bio", "pin": "P0.21"}
+{"at": 900, "parse": "Mode: {m:d}"}
+{"at": 900, "expect": "len(@m) == 0"}
+{"at": 2000, "parse": "Mode: {m:d}"}
+{"at": 2000, "expect": "len(@m) == 5"}
+{"at": 2000, "expect": "@m[-5] == 0"}
+{"at": 2000, "expect": "@m[-4] == 8"}
+{"at": 2000, "expect": "@m[-3] == 0"}
+{"at": 2000, "expect": "@m[-2] == 8"}
+{"at": 2000, "expect": "@m[-1] == 0"}

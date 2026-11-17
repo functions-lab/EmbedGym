@@ -1,0 +1,422 @@
+/*
+ * Copyright (c) Arduino s.r.l. and/or its affiliated companies
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/*
+ * Arduino pin N is GPIO N: P0.n = n, P1.n = 32 + n.
+ * analogWrite: any pin, on pwm0 channel (N % 4).
+ */
+
+/delete-node/ &boot_partition;
+/delete-node/ &slot0_partition;
+/delete-node/ &slot1_partition;
+
+&flash0 {
+	partitions {
+		code_partition: partition@0 {
+			compatible = "zephyr,mapped-partition";
+			label = "image-0";
+			reg = <0x00000000 0x00070000>;
+			read-only;
+		};
+
+		user_sketch: partition@70000 {
+			compatible = "zephyr,mapped-partition";
+			label = "user";
+			reg = <0x00070000 0x00088000>;
+		};
+	};
+};
+
+/ {
+	chosen {
+		zephyr,code-partition = &code_partition;
+	};
+
+	zephyr,user {
+		digital-pin-gpios =
+				    <&gpio0 0 0>,
+				    <&gpio0 1 0>,
+				    <&gpio0 2 0>,
+				    <&gpio0 3 0>,
+				    <&gpio0 4 0>,
+				    <&gpio0 5 0>,
+				    <&gpio0 6 0>,
+				    <&gpio0 7 0>,
+				    <&gpio0 8 0>,
+				    <&gpio0 9 0>,
+				    <&gpio0 10 0>,
+				    <&gpio0 11 0>,
+				    <&gpio0 12 0>,
+				    <&gpio0 13 0>,
+				    <&gpio0 14 0>,
+				    <&gpio0 15 0>,
+				    <&gpio0 16 0>,
+				    <&gpio0 17 0>,
+				    <&gpio0 18 0>,
+				    <&gpio0 19 0>,
+				    <&gpio0 20 0>,
+				    <&gpio0 21 0>,
+				    <&gpio0 22 0>,
+				    <&gpio0 23 0>,
+				    <&gpio0 24 0>,
+				    <&gpio0 25 0>,
+				    <&gpio0 26 0>,
+				    <&gpio0 27 0>,
+				    <&gpio0 28 0>,
+				    <&gpio0 29 0>,
+				    <&gpio0 30 0>,
+				    <&gpio0 31 0>,
+				    <&gpio1 0 0>,
+				    <&gpio1 1 0>,
+				    <&gpio1 2 0>,
+				    <&gpio1 3 0>,
+				    <&gpio1 4 0>,
+				    <&gpio1 5 0>,
+				    <&gpio1 6 0>,
+				    <&gpio1 7 0>,
+				    <&gpio1 8 0>,
+				    <&gpio1 9 0>,
+				    <&gpio1 10 0>,
+				    <&gpio1 11 0>,
+				    <&gpio1 12 0>,
+				    <&gpio1 13 0>,
+				    <&gpio1 14 0>,
+				    <&gpio1 15 0>;
+
+		builtin-led-gpios = <&gpio0 13 0>;
+
+		pwm-pin-gpios =
+				    <&gpio0 0 0>,
+				    <&gpio0 1 0>,
+				    <&gpio0 2 0>,
+				    <&gpio0 3 0>,
+				    <&gpio0 4 0>,
+				    <&gpio0 5 0>,
+				    <&gpio0 6 0>,
+				    <&gpio0 7 0>,
+				    <&gpio0 8 0>,
+				    <&gpio0 9 0>,
+				    <&gpio0 10 0>,
+				    <&gpio0 11 0>,
+				    <&gpio0 12 0>,
+				    <&gpio0 13 0>,
+				    <&gpio0 14 0>,
+				    <&gpio0 15 0>,
+				    <&gpio0 16 0>,
+				    <&gpio0 17 0>,
+				    <&gpio0 18 0>,
+				    <&gpio0 19 0>,
+				    <&gpio0 20 0>,
+				    <&gpio0 21 0>,
+				    <&gpio0 22 0>,
+				    <&gpio0 23 0>,
+				    <&gpio0 24 0>,
+				    <&gpio0 25 0>,
+				    <&gpio0 26 0>,
+				    <&gpio0 27 0>,
+				    <&gpio0 28 0>,
+				    <&gpio0 29 0>,
+				    <&gpio0 30 0>,
+				    <&gpio0 31 0>,
+				    <&gpio1 0 0>,
+				    <&gpio1 1 0>,
+				    <&gpio1 2 0>,
+				    <&gpio1 3 0>,
+				    <&gpio1 4 0>,
+				    <&gpio1 5 0>,
+				    <&gpio1 6 0>,
+				    <&gpio1 7 0>,
+				    <&gpio1 8 0>,
+				    <&gpio1 9 0>,
+				    <&gpio1 10 0>,
+				    <&gpio1 11 0>,
+				    <&gpio1 12 0>,
+				    <&gpio1 13 0>,
+				    <&gpio1 14 0>,
+				    <&gpio1 15 0>;
+
+		pwms =
+			<&pwm0 0 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 1 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 2 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 3 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 0 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 1 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 2 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 3 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 0 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 1 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 2 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 3 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 0 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 1 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 2 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 3 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 0 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 1 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 2 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 3 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 0 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 1 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 2 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 3 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 0 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 1 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 2 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 3 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 0 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 1 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 2 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 3 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 0 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 1 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 2 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 3 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 0 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 1 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 2 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 3 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 0 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 1 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 2 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 3 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 0 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 1 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 2 PWM_HZ(500) PWM_POLARITY_NORMAL>,
+			<&pwm0 3 PWM_HZ(500) PWM_POLARITY_NORMAL>;
+
+		adc-pin-gpios =
+				    <&gpio0 2 0>,
+				    <&gpio0 3 0>,
+				    <&gpio0 4 0>,
+				    <&gpio0 5 0>,
+				    <&gpio0 28 0>,
+				    <&gpio0 29 0>,
+				    <&gpio0 30 0>,
+				    <&gpio0 31 0>;
+
+		io-channels =
+				<&adc 0>,
+				<&adc 1>,
+				<&adc 2>,
+				<&adc 3>,
+				<&adc 4>,
+				<&adc 5>,
+				<&adc 6>,
+				<&adc 7>;
+
+		serials = <&uart0>, <&uart1>;
+		i2cs = <&i2c0>;
+		spis = <&spi2>;
+	};
+};
+
+&adc {
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+	channel@0 {
+		reg = <0>;
+		zephyr,gain = "ADC_GAIN_1_6";
+		zephyr,reference = "ADC_REF_INTERNAL";
+		zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+		zephyr,input-positive = <NRF_SAADC_AIN0>; /* P0.02 */
+		zephyr,resolution = <12>;
+	};
+
+	channel@1 {
+		reg = <1>;
+		zephyr,gain = "ADC_GAIN_1_6";
+		zephyr,reference = "ADC_REF_INTERNAL";
+		zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+		zephyr,input-positive = <NRF_SAADC_AIN1>; /* P0.03 */
+		zephyr,resolution = <12>;
+	};
+
+	channel@2 {
+		reg = <2>;
+		zephyr,gain = "ADC_GAIN_1_6";
+		zephyr,reference = "ADC_REF_INTERNAL";
+		zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+		zephyr,input-positive = <NRF_SAADC_AIN2>; /* P0.04 */
+		zephyr,resolution = <12>;
+	};
+
+	channel@3 {
+		reg = <3>;
+		zephyr,gain = "ADC_GAIN_1_6";
+		zephyr,reference = "ADC_REF_INTERNAL";
+		zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+		zephyr,input-positive = <NRF_SAADC_AIN3>; /* P0.05 */
+		zephyr,resolution = <12>;
+	};
+
+	channel@4 {
+		reg = <4>;
+		zephyr,gain = "ADC_GAIN_1_6";
+		zephyr,reference = "ADC_REF_INTERNAL";
+		zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+		zephyr,input-positive = <NRF_SAADC_AIN4>; /* P0.28 */
+		zephyr,resolution = <12>;
+	};
+
+	channel@5 {
+		reg = <5>;
+		zephyr,gain = "ADC_GAIN_1_6";
+		zephyr,reference = "ADC_REF_INTERNAL";
+		zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+		zephyr,input-positive = <NRF_SAADC_AIN5>; /* P0.29 */
+		zephyr,resolution = <12>;
+	};
+
+	channel@6 {
+		reg = <6>;
+		zephyr,gain = "ADC_GAIN_1_6";
+		zephyr,reference = "ADC_REF_INTERNAL";
+		zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+		zephyr,input-positive = <NRF_SAADC_AIN6>; /* P0.30 */
+		zephyr,resolution = <12>;
+	};
+
+	channel@7 {
+		reg = <7>;
+		zephyr,gain = "ADC_GAIN_1_6";
+		zephyr,reference = "ADC_REF_INTERNAL";
+		zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+		zephyr,input-positive = <NRF_SAADC_AIN7>; /* P0.31 */
+		zephyr,resolution = <12>;
+	};
+};
+
+&pinctrl {
+	empty_default: empty_default {
+		group1 {
+			psels = <>;
+		};
+	};
+
+	pwm0_arduino: pwm0_arduino {
+		group1 {
+			psels =
+				<NRF_PSEL(PWM_OUT0, 0, 0)>,
+				<NRF_PSEL(PWM_OUT1, 0, 1)>,
+				<NRF_PSEL(PWM_OUT2, 0, 2)>,
+				<NRF_PSEL(PWM_OUT3, 0, 3)>,
+				<NRF_PSEL(PWM_OUT0, 0, 4)>,
+				<NRF_PSEL(PWM_OUT1, 0, 5)>,
+				<NRF_PSEL(PWM_OUT2, 0, 6)>,
+				<NRF_PSEL(PWM_OUT3, 0, 7)>,
+				<NRF_PSEL(PWM_OUT0, 0, 8)>,
+				<NRF_PSEL(PWM_OUT1, 0, 9)>,
+				<NRF_PSEL(PWM_OUT2, 0, 10)>,
+				<NRF_PSEL(PWM_OUT3, 0, 11)>,
+				<NRF_PSEL(PWM_OUT0, 0, 12)>,
+				<NRF_PSEL(PWM_OUT1, 0, 13)>,
+				<NRF_PSEL(PWM_OUT2, 0, 14)>,
+				<NRF_PSEL(PWM_OUT3, 0, 15)>,
+				<NRF_PSEL(PWM_OUT0, 0, 16)>,
+				<NRF_PSEL(PWM_OUT1, 0, 17)>,
+				<NRF_PSEL(PWM_OUT2, 0, 18)>,
+				<NRF_PSEL(PWM_OUT3, 0, 19)>,
+				<NRF_PSEL(PWM_OUT0, 0, 20)>,
+				<NRF_PSEL(PWM_OUT1, 0, 21)>,
+				<NRF_PSEL(PWM_OUT2, 0, 22)>,
+				<NRF_PSEL(PWM_OUT3, 0, 23)>,
+				<NRF_PSEL(PWM_OUT0, 0, 24)>,
+				<NRF_PSEL(PWM_OUT1, 0, 25)>,
+				<NRF_PSEL(PWM_OUT2, 0, 26)>,
+				<NRF_PSEL(PWM_OUT3, 0, 27)>,
+				<NRF_PSEL(PWM_OUT0, 0, 28)>,
+				<NRF_PSEL(PWM_OUT1, 0, 29)>,
+				<NRF_PSEL(PWM_OUT2, 0, 30)>,
+				<NRF_PSEL(PWM_OUT3, 0, 31)>,
+				<NRF_PSEL(PWM_OUT0, 1, 0)>,
+				<NRF_PSEL(PWM_OUT1, 1, 1)>,
+				<NRF_PSEL(PWM_OUT2, 1, 2)>,
+				<NRF_PSEL(PWM_OUT3, 1, 3)>,
+				<NRF_PSEL(PWM_OUT0, 1, 4)>,
+				<NRF_PSEL(PWM_OUT1, 1, 5)>,
+				<NRF_PSEL(PWM_OUT2, 1, 6)>,
+				<NRF_PSEL(PWM_OUT3, 1, 7)>,
+				<NRF_PSEL(PWM_OUT0, 1, 8)>,
+				<NRF_PSEL(PWM_OUT1, 1, 9)>,
+				<NRF_PSEL(PWM_OUT2, 1, 10)>,
+				<NRF_PSEL(PWM_OUT3, 1, 11)>,
+				<NRF_PSEL(PWM_OUT0, 1, 12)>,
+				<NRF_PSEL(PWM_OUT1, 1, 13)>,
+				<NRF_PSEL(PWM_OUT2, 1, 14)>,
+				<NRF_PSEL(PWM_OUT3, 1, 15)>;
+		};
+	};
+
+	i2c0_velxio: i2c0_velxio {
+		group1 {
+			psels = <NRF_PSEL(TWIM_SDA, 0, 21)>,
+				<NRF_PSEL(TWIM_SCL, 0, 27)>;
+			bias-pull-up;
+		};
+	};
+
+	spi2_velxio: spi2_velxio {
+		group1 {
+			psels = <NRF_PSEL(SPIM_SCK, 0, 27)>,
+				<NRF_PSEL(SPIM_MOSI, 0, 21)>,
+				<NRF_PSEL(SPIM_MISO, 0, 23)>;
+		};
+	};
+};
+
+&pwm0 {
+	status = "okay";
+	zephyr,deferred-init;
+	pinctrl-0 = <&empty_default>;
+	pinctrl-1 = <&empty_default>;
+	pinctrl-2 = <&pwm0_arduino>;
+	pinctrl-names = "default", "sleep", "arduino";
+};
+
+&i2c0 {
+	compatible = "nordic,nrf-twi";
+	status = "okay";
+	zephyr,deferred-init;
+	pinctrl-0 = <&i2c0_velxio>;
+	pinctrl-1 = <&empty_default>;
+	pinctrl-names = "default", "sleep";
+};
+
+&spi1 {
+	status = "disabled";
+};
+
+&spi3 {
+	status = "disabled";
+};
+
+&spi2 {
+	compatible = "nordic,nrf-spim";
+	status = "okay";
+	zephyr,deferred-init;
+	pinctrl-0 = <&spi2_velxio>;
+	pinctrl-1 = <&empty_default>;
+	pinctrl-names = "default", "sleep";
+};
+
+&timer2 {
+	status = "okay";
+};
+
+&uart1 {
+	status = "okay";
+	zephyr,deferred-init;
+};
+
+&qspi {
+	status = "disabled";
+};
+
+&mx25r64 {
+	status = "disabled";
+};

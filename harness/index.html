@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>velxio testbench</title>
+    <style>
+      html, body { margin: 0; padding: 0; height: 100%; font-family: ui-monospace, Menlo, monospace; }
+      body { display: flex; flex-direction: column; }
+      #status { padding: 8px 12px; font-weight: bold; flex: 0 0 auto; }
+      #status.pass { background: #d4f5d1; color: #16632a; }
+      #status.fail { background: #f9d0d0; color: #8a1a1a; }
+      #main { display: flex; flex: 1 1 auto; min-height: 0; border-top: 1px solid #ccc; }
+      #log { padding: 8px 12px; white-space: pre-wrap; overflow-y: auto; flex: 0 0 320px; border-right: 1px solid #ccc; }
+      #log .pass-line { color: #16632a; }
+      #log .fail-line { color: #8a1a1a; }
+      #stage { position: relative; flex: 1 1 auto; min-width: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="status">initializing…</div>
+    <div id="main">
+      <div id="log"></div>
+      <div id="stage"></div>
+    </div>
+    <script type="module" src="./main.tsx"></script>
+  </body>
+</html>

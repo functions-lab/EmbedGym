@@ -1,0 +1,95 @@
+<svg width="96" height="132" viewBox="0 0 96 132" xmlns="http://www.w3.org/2000/svg">
+  <!-- board -->
+  <rect x="0.75" y="0.75" width="94.5" height="130.5" rx="6"
+        fill="#1e56a8" stroke="#143a75" stroke-width="1.5"/>
+
+  <!-- mounting holes -->
+  <circle cx="13" cy="11" r="6" fill="none" stroke="#e8eef7" stroke-width="1.4"/>
+  <circle cx="13" cy="11" r="3.6" fill="#0e2748"/>
+  <circle cx="83" cy="11" r="6" fill="none" stroke="#e8eef7" stroke-width="1.4"/>
+  <circle cx="83" cy="11" r="3.6" fill="#0e2748"/>
+
+  <!-- u.FL antenna connector -->
+  <rect x="61" y="15.5" width="17" height="11" rx="1" fill="#c9ced6" stroke="#8a919c" stroke-width="0.8"/>
+  <circle cx="69" cy="21" r="4" fill="#e8eaee" stroke="#8a919c" stroke-width="0.8"/>
+  <circle cx="69" cy="21" r="1.4" fill="#b7a36b"/>
+
+  <!-- FIX LED -->
+  <text x="12" y="37" text-anchor="middle" font-family="sans-serif" font-size="6.5"
+        font-weight="bold" fill="#ffffff">FIX</text>
+  <rect x="7.5" y="39.5" width="9" height="14" rx="1" fill="#c9ced6" stroke="#8a919c" stroke-width="0.8"/>
+  <rect x="9.3" y="43" width="5.4" height="7" fill="#d33b2f"/>
+
+  <!-- solder pads above / below antenna -->
+  <g fill="#c9ced6">
+    <rect x="21" y="30.5" width="4" height="3"/>
+    <rect x="28" y="30.5" width="4" height="3"/>
+    <rect x="35" y="30.5" width="4" height="3"/>
+    <rect x="42" y="30.5" width="4" height="3"/>
+    <rect x="49" y="30.5" width="4" height="3"/>
+    <rect x="56" y="30.5" width="4" height="3"/>
+    <rect x="63" y="30.5" width="4" height="3"/>
+    <rect x="21" y="90.5" width="4" height="3"/>
+    <rect x="28" y="90.5" width="4" height="3"/>
+    <rect x="35" y="90.5" width="4" height="3"/>
+    <rect x="42" y="90.5" width="4" height="3"/>
+    <rect x="49" y="90.5" width="4" height="3"/>
+    <rect x="56" y="90.5" width="4" height="3"/>
+    <rect x="63" y="90.5" width="4" height="3"/>
+  </g>
+
+  <!-- ceramic GPS antenna module -->
+  <rect x="19" y="34" width="53" height="56" rx="1.5" fill="#dcc79c" stroke="#b39b6e" stroke-width="1.2"/>
+  <!-- white sticker -->
+  <rect x="29" y="40" width="38" height="43" fill="#f4f4f2" stroke="#d7d4cc" stroke-width="0.6"/>
+  <circle cx="43" cy="56" r="9" fill="#2b2b2b"/>
+  <circle cx="43" cy="56" r="3.8" fill="#c9ced6"/>
+  <circle cx="33.5" cy="68" r="2.4" fill="#2b2b2b"/>
+  <text x="61" y="76" font-family="sans-serif" font-size="6" font-weight="bold"
+        fill="#2b2b2b" text-anchor="start" transform="rotate(-90 61 76)">PA1616S</text>
+
+  <!-- SMD passives, right column -->
+  <g stroke="#8a919c" stroke-width="0.5">
+    <rect x="77" y="32" width="8" height="4" fill="#d9c49a"/>
+    <rect x="87" y="32" width="5" height="4" fill="#c9ced6"/>
+    <rect x="77" y="44" width="8" height="4" fill="#3a3f46"/>
+    <rect x="87" y="44" width="5" height="4" fill="#d9c49a"/>
+    <rect x="77" y="56" width="14" height="7" fill="#3a3f46"/>
+    <rect x="77" y="68" width="8" height="4" fill="#d9c49a"/>
+    <rect x="77" y="78" width="6" height="6" fill="#3a3f46"/>
+    <rect x="85" y="78" width="6" height="4" fill="#d9c49a"/>
+  </g>
+  <!-- SMD passives, left column -->
+  <g stroke="#8a919c" stroke-width="0.5">
+    <rect x="7" y="58" width="6" height="9" fill="#3a3f46"/>
+    <rect x="7" y="72" width="6" height="6" fill="#3a3f46"/>
+  </g>
+  <circle cx="11" cy="88" r="3" fill="#d4a017"/>
+  <circle cx="11" cy="88" r="1.2" fill="#0e2748"/>
+
+  <!-- pin labels (rotated, read bottom-to-top) -->
+  <g font-family="sans-serif" font-size="6" font-weight="bold" fill="#ffffff">
+    <text transform="rotate(-90 9.6 113)" x="9.6" y="113" text-anchor="start" dy="2">3.3V</text>
+    <text transform="rotate(-90 19.2 113)" x="19.2" y="113" text-anchor="start" dy="2">EN</text>
+    <text transform="rotate(-90 28.8 113)" x="28.8" y="113" text-anchor="start" dy="2">VBAT</text>
+    <text transform="rotate(-90 38.4 113)" x="38.4" y="113" text-anchor="start" dy="2">FIX</text>
+    <text transform="rotate(-90 48 113)" x="48" y="113" text-anchor="start" dy="2">TX</text>
+    <text transform="rotate(-90 57.6 113)" x="57.6" y="113" text-anchor="start" dy="2">RX</text>
+    <text transform="rotate(-90 67.2 113)" x="67.2" y="113" text-anchor="start" dy="2">GND</text>
+    <text transform="rotate(-90 76.8 113)" x="76.8" y="113" text-anchor="start" dy="2">VIN</text>
+    <text transform="rotate(-90 86.4 113)" x="86.4" y="113" text-anchor="start" dy="2">PPS</text>
+  </g>
+
+  <!-- through-hole pins -->
+  <g>
+    <circle cx="9.6" cy="121" r="3.6" fill="#d4a017"/><circle cx="9.6" cy="121" r="1.7" fill="#0e2748"/>
+    <circle cx="19.2" cy="121" r="3.6" fill="#d4a017"/><circle cx="19.2" cy="121" r="1.7" fill="#0e2748"/>
+    <circle cx="28.8" cy="121" r="3.6" fill="#d4a017"/><circle cx="28.8" cy="121" r="1.7" fill="#0e2748"/>
+    <circle cx="38.4" cy="121" r="3.6" fill="#d4a017"/><circle cx="38.4" cy="121" r="1.7" fill="#0e2748"/>
+    <circle cx="48" cy="121" r="3.6" fill="#d4a017"/><circle cx="48" cy="121" r="1.7" fill="#0e2748"/>
+    <circle cx="57.6" cy="121" r="3.6" fill="#d4a017"/><circle cx="57.6" cy="121" r="1.7" fill="#0e2748"/>
+    <circle cx="67.2" cy="121" r="3.6" fill="#d4a017"/><circle cx="67.2" cy="121" r="1.7" fill="#0e2748"/>
+    <circle cx="76.8" cy="121" r="3.6" fill="#d4a017"/><circle cx="76.8" cy="121" r="1.7" fill="#0e2748"/>
+    <circle cx="86.4" cy="121" r="3.6" fill="#d4a017"/><circle cx="86.4" cy="121" r="1.7" fill="#0e2748"/>
+  </g>
+</svg>

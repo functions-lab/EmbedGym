@@ -1,0 +1,7 @@
+{"target": "atmega2560_arduino", "part": "ky-008", "name": "laser", "pin": 8}
+{"target": "esp32s3_espidf",     "part": "ky-008", "name": "laser", "pin": 10}
+{"target": "nrf52840_zephyr", "part": "ky-008", "name": "laser", "pin": "P1.12"}
+{"at": 500, "expect": "laser.laserOn == true"}
+{"at": 1500, "expect": "laser.laserOn == false"}
+{"at": 2500, "expect": "laser.laserOn == true"}
+{"at": 3500, "expect": "laser.laserOn == false"}

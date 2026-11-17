@@ -1,0 +1,43 @@
+{"target": "nrf52840_zephyr", "part": "ble", "name": "ble"}
+{"target": "nrf52840_zephyr", "peer": "peer.py", "name": "phone"}
+{"at": 500, "expect": "phone.connected == false"}
+{"at": 500, "do": "phone.connect"}
+{"at": 1500, "expect": "phone.result == 'ok'"}
+{"at": 1500, "expect": "phone.connected == true"}
+{"at": 1500, "expect": "phone.dle_tx == 251"}
+{"at": 1500, "expect": "phone.dle_rx == 251"}
+{"at": 1500, "parse": "DLE tx={dtx:d} rx={drx:d}"}
+{"at": 1500, "expect": "len(@dtx) >= 1 && @dtx[-1] == 251 && @drx[-1] == 251"}
+{"at": 1500, "parse": "SUBSCRIBED {sub:d}"}
+{"at": 1500, "expect": "len(@sub) == 1 && @sub[0] == 1"}
+{"at": 1500, "parse": "MTU tx={mtx:d} rx={mrx:d}"}
+{"at": 1500, "expect": "len(@mtx) == 1 && @mtx[0] == 23 && @mrx[0] == 23"}
+{"at": 1500, "do": "phone.mtu_247"}
+{"at": 2000, "expect": "phone.result == 'ok'"}
+{"at": 2000, "expect": "phone.mtu == 247"}
+{"at": 2000, "parse": "MTU tx={mtx:d} rx={mrx:d}"}
+{"at": 2000, "expect": "len(@mtx) == 2 && @mtx[1] == 247 && @mrx[1] == 247 && @mtx.t[1] > 1500"}
+{"at": 2000, "do": "phone.write"}
+{"at": 2500, "expect": "phone.result == 'ok'"}
+{"at": 2500, "parse": "RX n={n:d} len={size:d} total={total:d} crc={crc:s}"}
+{"at": 2500, "expect": "len(@n) == 1 && @size[0] == 240 && @total[0] == 240 && @crc[0] == 'f4a45448'"}
+{"at": 2500, "do": "phone.stream"}
+{"at": 3500, "expect": "phone.result == 'ok'"}
+{"at": 3500, "expect": "phone.writes == 11"}
+{"at": 3500, "parse": "RX n={n:d} len={size:d} total={total:d} crc={crc:s}"}
+{"at": 3500, "expect": "len(@n) == 11 && @n[10] == 11 && @size[10] == 240 && @total[10] == 2640 && @crc[10] == '82355815'"}
+{"at": 3500, "do": "phone.read"}
+{"at": 4000, "expect": "phone.result == 'ok'"}
+{"at": 4000, "expect": "phone.blob_len == 400"}
+{"at": 4000, "expect": "phone.blob_ok == true"}
+{"at": 4000, "parse": "READ off={off:d}"}
+{"at": 4000, "expect": "len(@off) == 2 && @off[0] == 0 && @off[1] == 246"}
+{"at": 4000, "expect": "phone.notifications == 0"}
+{"at": 4000, "do": "phone.burst_20"}
+{"at": 5500, "expect": "phone.result == 'ok'"}
+{"at": 5500, "expect": "phone.notifications == 20"}
+{"at": 5500, "expect": "phone.burst_ok == true"}
+{"at": 5500, "parse": "BURST sent={sent:d} failed={failed:d}"}
+{"at": 5500, "expect": "len(@sent) == 1 && @sent[0] == 20 && @failed[0] == 0"}
+{"at": 5500, "parse": "DISCONNECTED reason={reason:s}"}
+{"at": 5500, "expect": "len(@reason) == 0"}

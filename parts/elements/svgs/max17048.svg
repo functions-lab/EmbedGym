@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="76.8" viewBox="0 0 96 76.8">
+  <rect x="0.7" y="0.7" width="94.6" height="75.4" rx="8" fill="#252729" stroke="#bcc0c0" stroke-width="0.8"/>
+  <g fill="#d8b366" stroke="#f2e2af" stroke-width="0.5">
+    <circle cx="9.6" cy="9.6" r="5.4"/>
+    <circle cx="86.4" cy="9.6" r="5.4"/>
+    <circle cx="9.6" cy="67.2" r="7.1"/>
+    <circle cx="86.4" cy="67.2" r="7.1"/>
+  </g>
+  <g fill="#111315">
+    <circle cx="9.6" cy="9.6" r="4.7"/>
+    <circle cx="86.4" cy="9.6" r="4.7"/>
+    <circle cx="9.6" cy="67.2" r="5.1"/>
+    <circle cx="86.4" cy="67.2" r="5.1"/>
+  </g>
+  <g fill="none" stroke="#efefeb" stroke-width="0.8">
+    <circle cx="9.6" cy="67.2" r="8"/>
+    <circle cx="86.4" cy="67.2" r="8"/>
+  </g>
+  <g fill="#c5c8c7" stroke="#868a89" stroke-width="0.4">
+    <rect x="25.6" y="27.8" width="2.4" height="8.1" rx="0.4"/>
+    <rect x="33.2" y="27.8" width="2.4" height="8.1" rx="0.4"/>
+    <rect x="58.2" y="27.8" width="2.4" height="8.1" rx="0.4"/>
+    <rect x="65.8" y="27.8" width="2.4" height="8.1" rx="0.4"/>
+  </g>
+  <g fill="#65696b" stroke="#a9abaa" stroke-width="0.6">
+    <rect x="15.2" y="1" width="31.3" height="28.2" rx="0.5"/>
+    <rect x="48.4" y="1" width="31.3" height="28.2" rx="0.5"/>
+  </g>
+  <g fill="#aeb1af">
+    <rect x="16.2" y="1" width="2.4" height="3.1"/>
+    <rect x="42.7" y="1" width="2.4" height="3.1"/>
+    <rect x="49.4" y="1" width="2.4" height="3.1"/>
+    <rect x="75.9" y="1" width="2.4" height="3.1"/>
+    <rect x="16.2" y="26" width="2.4" height="4.4"/>
+    <rect x="43.1" y="26" width="2.4" height="4.4"/>
+    <rect x="49.4" y="26" width="2.4" height="4.4"/>
+    <rect x="76.3" y="26" width="2.4" height="4.4"/>
+  </g>
+  <g fill="#111315">
+    <rect x="22.1" y="9.1" width="3.9" height="16.5"/>
+    <rect x="36.6" y="9.1" width="3.9" height="16.5"/>
+    <rect x="55.3" y="9.1" width="3.9" height="16.5"/>
+    <rect x="69.8" y="9.1" width="3.9" height="16.5"/>
+  </g>
+  <g fill="#efefeb" font-family="Arial, sans-serif" font-size="6" font-weight="bold" text-anchor="middle">
+    <text x="22.1" y="29.1">−</text>
+    <text x="40.1" y="29.1">+</text>
+    <text x="55.3" y="29.1">−</text>
+    <text x="73.3" y="29.1">+</text>
+  </g>
+  <g fill="#d8b366" stroke="#f2e2af" stroke-width="0.5">
+    <circle cx="43.2" cy="33.6" r="3.3"/>
+    <circle cx="52.8" cy="33.6" r="3.3"/>
+  </g>
+  <g fill="#111315">
+    <circle cx="43.2" cy="33.6" r="1.9"/>
+    <circle cx="52.8" cy="33.6" r="1.9"/>
+  </g>
+  <g fill="#efefeb" font-family="Arial, sans-serif" font-size="4.5" font-weight="bold" text-anchor="middle">
+    <text x="43.2" y="41">+</text>
+    <text x="52.8" y="41">−</text>
+  </g>
+  <g fill="#aeb3b4">
+    <rect x="0.8" y="31.2" width="3.4" height="3.2"/>
+    <rect x="0.8" y="52.5" width="3.4" height="3.2"/>
+    <rect x="91.8" y="31.2" width="3.4" height="3.2"/>
+    <rect x="91.8" y="52.5" width="3.4" height="3.2"/>
+    <rect x="15.1" y="37" width="5.5" height="1.4"/>
+    <rect x="15.1" y="40.6" width="5.5" height="1.4"/>
+    <rect x="15.1" y="44.2" width="5.5" height="1.4"/>
+    <rect x="15.1" y="47.8" width="5.5" height="1.4"/>
+    <rect x="75.4" y="37" width="5.5" height="1.4"/>
+    <rect x="75.4" y="40.6" width="5.5" height="1.4"/>
+    <rect x="75.4" y="44.2" width="5.5" height="1.4"/>
+    <rect x="75.4" y="47.8" width="5.5" height="1.4"/>
+  </g>
+  <g fill="#cdd0ce" stroke="#909594" stroke-width="0.5">
+    <path d="M1.1 32.7h14.7v3.2h1.7v15.5h-1.7v3.2H1.1z"/>
+    <path d="M94.9 32.7H80.2v3.2h-1.7v15.5h1.7v3.2h14.7z"/>
+  </g>
+  <g fill="#434748">
+    <rect x="13" y="35.2" width="2.9" height="2.1"/>
+    <rect x="80.1" y="35.2" width="2.9" height="2.1"/>
+  </g>
+  <g fill="#c4c8c7">
+    <rect x="28.2" y="39.3" width="8.9" height="3.7"/>
+    <rect x="26.6" y="45.1" width="3.6" height="10.1"/>
+    <rect x="33.7" y="45.1" width="3.6" height="10.1"/>
+    <rect x="41.4" y="42.2" width="13.2" height="1.2"/>
+    <rect x="41.4" y="45" width="13.2" height="1.2"/>
+    <rect x="41.4" y="47.8" width="13.2" height="1.2"/>
+    <rect x="41.4" y="49.7" width="13.2" height="1.2"/>
+    <rect x="61.8" y="42.7" width="10.1" height="3.7"/>
+    <rect x="60.2" y="47.6" width="7.9" height="3.4"/>
+    <rect x="5.4" y="25.3" width="8.6" height="2.8"/>
+  </g>
+  <rect x="30.5" y="39.5" width="4.3" height="3.3" fill="#c7ab70"/>
+  <rect x="28.5" y="46.1" width="6.6" height="8.1" fill="#3e4243"/>
+  <rect x="43.5" y="42" width="9" height="8.8" rx="0.4" fill="#484b4c" stroke="#181b1c" stroke-width="0.5"/>
+  <circle cx="45.1" cy="44" r="0.6" fill="#969b9b"/>
+  <rect x="64.1" y="42.9" width="5.5" height="3.3" fill="#c7ab70"/>
+  <rect x="62.1" y="47.8" width="4.1" height="3" fill="#454849"/>
+  <rect x="8" y="25.5" width="3.4" height="2.4" fill="#759167"/>
+  <text x="55" y="57.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="6.4" font-weight="bold" letter-spacing="0.4" fill="#efefeb">MAX17048</text>
+  <g font-family="Arial, sans-serif" font-size="4.5" font-weight="bold" fill="#efefeb" text-anchor="middle">
+    <text x="33.6" y="62.4">GND</text>
+    <text x="52.8" y="62.4">SDA</text>
+    <text x="72" y="62.4">QStart</text>
+    <text x="24" y="75">VIN</text>
+    <text x="43.2" y="75">SCL</text>
+    <text x="62.4" y="75">INT</text>
+  </g>
+  <g fill="#d8b366" stroke="#f2e2af" stroke-width="0.5">
+    <circle cx="24" cy="67.2" r="3.3"/>
+    <circle cx="33.6" cy="67.2" r="3.3"/>
+    <circle cx="43.2" cy="67.2" r="3.3"/>
+    <circle cx="52.8" cy="67.2" r="3.3"/>
+    <circle cx="62.4" cy="67.2" r="3.3"/>
+    <circle cx="72" cy="67.2" r="3.3"/>
+  </g>
+  <g fill="#111315">
+    <circle cx="24" cy="67.2" r="1.9"/>
+    <circle cx="33.6" cy="67.2" r="1.9"/>
+    <circle cx="43.2" cy="67.2" r="1.9"/>
+    <circle cx="52.8" cy="67.2" r="1.9"/>
+    <circle cx="62.4" cy="67.2" r="1.9"/>
+    <circle cx="72" cy="67.2" r="1.9"/>
+  </g>
+</svg>

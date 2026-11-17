@@ -1,0 +1,184 @@
+{"target": "nrf52840_zephyr", "part": "pushbutton", "name": "button", "pin": "P1.11"}
+{"target": "nrf52840_zephyr", "part": "relay-module", "name": "relay", "pin": "P1.15"}
+{"target": "nrf52840_zephyr", "part": "ble", "name": "ble"}
+{"target": "nrf52840_zephyr", "peer": "peer.py", "name": "phone"}
+{"target": "nrf52840_arduino", "part": "pushbutton", "name": "button", "pin": "P1.11"}
+{"target": "nrf52840_arduino", "part": "relay-module", "name": "relay", "pin": "P1.15"}
+{"target": "nrf52840_arduino", "part": "ble", "name": "ble"}
+{"target": "nrf52840_arduino", "peer": "peer.py", "name": "phone"}
+{"at": 500, "expect": "relay.energized == false"}
+{"at": 12000, "expect": "phone.a_result == 'ok'"}
+{"at": 12000, "expect": "phone.a_connected == true"}
+{"at": 12000, "expect": "phone.a_connections == 1"}
+{"at": 12000, "expect": "phone.a_subscribed == true"}
+{"at": 12000, "expect": "phone.a_state_read == 0"}
+{"at": 12000, "expect": "phone.b_result == 'ok'"}
+{"at": 12000, "expect": "phone.b_connected == true"}
+{"at": 12000, "expect": "phone.b_connections == 1"}
+{"at": 12000, "expect": "phone.b_subscribed == true"}
+{"at": 12000, "expect": "phone.b_state_read == 0"}
+{"at": 12000, "expect": "relay.energized == false"}
+{"at": 12000, "capture": "a1 = phone.a_changes"}
+{"at": 12000, "capture": "b1 = phone.b_changes"}
+{"at": 12000, "do": "phone.watch"}
+{"at": 15000, "expect": "phone.watch_result == 'ok'"}
+{"at": 15000, "expect": "phone.adverts == 0"}
+{"at": 15000, "do": "phone.write_on_a"}
+{"at": 17000, "expect": "phone.a_result == 'ok'"}
+{"at": 17000, "expect": "relay.energized == true"}
+{"at": 17000, "capture": "a2 = phone.a_changes"}
+{"at": 17000, "expect": "@a2 - @a1 == 1"}
+{"at": 17000, "expect": "phone.a_last_notified == 1"}
+{"at": 17000, "capture": "b2 = phone.b_changes"}
+{"at": 17000, "expect": "@b2 - @b1 == 1"}
+{"at": 17000, "expect": "phone.b_last_notified == 1"}
+{"at": 17000, "do": "phone.read_b"}
+{"at": 19000, "expect": "phone.b_result == 'ok'"}
+{"at": 19000, "expect": "phone.b_state_read == 1"}
+{"at": 19000, "do": "phone.write_off_b"}
+{"at": 21000, "expect": "phone.b_result == 'ok'"}
+{"at": 21000, "expect": "relay.energized == false"}
+{"at": 21000, "capture": "a3 = phone.a_changes"}
+{"at": 21000, "expect": "@a3 - @a2 == 1"}
+{"at": 21000, "expect": "phone.a_last_notified == 0"}
+{"at": 21000, "capture": "b3 = phone.b_changes"}
+{"at": 21000, "expect": "@b3 - @b2 == 1"}
+{"at": 21000, "expect": "phone.b_last_notified == 0"}
+{"at": 21000, "do": "phone.read_a"}
+{"at": 23000, "expect": "phone.a_result == 'ok'"}
+{"at": 23000, "expect": "phone.a_state_read == 0"}
+{"at": 23000, "do": "button.down"}
+{"at": 23500, "do": "button.up"}
+{"at": 25000, "expect": "relay.energized == true"}
+{"at": 25000, "capture": "a4 = phone.a_changes"}
+{"at": 25000, "expect": "@a4 - @a3 == 1"}
+{"at": 25000, "expect": "phone.a_last_notified == 1"}
+{"at": 25000, "capture": "b4 = phone.b_changes"}
+{"at": 25000, "expect": "@b4 - @b3 == 1"}
+{"at": 25000, "expect": "phone.b_last_notified == 1"}
+{"at": 25000, "do": "phone.write_on_b"}
+{"at": 27000, "expect": "phone.b_result == 'ok'"}
+{"at": 27000, "expect": "relay.energized == true"}
+{"at": 27000, "capture": "a5 = phone.a_changes"}
+{"at": 27000, "expect": "@a5 == @a4"}
+{"at": 27000, "capture": "b5 = phone.b_changes"}
+{"at": 27000, "expect": "@b5 == @b4"}
+{"at": 27000, "do": "phone.unsubscribe_a"}
+{"at": 28500, "expect": "phone.a_result == 'ok'"}
+{"at": 28500, "expect": "phone.a_subscribed == false"}
+{"at": 28500, "do": "phone.write_off_b"}
+{"at": 30500, "expect": "phone.b_result == 'ok'"}
+{"at": 30500, "expect": "relay.energized == false"}
+{"at": 30500, "capture": "b6 = phone.b_changes"}
+{"at": 30500, "expect": "@b6 - @b5 == 1"}
+{"at": 30500, "expect": "phone.b_last_notified == 0"}
+{"at": 30500, "capture": "a6 = phone.a_changes"}
+{"at": 30500, "expect": "@a6 == @a5"}
+{"at": 30500, "do": "button.down"}
+{"at": 31000, "do": "button.up"}
+{"at": 32500, "expect": "relay.energized == true"}
+{"at": 32500, "capture": "b7 = phone.b_changes"}
+{"at": 32500, "expect": "@b7 - @b6 == 1"}
+{"at": 32500, "expect": "phone.b_last_notified == 1"}
+{"at": 32500, "capture": "a7 = phone.a_changes"}
+{"at": 32500, "expect": "@a7 == @a6"}
+{"at": 32500, "expect": "phone.a_strays == 0"}
+{"at": 32500, "do": "phone.read_a"}
+{"at": 34000, "expect": "phone.a_result == 'ok'"}
+{"at": 34000, "expect": "phone.a_state_read == 1"}
+{"at": 34000, "do": "phone.subscribe_a"}
+{"at": 35500, "expect": "phone.a_result == 'ok'"}
+{"at": 35500, "expect": "phone.a_subscribed == true"}
+{"at": 35500, "capture": "a8 = phone.a_changes"}
+{"at": 35500, "do": "phone.write_off_a"}
+{"at": 37500, "expect": "phone.a_result == 'ok'"}
+{"at": 37500, "expect": "relay.energized == false"}
+{"at": 37500, "capture": "a9 = phone.a_changes"}
+{"at": 37500, "expect": "@a9 - @a8 == 1"}
+{"at": 37500, "expect": "phone.a_last_notified == 0"}
+{"at": 37500, "capture": "b8 = phone.b_changes"}
+{"at": 37500, "expect": "@b8 - @b7 == 1"}
+{"at": 37500, "expect": "phone.b_last_notified == 0"}
+{"at": 37500, "do": "phone.disconnect_a"}
+{"at": 38500, "expect": "phone.a_result == 'ok'"}
+{"at": 38500, "expect": "phone.a_connected == false"}
+{"at": 38500, "expect": "phone.a_disconnects == 1"}
+{"at": 38500, "expect": "phone.b_connected == true"}
+{"at": 38500, "do": "phone.watch"}
+{"at": 39000, "do": "phone.write_on_b"}
+{"at": 41500, "expect": "phone.watch_result == 'ok'"}
+{"at": 41500, "expect": "phone.adverts > 0"}
+{"at": 41500, "expect": "phone.b_result == 'ok'"}
+{"at": 41500, "expect": "relay.energized == true"}
+{"at": 41500, "capture": "b9 = phone.b_changes"}
+{"at": 41500, "expect": "@b9 - @b8 == 1"}
+{"at": 41500, "expect": "phone.b_last_notified == 1"}
+{"at": 41500, "do": "phone.connect_a"}
+{"at": 45500, "expect": "phone.a_result == 'ok'"}
+{"at": 45500, "expect": "phone.a_connected == true"}
+{"at": 45500, "expect": "phone.a_connections == 2"}
+{"at": 45500, "expect": "phone.b_connected == true"}
+{"at": 45500, "expect": "phone.b_connections == 1"}
+{"at": 45500, "expect": "phone.a_subscribed == true"}
+{"at": 45500, "expect": "phone.a_state_read == 1"}
+{"at": 45500, "expect": "relay.energized == true"}
+{"at": 45500, "capture": "a10 = phone.a_changes"}
+{"at": 45500, "capture": "b10 = phone.b_changes"}
+{"at": 45500, "do": "button.down"}
+{"at": 46000, "do": "button.up"}
+{"at": 47500, "expect": "relay.energized == false"}
+{"at": 47500, "capture": "a11 = phone.a_changes"}
+{"at": 47500, "expect": "@a11 - @a10 == 1"}
+{"at": 47500, "expect": "phone.a_last_notified == 0"}
+{"at": 47500, "capture": "b11 = phone.b_changes"}
+{"at": 47500, "expect": "@b11 - @b10 == 1"}
+{"at": 47500, "expect": "phone.b_last_notified == 0"}
+{"at": 47500, "do": "phone.write_on_a"}
+{"at": 49500, "expect": "phone.a_result == 'ok'"}
+{"at": 49500, "expect": "relay.energized == true"}
+{"at": 49500, "capture": "a12 = phone.a_changes"}
+{"at": 49500, "expect": "@a12 - @a11 == 1"}
+{"at": 49500, "expect": "phone.a_last_notified == 1"}
+{"at": 49500, "capture": "b12 = phone.b_changes"}
+{"at": 49500, "expect": "@b12 - @b11 == 1"}
+{"at": 49500, "expect": "phone.b_last_notified == 1"}
+{"at": 49500, "do": "phone.disconnect_a"}
+{"at": 49500, "do": "phone.disconnect_b"}
+{"at": 50500, "expect": "phone.a_result == 'ok'"}
+{"at": 50500, "expect": "phone.a_connected == false"}
+{"at": 50500, "expect": "phone.a_disconnects == 2"}
+{"at": 50500, "expect": "phone.b_result == 'ok'"}
+{"at": 50500, "expect": "phone.b_connected == false"}
+{"at": 50500, "expect": "phone.b_disconnects == 1"}
+{"at": 50500, "do": "button.down"}
+{"at": 51000, "do": "button.up"}
+{"at": 52500, "expect": "relay.energized == false"}
+{"at": 52500, "do": "phone.connect_a"}
+{"at": 52500, "do": "phone.connect_b"}
+{"at": 58000, "expect": "phone.a_result == 'ok'"}
+{"at": 58000, "expect": "phone.a_connected == true"}
+{"at": 58000, "expect": "phone.a_connections == 3"}
+{"at": 58000, "expect": "phone.a_subscribed == true"}
+{"at": 58000, "expect": "phone.a_state_read == 0"}
+{"at": 58000, "expect": "phone.b_result == 'ok'"}
+{"at": 58000, "expect": "phone.b_connected == true"}
+{"at": 58000, "expect": "phone.b_connections == 2"}
+{"at": 58000, "expect": "phone.b_subscribed == true"}
+{"at": 58000, "expect": "phone.b_state_read == 0"}
+{"at": 58000, "capture": "a13 = phone.a_changes"}
+{"at": 58000, "capture": "b13 = phone.b_changes"}
+{"at": 58000, "do": "phone.write_on_b"}
+{"at": 60000, "expect": "phone.b_result == 'ok'"}
+{"at": 60000, "expect": "relay.energized == true"}
+{"at": 60000, "capture": "a14 = phone.a_changes"}
+{"at": 60000, "expect": "@a14 - @a13 == 1"}
+{"at": 60000, "expect": "phone.a_last_notified == 1"}
+{"at": 60000, "capture": "b14 = phone.b_changes"}
+{"at": 60000, "expect": "@b14 - @b13 == 1"}
+{"at": 60000, "expect": "phone.b_last_notified == 1"}
+{"at": 60000, "expect": "phone.a_disconnects == 2"}
+{"at": 60000, "expect": "phone.a_strays == 0"}
+{"at": 60000, "expect": "phone.a_bad_values == 0"}
+{"at": 60000, "expect": "phone.b_disconnects == 1"}
+{"at": 60000, "expect": "phone.b_strays == 0"}
+{"at": 60000, "expect": "phone.b_bad_values == 0"}

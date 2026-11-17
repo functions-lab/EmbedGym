@@ -1,0 +1,36 @@
+# CODEX_HOME/config.toml for experiment sessions. The container is the sandbox.
+# Launchers override web_search ("live") for stage 1a and its follow-up.
+approval_policy = "never"
+sandbox_mode = "danger-full-access"
+web_search = "disabled"
+# The exported copy has no .git; export.sh writes this marker at its root.
+project_root_markers = [".codex-root"]
+check_for_update_on_startup = false
+# The longest an empty write_stdin poll waits (default 5 min): embedgym-regress runs for up to two hours.
+background_terminal_max_timeout = 10800000
+
+[skills]
+include_instructions = false
+bundled.enabled = false
+
+[features]
+apps = false
+plugins = false
+remote_plugin = false
+plugin_sharing = false
+image_generation = false
+computer_use = false
+browser_use = false
+browser_use_external = false
+in_app_browser = false
+skill_search = false
+skill_mcp_dependency_install = false
+tool_suggest = false
+goals = false
+hooks = false
+memories = false
+multi_agent = true
+
+# A port step runs its five target agents in parallel under the orchestrator and the step agent.
+[agents]
+max_concurrent_threads_per_session = 10

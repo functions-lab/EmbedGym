@@ -1,0 +1,46 @@
+#include <zephyr/dt-bindings/pwm/pwm.h>
+
+/ {
+    aliases {
+        my-led = &led_p1_15;
+        pwm-led0 = &pwm_led_p1_15;
+    };
+
+    leds {
+        compatible = "gpio-leds";
+
+        led_p1_15: led_p1_15 {
+            gpios = <&gpio1 15 GPIO_ACTIVE_HIGH>;
+        };
+    };
+
+    pwmleds {
+        compatible = "pwm-leds";
+
+        pwm_led_p1_15: pwm_led_p1_15 {
+            pwms = <&pwm0 0 PWM_MSEC(1) PWM_POLARITY_NORMAL>;
+        };
+    };
+};
+
+&pinctrl {
+    pwm0_default: pwm0_default {
+        group1 {
+            psels = <NRF_PSEL(PWM_OUT0, 1, 15)>;
+        };
+    };
+
+    pwm0_sleep: pwm0_sleep {
+        group1 {
+            psels = <NRF_PSEL(PWM_OUT0, 1, 15)>;
+            low-power-enable;
+        };
+    };
+};
+
+&pwm0 {
+    status = "okay";
+    pinctrl-0 = <&pwm0_default>;
+    pinctrl-1 = <&pwm0_sleep>;
+    pinctrl-names = "default", "sleep";
+};

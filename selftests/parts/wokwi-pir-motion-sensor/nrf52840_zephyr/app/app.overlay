@@ -1,0 +1,13 @@
+/ {
+    aliases {
+        sr501 = &sr501;
+    };
+
+    sensors {
+        compatible = "gpio-keys";
+
+        sr501: sr501 {
+            gpios = <&gpio0 28 GPIO_ACTIVE_HIGH>;
+        };
+    };
+};

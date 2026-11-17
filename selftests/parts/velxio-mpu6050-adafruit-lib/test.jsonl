@@ -1,0 +1,11 @@
+{"target": "atmega2560_arduino", "part": "mpu6050", "name": "imu", "pin": 20}
+{"target": "esp32s3_espidf", "part": "mpu6050", "name": "imu", "pin": 38}
+{"target": "esp32s3_arduino", "part": "mpu6050", "name": "imu", "pin": 38}
+{"at": 500, "set": "imu.accelZ = 1"}
+{"at": 1500, "parse": "BOOT", "as": "boot"}
+{"at": 1500, "expect": "len(@boot) == 1"}
+{"at": 1500, "parse": "READY", "as": "ready"}
+{"at": 1500, "expect": "len(@ready) == 1"}
+{"at": 2500, "parse": "aZ: {az:d}"}
+{"at": 2500, "expect": "len(@az) > 0"}
+{"at": 2500, "expect": "@az[-1] >= 975 && @az[-1] <= 985"}

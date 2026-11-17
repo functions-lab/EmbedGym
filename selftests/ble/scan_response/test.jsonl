@@ -1,0 +1,34 @@
+{"target": "nrf52840_zephyr", "part": "ble", "name": "ble"}
+{"target": "nrf52840_zephyr", "peer": "peer.py", "name": "phone"}
+{"at": 995, "expect": "phone.passive_reports == 0"}
+{"at": 995, "expect": "phone.responses == 0"}
+{"at": 995, "parse": "SR {sr:d}"}
+{"at": 995, "expect": "len(@sr) == 0"}
+{"at": 2500, "capture": "p1 = phone.passive_reports"}
+{"at": 2500, "expect": "@p1 >= 8 && @p1 <= 24"}
+{"at": 2500, "expect": "phone.responses == 0"}
+{"at": 2500, "expect": "phone.bad == 0"}
+{"at": 2500, "parse": "SR {sr:d}"}
+{"at": 2500, "expect": "len(@sr) == 2 && @sr[1] == 1"}
+{"at": 2500, "do": "phone.scan_active"}
+{"at": 3500, "expect": "phone.active == true"}
+{"at": 3500, "expect": "phone.first == 1"}
+{"at": 3500, "expect": "phone.latest == 2"}
+{"at": 3500, "capture": "c2 = phone.changed_ms"}
+{"at": 3500, "capture": "r1 = phone.responses"}
+{"at": 3500, "expect": "@r1 >= 5 && @r1 <= 16"}
+{"at": 4500, "expect": "phone.latest == 3"}
+{"at": 4500, "capture": "c3 = phone.changed_ms"}
+{"at": 5500, "expect": "phone.latest == 4"}
+{"at": 5500, "capture": "c4 = phone.changed_ms"}
+{"at": 5500, "expect": "@c2 > 2995 && @c3 > 3995 && @c4 > 4995"}
+{"at": 5500, "capture": "r2 = phone.responses"}
+{"at": 5500, "expect": "@r2 - @r1 >= 10 && @r2 - @r1 <= 30"}
+{"at": 5500, "capture": "latest = phone.latest"}
+{"at": 5500, "parse": "SR {sr:d}"}
+{"at": 5500, "expect": "len(@sr) == 5 && @sr[4] == 4"}
+{"at": 5500, "expect": "995 < @sr.t[0] && @sr.t[0] < 1100 && 1995 < @sr.t[1] && @sr.t[1] < 2100 && 2995 < @sr.t[2] && @sr.t[2] < 3100 && 3995 < @sr.t[3] && @sr.t[3] < 4100 && 4995 < @sr.t[4] && @sr.t[4] < 5100"}
+{"at": 5500, "expect": "@latest == @sr[-1]"}
+{"at": 5500, "expect": "phone.in_sequence == true"}
+{"at": 5500, "expect": "phone.wrong_type == 0"}
+{"at": 5500, "expect": "phone.bad == 0"}

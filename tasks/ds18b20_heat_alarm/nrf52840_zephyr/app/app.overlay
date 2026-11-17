@@ -1,0 +1,20 @@
+/ {
+    aliases {
+        data-ds18b20 = &data_ds18b20;
+        my-buzzer = &my_buzzer;
+        my-led = &my_led;
+    };
+
+    keypad_pins {
+        compatible = "gpio-keys";
+        data_ds18b20: data_ds18b20 {
+            gpios = <&gpio0 3 (GPIO_ACTIVE_HIGH )>;
+        };
+        my_buzzer: my_buzzer {
+            gpios = <&gpio1 15 (GPIO_ACTIVE_HIGH )>;
+        };
+        my_led: my_led {
+            gpios = <&gpio1 12 (GPIO_ACTIVE_HIGH)>;
+        };
+    };
+};

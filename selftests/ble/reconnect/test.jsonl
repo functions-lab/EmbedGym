@@ -1,0 +1,51 @@
+{"target": "nrf52840_zephyr", "part": "ble", "name": "ble"}
+{"target": "nrf52840_zephyr", "peer": "peer.py", "name": "phone"}
+{"at": 500, "expect": "phone.connected == false"}
+{"at": 500, "expect": "phone.connects == 0"}
+{"at": 500, "parse": "ADVERTISING", "as": "adv"}
+{"at": 500, "expect": "len(@adv) == 1"}
+{"at": 500, "parse": "CONN {conn:d}"}
+{"at": 500, "expect": "len(@conn) == 0"}
+{"at": 500, "do": "phone.connect"}
+{"at": 1500, "expect": "phone.result == 'ok'"}
+{"at": 1500, "expect": "phone.connected == true"}
+{"at": 1500, "expect": "phone.connects == 1"}
+{"at": 1500, "parse": "CONN {conn:d}"}
+{"at": 1500, "expect": "len(@conn) == 1 && @conn[0] == 1 && @conn.t[0] > 500"}
+{"at": 1500, "do": "phone.drop"}
+{"at": 2000, "expect": "phone.result == 'ok'"}
+{"at": 2000, "expect": "phone.connected == false"}
+{"at": 2000, "expect": "phone.disconnects == 1"}
+{"at": 2000, "expect": "phone.last_reason == 22"}
+{"at": 2000, "parse": "DISC reason={reason:s}"}
+{"at": 2000, "expect": "len(@reason) == 1 && @reason[0] == '0x13' && @reason.t[0] > 1500"}
+{"at": 2000, "parse": "ADVERTISING", "as": "adv"}
+{"at": 2000, "expect": "len(@adv) == 2 && @adv.t[1] > @reason.t[0]"}
+{"at": 2000, "do": "phone.connect"}
+{"at": 3000, "expect": "phone.result == 'ok'"}
+{"at": 3000, "expect": "phone.connected == true"}
+{"at": 3000, "expect": "phone.connects == 2"}
+{"at": 3000, "parse": "CONN {conn:d}"}
+{"at": 3000, "expect": "len(@conn) == 2 && @conn[1] == 2 && @conn.t[1] > 2000"}
+{"at": 3000, "parse": "KICK", "as": "kick"}
+{"at": 3000, "expect": "len(@kick) == 0"}
+{"at": 3000, "do": "phone.kick"}
+{"at": 4000, "expect": "phone.result == 'ok'"}
+{"at": 4000, "expect": "phone.connected == false"}
+{"at": 4000, "expect": "phone.disconnects == 2"}
+{"at": 4000, "expect": "phone.last_reason == 19"}
+{"at": 4000, "parse": "KICK", "as": "kick"}
+{"at": 4000, "expect": "len(@kick) == 1 && @kick.t[0] > 3000"}
+{"at": 4000, "parse": "DISC reason={reason:s}"}
+{"at": 4000, "expect": "len(@reason) == 2 && @reason[1] == '0x16' && @reason.t[1] > @kick.t[0]"}
+{"at": 4000, "parse": "ADVERTISING", "as": "adv"}
+{"at": 4000, "expect": "len(@adv) == 3 && @adv.t[2] > @reason.t[1]"}
+{"at": 4000, "do": "phone.connect"}
+{"at": 5000, "expect": "phone.result == 'ok'"}
+{"at": 5000, "expect": "phone.connected == true"}
+{"at": 5000, "expect": "phone.connects == 3"}
+{"at": 5000, "expect": "phone.disconnects == 2"}
+{"at": 5000, "parse": "CONN {conn:d}"}
+{"at": 5000, "expect": "len(@conn) == 3 && @conn[2] == 3 && @conn.t[2] > 4000"}
+{"at": 5000, "parse": "DISC reason={reason:s}"}
+{"at": 5000, "expect": "len(@reason) == 2"}

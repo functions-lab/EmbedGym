@@ -1,0 +1,13 @@
+/ {
+    aliases {
+        emitter = &emitter;
+    };
+
+    emitters {
+        compatible = "gpio-leds";
+
+        emitter: emitter {
+            gpios = <&gpio1 12 GPIO_ACTIVE_HIGH>;
+        };
+    };
+};

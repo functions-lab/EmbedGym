@@ -1,0 +1,13 @@
+{"target":"atmega2560_arduino","part":"l298n","name":"motor","pin":5}
+{"target":"esp32s3_espidf","part":"l298n","name":"motor","pin":4}
+{"target":"nrf52840_zephyr","part":"l298n","name":"motor","pin":"P1.03"}
+{"at":300,"expect":"motor.stateA == 'positive'"}
+{"at":300,"expect":"motor.stateB == 'positive'"}
+{"at":400,"set":"motor.enaJumper = false"}
+{"at":550,"expect":"motor.coastA > 0.999"}
+{"at":550,"expect":"motor.positiveB > 0.999"}
+{"at":600,"set":"motor.enbJumper = false"}
+{"at":750,"expect":"motor.coastB > 0.999"}
+{"at":800,"set":"motor.enaJumper = true"}
+{"at":950,"expect":"motor.positiveA > 0.999"}
+{"at":950,"expect":"motor.coastB > 0.999"}

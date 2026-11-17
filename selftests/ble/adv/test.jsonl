@@ -1,0 +1,30 @@
+{"target": "nrf52840_zephyr", "part": "ble", "name": "ble"}
+{"target": "nrf52840_zephyr", "peer": "peer.py", "name": "phone"}
+{"at": 500, "expect": "phone.reports == 0"}
+{"at": 500, "parse": "ADV {adv:d}"}
+{"at": 500, "expect": "len(@adv) == 0"}
+{"at": 1600, "expect": "phone.latest == 0"}
+{"at": 1600, "capture": "c0 = phone.changed_ms"}
+{"at": 1600, "parse": "ADV {adv:d}"}
+{"at": 1600, "expect": "len(@adv) == 1 && @adv[0] == 0"}
+{"at": 2600, "expect": "phone.latest == 1"}
+{"at": 2600, "capture": "c1 = phone.changed_ms"}
+{"at": 3600, "expect": "phone.latest == 2"}
+{"at": 3600, "capture": "c2 = phone.changed_ms"}
+{"at": 3600, "capture": "r1 = phone.reports"}
+{"at": 4600, "expect": "phone.latest == 3"}
+{"at": 4600, "capture": "c3 = phone.changed_ms"}
+{"at": 5600, "expect": "phone.latest == 4"}
+{"at": 5600, "capture": "c4 = phone.changed_ms"}
+{"at": 6600, "expect": "phone.latest == 5"}
+{"at": 6600, "capture": "c5 = phone.changed_ms"}
+{"at": 6600, "expect": "@c0 > 995 && @c1 > 1995 && @c2 > 2995 && @c3 > 3995 && @c4 > 4995 && @c5 > 5995"}
+{"at": 6600, "capture": "r2 = phone.reports"}
+{"at": 6600, "expect": "@r2 - @r1 >= 16 && @r2 - @r1 <= 32"}
+{"at": 6600, "capture": "latest = phone.latest"}
+{"at": 6600, "parse": "ADV {adv:d}"}
+{"at": 6600, "expect": "len(@adv) == 6 && @adv[5] == 5"}
+{"at": 6600, "expect": "@latest == @adv[-1]"}
+{"at": 6600, "expect": "phone.in_sequence == true"}
+{"at": 6600, "expect": "phone.wrong_type == 0"}
+{"at": 6600, "expect": "phone.bad == 0"}

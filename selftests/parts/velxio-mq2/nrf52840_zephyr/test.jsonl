@@ -1,0 +1,38 @@
+{"target": "nrf52840_zephyr", "part": "mq2", "name": "gas", "pin": "P0.03"}
+{"at": 250, "parse": "DO start: {start:d}"}
+{"at": 250, "parse": "AO: {ao:d} DO: {dig:d}"}
+{"at": 250, "parse": "DO edge: {edge:d}"}
+{"at": 250, "expect": "len(@start) == 1 && @start[0] == 1 && len(@edge) == 0"}
+{"at": 250, "expect": "285 <= @ao[-1] && @ao[-1] <= 313 && @dig[-1] == 1"}
+{"at": 300, "set": "gas.voltage = 2"}
+{"at": 550, "parse": "AO: {ao:d} DO: {dig:d}"}
+{"at": 550, "parse": "DO edge: {edge:d}"}
+{"at": 550, "expect": "1174 <= @ao[-1] && @ao[-1] <= 1203 && @dig[-1] == 1 && len(@edge) == 0 && @ao.t[-1] > 400"}
+{"at": 600, "set": "gas.voltage = 3"}
+{"at": 850, "parse": "AO: {ao:d} DO: {dig:d}"}
+{"at": 850, "parse": "DO edge: {edge:d}"}
+{"at": 850, "expect": "1768 <= @ao[-1] && @ao[-1] <= 1798 && @dig[-1] == 0"}
+{"at": 850, "expect": "len(@edge) == 1 && @edge[0] == 0 && 600 < @edge.t[0] && @edge.t[0] < 610"}
+{"at": 900, "set": "gas.threshold = 3.5"}
+{"at": 1150, "parse": "AO: {ao:d} DO: {dig:d}"}
+{"at": 1150, "parse": "DO edge: {edge:d}"}
+{"at": 1150, "expect": "1768 <= @ao[-1] && @ao[-1] <= 1798 && @dig[-1] == 1"}
+{"at": 1150, "expect": "len(@edge) == 2 && @edge[1] == 1 && 900 < @edge.t[1] && @edge.t[1] < 910"}
+{"at": 1200, "set": "gas.voltage = 3.5"}
+{"at": 1450, "parse": "AO: {ao:d} DO: {dig:d}"}
+{"at": 1450, "parse": "DO edge: {edge:d}"}
+{"at": 1450, "expect": "2068 <= @ao[-1] && @ao[-1] <= 2098 && @dig[-1] == 1 && len(@edge) == 2"}
+{"at": 1500, "set": "gas.voltage = 5"}
+{"at": 1750, "parse": "AO: {ao:d} DO: {dig:d}"}
+{"at": 1750, "parse": "DO edge: {edge:d}"}
+{"at": 1750, "expect": "2985 <= @ao[-1] && @ao[-1] <= 3015 && @dig[-1] == 0"}
+{"at": 1750, "expect": "len(@edge) == 3 && @edge[2] == 0 && 1500 < @edge.t[2] && @edge.t[2] < 1510"}
+{"at": 1800, "set": "gas.threshold = 0"}
+{"at": 2050, "parse": "AO: {ao:d} DO: {dig:d}"}
+{"at": 2050, "parse": "DO edge: {edge:d}"}
+{"at": 2050, "expect": "@dig[-1] == 0 && len(@edge) == 3"}
+{"at": 2100, "set": "gas.voltage = 0"}
+{"at": 2350, "parse": "AO: {ao:d} DO: {dig:d}"}
+{"at": 2350, "parse": "DO edge: {edge:d}"}
+{"at": 2350, "expect": "@ao[-1] <= 10 && @dig[-1] == 1"}
+{"at": 2350, "expect": "len(@edge) == 4 && @edge[3] == 1 && 2100 < @edge.t[3] && @edge.t[3] < 2110"}

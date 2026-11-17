@@ -1,0 +1,11 @@
+node_modules/
+**/node_modules/
+__pycache__/
+*.py[cod]
+.git/
+results/
+
+# Emulator sources: QEMU builds in its own context and Renode in velxio's
+# (docker/docker-bake.hcl).
+third-party/
+velxio/third-party/

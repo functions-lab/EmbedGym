@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
+  <defs>
+    <mask id="amg8833-board-holes">
+      <rect width="96" height="96" fill="white"/>
+      <g fill="black">
+        <circle cx="9.6" cy="9.6" r="4.72"/><circle cx="86.4" cy="9.6" r="4.72"/>
+        <circle cx="9.6" cy="86.4" r="4.72"/><circle cx="86.4" cy="86.4" r="4.72"/>
+        <circle cx="24" cy="9.6" r="1.89"/><circle cx="33.6" cy="9.6" r="1.89"/>
+        <circle cx="43.2" cy="9.6" r="1.89"/><circle cx="52.8" cy="9.6" r="1.89"/>
+        <circle cx="62.4" cy="9.6" r="1.89"/><circle cx="72" cy="9.6" r="1.89"/>
+        <circle cx="24" cy="86.4" r="1.89"/><circle cx="33.6" cy="86.4" r="1.89"/>
+        <circle cx="43.2" cy="86.4" r="1.89"/><circle cx="52.8" cy="86.4" r="1.89"/>
+        <circle cx="62.4" cy="86.4" r="1.89"/><circle cx="72" cy="86.4" r="1.89"/>
+      </g>
+    </mask>
+  </defs>
+  <g mask="url(#amg8833-board-holes)">
+    <rect x="0.5" y="0.5" width="95" height="95" rx="9.1" fill="#282a2b" stroke="#a6a6a0" stroke-width="1"/>
+    <g fill="#d9c18a" stroke="#e6e2d7" stroke-width="0.8">
+      <circle cx="9.6" cy="9.6" r="6.7"/><circle cx="86.4" cy="9.6" r="6.7"/>
+      <circle cx="9.6" cy="86.4" r="6.7"/><circle cx="86.4" cy="86.4" r="6.7"/>
+    </g>
+    <g fill="#d9bc7c" stroke="#ddd8c8" stroke-width="0.4">
+      <circle cx="24" cy="9.6" r="3.36"/><circle cx="33.6" cy="9.6" r="3.36"/>
+      <circle cx="43.2" cy="9.6" r="3.36"/><circle cx="52.8" cy="9.6" r="3.36"/>
+      <circle cx="62.4" cy="9.6" r="3.36"/><circle cx="72" cy="9.6" r="3.36"/>
+      <circle cx="24" cy="86.4" r="3.36"/><circle cx="33.6" cy="86.4" r="3.36"/>
+      <circle cx="43.2" cy="86.4" r="3.36"/><circle cx="52.8" cy="86.4" r="3.36"/>
+      <circle cx="62.4" cy="86.4" r="3.36"/><circle cx="72" cy="86.4" r="3.36"/>
+    </g>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#eeeae2" text-anchor="middle">
+    <text x="48" y="5.6" font-size="5.6">AMG8833</text>
+    <text x="48" y="20.2" font-size="5.6">8x8 IR</text>
+    <g font-size="4.3">
+      <text x="24" y="94">VIN</text><text x="33.6" y="81.4">3Vo</text>
+      <text x="43.2" y="94">GND</text><text x="52.8" y="81.4">SCL</text>
+      <text x="62.4" y="94">SDA</text><text x="72" y="81.4">INT</text>
+    </g>
+  </g>
+  <g fill="#c9caca">
+    <rect x="13" y="42.7" width="4.5" height="1.5"/><rect x="13" y="46.5" width="4.5" height="1.5"/>
+    <rect x="13" y="50.3" width="4.5" height="1.5"/><rect x="13" y="54.1" width="4.5" height="1.5"/>
+    <rect x="78.5" y="42.7" width="4.5" height="1.5"/><rect x="78.5" y="46.5" width="4.5" height="1.5"/>
+    <rect x="78.5" y="50.3" width="4.5" height="1.5"/><rect x="78.5" y="54.1" width="4.5" height="1.5"/>
+  </g>
+  <rect x="0.8" y="36.6" width="13.6" height="22.8" rx="0.8" fill="#e9e4d3" stroke="#c5c0b1" stroke-width="0.6"/>
+  <rect x="81.6" y="36.6" width="13.6" height="22.8" rx="0.8" fill="#e9e4d3" stroke="#c5c0b1" stroke-width="0.6"/>
+  <g fill="#bcbec0">
+    <rect x="31" y="30.7" width="3" height="2.6"/>
+    <rect x="31" y="43.1" width="3" height="2.6"/><rect x="31" y="48" width="3" height="2.6"/>
+    <rect x="31" y="52.8" width="3" height="2.6"/><rect x="31" y="57.6" width="3" height="2.6"/>
+    <rect x="31" y="62.4" width="3" height="2.6"/><rect x="31" y="72.3" width="3" height="2.6"/>
+    <rect x="62" y="30.7" width="3" height="2.6"/>
+    <rect x="62" y="43.1" width="3" height="2.6"/><rect x="62" y="48" width="3" height="2.6"/>
+    <rect x="62" y="52.8" width="3" height="2.6"/><rect x="62" y="57.6" width="3" height="2.6"/>
+    <rect x="62" y="62.4" width="3" height="2.6"/><rect x="62" y="72.3" width="3" height="2.6"/>
+  </g>
+  <rect x="32.4" y="30.4" width="31.2" height="44.8" rx="1.2" fill="#bcaa78" stroke="#ede5cf" stroke-width="0.6"/>
+  <rect x="33.6" y="31.6" width="28.8" height="42.4" rx="1.2" fill="#e0e1df" stroke="#858989" stroke-width="0.8"/>
+  <rect x="36.8" y="34.4" width="22.4" height="36.4" rx="2.6" fill="#babfbd" stroke="#707775" stroke-width="0.9"/>
+  <rect x="42.5" y="39.7" width="11" height="11" rx="1.2" fill="#e1e1dc" stroke="#8a908c" stroke-width="0.6"/>
+  <rect x="43.1" y="40.3" width="9.8" height="9.8" rx="0.8" fill="#385852" stroke="#6c7e76" stroke-width="0.5"/>
+  <g stroke="#c8c9c5" stroke-width="0.6">
+    <rect x="32.1" y="24.5" width="6.8" height="3.8" fill="#c5a47b"/>
+    <rect x="43.4" y="24.3" width="9.2" height="4.4" fill="#c5a47b"/>
+    <rect x="7.9" y="29.2" width="7" height="3.8" fill="#c5a47b"/>
+    <rect x="19.5" y="61.2" width="9.2" height="4.4" fill="#c5a47b"/>
+    <rect x="24.4" y="66.4" width="4.4" height="9.2" fill="#c5a47b"/>
+    <rect x="2.6" y="63.5" width="4.4" height="9.2" fill="#c5a47b"/>
+    <rect x="69.8" y="73.1" width="7" height="3.3" fill="#3e4242"/>
+    <rect x="71.6" y="47.5" width="3.3" height="7" fill="#3e4242"/>
+    <rect x="22.7" y="28.5" width="3.3" height="7" fill="#3e4242"/>
+    <rect x="26.7" y="45.8" width="3.3" height="7" fill="#c5a47b"/>
+  </g>
+  <g fill="#c8c9c5">
+    <rect x="32.1" y="24.5" width="1.4" height="3.8"/><rect x="37.5" y="24.5" width="1.4" height="3.8"/>
+    <rect x="43.4" y="24.3" width="1.4" height="4.4"/><rect x="51.2" y="24.3" width="1.4" height="4.4"/>
+    <rect x="2.6" y="63.5" width="4.4" height="1.4"/><rect x="2.6" y="71.3" width="4.4" height="1.4"/>
+    <rect x="24.4" y="66.4" width="4.4" height="1.4"/><rect x="24.4" y="74.2" width="4.4" height="1.4"/>
+    <rect x="19.5" y="61.2" width="1.4" height="4.4"/><rect x="27.3" y="61.2" width="1.4" height="4.4"/>
+  </g>
+  <g fill="#c8c9c5">
+    <rect x="8.8" y="67" width="12.5" height="1.3"/><rect x="8.8" y="70.8" width="12.5" height="1.3"/>
+    <rect x="19.5" y="43" width="6.5" height="1.3"/><rect x="19.5" y="46.8" width="6.5" height="1.3"/>
+    <rect x="68.8" y="32.1" width="6.5" height="1.3"/><rect x="68.8" y="35.9" width="6.5" height="1.3"/>
+    <rect x="83.4" y="22.8" width="6" height="1.3"/><rect x="83.4" y="26.6" width="6" height="1.3"/>
+  </g>
+  <rect x="11.5" y="65.5" width="7" height="8.5" fill="#444747" stroke="#171a19" stroke-width="0.5"/>
+  <rect x="20.5" y="41.6" width="4.5" height="7.8" fill="#444747" stroke="#171a19" stroke-width="0.5"/>
+  <rect x="69.8" y="30.7" width="4.5" height="7.8" fill="#444747" stroke="#171a19" stroke-width="0.5"/>
+  <rect x="84.5" y="21.4" width="3.8" height="7.8" fill="#444747" stroke="#171a19" stroke-width="0.5"/>
+  <rect x="7.2" y="28" width="2.6" height="1.8" rx="0.2" fill="#74a067"/>
+  <text x="4.4" y="32" font-family="Arial, sans-serif" font-size="3.4" fill="#eeeae2" text-anchor="middle">on</text>
+</svg>

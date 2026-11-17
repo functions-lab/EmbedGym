@@ -1,0 +1,11 @@
+{
+  "extends": "../velxio/frontend/tsconfig.app.json",
+  "compilerOptions": {
+    "paths": {
+      "@velxio/*": ["../velxio/frontend/src/*"],
+      "@pro/*": ["../velxio/frontend/src/__pro_stub__/*"],
+      "@parts/*": ["./*"]
+    }
+  },
+  "include": ["."]
+}

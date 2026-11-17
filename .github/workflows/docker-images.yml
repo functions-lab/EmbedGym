@@ -1,0 +1,208 @@
+# Publishes the EmbedGym env (one per framework), sim and esp-cloud images to GHCR for amd64 and arm64 on
+# each release, tagged by docker/image_tag.sh. A release whose
+# tags the registry already holds builds nothing.
+name: Docker images
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  REGISTRY: ghcr.io/functions-lab
+
+jobs:
+  tags:
+    runs-on: ubuntu-24.04
+    outputs:
+      env: ${{ steps.tags.outputs.env }}
+      sim: ${{ steps.tags.outputs.sim }}
+      esp-cloud: ${{ steps.tags.outputs.esp-cloud }}
+      build-env: ${{ steps.tags.outputs.build-env }}
+      build-sim: ${{ steps.tags.outputs.build-sim }}
+      build-esp-cloud: ${{ steps.tags.outputs.build-esp-cloud }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: true
+      - uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - id: tags
+        run: |
+          for image in env sim esp-cloud; do
+            tag=$(bash docker/image_tag.sh "$image")
+            if [ "$image" = env ]; then names="env-arduino env-espidf env-zephyr"; else names=$image; fi
+            build=false
+            for name in $names; do
+              ref="$REGISTRY/embedgym-$name:$tag"
+              if out=$(docker buildx imagetools inspect "$ref" 2>&1); then
+                :
+              elif grep -q 'not found' <<<"$out"; then
+                build=true
+              else
+                echo "$out" >&2
+                exit 1
+              fi
+            done
+            echo "$image $tag: build=$build"
+            echo "$image=$tag" >> "$GITHUB_OUTPUT"
+            echo "build-$image=$build" >> "$GITHUB_OUTPUT"
+          done
+
+  env:
+    needs: tags
+    if: needs.tags.outputs.build-env == 'true'
+    strategy:
+      matrix:
+        include:
+          - { arch: amd64, runner: ubuntu-24.04 }
+          - { arch: arm64, runner: ubuntu-24.04-arm }
+    runs-on: ${{ matrix.runner }}
+    steps:
+      # The build outgrows the amd64 runner's free disk. The delete takes ~95 s
+      # there, so it runs in the background while the build's disk use is low.
+      - name: Free disk space
+        run: sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc /usr/local/.ghcup /opt/hostedtoolcache/CodeQL >/dev/null 2>&1 &
+      - uses: actions/checkout@v7
+        with:
+          submodules: true
+      - uses: docker/setup-buildx-action@v4
+      - uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - run: docker buildx bake -f docker/docker-bake.hcl env --push
+        env:
+          ARCH: ${{ matrix.arch }}
+          ENV_TAG: ${{ needs.tags.outputs.env }}
+      - if: always()
+        run: df -h /
+
+  sim:
+    needs: tags
+    if: needs.tags.outputs.build-sim == 'true'
+    strategy:
+      matrix:
+        include:
+          - { arch: amd64, runner: ubuntu-24.04 }
+          - { arch: arm64, runner: ubuntu-24.04-arm }
+    runs-on: ${{ matrix.runner }}
+    steps:
+      # The build outgrows the amd64 runner's free disk. The delete takes ~95 s
+      # there, so it runs in the background while the build's disk use is low.
+      - name: Free disk space
+        run: sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc /usr/local/.ghcup /opt/hostedtoolcache/CodeQL >/dev/null 2>&1 &
+      - uses: actions/checkout@v7
+        with:
+          submodules: true
+      - run: grep -v '^#' docker/emulators.env >> "$GITHUB_ENV"
+      - uses: actions/checkout@v7
+        with:
+          repository: functions-lab/qemu-esp32
+          ref: ${{ env.QEMU_COMMIT }}
+          persist-credentials: false
+          path: third-party/qemu-esp32s3
+      - uses: actions/checkout@v7
+        with:
+          repository: functions-lab/renode
+          ref: ${{ env.RENODE_COMMIT }}
+          persist-credentials: false
+          submodules: recursive
+          path: velxio/third-party/renode
+      - uses: actions/checkout@v7
+        with:
+          repository: renode/renode-resources
+          ref: ${{ env.RENODE_RESOURCES_COMMIT }}
+          persist-credentials: false
+          path: velxio/third-party/renode/lib/resources
+      - uses: docker/setup-buildx-action@v4
+      - uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build QEMU
+        run: |
+          docker buildx bake -f docker/docker-bake.hcl qemu
+          cp third-party/qemu-esp32s3/pc-bios/{esp32s3_rev0_rom.bin,esp32-v3-rom.bin,esp32-v3-rom-app.bin,esp32c3-rom.bin} prebuilt/qemu/
+        env:
+          ARCH: ${{ matrix.arch }}
+      - run: docker buildx bake -f docker/docker-bake.hcl sim --push
+        env:
+          ARCH: ${{ matrix.arch }}
+          SIM_TAG: ${{ needs.tags.outputs.sim }}
+      - if: always()
+        run: df -h /
+
+  esp-cloud:
+    needs: tags
+    if: needs.tags.outputs.build-esp-cloud == 'true'
+    strategy:
+      matrix:
+        include:
+          - { arch: amd64, runner: ubuntu-24.04 }
+          - { arch: arm64, runner: ubuntu-24.04-arm }
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: true
+      - uses: docker/setup-buildx-action@v4
+      - uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - run: docker buildx bake -f docker/docker-bake.hcl esp-cloud --push
+        env:
+          ARCH: ${{ matrix.arch }}
+          CLOUD_TAG: ${{ needs.tags.outputs.esp-cloud }}
+
+  env-manifest:
+    needs: [tags, env]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+          for name in arduino espidf zephyr; do
+            image="$REGISTRY/embedgym-env-$name:${{ needs.tags.outputs.env }}"
+            docker buildx imagetools create -t "$image" "$image-amd64" "$image-arm64"
+          done
+
+  sim-manifest:
+    needs: [tags, sim]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+          image="$REGISTRY/embedgym-sim:${{ needs.tags.outputs.sim }}"
+          docker buildx imagetools create -t "$image" "$image-amd64" "$image-arm64"
+
+  esp-cloud-manifest:
+    needs: [tags, esp-cloud]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+          image="$REGISTRY/embedgym-esp-cloud:${{ needs.tags.outputs.esp-cloud }}"
+          docker buildx imagetools create -t "$image" "$image-amd64" "$image-arm64"

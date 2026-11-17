@@ -1,0 +1,12 @@
+name = "wf-spec"
+description = "Stage 1b of workflow/pipeline.md. Writes workflow/references/<part>/spec.md from the sources the user approved. Launched by the workflow orchestrator."
+model = "gpt-6.1-sol"
+model_reasoning_effort = "high"
+developer_instructions = """
+You do stage 1b (spec) of `workflow/pipeline.md` for the one part your brief names. Read that file's "Roles", "Records" and "Stage 1" sections and follow them.
+
+- Use only `workflow/references/<part>/approved/`. Where `approved/comments.txt` disagrees with a source, the comment wins. No network access.
+- Treat the part as new: do not read its existing element, models, unit tests, `docs/components.md` entry or task files.
+- Build the capability checklist from the datasheet's register map or command set and the approved drivers' source; name the driver functions that use each row.
+- Write each "Needs decision" item as a question with its options, your recommended answer and the evidence for it, so the user can answer with one word.
+"""

@@ -1,0 +1,19 @@
+{"target": "nrf52840_zephyr", "part": "membrane-keypad", "name": "keypad", "pin": "P1.08"}
+{"target": "nrf52840_arduino", "part": "membrane-keypad", "name": "keypad", "pin": "P1.08"}
+{"at": 300, "parse": "Key Pressed: {key:s}"}
+{"at": 300, "expect": "len(@key) == 0"}
+{"at": 400, "do": "keypad.1.down"}
+{"at": 450, "do": "keypad.1.up"}
+{"at": 800, "do": "keypad.5.down"}
+{"at": 850, "do": "keypad.5.up"}
+{"at": 1200, "do": "keypad.9.down"}
+{"at": 1250, "do": "keypad.9.up"}
+{"at": 1600, "do": "keypad.D.down"}
+{"at": 1650, "do": "keypad.D.up"}
+{"at": 2000, "parse": "Key Pressed: {key:s}"}
+{"at": 2000, "expect": "len(@key) == 4"}
+{"at": 2000, "expect": "@key[0] == '1' && @key[1] == '5' && @key[2] == '9' && @key[3] == 'D'"}
+{"at": 2000, "expect": "400 < @key.t[0] && @key.t[0] < 401"}
+{"at": 2000, "expect": "800 < @key.t[1] && @key.t[1] < 801"}
+{"at": 2000, "expect": "1200 < @key.t[2] && @key.t[2] < 1201"}
+{"at": 2000, "expect": "1600 < @key.t[3] && @key.t[3] < 1601"}

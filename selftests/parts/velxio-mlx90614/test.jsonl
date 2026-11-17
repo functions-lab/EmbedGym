@@ -1,0 +1,26 @@
+{"target":"atmega2560_arduino","part":"mlx90614","name":"ir","pin":20}
+{"target":"esp32s3_espidf","part":"mlx90614","name":"ir","pin":38}
+{"target":"esp32s3_arduino","part":"mlx90614","name":"ir","pin":38}
+{"target":"nrf52840_zephyr","part":"mlx90614","name":"ir","pin":"P0.21"}
+{"target":"nrf52840_arduino","part":"mlx90614","name":"ir","pin":"P0.21"}
+{"at":0,"set":"ir.objectTemperature = 28.75"}
+{"at":0,"set":"ir.ambientTemperature = 21.49"}
+{"at":2000,"set":"ir.objectTemperature = 100.01"}
+{"at":2000,"set":"ir.ambientTemperature = 30.01"}
+{"at":1900,"parse":"probe {probe:d}"}
+{"at":1900,"expect":"len(@probe) == 1 && @probe[0] == 0"}
+{"at":1900,"parse":"ram {ram:d}"}
+{"at":1900,"expect":"len(@ram) == 1 && @ram[0] == 0"}
+{"at":1900,"parse":"eeprom {eeprom:d}"}
+{"at":1900,"expect":"len(@eeprom) == 1 && @eeprom[0] == 0"}
+{"at":1900,"parse":"eeprom-write {eepromwrite:d}"}
+{"at":1900,"expect":"len(@eepromwrite) == 1 && @eepromwrite[0] == 0"}
+{"at":1900,"parse":"bad-pec {badpec:d}"}
+{"at":1900,"expect":"len(@badpec) == 1 && @badpec[0] == 0"}
+{"at":1900,"parse":"failures {failures:d}"}
+{"at":1900,"expect":"len(@failures) == 1 && @failures[0] == 0"}
+{"at":1900,"parse":"raw {object:d} {ambient:d}"}
+{"at":1900,"expect":"len(@object) >= 2 && @object[-1] == 15095 && @ambient[-1] == 14732"}
+{"at":3500,"parse":"raw {object2:d} {ambient2:d}"}
+{"at":3500,"expect":"@object2[-1] == 18658 && @ambient2[-1] == 15158 && @object2.t[-1] > 2000"}
+{"at":3500,"expect":"@object2[1] == 15095"}

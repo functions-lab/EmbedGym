@@ -1,0 +1,16 @@
+/ {
+    aliases {
+        sr04-trig = &sr04_trig;
+        sr04-echo = &sr04_echo;
+    };
+
+    keypad_pins {
+        compatible = "gpio-keys";
+        sr04_trig: sr04_trig {
+            gpios = <&gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        sr04_echo: sr04_echo {
+            gpios = <&gpio0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+    };
+};

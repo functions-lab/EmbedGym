@@ -1,0 +1,8 @@
+{"target":"atmega2560_arduino","part":"max17048","name":"cell","pin":20}
+{"target":"esp32s3_espidf","part":"max17048","name":"cell","pin":38}
+{"target":"nrf52840_zephyr","part":"max17048","name":"cell","pin":"P0.21"}
+{"at":1000,"set":"cell.batteryConnected = true"}
+{"at":2000,"parse":"unpowered {unpowered:d}"}
+{"at":2000,"expect":"len(@unpowered) == 1 && @unpowered[0] == 0"}
+{"at":2000,"parse":"failures {failures:d}"}
+{"at":2000,"expect":"len(@failures) == 1 && @failures[0] == 0"}

@@ -1,0 +1,9 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+
+/* The sample turns uart0 into the legacy nordic,nrf-uart, which has no
+ * registers in Renode's EasyDMA UART model; this keeps the board's UARTE. */
+&uart0 {
+	current-speed = <1000000>;
+	status = "okay";
+	hw-flow-control;
+};

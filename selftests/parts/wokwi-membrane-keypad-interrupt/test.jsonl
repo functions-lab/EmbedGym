@@ -1,0 +1,14 @@
+{"target": "nrf52840_zephyr", "part": "membrane-keypad", "name": "keypad", "pin": "P1.08"}
+{"at": 300, "parse": "Key Pressed: {key:s}"}
+{"at": 300, "expect": "len(@key) == 0"}
+{"at": 400, "do": "keypad.5.down"}
+{"at": 600, "parse": "Key Pressed: {key:s}"}
+{"at": 600, "expect": "len(@key) == 1 && @key[-1] == '5'"}
+{"at": 600, "expect": "@key.t[-1] > 400 && @key.t[-1] < 420"}
+{"at": 700, "do": "keypad.5.up"}
+{"at": 900, "do": "keypad.D.down"}
+{"at": 1100, "parse": "Key Pressed: {key:s}"}
+{"at": 1100, "expect": "len(@key) == 2 && @key[-1] == 'D'"}
+{"at": 1200, "do": "keypad.D.up"}
+{"at": 1400, "parse": "Key Pressed: {key:s}"}
+{"at": 1400, "expect": "len(@key) == 2"}

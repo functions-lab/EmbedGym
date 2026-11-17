@@ -1,0 +1,8 @@
+{"at":100,"expect":"serial.txHex == ''"}
+{"at":100,"send":"serial","bytes":[0,13,10,255,65]}
+{"at":300,"expect":"serial.txHex == '000d0aff41'"}
+{"at":400,"send":"serial","bytes":[66,0,128]}
+{"at":600,"expect":"serial.txHex == '000d0aff41420080'"}
+{"at":600,"expect":"lamp.value == false"}
+{"target":"atmega2560_arduino","part":"led","name":"lamp","pin":4}
+{"target":"atmega328p_arduino","part":"led","name":"lamp","pin":4}

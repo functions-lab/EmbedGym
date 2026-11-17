@@ -1,0 +1,16 @@
+/ {
+    aliases {
+        encoder-clk = &enc_clk;
+        encoder-dt = &enc_dt;
+    };
+
+    raw_encoder_pins {
+        compatible = "gpio-keys";
+        enc_clk: enc_clk {
+            gpios = <&gpio1 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        enc_dt: enc_dt {
+            gpios = <&gpio1 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+    };
+};

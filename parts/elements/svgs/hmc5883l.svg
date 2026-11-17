@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="69" viewBox="0 0 50 69">
+  <path d="M.6.6H49.4V68.4H.6Z M14 8.6A6 6 0 1 0 2 8.6A6 6 0 1 0 14 8.6Z M48 8.6A6 6 0 1 0 36 8.6A6 6 0 1 0 48 8.6Z" fill="#075087" fill-rule="evenodd" stroke="#247b96" stroke-width="1.2"/>
+  <g fill="none" stroke="#afb9be" stroke-width=".9">
+    <circle cx="8" cy="8.6" r="6.5"/>
+    <circle cx="42" cy="8.6" r="6.5"/>
+  </g>
+  <g fill="#c5c7c8">
+    <rect x="20" y="12" width="9" height="3.2" rx=".3"/>
+    <rect x="20" y="17.3" width="9" height="3.2" rx=".3"/>
+    <path d="M21 24H22.2V27H21Z M23.4 24H24.6V27H23.4Z M25.8 24H27V27H25.8Z M28.2 24H29.4V27H28.2Z M21 36H22.2V39H21Z M23.4 36H24.6V39H23.4Z M25.8 36H27V39H25.8Z M28.2 36H29.4V39H28.2Z M18 28H21V29.2H18Z M18 30.4H21V31.6H18Z M18 32.8H21V34H18Z M18 35.2H21V36.4H18Z M29 28H32V29.2H29Z M29 30.4H32V31.6H29Z M29 32.8H32V34H29Z M29 35.2H32V36.4H29Z"/>
+  </g>
+  <g fill="#bda781">
+    <rect x="21.7" y="12" width="5.6" height="3.2"/>
+    <rect x="21.7" y="17.3" width="5.6" height="3.2"/>
+  </g>
+  <rect x="20" y="26" width="10.2" height="11.7" rx=".6" fill="#292b2e"/>
+  <circle cx="21.7" cy="27.7" r=".55" fill="#6b6d6e"/>
+  <g fill="#c5c7c8">
+    <rect x="4" y="45.4" width="3" height="8" rx=".3"/>
+    <rect x="9.8" y="45.4" width="3" height="8" rx=".3"/>
+    <rect x="15.6" y="45.4" width="3" height="8" rx=".3"/>
+    <rect x="21.4" y="45.4" width="3" height="8" rx=".3"/>
+    <rect x="41.3" y="45.4" width="3" height="8" rx=".3"/>
+    <rect x="28" y="45" width="3" height="3"/>
+    <rect x="28" y="53" width="3" height="3"/>
+    <rect x="35" y="49" width="4" height="3"/>
+  </g>
+  <g fill="#282a2d">
+    <rect x="4" y="47" width="3" height="4.8"/>
+    <rect x="9.8" y="47" width="3" height="4.8"/>
+    <rect x="30" y="46.3" width="6.2" height="8.3" rx=".5"/>
+  </g>
+  <g fill="#bda781">
+    <rect x="15.6" y="47" width="3" height="4.8"/>
+    <rect x="21.4" y="47" width="3" height="4.8"/>
+    <rect x="41.3" y="47" width="3" height="4.8"/>
+  </g>
+  <g fill="#e9f2ef" font-family="Arial,sans-serif">
+    <text x="5" y="17" font-size="4.2" transform="rotate(90 5 17)">HMC5883L</text>
+    <text x="45.4" y="30" font-size="3.5">X</text>
+    <text x="34" y="24.3" font-size="3.5">Y</text>
+    <text x="33.8" y="39.1" font-size="3.5">Z</text>
+  </g>
+  <path d="M37.2 34.5V26.5M37.2 26.5L35.7 28M37.2 26.5L38.7 28M37.2 34.5H46M46 34.5L44.5 33M46 34.5L44.5 36" fill="none" stroke="#e9f2ef" stroke-width=".9" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="37.2" cy="34.5" r="1.1" fill="#e9f2ef"/>
+  <g fill="#e9f2ef" font-family="Arial,sans-serif" font-size="3" text-anchor="middle">
+    <text x="5.8" y="59">VCC</text>
+    <text x="15.4" y="59">GND</text>
+    <text x="25" y="59">SCL</text>
+    <text x="34.6" y="59">SDA</text>
+    <text x="44.2" y="59">DRDY</text>
+  </g>
+  <g fill="#c9ced0" stroke="#a2abad" stroke-width=".45">
+    <circle cx="5.8" cy="63.5" r="3.7"/>
+    <circle cx="15.4" cy="63.5" r="3.7"/>
+    <circle cx="25" cy="63.5" r="3.7"/>
+    <circle cx="34.6" cy="63.5" r="3.7"/>
+    <circle cx="44.2" cy="63.5" r="3.7"/>
+  </g>
+  <g fill="#1f2e35">
+    <circle cx="5.8" cy="63.5" r="1.6"/>
+    <circle cx="15.4" cy="63.5" r="1.6"/>
+    <circle cx="25" cy="63.5" r="1.6"/>
+    <circle cx="34.6" cy="63.5" r="1.6"/>
+    <circle cx="44.2" cy="63.5" r="1.6"/>
+  </g>
+</svg>

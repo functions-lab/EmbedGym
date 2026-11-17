@@ -1,0 +1,4 @@
+[submodule "velxio"]
+	path = velxio
+	url = https://github.com/functions-lab/velxio.git
+	branch = embedgym

@@ -1,0 +1,12 @@
+/ {
+    aliases {
+        lock-relay = &lock_relay;
+    };
+
+    keypad_pins {
+        compatible = "gpio-keys";
+        lock_relay: lock_relay {
+            gpios = <&gpio1 15 (GPIO_ACTIVE_HIGH)>;
+        };
+    };
+};

@@ -1,0 +1,14 @@
+{"target": "nrf52840_arduino", "part": "buzzer", "name": "buzzer", "pin": "P1.15"}
+{"at": 500, "expect": "buzzer.hasSignal == true"}
+{"at": 500, "expect": "buzzer.frequency > 999"}
+{"at": 500, "expect": "buzzer.frequency < 1001"}
+{"at": 1500, "expect": "buzzer.hasSignal == false"}
+{"at": 1500, "expect": "buzzer.frequency == 0"}
+{"at": 2500, "expect": "buzzer.hasSignal == true"}
+{"at": 2500, "expect": "buzzer.frequency > 1999"}
+{"at": 2500, "expect": "buzzer.frequency < 2001"}
+{"at": 3500, "expect": "buzzer.hasSignal == false"}
+{"at": 4500, "expect": "buzzer.hasSignal == true"}
+{"at": 4500, "expect": "buzzer.frequency > 439"}
+{"at": 4500, "expect": "buzzer.frequency < 441"}
+{"at": 5500, "expect": "buzzer.hasSignal == false"}

@@ -1,0 +1,86 @@
+{"target": "nrf52840_zephyr", "part": "ble", "name": "ble"}
+{"target": "nrf52840_zephyr", "peer": "peer.py", "name": "phone"}
+{"at": 500, "expect": "phone.connected == false"}
+{"at": 500, "parse": "ADVERTISING", "as": "adv"}
+{"at": 500, "expect": "len(@adv) == 1"}
+{"at": 500, "parse": "CONNECTED", "as": "conn"}
+{"at": 500, "expect": "len(@conn) == 0"}
+{"at": 500, "parse": "SUBSCRIBED {sub:d}"}
+{"at": 500, "expect": "len(@sub) == 0"}
+{"at": 500, "parse": "NOTIFY {n:d}"}
+{"at": 500, "expect": "len(@n) == 0"}
+{"at": 500, "do": "phone.connect"}
+{"at": 1500, "expect": "phone.result == 'ok'"}
+{"at": 1500, "expect": "phone.connected == true"}
+{"at": 1500, "expect": "phone.phy_tx == 1"}
+{"at": 1500, "expect": "phone.phy_rx == 1"}
+{"at": 1500, "expect": "phone.phy_updates == 0"}
+{"at": 1500, "expect": "phone.properties == 16"}
+{"at": 1500, "parse": "CONNECTED", "as": "conn"}
+{"at": 1500, "expect": "len(@conn) == 1 && @conn.t[0] > 500"}
+{"at": 1500, "parse": "SUBSCRIBED {sub:d}"}
+{"at": 1500, "expect": "len(@sub) == 1 && @sub[0] == 1"}
+{"at": 1500, "parse": "PHY tx={ptx:d} rx={prx:d}"}
+{"at": 1500, "expect": "len(@ptx) == 0"}
+{"at": 1500, "parse": "PHY REQUEST {preq:d}"}
+{"at": 1500, "expect": "len(@preq) == 0"}
+{"at": 1500, "capture": "n0 = phone.notifications"}
+{"at": 1500, "expect": "@n0 >= 2 && @n0 <= 4"}
+{"at": 1500, "expect": "phone.counts_in_order == true"}
+{"at": 1500, "do": "phone.phone_2m"}
+{"at": 2500, "expect": "phone.result == 'ok'"}
+{"at": 2500, "expect": "phone.phy_updates == 1"}
+{"at": 2500, "expect": "phone.phy_tx == 2"}
+{"at": 2500, "expect": "phone.phy_rx == 2"}
+{"at": 2500, "parse": "PHY tx={ptx:d} rx={prx:d}"}
+{"at": 2500, "expect": "len(@ptx) == 1 && @ptx[0] == 2 && @prx[0] == 2 && @ptx.t[0] > 1500"}
+{"at": 2500, "parse": "PHY REQUEST {preq:d}"}
+{"at": 2500, "expect": "len(@preq) == 0"}
+{"at": 2500, "expect": "phone.since_update >= 2"}
+{"at": 2500, "expect": "phone.since_update <= 5"}
+{"at": 2500, "expect": "phone.counts_in_order == true"}
+{"at": 2500, "do": "phone.board_1m"}
+{"at": 3500, "expect": "phone.result == 'ok'"}
+{"at": 3500, "parse": "PHY REQUEST {preq:d}"}
+{"at": 3500, "expect": "len(@preq) == 1 && @preq[0] == 1 && @preq.t[0] > 2500"}
+{"at": 3500, "parse": "PHY tx={ptx:d} rx={prx:d}"}
+{"at": 3500, "expect": "len(@ptx) == 2 && @ptx[1] == 1 && @prx[1] == 1 && @ptx.t[1] > @preq.t[0]"}
+{"at": 3500, "expect": "phone.phy_updates == 2"}
+{"at": 3500, "expect": "phone.phy_tx == 1"}
+{"at": 3500, "expect": "phone.phy_rx == 1"}
+{"at": 3500, "expect": "phone.since_update >= 2"}
+{"at": 3500, "expect": "phone.since_update <= 5"}
+{"at": 3500, "do": "phone.board_2m"}
+{"at": 4500, "expect": "phone.result == 'ok'"}
+{"at": 4500, "parse": "PHY REQUEST {preq:d}"}
+{"at": 4500, "expect": "len(@preq) == 2 && @preq[1] == 2 && @preq.t[1] > 3500"}
+{"at": 4500, "parse": "PHY tx={ptx:d} rx={prx:d}"}
+{"at": 4500, "expect": "len(@ptx) == 3 && @ptx[2] == 2 && @prx[2] == 2 && @ptx.t[2] > @preq.t[1]"}
+{"at": 4500, "expect": "phone.phy_updates == 3"}
+{"at": 4500, "expect": "phone.phy_tx == 2"}
+{"at": 4500, "expect": "phone.phy_rx == 2"}
+{"at": 4500, "expect": "phone.since_update >= 2"}
+{"at": 4500, "expect": "phone.since_update <= 5"}
+{"at": 4500, "do": "phone.phone_1m"}
+{"at": 5500, "expect": "phone.result == 'ok'"}
+{"at": 5500, "parse": "PHY tx={ptx:d} rx={prx:d}"}
+{"at": 5500, "expect": "len(@ptx) == 4 && @ptx[3] == 1 && @prx[3] == 1 && @ptx.t[3] > 4500"}
+{"at": 5500, "parse": "PHY REQUEST {preq:d}"}
+{"at": 5500, "expect": "len(@preq) == 2"}
+{"at": 5500, "expect": "phone.phy_updates == 4"}
+{"at": 5500, "expect": "phone.phy_tx == 1"}
+{"at": 5500, "expect": "phone.phy_rx == 1"}
+{"at": 5500, "expect": "phone.phy_failures == 0"}
+{"at": 5500, "expect": "phone.indications == 0"}
+{"at": 5500, "expect": "phone.foreign == 0"}
+{"at": 5500, "expect": "phone.since_update >= 2"}
+{"at": 5500, "expect": "phone.since_update <= 5"}
+{"at": 5500, "expect": "phone.counts_in_order == true"}
+{"at": 5500, "capture": "count = phone.notifications"}
+{"at": 5500, "expect": "phone.last_count == @count"}
+{"at": 5500, "parse": "NOTIFY {n:d}"}
+{"at": 5500, "expect": "len(@n) - @count >= 0 && len(@n) - @count <= 1 && @n[-1] == len(@n)"}
+{"at": 5500, "parse": "NOTIFY FAILED err={nfail:d}"}
+{"at": 5500, "expect": "len(@nfail) == 0"}
+{"at": 5500, "parse": "DISCONNECTED reason={reason:s}"}
+{"at": 5500, "expect": "len(@reason) == 0"}

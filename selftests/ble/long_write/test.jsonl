@@ -1,0 +1,92 @@
+{"target": "nrf52840_zephyr", "part": "ble", "name": "ble"}
+{"target": "nrf52840_zephyr", "peer": "peer.py", "name": "phone"}
+{"at": 500, "expect": "phone.connected == false"}
+{"at": 500, "parse": "ADVERTISING", "as": "adv"}
+{"at": 500, "expect": "len(@adv) == 1"}
+{"at": 500, "parse": "CONNECTED", "as": "conn"}
+{"at": 500, "expect": "len(@conn) == 0"}
+{"at": 500, "parse": "MTU tx={mtx:d} rx={mrx:d}"}
+{"at": 500, "expect": "len(@mtx) == 0"}
+{"at": 500, "do": "phone.connect"}
+{"at": 1500, "expect": "phone.result == 'ok'"}
+{"at": 1500, "expect": "phone.connected == true"}
+{"at": 1500, "expect": "phone.ready == true"}
+{"at": 1500, "expect": "phone.mtu == 23"}
+{"at": 1500, "parse": "CONNECTED", "as": "conn"}
+{"at": 1500, "expect": "len(@conn) == 1 && @conn.t[0] > 500"}
+{"at": 1500, "parse": "MTU tx={mtx:d} rx={mrx:d}"}
+{"at": 1500, "expect": "len(@mtx) == 1 && @mtx[0] == 23 && @mrx[0] == 23"}
+{"at": 1500, "parse": "WRITE len={wlen:d} crc={wcrc:s}"}
+{"at": 1500, "expect": "len(@wlen) == 0"}
+{"at": 1500, "parse": "REJECT len={rlen:d}"}
+{"at": 1500, "expect": "len(@rlen) == 0"}
+{"at": 1500, "parse": "READ off={off:d}"}
+{"at": 1500, "expect": "len(@off) == 0"}
+{"at": 1500, "do": "phone.write_old"}
+{"at": 2000, "expect": "phone.result == 'ok'"}
+{"at": 2000, "expect": "phone.parts == 3"}
+{"at": 2000, "parse": "WRITE len={wlen:d} crc={wcrc:s}"}
+{"at": 2000, "expect": "len(@wlen) == 1 && @wlen[0] == 40 && @wcrc[0] == '5b3785af' && @wlen.t[0] > 1500"}
+{"at": 2000, "do": "phone.write_cancelled"}
+{"at": 2500, "expect": "phone.result == 'ok'"}
+{"at": 2500, "expect": "phone.parts == 5"}
+{"at": 2500, "parse": "WRITE len={wlen:d} crc={wcrc:s}"}
+{"at": 2500, "expect": "len(@wlen) == 1"}
+{"at": 2500, "do": "phone.read"}
+{"at": 3000, "expect": "phone.result == 'ok'"}
+{"at": 3000, "expect": "phone.read_len == 40"}
+{"at": 3000, "expect": "phone.read_crc == '5b3785af'"}
+{"at": 3000, "parse": "READ off={off:d}"}
+{"at": 3000, "expect": "len(@off) == 2 && @off[0] == 0 && @off[1] == 22 && @off.t[0] > 2500"}
+{"at": 3000, "do": "phone.execute_queued"}
+{"at": 3500, "expect": "phone.result == 'ok'"}
+{"at": 3500, "parse": "WRITE len={wlen:d} crc={wcrc:s}"}
+{"at": 3500, "expect": "len(@wlen) == 1"}
+{"at": 3500, "do": "phone.read"}
+{"at": 4000, "expect": "phone.result == 'ok'"}
+{"at": 4000, "expect": "phone.read_len == 40"}
+{"at": 4000, "expect": "phone.read_crc == '5b3785af'"}
+{"at": 4000, "parse": "READ off={off:d}"}
+{"at": 4000, "expect": "len(@off) == 4 && @off.t[2] > 3500"}
+{"at": 4000, "do": "phone.write_504"}
+{"at": 6250, "expect": "phone.result == 'att 0x0d'"}
+{"at": 6250, "expect": "phone.error_op == 24"}
+{"at": 6250, "expect": "phone.parts == 28"}
+{"at": 6250, "parse": "REJECT len={rlen:d}"}
+{"at": 6250, "expect": "len(@rlen) == 1 && @rlen[0] == 504 && @rlen.t[0] > 4000"}
+{"at": 6250, "parse": "WRITE len={wlen:d} crc={wcrc:s}"}
+{"at": 6250, "expect": "len(@wlen) == 1"}
+{"at": 6250, "do": "phone.read"}
+{"at": 6750, "expect": "phone.result == 'ok'"}
+{"at": 6750, "expect": "phone.read_len == 40"}
+{"at": 6750, "expect": "phone.read_crc == '5b3785af'"}
+{"at": 6750, "do": "phone.prepare_new"}
+{"at": 8750, "expect": "phone.result == 'ok'"}
+{"at": 8750, "expect": "phone.parts == 28"}
+{"at": 8750, "parse": "WRITE len={wlen:d} crc={wcrc:s}"}
+{"at": 8750, "expect": "len(@wlen) == 1"}
+{"at": 8750, "do": "phone.read"}
+{"at": 9250, "expect": "phone.result == 'ok'"}
+{"at": 9250, "expect": "phone.read_len == 40"}
+{"at": 9250, "expect": "phone.read_crc == '5b3785af'"}
+{"at": 9250, "parse": "READ off={off:d}"}
+{"at": 9250, "expect": "len(@off) == 8 && @off.t[6] > 8750"}
+{"at": 9250, "do": "phone.execute_queued"}
+{"at": 9750, "expect": "phone.result == 'ok'"}
+{"at": 9750, "parse": "WRITE len={wlen:d} crc={wcrc:s}"}
+{"at": 9750, "expect": "len(@wlen) == 2 && @wlen[1] == 500 && @wcrc[1] == 'd96bc68b' && @wlen.t[1] > 9250"}
+{"at": 9750, "do": "phone.read"}
+{"at": 11500, "expect": "phone.result == 'ok'"}
+{"at": 11500, "expect": "phone.read_len == 500"}
+{"at": 11500, "expect": "phone.read_crc == 'd96bc68b'"}
+{"at": 11500, "parse": "READ off={off:d}"}
+{"at": 11500, "expect": "len(@off) == 31 && @off[8] == 0 && @off[9] == 22 && @off[30] == 484 && @off.t[8] > 9750"}
+{"at": 11500, "expect": "phone.echo_bad == 0"}
+{"at": 11500, "parse": "WRITE len={wlen:d} crc={wcrc:s}"}
+{"at": 11500, "expect": "len(@wlen) == 2"}
+{"at": 11500, "parse": "REJECT len={rlen:d}"}
+{"at": 11500, "expect": "len(@rlen) == 1"}
+{"at": 11500, "parse": "MTU tx={mtx:d} rx={mrx:d}"}
+{"at": 11500, "expect": "len(@mtx) == 1"}
+{"at": 11500, "parse": "DISCONNECTED reason={reason:s}"}
+{"at": 11500, "expect": "len(@reason) == 0"}

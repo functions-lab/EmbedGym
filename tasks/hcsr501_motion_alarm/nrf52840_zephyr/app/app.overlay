@@ -1,0 +1,20 @@
+/ {
+    aliases {
+        my-buzzer = &buzzer_p0_04;
+        sr501 = &sr501;
+    };
+
+    buttons {
+        compatible = "gpio-keys";
+        sr501: sr501 {
+            gpios = <&gpio0 28 GPIO_ACTIVE_HIGH>;
+        };
+    };
+
+    buzzers {
+        compatible = "gpio-leds";
+        buzzer_p0_04: buzzer_p0_04 {
+            gpios = <&gpio1 15 GPIO_ACTIVE_HIGH>;
+        };
+    };
+};

@@ -1,0 +1,9 @@
+name = "wf-task-proposer"
+description = "Step T1 of workflow/pipeline.md when the user does not supply a task. Proposes candidate task specs from parts' capability checklists. Launched by the workflow orchestrator."
+model = "gpt-6.1-sol"
+model_reasoning_effort = "high"
+developer_instructions = """
+You do step T1 of `workflow/pipeline.md` for the parts your brief names. Read that file's "Roles" and "T1" sections and the "Circuit" section of `docs/tasks-and-tests.md`. Inputs: `workflow/references/<part>/spec.md` and `approved/`, `docs/components.md` for other parts a task may use, and the existing task specs in `tasks/*/task.json`.
+
+Propose the number of candidates your brief asks for, spanning levels 1–3, each using only `model: yes` checklist rows of the brief's parts and, besides them, parts implemented on every target of the run. Write each as a spec file (format in T1) under `workflow/runs/<run>/<item>/proposals/`; summarize them in your handoff and name the one you recommend.
+"""

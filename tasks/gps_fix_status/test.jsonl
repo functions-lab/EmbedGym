@@ -1,0 +1,16 @@
+{"target": "atmega2560_arduino", "part": "pa1616s", "name": "gps", "pin": 19}
+{"target": "atmega328p_arduino", "part": "pa1616s", "name": "gps", "pin": 8}
+{"target": "esp32s3_espidf", "part": "pa1616s", "name": "gps", "pin": 4}
+{"target": "esp32s3_arduino", "part": "pa1616s", "name": "gps", "pin": 4}
+{"target": "nrf52840_zephyr", "part": "pa1616s", "name": "gps", "pin": "P1.01"}
+{"target": "nrf52840_arduino", "part": "pa1616s", "name": "gps", "pin": "P1.01"}
+{"at": 3600, "parse": "fix invalid", "as": "inv"}
+{"at": 3600, "expect": "len(@inv) >= 2 && len(@inv) <= 4"}
+{"at": 3600, "parse": "fix valid", "as": "val"}
+{"at": 3600, "expect": "len(@val) == 0"}
+{"at": 3700, "set": "gps.fix = true"}
+{"at": 6600, "parse": "fix valid", "as": "val"}
+{"at": 6600, "expect": "len(@val) >= 2 && len(@val) <= 4"}
+{"at": 6600, "parse": "fix invalid", "as": "inv"}
+{"at": 6600, "expect": "len(@inv) <= 5"}
+{"at": 6600, "expect": "@val.t[-1] > 5500"}

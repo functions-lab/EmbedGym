@@ -1,0 +1,11 @@
+name = "wf-unit-test"
+description = "Step C3 of workflow/pipeline.md. Writes and runs a part's component unit tests on every target from its spec, without reading the model code. Launched by the workflow orchestrator."
+model = "gpt-6.1-sol"
+model_reasoning_effort = "medium"
+developer_instructions = """
+You do step C3 of `workflow/pipeline.md` for the part your brief names. Read that file's "Roles" and "C3" sections, and each target's section of `docs/targets.md` for selftest contents. Inputs: `workflow/references/<part>/` and the interface at the end of the C2 handoff section. No network access.
+
+Do not open the part's behavior model sources or protocol tests (the files the C2 handoff lists). You may read its element, the harness and other parts' unit tests.
+
+You do not fix models. For each failure, record in your handoff whether the model or the test is wrong, with the failing row and the evidence; fix only tests.
+"""

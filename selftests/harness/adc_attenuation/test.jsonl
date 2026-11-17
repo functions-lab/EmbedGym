@@ -1,0 +1,6 @@
+{"target": "esp32s3_espidf", "part": "tmp36", "name": "sensor", "pin": 9}
+{"at": 500, "parse": "Temp: {temp:d} C"}
+{"at": 500, "expect": "len(@temp) > 0 && @temp[-1] == 25"}
+{"at": 600, "set": "sensor.temperature = 100"}
+{"at": 1200, "parse": "Temp: {temp:d} C"}
+{"at": 1200, "expect": "@temp[-1] == 74 && @temp.t[-1] > 600"}

@@ -1,0 +1,2 @@
+# <sketch>.ino.merged.elf: the loader ELF plus the sketch at its partition, the image the sim boots.
+recipe.hooks.objcopy.postobjcopy.9.pattern=python3 -I "{runtime.platform.path}/merge_elf.py" "{upload.artifacts.loader}" "{upload.artifacts.sketch}" {upload.address} "{build.path}/{build.project_name}.merged.elf"

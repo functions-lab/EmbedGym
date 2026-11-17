@@ -1,0 +1,24 @@
+{"target":"atmega2560_arduino","part":"max17048","name":"cell","pin":20}
+{"target":"esp32s3_espidf","part":"max17048","name":"cell","pin":38}
+{"target":"esp32s3_arduino","part":"max17048","name":"cell","pin":38}
+{"target":"nrf52840_zephyr","part":"max17048","name":"cell","pin":"P0.21"}
+{"target":"nrf52840_arduino","part":"max17048","name":"cell","pin":"P0.21"}
+{"at":3500,"set":"cell.stateOfCharge = 60"}
+{"at":5500,"set":"cell.stateOfCharge = 70"}
+{"at":7500,"set":"cell.chargeRate = -10"}
+{"at":9500,"set":"cell.chargeRate = 10"}
+{"at":9500,"set":"cell.cellVoltage = 4.1"}
+{"at":12000,"parse":"stock-init {stock_init:d}"}
+{"at":12000,"expect":"len(@stock_init) == 1 && @stock_init[0] == 0"}
+{"at":12000,"parse":"stock-byte-setters {stock_byte_setters:d}"}
+{"at":12000,"expect":"len(@stock_byte_setters) == 1 && @stock_byte_setters[0] == 0"}
+{"at":12000,"parse":"stock-alert-getters {stock_alert_getters:d}"}
+{"at":12000,"expect":"len(@stock_alert_getters) == 1 && @stock_alert_getters[0] == 0"}
+{"at":12000,"parse":"stock-sleep {stock_sleep:d}"}
+{"at":12000,"expect":"len(@stock_sleep) == 1 && @stock_sleep[0] == 0"}
+{"at":12000,"parse":"stock-readings {stock_readings:d}"}
+{"at":12000,"expect":"len(@stock_readings) == 1 && @stock_readings[0] == 0"}
+{"at":12000,"parse":"stock-reset {stock_reset:d}"}
+{"at":12000,"expect":"len(@stock_reset) == 1 && @stock_reset[0] == 0"}
+{"at":12000,"parse":"failures {failures:d}"}
+{"at":12000,"expect":"len(@failures) == 1 && @failures[0] == 0"}

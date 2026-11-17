@@ -1,0 +1,13 @@
+{"target":"esp32s3_espidf","part":"mlx90614","name":"ir","pin":38}
+{"target":"esp32s3_espidf","part":"hmc5883l","name":"compass","pin":38}
+{"target":"nrf52840_zephyr","part":"mlx90614","name":"ir","pin":"P0.21"}
+{"target":"nrf52840_zephyr","part":"hmc5883l","name":"compass","pin":"P0.21"}
+{"at":0,"set":"ir.objectTemperature = 40"}
+{"at":0,"set":"ir.ambientTemperature = 30"}
+{"at":0,"set":"compass.magneticX = 0.2"}
+{"at":0,"set":"compass.magneticY = 0.4"}
+{"at":0,"set":"compass.magneticZ = -0.3"}
+{"at":500,"parse":"mlx {obj:d} {amb:d}"}
+{"at":500,"expect":"len(@obj) == 1 && @obj[0] == 15658 && @amb[0] == 15158 && @obj.t[0] < 50"}
+{"at":500,"parse":"hmc {x:d} {y:d} {z:d}"}
+{"at":500,"expect":"len(@x) == 1 && @x[0] == 218 && @y[0] == 436 && @z[0] == -327"}

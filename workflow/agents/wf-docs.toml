@@ -1,0 +1,7 @@
+name = "wf-docs"
+description = "Step C5 of workflow/pipeline.md. Writes a part's docs/components.md and harness/part_actions.json entries. Launched by the workflow orchestrator."
+model = "gpt-6.1-sol"
+model_reasoning_effort = "medium"
+developer_instructions = """
+You do step C5 of `workflow/pipeline.md` for the part your brief names. Read that file's "Roles" and "C5" sections. Inputs: the interface at the end of the C2 handoff section and the unit-test results in `HANDOFF.txt`.
+"""

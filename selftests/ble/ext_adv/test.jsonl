@@ -1,0 +1,35 @@
+{"target": "nrf52840_zephyr", "part": "ble", "name": "ble"}
+{"target": "nrf52840_zephyr", "peer": "peer.py", "name": "phone"}
+{"at": 995, "expect": "phone.reports == 0"}
+{"at": 995, "parse": "EXT seq={seq:d} len={size:d} crc={crc:s}"}
+{"at": 995, "expect": "len(@seq) == 0"}
+{"at": 1600, "expect": "phone.latest == 0"}
+{"at": 1600, "expect": "phone.length == 191"}
+{"at": 1600, "expect": "phone.crc == '773f2a69'"}
+{"at": 1600, "capture": "c0 = phone.changed_ms"}
+{"at": 1600, "parse": "EXT seq={seq:d} len={size:d} crc={crc:s}"}
+{"at": 1600, "expect": "len(@seq) == 1 && @seq[0] == 0 && @size[0] == 191 && @crc[0] == '773f2a69'"}
+{"at": 2600, "expect": "phone.latest == 1"}
+{"at": 2600, "expect": "phone.crc == 'f33ad5e9'"}
+{"at": 2600, "capture": "c1 = phone.changed_ms"}
+{"at": 3600, "expect": "phone.latest == 2"}
+{"at": 3600, "expect": "phone.crc == 'c3214bc6'"}
+{"at": 3600, "capture": "c2 = phone.changed_ms"}
+{"at": 3600, "capture": "r1 = phone.reports"}
+{"at": 4600, "expect": "phone.latest == 3"}
+{"at": 4600, "expect": "phone.crc == 'c6198e68'"}
+{"at": 4600, "capture": "c3 = phone.changed_ms"}
+{"at": 5600, "expect": "phone.latest == 4"}
+{"at": 5600, "expect": "phone.length == 191"}
+{"at": 5600, "expect": "phone.crc == '95f8ff67'"}
+{"at": 5600, "capture": "c4 = phone.changed_ms"}
+{"at": 5600, "expect": "@c0 > 995 && @c1 > 1995 && @c2 > 2995 && @c3 > 3995 && @c4 > 4995"}
+{"at": 5600, "capture": "r2 = phone.reports"}
+{"at": 5600, "expect": "@r2 - @r1 >= 10 && @r2 - @r1 <= 30"}
+{"at": 5600, "parse": "EXT seq={seq:d} len={size:d} crc={crc:s}"}
+{"at": 5600, "expect": "len(@seq) == 5 && @seq[4] == 4 && @size[4] == 191 && @crc[4] == '95f8ff67'"}
+{"at": 5600, "expect": "995 < @seq.t[0] && @seq.t[0] < 1100 && 1995 < @seq.t[1] && @seq.t[1] < 2100 && 2995 < @seq.t[2] && @seq.t[2] < 3100 && 3995 < @seq.t[3] && @seq.t[3] < 4100 && 4995 < @seq.t[4] && @seq.t[4] < 5100"}
+{"at": 5600, "expect": "phone.in_sequence == true"}
+{"at": 5600, "expect": "phone.wrong_type == 0"}
+{"at": 5600, "expect": "phone.incomplete == 0"}
+{"at": 5600, "expect": "phone.bad == 0"}

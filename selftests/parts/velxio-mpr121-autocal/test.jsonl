@@ -1,0 +1,14 @@
+{"target":"atmega2560_arduino","part":"mpr121","name":"touch","pin":20}
+{"target":"esp32s3_espidf","part":"mpr121","name":"touch","pin":38}
+{"target":"nrf52840_zephyr","part":"mpr121","name":"touch","pin":"P0.21"}
+{"at":1000,"do":"touch.0.down"}
+{"at":1300,"do":"touch.0.up"}
+{"at":1500,"set":"touch.capacitance0 = 5"}
+{"at":1700,"set":"touch.capacitance0 = 100000"}
+{"at":2100,"set":"touch.capacitance0 = 15"}
+{"at":2500,"parse":"FAIL {errors:s}"}
+{"at":2500,"expect":"len(@errors) == 0"}
+{"at":2500,"parse":"failures {failures:d}"}
+{"at":2500,"expect":"len(@failures) == 1 && @failures[0] == 0"}
+{"at":2500,"parse":"checks {checks:d}"}
+{"at":2500,"expect":"@checks[0] >= 130"}

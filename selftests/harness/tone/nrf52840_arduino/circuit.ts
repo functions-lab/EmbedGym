@@ -1,0 +1,1 @@
+../../../parts/wokwi-buzzer/nrf52840_zephyr/circuit.ts

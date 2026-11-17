@@ -1,0 +1,80 @@
+{
+  "pushbutton": { "label": "button", "do": ["down", "up"] },
+  "bounce-button": { "label": "button", "do": ["down", "up"] },
+  "membrane-keypad": { "label": "keypad", "do": ["<key>.down", "<key>.up"], "slots": { "key": { "text": "0–9, A–D, *, #", "pattern": "[0-9A-D*#]" } } },
+  "mpr121": { "label": "MPR121", "do": ["<electrode>.down", "<electrode>.up"], "slots": { "electrode": { "text": "0–11", "pattern": "[0-9]|1[01]" } } },
+  "ky-040": { "label": "rotary encoder", "do": ["clockwiseStep", "counterClockwiseStep", "press", "release"] },
+  "ky-020-tilt-switch": { "label": "tilt switch", "set": { "tilted": "true|false" } },
+  "joystick": { "label": "joystick", "set": { "x": "<0–1023>", "y": "<0–1023>", "pressed": "true|false" } },
+  "led": { "label": "LED", "read": ["value", "brightness"] },
+  "buzzer": { "label": "buzzer", "read": ["hasSignal", "frequency"] },
+  "active-buzzer": { "label": "active buzzer", "read": ["sounding"] },
+  "ky-008": { "label": "laser", "read": ["laserOn"] },
+  "relay-module": { "label": "relay", "read": ["energized"] },
+  "drv2605l": {
+    "label": "haptic motor",
+    "read": ["vibrating", "drive", "mode", "library", "lastEffect", "effectCount"],
+    "note": "drive is the RTP drive level, -128…127 (0 = no drive, 127 = full forward); in the unsigned RTP format, input 128 reads 0 and 255 reads 127."
+  },
+  "lcd1602": { "label": "LCD", "read": ["row0", "row1", "backlightBrightness"] },
+  "l298n": { "label": "L298N", "read": ["stateA", "stateB", "driveA", "driveB"] },
+  "hc-sr04": { "label": "HC-SR04", "set": { "distance": "<cm>" } },
+  "tmp36": { "label": "TMP36", "set": { "temperature": "<°C>" } },
+  "mpu6050": {
+    "label": "MPU6050",
+    "set": {
+      "accelX": "<g>", "accelY": "<g>", "accelZ": "<g>",
+      "gyroX": "<°/s>", "gyroY": "<°/s>", "gyroZ": "<°/s>",
+      "temp": "<°C>"
+    }
+  },
+  "water-level-sensor": { "label": "water level sensor", "set": { "level": "<0–1023>" } },
+  "shock-sensor": { "label": "shock sensor", "set": { "shock": "true" } },
+  "pir-motion-sensor": { "label": "PIR motion sensor", "set": { "trigger": "true" } },
+  "ky-018-photoresistor": { "label": "photoresistor", "set": { "lightLevel": "<0–1023>" } },
+  "ky-038-sound-sensor": { "label": "sound sensor", "set": { "soundLevel": "<0–1023>" } },
+  "mq2": { "label": "MQ-2 gas sensor", "set": { "voltage": "<0–5 V>" } },
+  "sen0244": { "label": "TDS sensor", "set": { "tds": "<0–1000 ppm>" } },
+  "ds18b20": { "label": "DS18B20", "set": { "temperature": "<°C>" } },
+  "dht11": { "label": "DHT11", "set": { "temperature": "<°C>", "humidity": "<%RH>" } },
+  "bme280": { "label": "BME280", "set": { "temperature": "<°C>", "pressure": "<hPa>", "humidity": "<%RH>" } },
+  "ds1307": { "label": "DS1307", "set": { "epoch": "<unix seconds>", "running": "true|false" } },
+  "pa1616s": {
+    "label": "GPS",
+    "set": {
+      "fix": "true|false", "latitude": "<°>", "longitude": "<°>", "satellites": "<count>",
+      "altitude": "<m>", "speed": "<knots>", "course": "<°>"
+    }
+  },
+  "vl53l0x": { "label": "VL53L0X", "set": { "distance": "<mm>" } },
+  "pmsa003i": { "label": "PMSA003I", "set": { "pm1_0": "<µg/m³>", "pm2_5": "<µg/m³>", "pm10": "<µg/m³>" } },
+  "ltr390": { "label": "LTR390", "set": { "als": "<counts>", "uvs": "<counts>" } },
+  "sgp40": { "label": "SGP40", "set": { "raw": "<ticks>" } },
+  "max32664": { "label": "MAX32664", "set": { "heartRate": "<bpm>", "oxygen": "<%>", "confidence": "<%>", "status": "<0–3>" } },
+  "hmc5883l": { "label": "HMC5883L", "set": { "magneticX": "<gauss>", "magneticY": "<gauss>", "magneticZ": "<gauss>" } },
+  "mlx90614": { "label": "MLX90614", "set": { "objectTemperature": "<°C>", "ambientTemperature": "<°C>" } },
+  "max17048": {
+    "label": "MAX17048",
+    "set": {
+      "batteryConnected": "true|false", "cellVoltage": "<V>", "openCircuitVoltage": "<V>",
+      "stateOfCharge": "<%>", "chargeRate": "<%/h>"
+    }
+  },
+  "amg8833": { "label": "AMG8833", "set": { "pixel<n>": "<°C>", "thermistorTemperature": "<°C>" }, "slots": { "n": { "text": "0–63", "pattern": "[0-9]|[1-5][0-9]|6[0-3]" } } },
+  "line-sensor": {
+    "label": "line sensor",
+    "set": { "leftPhotocurrentUa": "<µA>", "middlePhotocurrentUa": "<µA>", "rightPhotocurrentUa": "<µA>" }
+  },
+  "battery-9v": {},
+  "power-supply": {},
+  "level-shifter": {},
+  "hm10": {
+    "label": "HM-10",
+    "do": ["remoteOn", "connect", "subscribe", "disconnect"],
+    "read": ["connected", "remoteRxHex"],
+    "send": ["remote"],
+    "note": "These act as a phone app: remoteOn turns the phone's Bluetooth on, connect connects the phone to the HM-10, subscribe turns on the HM-10's notifications to the phone, send writes from the phone, and remoteRxHex holds the bytes the phone has received."
+  },
+  "wifi": {},
+  "ble": {}
+}

@@ -1,0 +1,40 @@
+{"target": "atmega2560_arduino", "part": "sen0244", "name": "tds", "pin": "A0"}
+{"target": "atmega328p_arduino", "part": "sen0244", "name": "tds", "pin": "A0"}
+{"target": "esp32s3_espidf", "part": "sen0244", "name": "tds", "pin": 9}
+{"target": "esp32s3_arduino", "part": "sen0244", "name": "tds", "pin": 9}
+{"target": "nrf52840_zephyr", "part": "sen0244", "name": "tds", "pin": "P0.03"}
+{"target": "nrf52840_arduino", "part": "sen0244", "name": "tds", "pin": "P0.03"}
+{"at": 3000, "parse": "No water detected", "as": "dry"}
+{"at": 3000, "parse": "Settling: {settle:d} ppm"}
+{"at": 3000, "parse": "Stable: {stable:d} ppm"}
+{"at": 3000, "expect": "len(@dry) >= 1 && len(@dry) <= 4 && len(@settle) == 0 && len(@stable) == 0"}
+{"at": 3100, "set": "tds.tds = 300"}
+{"at": 7000, "parse": "Settling: {settle:d} ppm"}
+{"at": 7000, "parse": "Stable: {stable:d} ppm"}
+{"at": 7000, "expect": "len(@stable) == 0 && len(@settle) >= 3 && len(@settle) <= 5"}
+{"at": 7000, "expect": "@settle.t[-1] > 5900 && 293 <= @settle[-1] && @settle[-1] <= 307"}
+{"at": 10500, "parse": "No water detected", "as": "dry"}
+{"at": 10500, "parse": "Settling: {settle:d} ppm"}
+{"at": 10500, "parse": "Stable: {stable:d} ppm"}
+{"at": 10500, "expect": "@dry.t[-1] < 3800 && @stable.t[-1] > 9400 && @stable.t[-1] > @settle.t[-1] && 293 <= @stable[-1] && @stable[-1] <= 307"}
+{"at": 10600, "set": "tds.tds = 600"}
+{"at": 14800, "parse": "Settling: {settle:d} ppm"}
+{"at": 14800, "parse": "Stable: {stable:d} ppm"}
+{"at": 14800, "expect": "@stable.t[-1] < 11500 && @settle.t[-1] > 13700 && 585 <= @settle[-1] && @settle[-1] <= 610"}
+{"at": 18000, "parse": "Settling: {settle:d} ppm"}
+{"at": 18000, "parse": "Stable: {stable:d} ppm"}
+{"at": 18000, "expect": "@stable.t[-1] > 16900 && @stable.t[-1] > @settle.t[-1] && 585 <= @stable[-1] && @stable[-1] <= 610"}
+{"at": 18100, "set": "tds.tds = 0"}
+{"at": 21000, "parse": "No water detected", "as": "dry"}
+{"at": 21000, "parse": "Settling: {settle:d} ppm"}
+{"at": 21000, "parse": "Stable: {stable:d} ppm"}
+{"at": 21000, "expect": "@dry.t[-1] > 19900 && @dry.t[-1] > @stable.t[-1] && @dry.t[-1] > @settle.t[-1]"}
+{"at": 21100, "set": "tds.tds = 600"}
+{"at": 25300, "parse": "Settling: {settle:d} ppm"}
+{"at": 25300, "parse": "Stable: {stable:d} ppm"}
+{"at": 25300, "expect": "@stable.t[-1] < 21100 && @settle.t[-1] > 24200 && 585 <= @settle[-1] && @settle[-1] <= 610"}
+{"at": 28500, "parse": "No water detected", "as": "dry"}
+{"at": 28500, "parse": "Settling: {settle:d} ppm"}
+{"at": 28500, "parse": "Stable: {stable:d} ppm"}
+{"at": 28500, "expect": "@stable.t[-1] > 27400 && @stable.t[-1] > @settle.t[-1] && 585 <= @stable[-1] && @stable[-1] <= 610"}
+{"at": 28500, "expect": "len(@dry) + len(@settle) + len(@stable) >= 25 && len(@dry) + len(@settle) + len(@stable) <= 30"}

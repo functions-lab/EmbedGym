@@ -1,0 +1,30 @@
+node_modules/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+venv/
+.venv/
+dist/
+.vite/
+*.log
+.env
+.DS_Store
+.claude/
+
+# Firmware the harness and the agent builds compile
+build/
+compiled.bin
+compiled.elf
+*.hex
+**/*.ino.eep
+**/*.ino.with_bootloader.bin
+**/*.ino.map
+
+# Emulator sources and the QEMU library the sim image is built from
+# (docker/docker-bake.hcl)
+third-party/
+prebuilt/qemu/*
+!prebuilt/qemu/.gitkeep
+
+results/*
+!results/.gitkeep

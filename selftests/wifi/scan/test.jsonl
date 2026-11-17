@@ -1,0 +1,14 @@
+{"target": "esp32s3_espidf", "part": "wifi", "name": "wifi"}
+{"at": 500, "parse": "AP: {ssid:s} CH: {ch:d} RSSI: {rssi:d}"}
+{"at": 500, "expect": "len(@ssid) == 0"}
+{"at": 4000, "parse": "AP: {ssid:s} CH: {ch:d} RSSI: {rssi:d}"}
+{"at": 4000, "expect": "len(@ssid) == 4"}
+{"at": 4000, "expect": "@ssid[0] == 'Espressif' && @ssid[1] == 'MasseyWifi' && @ssid[2] == 'PICSimLabWifi' && @ssid[3] == 'Velxio-GUEST'"}
+{"at": 4000, "parse": "AP: Espressif CH: 5 RSSI: -30", "as": "espressif"}
+{"at": 4000, "expect": "len(@espressif) == 1"}
+{"at": 4000, "parse": "AP: MasseyWifi CH: 10 RSSI: -40", "as": "massey"}
+{"at": 4000, "expect": "len(@massey) == 1"}
+{"at": 4000, "parse": "AP: PICSimLabWifi CH: 1 RSSI: -25", "as": "picsimlab"}
+{"at": 4000, "expect": "len(@picsimlab) == 1"}
+{"at": 4000, "parse": "AP: Velxio-GUEST CH: 6 RSSI: -20", "as": "guest"}
+{"at": 4000, "expect": "len(@guest) == 1"}

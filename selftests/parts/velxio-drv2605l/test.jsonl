@@ -1,0 +1,86 @@
+{"target":"atmega2560_arduino","part":"drv2605l","name":"haptic","pin":20}
+{"target":"esp32s3_espidf","part":"drv2605l","name":"haptic","pin":38}
+{"target":"esp32s3_arduino","part":"drv2605l","name":"haptic","pin":38}
+{"target":"nrf52840_zephyr","part":"drv2605l","name":"haptic","pin":"P0.21"}
+{"target":"nrf52840_arduino","part":"drv2605l","name":"haptic","pin":"P0.21"}
+{"at":150,"parse":"reset {reset:d}"}
+{"at":150,"expect":"len(@reset) == 1 && @reset[0] == 0"}
+{"at":150,"expect":"haptic.standby == true"}
+{"at":150,"expect":"haptic.mode == 0"}
+{"at":150,"expect":"haptic.library == 1"}
+{"at":150,"expect":"haptic.go == false"}
+{"at":150,"expect":"haptic.effectCount == 0"}
+{"at":150,"expect":"haptic.lastEffectMs == -1"}
+{"at":450,"expect":"haptic.standby == false"}
+{"at":450,"expect":"haptic.vibrating == false"}
+{"at":550,"expect":"haptic.go == true"}
+{"at":550,"expect":"haptic.vibrating == true"}
+{"at":550,"expect":"haptic.lastEffect == 10"}
+{"at":550,"expect":"haptic.effectCount == 1"}
+{"at":550,"expect":"haptic.lastEffectMs >= 490"}
+{"at":550,"expect":"haptic.lastEffectMs <= 512"}
+{"at":550,"capture":"e10 = haptic.lastEffectMs"}
+{"at":700,"expect":"haptic.go == true"}
+{"at":700,"expect":"haptic.vibrating == false"}
+{"at":700,"expect":"haptic.effectCount == 1"}
+{"at":850,"expect":"haptic.vibrating == true"}
+{"at":850,"expect":"haptic.lastEffect == 47"}
+{"at":850,"expect":"haptic.effectCount == 2"}
+{"at":850,"capture":"e47 = haptic.lastEffectMs"}
+{"at":850,"expect":"299.999 < @e47 - @e10 && @e47 - @e10 < 300.001"}
+{"at":950,"expect":"haptic.go == false"}
+{"at":950,"expect":"haptic.vibrating == false"}
+{"at":950,"expect":"haptic.effects == '10 47'"}
+{"at":950,"parse":"seq {seq:d}"}
+{"at":950,"expect":"len(@seq) == 1 && 398 <= @seq[0] && @seq[0] <= 403"}
+{"at":1450,"expect":"haptic.lastEffect == 5"}
+{"at":1450,"expect":"haptic.effectCount == 7"}
+{"at":1900,"expect":"haptic.go == false"}
+{"at":1900,"expect":"haptic.effects == '10 47 1 2 3 4 5 6 7 8'"}
+{"at":1900,"parse":"eight {eight:d}"}
+{"at":1900,"expect":"len(@eight) == 1 && 798 <= @eight[0] && @eight[0] <= 803"}
+{"at":2025,"expect":"haptic.go == true"}
+{"at":2025,"expect":"haptic.vibrating == true"}
+{"at":2025,"expect":"haptic.effectCount == 11"}
+{"at":2100,"expect":"haptic.go == false"}
+{"at":2100,"expect":"haptic.vibrating == false"}
+{"at":2100,"parse":"cancel {cancel:d}"}
+{"at":2100,"expect":"len(@cancel) == 1 && @cancel[0] == 0"}
+{"at":2150,"expect":"haptic.effectCount == 11"}
+{"at":2250,"expect":"haptic.mode == 5"}
+{"at":2250,"expect":"haptic.drive == 127"}
+{"at":2250,"expect":"haptic.vibrating == true"}
+{"at":2250,"expect":"haptic.go == false"}
+{"at":2350,"expect":"haptic.drive == -127"}
+{"at":2450,"expect":"haptic.drive == 0"}
+{"at":2450,"expect":"haptic.vibrating == false"}
+{"at":2550,"expect":"haptic.drive == 127"}
+{"at":2650,"expect":"haptic.standby == true"}
+{"at":2650,"expect":"haptic.mode == 5"}
+{"at":2650,"expect":"haptic.drive == 0"}
+{"at":2650,"expect":"haptic.vibrating == false"}
+{"at":2725,"expect":"haptic.standby == false"}
+{"at":2725,"expect":"haptic.vibrating == true"}
+{"at":2725,"expect":"haptic.lastEffect == 1"}
+{"at":2725,"expect":"haptic.effectCount == 12"}
+{"at":2800,"expect":"haptic.standby == true"}
+{"at":2800,"expect":"haptic.go == false"}
+{"at":2800,"expect":"haptic.vibrating == false"}
+{"at":2800,"parse":"standby-go {standbygo:d}"}
+{"at":2800,"expect":"len(@standbygo) == 1 && @standbygo[0] == 0"}
+{"at":2950,"parse":"dev-reset {devreset:d}"}
+{"at":2950,"expect":"len(@devreset) == 1 && @devreset[0] == 0"}
+{"at":2950,"expect":"haptic.standby == true"}
+{"at":2950,"expect":"haptic.mode == 0"}
+{"at":2950,"expect":"haptic.effectCount == 12"}
+{"at":3150,"expect":"haptic.mode == 6"}
+{"at":3150,"expect":"haptic.go == true"}
+{"at":3250,"expect":"haptic.go == false"}
+{"at":3250,"parse":"diag {diagms:d} {diagstatus:d}"}
+{"at":3250,"expect":"len(@diagms) == 1 && 98 <= @diagms[0] && @diagms[0] <= 103 && @diagstatus[0] == 224"}
+{"at":3700,"expect":"haptic.mode == 7"}
+{"at":3700,"expect":"haptic.go == true"}
+{"at":4100,"expect":"haptic.go == false"}
+{"at":4100,"expect":"haptic.effectCount == 12"}
+{"at":4100,"parse":"cal {calms:d} {calstatus:d}"}
+{"at":4100,"expect":"len(@calms) == 1 && 698 <= @calms[0] && @calms[0] <= 703 && @calstatus[0] == 224"}

@@ -1,0 +1,16 @@
+/ {
+    aliases {
+        sound-sensor = &sound_sensor;
+        lock-relay = &lock_relay;
+    };
+
+    keypad_pins {
+        compatible = "gpio-keys";
+        sound_sensor: sound_sensor {
+            gpios = <&gpio0 3 (GPIO_ACTIVE_HIGH)>;
+        };
+        lock_relay: lock_relay {
+            gpios = <&gpio1 15 (GPIO_ACTIVE_HIGH)>;
+        };
+    };
+};

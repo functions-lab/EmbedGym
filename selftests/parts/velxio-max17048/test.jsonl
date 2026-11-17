@@ -1,0 +1,43 @@
+{"target":"atmega2560_arduino","part":"max17048","name":"cell","pin":20}
+{"target":"esp32s3_espidf","part":"max17048","name":"cell","pin":38}
+{"target":"esp32s3_arduino","part":"max17048","name":"cell","pin":38}
+{"target":"nrf52840_zephyr","part":"max17048","name":"cell","pin":"P0.21"}
+{"target":"nrf52840_arduino","part":"max17048","name":"cell","pin":"P0.21"}
+{"at":3500,"set":"cell.stateOfCharge = 14"}
+{"at":6500,"set":"cell.stateOfCharge = 60"}
+{"at":10000,"set":"cell.stateOfCharge = 70"}
+{"at":12500,"set":"cell.chargeRate = -10"}
+{"at":14000,"set":"cell.chargeRate = 10"}
+{"at":15500,"set":"cell.chargeRate = 0"}
+{"at":16500,"set":"cell.cellVoltage = 3.1"}
+{"at":17000,"set":"cell.cellVoltage = 3.8"}
+{"at":20750,"set":"cell.stateOfCharge = 90"}
+{"at":22200,"set":"cell.batteryConnected = false"}
+{"at":23000,"set":"cell.stateOfCharge = 25"}
+{"at":23000,"set":"cell.batteryConnected = true"}
+{"at":25000,"parse":"defaults {defaults:d}"}
+{"at":25000,"expect":"len(@defaults) == 1 && @defaults[0] == 0"}
+{"at":25000,"parse":"word-config {word_config:d}"}
+{"at":25000,"expect":"len(@word_config) == 1 && @word_config[0] == 0"}
+{"at":25000,"parse":"quickstart {quickstart:d}"}
+{"at":25000,"expect":"len(@quickstart) == 1 && @quickstart[0] == 0"}
+{"at":25000,"parse":"voltage-alerts {voltage_alerts:d}"}
+{"at":25000,"expect":"len(@voltage_alerts) == 1 && @voltage_alerts[0] == 0"}
+{"at":25000,"parse":"soc-alerts {soc_alerts:d}"}
+{"at":25000,"expect":"len(@soc_alerts) == 1 && @soc_alerts[0] == 0"}
+{"at":25000,"parse":"software-sleep {software_sleep:d}"}
+{"at":25000,"expect":"len(@software_sleep) == 1 && @software_sleep[0] == 0"}
+{"at":25000,"parse":"hibernate {hibernate:d}"}
+{"at":25000,"expect":"len(@hibernate) == 1 && @hibernate[0] == 0"}
+{"at":25000,"parse":"crate {crate:d}"}
+{"at":25000,"expect":"len(@crate) == 1 && @crate[0] == 0"}
+{"at":25000,"parse":"voltage-reset {voltage_reset:d}"}
+{"at":25000,"expect":"len(@voltage_reset) == 1 && @voltage_reset[0] == 0"}
+{"at":25000,"parse":"bus-sleep {bus_sleep:d}"}
+{"at":25000,"expect":"len(@bus_sleep) == 1 && @bus_sleep[0] == 0"}
+{"at":25000,"parse":"battery-power {battery_power:d}"}
+{"at":25000,"expect":"len(@battery_power) == 1 && @battery_power[0] == 0"}
+{"at":25000,"parse":"reset {reset:d}"}
+{"at":25000,"expect":"len(@reset) == 1 && @reset[0] == 0"}
+{"at":25000,"parse":"failures {failures:d}"}
+{"at":25000,"expect":"len(@failures) == 1 && @failures[0] == 0"}

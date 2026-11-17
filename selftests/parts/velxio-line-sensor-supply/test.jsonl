@@ -1,0 +1,29 @@
+{"target":"atmega2560_arduino","part":"line-sensor","name":"sensor","pin":"A0"}
+{"at":700,"capture":"supplyV = sensor.supplyVoltage"}
+{"at":700,"capture":"current = sensor.supplyCurrent"}
+{"at":700,"capture":"leftV = sensor.leftVoltage"}
+{"at":700,"capture":"middleV = sensor.middleVoltage"}
+{"at":700,"capture":"rightV = sensor.rightVoltage"}
+{"at":700,"parse":"ADC {left:d} {middle:d} {right:d}"}
+{"at":700,"expect":"4.9 < @supplyV && @supplyV < 4.94"}
+{"at":700,"expect":"Math.abs(5 - @supplyV - @current) < 0.001"}
+{"at":700,"expect":"Math.abs(@left[-1] * 5 / 1023 - @leftV) < 0.02"}
+{"at":700,"expect":"Math.abs(@middle[-1] * 5 / 1023 - @middleV) < 0.02"}
+{"at":700,"expect":"Math.abs(@right[-1] * 5 / 1023 - @rightV) < 0.02"}
+{"at":700,"expect":"sensor.leftVoltage > 3.3"}
+{"at":700,"expect":"sensor.middleVoltage > 3.3"}
+{"at":700,"expect":"sensor.rightVoltage > 3.3"}
+{"at":900,"set":"sensor.leftPhotocurrentUa = 300"}
+{"at":1300,"capture":"supplyV = sensor.supplyVoltage"}
+{"at":1300,"capture":"current = sensor.supplyCurrent"}
+{"at":1300,"capture":"leftV = sensor.leftVoltage"}
+{"at":1300,"capture":"middleV = sensor.middleVoltage"}
+{"at":1300,"capture":"rightV = sensor.rightVoltage"}
+{"at":1300,"parse":"ADC {left:d} {middle:d} {right:d}"}
+{"at":1300,"expect":"Math.abs(5 - @supplyV - @current) < 0.001"}
+{"at":1300,"expect":"Math.abs(@left[-1] * 5 / 1023 - @leftV) < 0.02"}
+{"at":1300,"expect":"Math.abs(@middle[-1] * 5 / 1023 - @middleV) < 0.02"}
+{"at":1300,"expect":"Math.abs(@right[-1] * 5 / 1023 - @rightV) < 0.02"}
+{"at":1300,"expect":"sensor.leftVoltage < 0.8"}
+{"at":1300,"expect":"sensor.middleVoltage > 3.3"}
+{"at":1300,"expect":"sensor.rightVoltage > 3.3"}

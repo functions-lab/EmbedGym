@@ -1,0 +1,44 @@
+--- a/cores/arduino/wiring_pulse.cpp
++++ b/cores/arduino/wiring_pulse.cpp
+@@ -13,6 +13,9 @@
+ 
+ unsigned long pulseIn(pin_size_t pinNumber, uint8_t state, unsigned long timeout) {
+ 	RETURN_ON_INVALID_PIN(pinNumber, LOW);
++	if (timeout == 0) {
++		return 0;
++	}
+ 
+ 	struct k_timer timer;
+ 	int64_t start, end, delta = 0;
+@@ -23,24 +26,24 @@
+ 	}
+ 
+ 	k_timer_init(&timer, NULL, NULL);
+-	k_timer_start(&timer, K_MSEC(timeout), K_NO_WAIT);
++	k_timer_start(&timer, K_USEC(timeout), K_NO_WAIT);
+ 
+-	while (gpio_pin_get_dt(spec) == state && k_timer_status_get(&timer) == 0)
++	while (gpio_pin_get_dt(spec) == state && k_timer_remaining_ticks(&timer) > 0)
+ 		;
+-	if (k_timer_status_get(&timer) > 0) {
++	if (k_timer_remaining_ticks(&timer) == 0) {
+ 		goto cleanup;
+ 	}
+ 
+-	while (gpio_pin_get_dt(spec) != state && k_timer_status_get(&timer) == 0)
++	while (gpio_pin_get_dt(spec) != state && k_timer_remaining_ticks(&timer) > 0)
+ 		;
+-	if (k_timer_status_get(&timer) > 0) {
++	if (k_timer_remaining_ticks(&timer) == 0) {
+ 		goto cleanup;
+ 	}
+ 
+ 	start = k_uptime_ticks();
+-	while (gpio_pin_get_dt(spec) == state && k_timer_status_get(&timer) == 0)
++	while (gpio_pin_get_dt(spec) == state && k_timer_remaining_ticks(&timer) > 0)
+ 		;
+-	if (k_timer_status_get(&timer) > 0) {
++	if (k_timer_remaining_ticks(&timer) == 0) {
+ 		goto cleanup;
+ 	}
+ 	end = k_uptime_ticks();

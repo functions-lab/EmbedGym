@@ -1,0 +1,72 @@
+{"target": "nrf52840_zephyr", "part": "ble", "name": "ble"}
+{"target": "nrf52840_zephyr", "peer": "peer.py", "name": "phone"}
+{"at": 500, "expect": "phone.connected == false"}
+{"at": 500, "expect": "phone.connects == 0"}
+{"at": 500, "parse": "ADVERTISING", "as": "adv"}
+{"at": 500, "expect": "len(@adv) == 1"}
+{"at": 500, "parse": "CONN {conn:d} peer={peer:s} timeout={timeout:d}"}
+{"at": 500, "expect": "len(@conn) == 0"}
+{"at": 500, "do": "phone.connect"}
+{"at": 1500, "expect": "phone.result == 'ok'"}
+{"at": 1500, "expect": "phone.connected == true"}
+{"at": 1500, "expect": "phone.connects == 1"}
+{"at": 1500, "parse": "CONN {conn:d} peer={peer:s} timeout={timeout:d}"}
+{"at": 1500, "expect": "len(@conn) == 1 && @conn[0] == 1 && @conn.t[0] > 500"}
+{"at": 1500, "expect": "@timeout[0] == 720"}
+{"at": 1500, "expect": "@peer[0] == 'F0:F1:F2:F3:F4:F5'"}
+{"at": 1500, "do": "phone.vanish"}
+{"at": 3000, "expect": "phone.result == 'ok'"}
+{"at": 3000, "expect": "phone.connected == false"}
+{"at": 3000, "expect": "phone.vanishes == 1"}
+{"at": 3000, "expect": "phone.disconnects == 0"}
+{"at": 3000, "parse": "DISC reason={reason:s}"}
+{"at": 3000, "expect": "len(@reason) == 1 && @reason[0] == '0x08' && @reason.t[0] > 1500"}
+{"at": 3000, "parse": "ADVERTISING", "as": "adv"}
+{"at": 3000, "expect": "len(@adv) == 2 && @adv.t[1] > @reason.t[0]"}
+{"at": 3000, "do": "phone.connect"}
+{"at": 4000, "expect": "phone.result == 'ok'"}
+{"at": 4000, "expect": "phone.connected == true"}
+{"at": 4000, "expect": "phone.connects == 2"}
+{"at": 4000, "parse": "CONN {conn:d} peer={peer:s} timeout={timeout:d}"}
+{"at": 4000, "expect": "len(@conn) == 2 && @conn[1] == 2 && @conn.t[1] > 3000"}
+{"at": 4000, "expect": "@timeout[1] == 720"}
+{"at": 4000, "expect": "@peer[1] == 'F0:F1:F2:F3:F4:F5'"}
+{"at": 4000, "do": "phone.vanish"}
+{"at": 5500, "expect": "phone.result == 'ok'"}
+{"at": 5500, "expect": "phone.connected == false"}
+{"at": 5500, "expect": "phone.vanishes == 2"}
+{"at": 5500, "expect": "phone.disconnects == 0"}
+{"at": 5500, "parse": "DISC reason={reason:s}"}
+{"at": 5500, "expect": "len(@reason) == 2 && @reason[1] == '0x08' && @reason.t[1] > 4000"}
+{"at": 5500, "parse": "ADVERTISING", "as": "adv"}
+{"at": 5500, "expect": "len(@adv) == 3 && @adv.t[2] > @reason.t[1]"}
+{"at": 5500, "do": "phone.connect"}
+{"at": 6500, "expect": "phone.result == 'ok'"}
+{"at": 6500, "expect": "phone.connected == true"}
+{"at": 6500, "expect": "phone.connects == 3"}
+{"at": 6500, "parse": "CONN {conn:d} peer={peer:s} timeout={timeout:d}"}
+{"at": 6500, "expect": "len(@conn) == 3 && @conn[2] == 3 && @conn.t[2] > 5500"}
+{"at": 6500, "expect": "@timeout[2] == 720"}
+{"at": 6500, "expect": "@peer[2] == 'F0:F1:F2:F3:F4:F5'"}
+{"at": 6500, "do": "phone.disconnect"}
+{"at": 7000, "expect": "phone.result == 'ok'"}
+{"at": 7000, "expect": "phone.connected == false"}
+{"at": 7000, "expect": "phone.vanishes == 2"}
+{"at": 7000, "expect": "phone.disconnects == 1"}
+{"at": 7000, "parse": "DISC reason={reason:s}"}
+{"at": 7000, "expect": "len(@reason) == 3 && @reason[2] == '0x13' && @reason.t[2] > 6500"}
+{"at": 7000, "parse": "ADVERTISING", "as": "adv"}
+{"at": 7000, "expect": "len(@adv) == 4 && @adv.t[3] > @reason.t[2]"}
+{"at": 7000, "expect": "phone.last_reason == 22"}
+{"at": 7000, "do": "phone.connect"}
+{"at": 8000, "expect": "phone.result == 'ok'"}
+{"at": 8000, "expect": "phone.connected == true"}
+{"at": 8000, "expect": "phone.connects == 4"}
+{"at": 8000, "parse": "CONN {conn:d} peer={peer:s} timeout={timeout:d}"}
+{"at": 8000, "expect": "len(@conn) == 4 && @conn[3] == 4 && @conn.t[3] > 7000"}
+{"at": 8000, "expect": "@timeout[3] == 720"}
+{"at": 8000, "expect": "@peer[3] == 'F0:F1:F2:F3:F4:F5'"}
+{"at": 8000, "expect": "phone.vanishes == 2"}
+{"at": 8000, "expect": "phone.disconnects == 1"}
+{"at": 8000, "parse": "DISC reason={reason:s}"}
+{"at": 8000, "expect": "len(@reason) == 3"}

@@ -1,0 +1,70 @@
+import type { Wire } from '@velxio/types/wire';
+import type { BoardInstance } from '@velxio/types/board';
+
+export const boards: BoardInstance[] = [
+  { id: 'arduino-mega', boardKind: 'arduino-mega', x: 100, y: 260 } as BoardInstance,
+];
+
+export const components = [
+  { id: 'GAUGE1', metadataId: 'max17048', x: 330, y: 110 },
+  { id: 'BZ1', metadataId: 'buzzer', x: 150, y: 140 },
+  { id: 'R_LED', metadataId: 'resistor', x: 490, y: 190, properties: { value: '220' } },
+  { id: 'L1', metadataId: 'led', x: 600, y: 120, properties: { color: 'red' } },
+];
+
+export const wires: Wire[] = [
+  {
+    id: 'w-SDA',
+    start: { componentId: 'arduino-mega', pinName: '20', x: 0, y: 0 },
+    end: { componentId: 'GAUGE1', pinName: 'SDA', x: 0, y: 0 },
+    color: '#00aa00', waypoints: [],
+  },
+  {
+    id: 'w-SCL',
+    start: { componentId: 'arduino-mega', pinName: '21', x: 0, y: 0 },
+    end: { componentId: 'GAUGE1', pinName: 'SCL', x: 0, y: 0 },
+    color: '#ffaa00', waypoints: [],
+  },
+  {
+    id: 'w-VIN',
+    start: { componentId: 'arduino-mega', pinName: '5V', x: 0, y: 0 },
+    end: { componentId: 'GAUGE1', pinName: 'VIN', x: 0, y: 0 },
+    color: '#ff0000', waypoints: [],
+  },
+  {
+    id: 'w-GND',
+    start: { componentId: 'arduino-mega', pinName: 'GND', x: 0, y: 0 },
+    end: { componentId: 'GAUGE1', pinName: 'GND', x: 0, y: 0 },
+    color: '#000000', waypoints: [],
+  },
+  {
+    id: 'w-3-BZ1',
+    start: { componentId: 'arduino-mega', pinName: '3', x: 0, y: 0 },
+    end: { componentId: 'BZ1', pinName: '1', x: 0, y: 0 },
+    color: '#0000ff', waypoints: [],
+  },
+  {
+    id: 'w-BZ1-GND',
+    start: { componentId: 'BZ1', pinName: '2', x: 0, y: 0 },
+    end: { componentId: 'arduino-mega', pinName: 'GND', x: 0, y: 0 },
+    color: '#000000', waypoints: [],
+  },
+  {
+    id: 'w-4-resistor',
+    start: { componentId: 'arduino-mega', pinName: '4', x: 0, y: 0 },
+    end: { componentId: 'R_LED', pinName: '1', x: 0, y: 0 },
+    color: '#ff8800', waypoints: [],
+  },
+  {
+    id: 'w-resistor-LED',
+    start: { componentId: 'R_LED', pinName: '2', x: 0, y: 0 },
+    end: { componentId: 'L1', pinName: 'A', x: 0, y: 0 },
+    color: '#ff8800', waypoints: [],
+  },
+  {
+    id: 'w-LED-GND',
+    start: { componentId: 'L1', pinName: 'C', x: 0, y: 0 },
+    end: { componentId: 'arduino-mega', pinName: 'GND', x: 0, y: 0 },
+    color: '#000000', waypoints: [],
+  },
+];

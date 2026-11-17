@@ -1,0 +1,13 @@
+/ {
+    aliases {
+        shock-sensor = &shock_sensor;
+    };
+
+    sensors {
+        compatible = "gpio-keys";
+
+        shock_sensor: shock_sensor {
+            gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>;
+        };
+    };
+};

@@ -1,0 +1,69 @@
+{"target": "nrf52840_zephyr", "part": "ble", "name": "ble"}
+{"target": "nrf52840_zephyr", "peer": "peer.py", "name": "phone"}
+{"at": 2000, "expect": "phone.connections == 1"}
+{"at": 2000, "expect": "phone.subscribed == true"}
+{"at": 2000, "expect": "phone.logs == 0"}
+{"at": 2000, "expect": "phone.rejected == 0"}
+{"at": 2000, "expect": "phone.feeds == 0"}
+{"at": 2000, "expect": "phone.notes == 0"}
+{"at": 2000, "parse": "CONNECTED", "as": "conn"}
+{"at": 2000, "expect": "len(@conn) == 1"}
+{"at": 2000, "parse": "SUBSCRIBED", "as": "sub"}
+{"at": 2000, "expect": "len(@sub) == 1 && @sub.t[0] > @conn.t[0]"}
+{"at": 2000, "parse": "WRITE n={n:d} err={err:s}"}
+{"at": 2000, "expect": "len(@n) == 0"}
+{"at": 2000, "do": "phone.ask_log"}
+{"at": 2500, "expect": "phone.logs == 1"}
+{"at": 2500, "expect": "phone.log_text == 'log 1'"}
+{"at": 2500, "parse": "WRITE n={n:d} err={err:s}"}
+{"at": 2500, "expect": "len(@n) == 1 && @n[0] == 1 && @err[0] == '0x00' && @n.t[0] > 2000"}
+{"at": 2500, "do": "phone.ask_log"}
+{"at": 3000, "expect": "phone.logs == 2"}
+{"at": 3000, "expect": "phone.log_text == 'log 1,log 2'"}
+{"at": 3000, "parse": "WRITE n={n:d} err={err:s}"}
+{"at": 3000, "expect": "len(@n) == 2 && @n[1] == 2 && @err[1] == '0x00' && @n.t[1] > 2500"}
+{"at": 3000, "do": "phone.reject"}
+{"at": 3000, "do": "phone.ask_log"}
+{"at": 3500, "expect": "phone.logs == 2"}
+{"at": 3500, "expect": "phone.rejected == 1"}
+{"at": 3500, "expect": "phone.rejected_text == 'log 3'"}
+{"at": 3500, "parse": "WRITE n={n:d} err={err:s}"}
+{"at": 3500, "expect": "len(@n) == 3 && @n[2] == 3 && @err[2] == '0xfc' && @n.t[2] > 3000"}
+{"at": 3500, "do": "phone.accept"}
+{"at": 3500, "do": "phone.ask_log"}
+{"at": 4000, "expect": "phone.logs == 3"}
+{"at": 4000, "expect": "phone.log_text == 'log 1,log 2,log 4'"}
+{"at": 4000, "expect": "phone.rejected == 1"}
+{"at": 4000, "parse": "WRITE n={n:d} err={err:s}"}
+{"at": 4000, "expect": "len(@n) == 4 && @n[3] == 4 && @err[3] == '0x00' && @n.t[3] > 3500"}
+{"at": 4000, "parse": "BURST sent={sent:d} failed={failed:d}"}
+{"at": 4000, "expect": "len(@sent) == 0"}
+{"at": 4000, "do": "phone.ask_feed"}
+{"at": 4500, "expect": "phone.feeds == 5"}
+{"at": 4500, "expect": "phone.feed_commands == 5"}
+{"at": 4500, "expect": "phone.feed_text == 'feed 1,feed 2,feed 3,feed 4,feed 5'"}
+{"at": 4500, "parse": "BURST sent={sent:d} failed={failed:d}"}
+{"at": 4500, "expect": "len(@sent) == 1 && @sent[0] == 5 && @failed[0] == 0 && @sent.t[0] > 4000"}
+{"at": 4500, "parse": "NOTE len={size:d} err={nerr:s}"}
+{"at": 4500, "expect": "len(@size) == 0"}
+{"at": 4500, "do": "phone.ask_note"}
+{"at": 5500, "expect": "phone.notes == 1"}
+{"at": 5500, "expect": "phone.note_len == 60"}
+{"at": 5500, "expect": "phone.note_crc == 'be10115f'"}
+{"at": 5500, "expect": "phone.note_mtu == 23"}
+{"at": 5500, "expect": "phone.note_commits == 1"}
+{"at": 5500, "expect": "phone.note_fragments >= 4"}
+{"at": 5500, "parse": "NOTE len={size:d} err={nerr:s}"}
+{"at": 5500, "expect": "len(@size) == 1 && @size[0] == 60 && @nerr[0] == '0x00' && @size.t[0] > 4500"}
+{"at": 5500, "expect": "phone.logs == 3"}
+{"at": 5500, "expect": "phone.rejected == 1"}
+{"at": 5500, "expect": "phone.feeds == 5"}
+{"at": 5500, "expect": "phone.feed_commands == 5"}
+{"at": 5500, "parse": "WRITE n={n:d} err={err:s}"}
+{"at": 5500, "expect": "len(@n) == 4"}
+{"at": 5500, "expect": "phone.connections == 1"}
+{"at": 5500, "expect": "phone.disconnects == 0"}
+{"at": 5500, "expect": "phone.invalid == 0"}
+{"at": 5500, "expect": "phone.first_invalid == ''"}
+{"at": 5500, "parse": "DISCONNECTED reason={reason:s}"}
+{"at": 5500, "expect": "len(@reason) == 0"}

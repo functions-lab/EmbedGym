@@ -1,0 +1,39 @@
+{"target": "nrf52840_arduino", "part": "pushbutton", "name": "button", "pin": "P1.11"}
+{"at": 15, "do": "button.down"}
+{"at": 25, "do": "button.up"}
+{"at": 35, "do": "button.down"}
+{"at": 70, "do": "button.up"}
+{"at": 90, "do": "button.down"}
+{"at": 100, "do": "button.up"}
+{"at": 105, "do": "button.down"}
+{"at": 120, "do": "button.up"}
+{"at": 130, "do": "button.down"}
+{"at": 150, "do": "button.up"}
+{"at": 160, "do": "button.down"}
+{"at": 170, "do": "button.up"}
+{"at": 200, "do": "button.down"}
+{"at": 205, "do": "button.up"}
+{"at": 230, "parse": "start: {startwidth:d} us, elapsed {startelapsed:d} us"}
+{"at": 230, "expect": "len(@startwidth) == 1 && @startwidth[0] == 0"}
+{"at": 230, "expect": "950 <= @startelapsed[0] && @startelapsed[0] <= 1100"}
+{"at": 230, "parse": "old: {oldwidth:d} us, elapsed {oldelapsed:d} us"}
+{"at": 230, "expect": "len(@oldwidth) == 1 && @oldwidth[0] == 0"}
+{"at": 230, "expect": "950 <= @oldelapsed[0] && @oldelapsed[0] <= 1100"}
+{"at": 230, "parse": "end: {endwidth:d} us, elapsed {endelapsed:d} us"}
+{"at": 230, "expect": "len(@endwidth) == 1 && @endwidth[0] == 0"}
+{"at": 230, "expect": "19950 <= @endelapsed[0] && @endelapsed[0] <= 20100"}
+{"at": 230, "parse": "high: {highwidth:d} us, elapsed {highelapsed:d} us"}
+{"at": 230, "expect": "len(@highwidth) == 1 && 9900 <= @highwidth[0] && @highwidth[0] <= 10100"}
+{"at": 230, "expect": "@highelapsed[0] >= @highwidth[0] && @highelapsed[0] < 30000"}
+{"at": 230, "parse": "low: {lowwidth:d} us, elapsed {lowelapsed:d} us"}
+{"at": 230, "expect": "len(@lowwidth) == 1 && 9900 <= @lowwidth[0] && @lowwidth[0] <= 10100"}
+{"at": 230, "expect": "@lowelapsed[0] >= @lowwidth[0] && @lowelapsed[0] < 30000"}
+{"at": 230, "parse": "skip: {skipwidth:d} us, elapsed {skipelapsed:d} us"}
+{"at": 230, "expect": "len(@skipwidth) == 1 && 9900 <= @skipwidth[0] && @skipwidth[0] <= 10100"}
+{"at": 230, "expect": "@skipelapsed[0] >= @skipwidth[0] && @skipelapsed[0] < 50000"}
+{"at": 230, "parse": "zero: {zerowidth:d} us, elapsed {zeroelapsed:d} us"}
+{"at": 230, "expect": "len(@zerowidth) == 1 && @zerowidth[0] == 0"}
+{"at": 230, "expect": "0 <= @zeroelapsed[0] && @zeroelapsed[0] <= 100"}
+{"at": 230, "parse": "lowend: {lowendwidth:d} us, elapsed {lowendelapsed:d} us"}
+{"at": 230, "expect": "len(@lowendwidth) == 1 && @lowendwidth[0] == 0"}
+{"at": 230, "expect": "29950 <= @lowendelapsed[0] && @lowendelapsed[0] <= 30100"}

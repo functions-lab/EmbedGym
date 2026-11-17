@@ -1,0 +1,18 @@
+# The core's only board: the nRF52840 DK on the loader built from
+# variants/nrf52840dk_nrf52840, static link mode only. extra/build.sh finds it
+# by build.zephyr_target and writes the loader-derived fields (version,
+# upload.address/maximum_*, build.architecture/mcu/fpu/float-abi) to
+# boards.local.txt.
+
+nrf52840dk.name=Nordic nRF52840 DK
+nrf52840dk.build.core=arduino
+nrf52840dk.build.crossprefix=arm-zephyr-eabi-
+nrf52840dk.build.compiler_path={runtime.tools.arm-zephyr-eabi-1.0.1.path}/bin/
+nrf52840dk.build.zephyr_target=nrf52840dk/nrf52840
+nrf52840dk.build.zephyr_hals=hal_nordic
+nrf52840dk.build.variant=nrf52840dk_nrf52840
+nrf52840dk.build.board=NRF52840DK
+nrf52840dk.build.link_mode=static
+
+nrf52840dk.upload.extension=bin-zsk.bin
+nrf52840dk.bootloader.file=zephyr-{build.variant}.elf

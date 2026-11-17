@@ -1,0 +1,17 @@
+import type { BoardInstance } from '@velxio/types/board';
+import type { Wire } from '@velxio/types/wire';
+export const boards: BoardInstance[] = [{ id: 'arduino-mega', boardKind: 'arduino-mega', x: 100, y: 200 } as BoardInstance];
+export const components = [
+  { id: 'RADIO', metadataId: 'hm10', x: 700, y: 90, properties: {'savedMode': 2} },
+  { id: 'SHIFT', metadataId: 'level-shifter', x: 460, y: 70 },
+];
+export const wires: Wire[] = [
+  { id: 'wire-0', start: { componentId: 'arduino-mega', pinName: '5V', x: 0, y: 0 }, end: { componentId: 'RADIO', pinName: 'VCC', x: 0, y: 0 }, color: '#2288aa', waypoints: [] },
+  { id: 'wire-1', start: { componentId: 'arduino-mega', pinName: 'GND', x: 0, y: 0 }, end: { componentId: 'RADIO', pinName: 'GND13', x: 0, y: 0 }, color: '#2288aa', waypoints: [] },
+  { id: 'wire-2', start: { componentId: 'arduino-mega', pinName: '18', x: 0, y: 0 }, end: { componentId: 'SHIFT', pinName: 'HV1', x: 0, y: 0 }, color: '#2288aa', waypoints: [] },
+  { id: 'wire-3', start: { componentId: 'SHIFT', pinName: 'LV1', x: 0, y: 0 }, end: { componentId: 'RADIO', pinName: 'UART_RX', x: 0, y: 0 }, color: '#2288aa', waypoints: [] },
+  { id: 'wire-6', start: { componentId: 'RADIO', pinName: 'UART_TX', x: 0, y: 0 }, end: { componentId: 'arduino-mega', pinName: '19', x: 0, y: 0 }, color: '#2288aa', waypoints: [] },
+  { id: 'w-5V-HV', start: { componentId: 'arduino-mega', pinName: '5V', x: 0, y: 0 }, end: { componentId: 'SHIFT', pinName: 'HV', x: 0, y: 0 }, color: '#ff0000', waypoints: [] },
+  { id: 'w-3V3-LV', start: { componentId: 'arduino-mega', pinName: '3.3V', x: 0, y: 0 }, end: { componentId: 'SHIFT', pinName: 'LV', x: 0, y: 0 }, color: '#ff8800', waypoints: [] },
+  { id: 'w-SHIFT-GND', start: { componentId: 'SHIFT', pinName: 'GND.1', x: 0, y: 0 }, end: { componentId: 'arduino-mega', pinName: 'GND', x: 0, y: 0 }, color: '#000000', waypoints: [] },
+];

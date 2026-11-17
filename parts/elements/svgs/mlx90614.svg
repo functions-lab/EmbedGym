@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="43" height="66" viewBox="0 0 43 66">
+  <rect x="0.6" y="0.6" width="41.8" height="64.8" fill="#075087" stroke="#247b96" stroke-width="1.2"/>
+  <g fill="#d8b366" stroke="#f2e2af" stroke-width="0.5">
+    <circle cx="8.3" cy="8.3" r="6.6"/>
+    <circle cx="34.7" cy="8.3" r="6.6"/>
+  </g>
+  <g fill="#111315">
+    <circle cx="8.3" cy="8.3" r="5"/>
+    <circle cx="34.7" cy="8.3" r="5"/>
+  </g>
+  <circle cx="21.5" cy="31.2" r="17.6" fill="#aeb4b9" stroke="#868d93" stroke-width="0.6"/>
+  <circle cx="21.5" cy="31.2" r="15.4" fill="#d3d7da" stroke="#9aa1a7" stroke-width="0.6"/>
+  <circle cx="21.5" cy="31.2" r="11.4" fill="#c4c9cd" stroke="#a3aab0" stroke-width="0.6"/>
+  <circle cx="21.5" cy="31.2" r="7" fill="#97a598" stroke="#77857a" stroke-width="0.6"/>
+  <g fill="#e9f2ef" font-family="Arial, sans-serif" font-size="3.2" font-weight="bold" text-anchor="middle">
+    <text x="7.1" y="56.4">VIN</text>
+    <text x="16.7" y="56.4">GND</text>
+    <text x="26.3" y="56.4">SCL</text>
+    <text x="35.9" y="56.4">SDA</text>
+  </g>
+  <g fill="#d8b366" stroke="#f2e2af" stroke-width="0.5">
+    <circle cx="7.1" cy="61.6" r="3.3"/>
+    <circle cx="16.7" cy="61.6" r="3.3"/>
+    <circle cx="26.3" cy="61.6" r="3.3"/>
+    <rect x="32.7" y="58.4" width="6.4" height="6.4"/>
+  </g>
+  <g fill="#111315">
+    <circle cx="7.1" cy="61.6" r="1.8"/>
+    <circle cx="16.7" cy="61.6" r="1.8"/>
+    <circle cx="26.3" cy="61.6" r="1.8"/>
+    <circle cx="35.9" cy="61.6" r="1.8"/>
+  </g>
+</svg>

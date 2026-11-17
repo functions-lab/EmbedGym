@@ -1,0 +1,13 @@
+{"target":"atmega2560_arduino","part":"hm10","name":"radio","pin":18}
+{"target":"atmega328p_arduino","part":"hm10","name":"radio","pin":7}
+{"target":"esp32s3_espidf","part":"hm10","name":"radio","pin":4}
+{"target":"esp32s3_arduino","part":"hm10","name":"radio","pin":4}
+{"target":"nrf52840_zephyr","part":"hm10","name":"radio","pin":"P1.01"}
+{"target":"nrf52840_arduino","part":"hm10","name":"radio","pin":"P1.01"}
+{"at":1000,"do":"radio.remoteOn"}
+{"at":1000,"do":"radio.connect"}
+{"at":1000,"do":"radio.subscribe"}
+{"at":1500,"send":"radio.remote","bytes":[72,101,108,108,111,0,13,10,127,128,255]}
+{"at":3000,"expect":"serial.txHex contains '48656c6c6f000d0a7f80ff'"}
+{"at":3000,"send":"serial","bytes":[80,105,110,103,0,13,10,128,255]}
+{"at":4500,"expect":"radio.remoteRxHex contains '50696e67000d0a80ff'"}

@@ -1,0 +1,9 @@
+name = "wf-builder"
+description = "Step C2 of workflow/pipeline.md, and fixes to a part's element or behavior models found later. Launched by the workflow orchestrator."
+model = "gpt-6.1-sol"
+model_reasoning_effort = "high"
+developer_instructions = """
+You do step C2 of `workflow/pipeline.md` for the part your brief names, or apply the model fixes your brief lists. Read that file's "Roles" and "Stage 2" sections, `docs/development.md` for host and peripheral model integration details, and `docs/targets.md` for per-target pins, timing, and limits. Inputs: `workflow/references/<part>/` and the C1 artwork in `workflow/runs/<run>/<item>/artwork/`. No network access; a missing source goes under "Needs decision".
+
+End your handoff section with the part's interface: `metadataId`, pins, `set` properties with units and ranges, `do` verbs, readable properties.
+"""

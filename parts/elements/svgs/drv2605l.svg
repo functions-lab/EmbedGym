@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="111.2" viewBox="0 0 96 111.2">
+  <g id="motor">
+    <circle cx="48" cy="20" r="18.9" fill="#c3c7cb" stroke="#8d9297" stroke-width="0.8"/>
+    <circle cx="48" cy="20" r="15.6" fill="none" stroke="#a6abb0" stroke-width="0.6"/>
+    <circle cx="48" cy="20" r="5.2" fill="#b3b8bd" stroke="#969ba0" stroke-width="0.6"/>
+    <rect x="44.2" y="36" width="7.6" height="4" rx="0.6" fill="#3b3f43"/>
+  </g>
+
+  <g transform="translate(0 44)">
+    <rect x="0.4" y="0.4" width="95.2" height="66.4" rx="4" fill="#252729" stroke="#bcc0c0" stroke-width="0.8"/>
+
+    <g fill="none" stroke="#efefeb" stroke-width="0.8">
+      <circle cx="9.6" cy="9.6" r="7.4"/>
+      <circle cx="86.4" cy="9.6" r="7.4"/>
+      <circle cx="9.6" cy="57.6" r="7.4"/>
+      <circle cx="86.4" cy="57.6" r="7.4"/>
+    </g>
+    <g fill="#d8b366" stroke="#f2e2af" stroke-width="0.5">
+      <circle cx="9.6" cy="9.6" r="6.4"/>
+      <circle cx="86.4" cy="9.6" r="6.4"/>
+      <circle cx="9.6" cy="57.6" r="6.4"/>
+      <circle cx="86.4" cy="57.6" r="6.4"/>
+    </g>
+    <g fill="#111315">
+      <circle cx="9.6" cy="9.6" r="4.6"/>
+      <circle cx="86.4" cy="9.6" r="4.6"/>
+      <circle cx="9.6" cy="57.6" r="4.6"/>
+      <circle cx="86.4" cy="57.6" r="4.6"/>
+    </g>
+
+    <g fill="none" stroke="#efefeb" stroke-width="0.6">
+      <rect x="33.6" y="1.6" width="10.6" height="10.6"/>
+      <rect x="51.8" y="1.6" width="10.6" height="10.6"/>
+      <circle cx="38.1" cy="15.2" r="2.3"/>
+      <circle cx="57.9" cy="15.2" r="2.3"/>
+    </g>
+    <g stroke="#efefeb" stroke-width="0.7">
+      <path d="M36.7 15.2h2.8"/>
+      <path d="M56.5 15.2h2.8M57.9 13.8v2.8"/>
+    </g>
+    <g fill="#d8b366" stroke="#f2e2af" stroke-width="0.5">
+      <rect x="35.1" y="3.1" width="7.6" height="7.6"/>
+      <rect x="53.3" y="3.1" width="7.6" height="7.6"/>
+      <rect x="26.3" y="3.1" width="5.8" height="10.6" rx="2.9"/>
+      <rect x="64.7" y="3.1" width="5.8" height="10.6" rx="2.9"/>
+      <circle cx="75.4" cy="13.3" r="2.6"/>
+      <circle cx="22.4" cy="47.2" r="2.6"/>
+    </g>
+    <g fill="#111315">
+      <circle cx="38.9" cy="6.9" r="1.2"/>
+      <circle cx="57.1" cy="6.9" r="1.2"/>
+      <circle cx="29.2" cy="8.4" r="1.4"/>
+      <circle cx="67.6" cy="8.4" r="1.4"/>
+    </g>
+
+    <text x="1.8" y="19.4" font-family="Arial, sans-serif" font-size="4.4" font-weight="bold" fill="#efefeb">on</text>
+    <rect x="10.4" y="17.1" width="7" height="3" fill="#aeb3b4"/>
+    <rect x="12.2" y="17.3" width="3.4" height="2.6" fill="#e9e4c8"/>
+
+    <g fill="#aeb3b4">
+      <rect x="16.4" y="26.3" width="6.6" height="1.6"/>
+      <rect x="16.4" y="30.1" width="6.6" height="1.6"/>
+      <rect x="16.4" y="33.9" width="6.6" height="1.6"/>
+      <rect x="16.4" y="37.7" width="6.6" height="1.6"/>
+      <rect x="73" y="26.3" width="6.6" height="1.6"/>
+      <rect x="73" y="30.1" width="6.6" height="1.6"/>
+      <rect x="73" y="33.9" width="6.6" height="1.6"/>
+      <rect x="73" y="37.7" width="6.6" height="1.6"/>
+      <rect x="15.6" y="20.6" width="3" height="2.2"/>
+      <rect x="15.6" y="43.8" width="3" height="2.2"/>
+      <rect x="77.4" y="20.6" width="3" height="2.2"/>
+      <rect x="77.4" y="43.8" width="3" height="2.2"/>
+    </g>
+    <g fill="#cdd0ce" stroke="#909594" stroke-width="0.5">
+      <path d="M1.1 20.4h14.4v3.4h1.6v18.6h-1.6v3.4H1.1z"/>
+      <path d="M94.9 20.4H80.5v3.4h-1.6v18.6h1.6v3.4h14.4z"/>
+    </g>
+    <g fill="#e3e5e4">
+      <rect x="1.1" y="20.4" width="14.4" height="1.6"/>
+      <rect x="80.5" y="20.4" width="14.4" height="1.6"/>
+    </g>
+
+    <rect x="24.1" y="27.4" width="11.7" height="15.6" fill="none" stroke="#efefeb" stroke-width="0.5"/>
+    <g fill="#c4c8c7">
+      <rect x="24.8" y="29.8" width="2.4" height="1.4"/>
+      <rect x="24.8" y="32.5" width="2.4" height="1.4"/>
+      <rect x="24.8" y="35.3" width="2.4" height="1.4"/>
+      <rect x="24.8" y="38" width="2.4" height="1.4"/>
+      <rect x="32.7" y="29.8" width="2.4" height="1.4"/>
+      <rect x="32.7" y="32.5" width="2.4" height="1.4"/>
+      <rect x="32.7" y="35.3" width="2.4" height="1.4"/>
+      <rect x="32.7" y="38" width="2.4" height="1.4"/>
+    </g>
+    <rect x="26.6" y="28.6" width="6.7" height="12" fill="#2e3133"/>
+    <text transform="translate(31.2 34.6) rotate(90)" text-anchor="middle" font-family="Arial, sans-serif" font-size="3.2" fill="#d0d3d2">103</text>
+
+    <g fill="#c4c8c7">
+      <rect x="44.4" y="26.8" width="1" height="3.2"/>
+      <rect x="46.3" y="26.8" width="1" height="3.2"/>
+      <rect x="48.1" y="26.8" width="1" height="3.2"/>
+      <rect x="49.9" y="26.8" width="1" height="3.2"/>
+      <rect x="51.8" y="26.8" width="1" height="3.2"/>
+      <rect x="44.4" y="41.6" width="1" height="3.2"/>
+      <rect x="46.3" y="41.6" width="1" height="3.2"/>
+      <rect x="48.1" y="41.6" width="1" height="3.2"/>
+      <rect x="49.9" y="41.6" width="1" height="3.2"/>
+      <rect x="51.8" y="41.6" width="1" height="3.2"/>
+    </g>
+    <rect x="42.6" y="29.7" width="11.4" height="12.2" rx="0.4" fill="#484b4c" stroke="#181b1c" stroke-width="0.5"/>
+    <circle cx="44.3" cy="40.2" r="0.6" fill="#969b9b"/>
+
+    <g fill="#c4c8c7">
+      <rect x="37.4" y="32" width="3.9" height="2.6"/>
+      <rect x="37.4" y="40.3" width="3.9" height="2.6"/>
+      <rect x="55.6" y="29.4" width="3.8" height="2.4"/>
+      <rect x="55.6" y="37.2" width="3.8" height="2.4"/>
+      <rect x="61.3" y="29.4" width="3.8" height="2.4"/>
+      <rect x="61.3" y="37.2" width="3.8" height="2.4"/>
+      <rect x="66.3" y="29.4" width="6.4" height="2.6"/>
+      <rect x="66.3" y="37" width="6.4" height="2.6"/>
+    </g>
+    <g fill="#c7ab70">
+      <rect x="37.7" y="34.6" width="3.3" height="5.7"/>
+      <rect x="55.9" y="31.8" width="3.2" height="5.4"/>
+      <rect x="61.6" y="31.8" width="3.2" height="5.4"/>
+      <rect x="66.6" y="32" width="5.8" height="5"/>
+    </g>
+    <circle cx="41.6" cy="45.3" r="0.9" fill="#efefeb"/>
+
+    <text x="55.6" y="24.4" text-anchor="middle" textLength="32" lengthAdjust="spacingAndGlyphs" font-family="Arial, sans-serif" font-size="8.2" font-weight="bold" fill="#efefeb">DRV2605L</text>
+    <text x="72.2" y="49.7" text-anchor="middle" font-family="Arial, sans-serif" font-size="5.2" font-weight="bold" fill="#efefeb">Haptic</text>
+
+    <g font-family="Arial, sans-serif" font-size="5" font-weight="bold" fill="#efefeb" text-anchor="middle">
+      <text x="38.4" y="53">GND</text>
+      <text x="57.6" y="53">SDA</text>
+      <text x="28.8" y="65.2">VIN</text>
+      <text x="48" y="65.2">SCL</text>
+      <text x="67.2" y="65.2">INT</text>
+    </g>
+    <g fill="#d8b366" stroke="#f2e2af" stroke-width="0.5">
+      <circle cx="28.8" cy="57.6" r="3.3"/>
+      <circle cx="38.4" cy="57.6" r="3.3"/>
+      <circle cx="48" cy="57.6" r="3.3"/>
+      <circle cx="57.6" cy="57.6" r="3.3"/>
+      <circle cx="67.2" cy="57.6" r="3.3"/>
+    </g>
+    <g fill="#111315">
+      <circle cx="28.8" cy="57.6" r="1.9"/>
+      <circle cx="38.4" cy="57.6" r="1.9"/>
+      <circle cx="48" cy="57.6" r="1.9"/>
+      <circle cx="57.6" cy="57.6" r="1.9"/>
+      <circle cx="67.2" cy="57.6" r="1.9"/>
+    </g>
+  </g>
+
+  <g fill="none" stroke-width="1.4" stroke-linecap="round">
+    <path d="M45.6 39.5C45.6 45 38.9 45 38.9 50.9" stroke="#2f6fd6"/>
+    <path d="M50.4 39.5C50.4 45 57.1 45 57.1 50.9" stroke="#d93025"/>
+  </g>
+  <g fill="#b9bdc0" stroke="#8d9297" stroke-width="0.4">
+    <circle cx="38.9" cy="50.9" r="1.7"/>
+    <circle cx="57.1" cy="50.9" r="1.7"/>
+  </g>
+</svg>

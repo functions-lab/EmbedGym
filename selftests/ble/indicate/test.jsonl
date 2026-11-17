@@ -1,0 +1,79 @@
+{"target": "nrf52840_zephyr", "part": "ble", "name": "ble"}
+{"target": "nrf52840_zephyr", "peer": "peer.py", "name": "phone"}
+{"at": 500, "expect": "phone.connected == false"}
+{"at": 500, "parse": "ADVERTISING", "as": "adv"}
+{"at": 500, "expect": "len(@adv) == 1"}
+{"at": 500, "parse": "CONNECTED", "as": "conn"}
+{"at": 500, "expect": "len(@conn) == 0"}
+{"at": 500, "do": "phone.connect"}
+{"at": 1500, "expect": "phone.result == 'ok'"}
+{"at": 1500, "expect": "phone.connected == true"}
+{"at": 1500, "expect": "phone.ready == true"}
+{"at": 1500, "expect": "phone.properties == 32"}
+{"at": 1500, "parse": "CONNECTED", "as": "conn"}
+{"at": 1500, "expect": "len(@conn) == 1 && @conn.t[0] > 500"}
+{"at": 1500, "parse": "SUBSCRIBED {sub:d}"}
+{"at": 1500, "expect": "len(@sub) == 0"}
+{"at": 1500, "parse": "IND {ind:d}"}
+{"at": 1500, "expect": "len(@ind) == 0"}
+{"at": 1500, "parse": "CONFIRMED {conf:d}"}
+{"at": 1500, "expect": "len(@conf) == 0"}
+{"at": 1500, "expect": "phone.indications == 0"}
+{"at": 1500, "expect": "phone.notifications == 0"}
+{"at": 1500, "expect": "phone.foreign == 0"}
+{"at": 1500, "do": "phone.subscribe"}
+{"at": 2500, "expect": "phone.result == 'ok'"}
+{"at": 2500, "parse": "SUBSCRIBED {sub:d}"}
+{"at": 2500, "expect": "len(@sub) == 1 && @sub[0] == 2 && @sub.t[0] > 1500"}
+{"at": 2500, "capture": "n1 = phone.indications"}
+{"at": 2500, "expect": "@n1 >= 8 && @n1 <= 20"}
+{"at": 2500, "parse": "IND {ind:d}"}
+{"at": 2500, "parse": "CONFIRMED {conf:d}"}
+{"at": 2500, "expect": "len(@ind) <= len(@conf) + 1 && len(@conf) <= @n1 && @n1 <= len(@ind)"}
+{"at": 2500, "expect": "@ind.t[0] > @sub.t[0]"}
+{"at": 2500, "expect": "phone.values_in_order == true"}
+{"at": 2500, "do": "phone.hold"}
+{"at": 4000, "expect": "phone.holding == true"}
+{"at": 4000, "capture": "held = phone.held_value"}
+{"at": 4000, "capture": "held_at = phone.held_ms"}
+{"at": 4000, "expect": "@held_at > 2500 && @held_at < 3000"}
+{"at": 4000, "expect": "phone.indications == @held"}
+{"at": 4000, "expect": "phone.last_value == @held"}
+{"at": 4000, "parse": "IND {ind:d}"}
+{"at": 4000, "expect": "len(@ind) == @held && @ind[-1] == @held"}
+{"at": 4000, "parse": "CONFIRMED {conf:d}"}
+{"at": 4000, "expect": "len(@conf) == @held - 1 && @conf[-1] == @held - 1"}
+{"at": 4000, "do": "phone.release"}
+{"at": 5000, "expect": "phone.result == 'ok'"}
+{"at": 5000, "expect": "phone.holding == false"}
+{"at": 5000, "parse": "CONFIRMED {conf:d}"}
+{"at": 5000, "expect": "len(@conf) > @held && @conf[@held - 1] == @held && @conf.t[@held - 1] > 4000"}
+{"at": 5000, "parse": "IND {ind:d}"}
+{"at": 5000, "expect": "len(@ind) > @held && @ind.t[@held] > @conf.t[@held - 1]"}
+{"at": 5000, "capture": "n3 = phone.indications"}
+{"at": 5000, "expect": "@n3 - @held >= 8 && @n3 - @held <= 20"}
+{"at": 5000, "expect": "phone.values_in_order == true"}
+{"at": 5000, "do": "phone.unsubscribe"}
+{"at": 5500, "expect": "phone.result == 'ok'"}
+{"at": 5500, "parse": "SUBSCRIBED {sub:d}"}
+{"at": 5500, "expect": "len(@sub) == 2 && @sub[1] == 0 && @sub.t[1] > 5000"}
+{"at": 7000, "expect": "phone.after_disable == 0"}
+{"at": 7000, "expect": "phone.notifications == 0"}
+{"at": 7000, "expect": "phone.foreign == 0"}
+{"at": 7000, "expect": "phone.values_in_order == true"}
+{"at": 7000, "capture": "n2 = phone.indications"}
+{"at": 7000, "expect": "phone.last_value == @n2"}
+{"at": 7000, "parse": "SUBSCRIBED {sub:d}"}
+{"at": 7000, "parse": "IND {ind:d}"}
+{"at": 7000, "parse": "CONFIRMED {conf:d}"}
+{"at": 7000, "expect": "len(@sub) == 2 && len(@ind) == @n2 && len(@conf) == @n2"}
+{"at": 7000, "parse": "{received:s}", "from": "phone.received"}
+{"at": 7000, "parse": "{confirmed:s}", "from": "phone.confirmed"}
+{"at": 7000, "expect": "@ind.join(',') == @received[-1] && @conf.join(',') == @confirmed[-1]"}
+{"at": 7000, "expect": "@ind.t[-1] < @sub.t[1]"}
+{"at": 7000, "parse": "INDICATE FAILED n={ifail:d} err={ierr:d}"}
+{"at": 7000, "expect": "len(@ifail) == 0"}
+{"at": 7000, "parse": "CONFIRM FAILED n={cfail:d} err={cerr:s}"}
+{"at": 7000, "expect": "len(@cfail) == 0"}
+{"at": 7000, "parse": "DISCONNECTED reason={reason:s}"}
+{"at": 7000, "expect": "len(@reason) == 0"}

@@ -1,0 +1,13 @@
+/ {
+    aliases {
+        ky020 = &ky020;
+    };
+
+    sensors {
+        compatible = "gpio-keys";
+
+        ky020: ky020 {
+            gpios = <&gpio0 4 GPIO_ACTIVE_HIGH>;
+        };
+    };
+};

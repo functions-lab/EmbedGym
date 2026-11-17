@@ -1,0 +1,4 @@
+{"target": "esp32s3_espidf", "part": "wifi", "name": "wifi"}
+{"target": "esp32s3_espidf", "peer": "peer.py", "name": "cloud"}
+{"at": 500, "do": "cloud.explode"}
+{"at": 1000, "expect": "cloud.alive == true"}

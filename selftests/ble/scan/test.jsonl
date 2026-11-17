@@ -1,0 +1,26 @@
+{"target": "nrf52840_zephyr", "part": "ble", "name": "ble"}
+{"target": "nrf52840_zephyr", "peer": "peer.py", "name": "phone"}
+{"at": 1000, "expect": "phone.updates == 1"}
+{"at": 1000, "parse": "TEMP {temp:f.2}"}
+{"at": 1000, "expect": "len(@temp) == 1 && @temp[0] == 21.5"}
+{"at": 1000, "do": "phone.next"}
+{"at": 1000, "expect": "phone.step == 1"}
+{"at": 2000, "expect": "phone.updates == 2"}
+{"at": 2000, "parse": "TEMP {temp:f.2}"}
+{"at": 2000, "expect": "len(@temp) == 2 && @temp[1] == 22.75 && @temp.t[1] > 1000"}
+{"at": 2000, "do": "phone.next"}
+{"at": 3000, "parse": "TEMP {temp:f.2}"}
+{"at": 3000, "expect": "len(@temp) == 3 && @temp[2] == -5.25 && @temp.t[2] > 2000"}
+{"at": 3000, "do": "phone.next"}
+{"at": 4000, "parse": "TEMP {temp:f.2}"}
+{"at": 4000, "expect": "len(@temp) == 4 && @temp[3] == -0.25 && @temp.t[3] > 3000"}
+{"at": 4000, "do": "phone.next"}
+{"at": 5000, "parse": "TEMP {temp:f.2}"}
+{"at": 5000, "expect": "len(@temp) == 5 && @temp[4] == 0 && @temp.t[4] > 4000"}
+{"at": 5000, "do": "phone.next"}
+{"at": 6000, "parse": "TEMP {temp:f.2}"}
+{"at": 6000, "expect": "len(@temp) == 6 && @temp[5] == 30 && @temp.t[5] > 5000"}
+{"at": 7000, "expect": "phone.step == 5"}
+{"at": 7000, "expect": "phone.updates == 6"}
+{"at": 7000, "parse": "TEMP {temp:f.2}"}
+{"at": 7000, "expect": "len(@temp) == 6"}

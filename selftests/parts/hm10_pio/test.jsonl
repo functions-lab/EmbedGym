@@ -1,0 +1,22 @@
+{"target":"atmega2560_arduino","part":"hm10","name":"radio","pin":2}
+{"target":"atmega328p_arduino","part":"hm10","name":"radio","pin":2}
+{"target":"esp32s3_espidf","part":"hm10","name":"radio","pin":6}
+{"target":"nrf52840_zephyr","part":"hm10","name":"radio","pin":"P1.04"}
+{"at":300,"parse":"PIO1: {state:d}"}
+{"at":300,"expect":"len(@state) == 1 && @state[-1] == 1"}
+{"at":700,"parse":"PIO1: {state:d}"}
+{"at":700,"expect":"len(@state) == 2 && @state[-1] == 0 && 500 < @state.t[-1] && @state.t[-1] < 700"}
+{"at":800,"do":"radio.remoteOn"}
+{"at":800,"do":"radio.connect"}
+{"at":800,"do":"radio.subscribe"}
+{"at":900,"send":"radio.remote","bytes":[65,84,43,67,79,76,63,63]}
+{"at":950,"parse":"PIO1: {state:d}"}
+{"at":950,"expect":"len(@state) == 3 && @state[-1] == 1 && 800 < @state.t[-1] && @state.t[-1] < 950"}
+{"at":1000,"send":"radio.remote","bytes":[65,84,43,65,68,67,54,63]}
+{"at":1050,"send":"radio.remote","bytes":[65,84,43,65,68,67,53,63]}
+{"at":1100,"send":"radio.remote","bytes":[65,84,43,80,73,79,50,49]}
+{"at":1200,"send":"radio.remote","bytes":[65,84,43,80,73,79,50,52]}
+{"at":1900,"parse":"PIO2: {p:d}"}
+{"at":1900,"expect":"len(@p) == 6 && @p[0] == 0 && @p[1] == 1 && @p[2] == 0 && @p[-1] == 1 && 1345 < @p.t[2] && @p.t[2] < 1370 && 1795 < @p.t[-1] && @p.t[-1] < 1820"}
+{"at":1950,"send":"radio.remote","bytes":[65,84,43,80,73,79,50,48]}
+{"at":2100,"expect":"radio.remoteRxHex == '4f4b2b436f6c3a41354f4b2b414443363a332e33304f4b2b414443353a302e30304f4b2b50494f323a314f4b2b50494f323a344f4b2b436f6c3a32354f4b2b50494f323a30'"}

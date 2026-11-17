@@ -1,0 +1,174 @@
+{"target":"atmega2560_arduino","part":"amg8833","name":"thermal","pin":20}
+{"target":"esp32s3_espidf","part":"amg8833","name":"thermal","pin":38}
+{"target":"esp32s3_arduino","part":"amg8833","name":"thermal","pin":38}
+{"target":"nrf52840_zephyr","part":"amg8833","name":"thermal","pin":"P0.21"}
+{"target":"nrf52840_arduino","part":"amg8833","name":"thermal","pin":"P0.21"}
+{"at":0,"set":"thermal.thermistorTemperature = -12.0625"}
+{"at":0,"set":"thermal.pixel0 = -8.0"}
+{"at":0,"set":"thermal.pixel1 = -7.75"}
+{"at":0,"set":"thermal.pixel2 = -7.5"}
+{"at":0,"set":"thermal.pixel3 = -7.25"}
+{"at":0,"set":"thermal.pixel4 = -7.0"}
+{"at":0,"set":"thermal.pixel5 = -6.75"}
+{"at":0,"set":"thermal.pixel6 = -6.5"}
+{"at":0,"set":"thermal.pixel7 = -6.25"}
+{"at":0,"set":"thermal.pixel8 = -6.0"}
+{"at":0,"set":"thermal.pixel9 = -5.75"}
+{"at":0,"set":"thermal.pixel10 = -5.5"}
+{"at":0,"set":"thermal.pixel11 = -5.25"}
+{"at":0,"set":"thermal.pixel12 = -5.0"}
+{"at":0,"set":"thermal.pixel13 = -4.75"}
+{"at":0,"set":"thermal.pixel14 = -4.5"}
+{"at":0,"set":"thermal.pixel15 = -4.25"}
+{"at":0,"set":"thermal.pixel16 = -4.0"}
+{"at":0,"set":"thermal.pixel17 = -3.75"}
+{"at":0,"set":"thermal.pixel18 = -3.5"}
+{"at":0,"set":"thermal.pixel19 = -3.25"}
+{"at":0,"set":"thermal.pixel20 = -3.0"}
+{"at":0,"set":"thermal.pixel21 = -2.75"}
+{"at":0,"set":"thermal.pixel22 = -2.5"}
+{"at":0,"set":"thermal.pixel23 = -2.25"}
+{"at":0,"set":"thermal.pixel24 = -2.0"}
+{"at":0,"set":"thermal.pixel25 = -1.75"}
+{"at":0,"set":"thermal.pixel26 = -1.5"}
+{"at":0,"set":"thermal.pixel27 = -1.25"}
+{"at":0,"set":"thermal.pixel28 = -1.0"}
+{"at":0,"set":"thermal.pixel29 = -0.75"}
+{"at":0,"set":"thermal.pixel30 = -0.5"}
+{"at":0,"set":"thermal.pixel31 = -0.25"}
+{"at":0,"set":"thermal.pixel32 = 0.0"}
+{"at":0,"set":"thermal.pixel33 = 0.25"}
+{"at":0,"set":"thermal.pixel34 = 0.5"}
+{"at":0,"set":"thermal.pixel35 = 0.75"}
+{"at":0,"set":"thermal.pixel36 = 1.0"}
+{"at":0,"set":"thermal.pixel37 = 1.25"}
+{"at":0,"set":"thermal.pixel38 = 1.5"}
+{"at":0,"set":"thermal.pixel39 = 1.75"}
+{"at":0,"set":"thermal.pixel40 = 2.0"}
+{"at":0,"set":"thermal.pixel41 = 2.25"}
+{"at":0,"set":"thermal.pixel42 = 2.5"}
+{"at":0,"set":"thermal.pixel43 = 2.75"}
+{"at":0,"set":"thermal.pixel44 = 3.0"}
+{"at":0,"set":"thermal.pixel45 = 3.25"}
+{"at":0,"set":"thermal.pixel46 = 3.5"}
+{"at":0,"set":"thermal.pixel47 = 3.75"}
+{"at":0,"set":"thermal.pixel48 = 4.0"}
+{"at":0,"set":"thermal.pixel49 = 4.25"}
+{"at":0,"set":"thermal.pixel50 = 4.5"}
+{"at":0,"set":"thermal.pixel51 = 4.75"}
+{"at":0,"set":"thermal.pixel52 = 5.0"}
+{"at":0,"set":"thermal.pixel53 = 5.25"}
+{"at":0,"set":"thermal.pixel54 = 5.5"}
+{"at":0,"set":"thermal.pixel55 = 5.75"}
+{"at":0,"set":"thermal.pixel56 = 6.0"}
+{"at":0,"set":"thermal.pixel57 = 6.25"}
+{"at":0,"set":"thermal.pixel58 = 6.5"}
+{"at":0,"set":"thermal.pixel59 = 6.75"}
+{"at":0,"set":"thermal.pixel60 = 7.0"}
+{"at":0,"set":"thermal.pixel61 = 7.25"}
+{"at":0,"set":"thermal.pixel62 = 7.5"}
+{"at":0,"set":"thermal.pixel63 = 7.75"}
+{"at":1500,"set":"thermal.pixel0 = 25"}
+{"at":1500,"set":"thermal.pixel1 = 25"}
+{"at":1500,"set":"thermal.pixel2 = 25"}
+{"at":1500,"set":"thermal.pixel3 = 25"}
+{"at":1500,"set":"thermal.pixel4 = 25"}
+{"at":1500,"set":"thermal.pixel5 = 25"}
+{"at":1500,"set":"thermal.pixel6 = 25"}
+{"at":1500,"set":"thermal.pixel7 = 25"}
+{"at":1500,"set":"thermal.pixel8 = 25"}
+{"at":1500,"set":"thermal.pixel9 = 25"}
+{"at":1500,"set":"thermal.pixel10 = 25"}
+{"at":1500,"set":"thermal.pixel11 = 25"}
+{"at":1500,"set":"thermal.pixel12 = 25"}
+{"at":1500,"set":"thermal.pixel13 = 25"}
+{"at":1500,"set":"thermal.pixel14 = 25"}
+{"at":1500,"set":"thermal.pixel15 = 25"}
+{"at":1500,"set":"thermal.pixel16 = 25"}
+{"at":1500,"set":"thermal.pixel17 = 25"}
+{"at":1500,"set":"thermal.pixel18 = 25"}
+{"at":1500,"set":"thermal.pixel19 = 25"}
+{"at":1500,"set":"thermal.pixel20 = 25"}
+{"at":1500,"set":"thermal.pixel21 = 25"}
+{"at":1500,"set":"thermal.pixel22 = 25"}
+{"at":1500,"set":"thermal.pixel23 = 25"}
+{"at":1500,"set":"thermal.pixel24 = 25"}
+{"at":1500,"set":"thermal.pixel25 = 25"}
+{"at":1500,"set":"thermal.pixel26 = 25"}
+{"at":1500,"set":"thermal.pixel27 = 25"}
+{"at":1500,"set":"thermal.pixel28 = 25"}
+{"at":1500,"set":"thermal.pixel29 = 25"}
+{"at":1500,"set":"thermal.pixel30 = 25"}
+{"at":1500,"set":"thermal.pixel31 = 25"}
+{"at":1500,"set":"thermal.pixel32 = 25"}
+{"at":1500,"set":"thermal.pixel33 = 25"}
+{"at":1500,"set":"thermal.pixel34 = 25"}
+{"at":1500,"set":"thermal.pixel35 = 25"}
+{"at":1500,"set":"thermal.pixel36 = 25"}
+{"at":1500,"set":"thermal.pixel37 = 25"}
+{"at":1500,"set":"thermal.pixel38 = 25"}
+{"at":1500,"set":"thermal.pixel39 = 25"}
+{"at":1500,"set":"thermal.pixel40 = 25"}
+{"at":1500,"set":"thermal.pixel41 = 25"}
+{"at":1500,"set":"thermal.pixel42 = 25"}
+{"at":1500,"set":"thermal.pixel43 = 25"}
+{"at":1500,"set":"thermal.pixel44 = 25"}
+{"at":1500,"set":"thermal.pixel45 = 25"}
+{"at":1500,"set":"thermal.pixel46 = 25"}
+{"at":1500,"set":"thermal.pixel47 = 25"}
+{"at":1500,"set":"thermal.pixel48 = 25"}
+{"at":1500,"set":"thermal.pixel49 = 25"}
+{"at":1500,"set":"thermal.pixel50 = 25"}
+{"at":1500,"set":"thermal.pixel51 = 25"}
+{"at":1500,"set":"thermal.pixel52 = 25"}
+{"at":1500,"set":"thermal.pixel53 = 25"}
+{"at":1500,"set":"thermal.pixel54 = 25"}
+{"at":1500,"set":"thermal.pixel55 = 25"}
+{"at":1500,"set":"thermal.pixel56 = 25"}
+{"at":1500,"set":"thermal.pixel57 = 25"}
+{"at":1500,"set":"thermal.pixel58 = 25"}
+{"at":1500,"set":"thermal.pixel59 = 25"}
+{"at":1500,"set":"thermal.pixel60 = 25"}
+{"at":1500,"set":"thermal.pixel61 = 25"}
+{"at":1500,"set":"thermal.pixel62 = 25"}
+{"at":1500,"set":"thermal.pixel63 = 25"}
+{"at":1500,"set":"thermal.thermistorTemperature = 25"}
+{"at":2500,"set":"thermal.pixel0 = 35"}
+{"at":4500,"set":"thermal.pixel0 = 45"}
+{"at":4500,"set":"thermal.thermistorTemperature = 5.5"}
+{"at":6000,"set":"thermal.pixel0 = 25"}
+{"at":6500,"set":"thermal.pixel63 = 35"}
+{"at":7000,"set":"thermal.pixel63 = 28"}
+{"at":7500,"set":"thermal.pixel63 = 25"}
+{"at":8000,"set":"thermal.pixel1 = 5"}
+{"at":8500,"set":"thermal.pixel1 = 20"}
+{"at":9000,"set":"thermal.pixel1 = 25"}
+{"at":9500,"set":"thermal.pixel2 = 35"}
+{"at":10000,"set":"thermal.pixel2 = 25"}
+{"at":10100,"set":"thermal.pixel2 = 30"}
+{"at":10500,"set":"thermal.pixel3 = 35"}
+{"at":11000,"set":"thermal.pixel60 = 10"}
+{"at":11500,"set":"thermal.pixel3 = 25"}
+{"at":11500,"set":"thermal.pixel60 = 25"}
+{"at":12000,"set":"thermal.pixelAdcOverflow = true"}
+{"at":13000,"set":"thermal.pixelAdcOverflow = false"}
+{"at":17000,"set":"thermal.pixel62 = 40"}
+{"at":78000,"set":"thermal.pixel62 = 45"}
+{"at":88000,"parse":"encoding {encoding:d}"}
+{"at":88000,"expect":"len(@encoding) == 1 && @encoding[0] == 0"}
+{"at":88000,"parse":"frame-average {frame_average:d}"}
+{"at":88000,"expect":"len(@frame_average) == 1 && @frame_average[0] == 0"}
+{"at":88000,"parse":"sleep-reset {sleep_reset:d}"}
+{"at":88000,"expect":"len(@sleep_reset) == 1 && @sleep_reset[0] == 0"}
+{"at":88000,"parse":"interrupts {interrupts:d}"}
+{"at":88000,"expect":"len(@interrupts) == 1 && @interrupts[0] == 0"}
+{"at":88000,"parse":"difference {difference:d}"}
+{"at":88000,"expect":"len(@difference) == 1 && @difference[0] == 0"}
+{"at":88000,"parse":"ADC-fault {ADC_fault:d}"}
+{"at":88000,"expect":"len(@ADC_fault) == 1 && @ADC_fault[0] == 0"}
+{"at":88000,"parse":"standby-reset {standby_reset:d}"}
+{"at":88000,"expect":"len(@standby_reset) == 1 && @standby_reset[0] == 0"}
+{"at":88000,"parse":"FAIL {errors:s}"}
+{"at":88000,"expect":"len(@errors) == 0"}
+{"at":88000,"parse":"failures {failures:d}"}
+{"at":88000,"expect":"len(@failures) == 1 && @failures[0] == 0"}

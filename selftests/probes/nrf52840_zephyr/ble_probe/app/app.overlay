@@ -1,0 +1,11 @@
+/ {
+    leds {
+        probe_led: probe_led {
+            gpios = <&gpio1 15 GPIO_ACTIVE_HIGH>;
+        };
+    };
+
+    aliases {
+        probe-led = &probe_led;
+    };
+};

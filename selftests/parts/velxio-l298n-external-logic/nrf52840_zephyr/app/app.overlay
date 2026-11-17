@@ -1,0 +1,32 @@
+/ {
+    aliases {
+        l298n-in1 = &l298n_in1;
+        l298n-in2 = &l298n_in2;
+        l298n-ena = &l298n_ena;
+        l298n-in3 = &l298n_in3;
+        l298n-in4 = &l298n_in4;
+        l298n-enb = &l298n_enb;
+    };
+
+    l298n_pins {
+        compatible = "gpio-leds";
+        l298n_in1: l298n_in1 {
+            gpios = <&gpio1 3 GPIO_ACTIVE_HIGH>;
+        };
+        l298n_in2: l298n_in2 {
+            gpios = <&gpio1 4 GPIO_ACTIVE_HIGH>;
+        };
+        l298n_ena: l298n_ena {
+            gpios = <&gpio1 5 GPIO_ACTIVE_HIGH>;
+        };
+        l298n_in3: l298n_in3 {
+            gpios = <&gpio1 6 GPIO_ACTIVE_HIGH>;
+        };
+        l298n_in4: l298n_in4 {
+            gpios = <&gpio1 7 GPIO_ACTIVE_HIGH>;
+        };
+        l298n_enb: l298n_enb {
+            gpios = <&gpio1 8 GPIO_ACTIVE_HIGH>;
+        };
+    };
+};

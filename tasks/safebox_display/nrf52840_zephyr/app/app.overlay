@@ -1,0 +1,68 @@
+/ {
+    aliases {
+        row-1 = &row_1;
+        row-2 = &row_2;
+        row-3 = &row_3;
+        row-4 = &row_4;
+        col-1 = &col_1;
+        col-2 = &col_2;
+        col-3 = &col_3;
+        col-4 = &col_4;
+        lock-relay = &lock_relay;
+        d-7 = &D_7;
+        d-6 = &D_6;
+        d-5 = &D_5;
+        d-4 = &D_4;
+        rs = &RS;
+        e = &E;
+    };
+
+    keypad_pins {
+        compatible = "gpio-keys";
+        row_1: row_1 {
+            gpios = <&gpio1 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        row_2: row_2 {
+            gpios = <&gpio1 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        row_3: row_3 {
+            gpios = <&gpio1 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        row_4: row_4 {
+            gpios = <&gpio0 27 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        col_1: col_1 {
+            gpios = <&gpio0 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        col_2: col_2 {
+            gpios = <&gpio0 23 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        col_3: col_3 {
+            gpios = <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        col_4: col_4 {
+            gpios = <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        RS: RS {
+            gpios = <&gpio0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        E: E {
+            gpios = <&gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        D_7: D_7 {
+            gpios = <&gpio0 30 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        D_6: D_6 {
+            gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        D_5: D_5 {
+            gpios = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        D_4: D_4 {
+            gpios = <&gpio0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        lock_relay: lock_relay {
+            gpios = <&gpio1 15 (GPIO_ACTIVE_HIGH)>;
+        };
+    };
+};

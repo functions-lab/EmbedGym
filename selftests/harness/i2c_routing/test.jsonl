@@ -1,0 +1,3 @@
+{"target":"esp32s3_espidf","part":"bme280","name":"env","pin":38}
+{"at":500,"parse":"I2C connected: {ok:d}"}
+{"at":500,"expect":"len(@ok) == 6 && @ok[0] == 1 && @ok[1] == 0 && @ok[2] == 0 && @ok[3] == 0 && @ok[4] == 0 && @ok[5] == 1"}

@@ -1,0 +1,2 @@
+{"target": "esp32s3_espidf", "part": "led", "name": "led", "pin": 10}
+{"at": 1000, "expect": "led.brightness > 0"}

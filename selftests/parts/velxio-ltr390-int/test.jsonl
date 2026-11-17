@@ -1,0 +1,13 @@
+{"target": "atmega2560_arduino", "part": "ltr390", "name": "ltr", "pin": 20}
+{"target": "esp32s3_espidf", "part": "ltr390", "name": "ltr", "pin": 38}
+{"target": "esp32s3_arduino", "part": "ltr390", "name": "ltr", "pin": 38}
+{"target": "nrf52840_zephyr", "part": "ltr390", "name": "ltr", "pin": "P0.21"}
+{"at": 1000, "parse": "EV: {ev:d}"}
+{"at": 1000, "expect": "len(@ev) > 1 && @ev[-1] == 0"}
+{"at": 1100, "set": "ltr.als = 60000"}
+{"at": 2000, "parse": "EV: {ev:d}"}
+{"at": 2000, "expect": "@ev[-1] == 1"}
+{"at": 2000, "expect": "@ev.t[-1] > 1100"}
+{"at": 2100, "set": "ltr.als = 45000"}
+{"at": 3000, "parse": "EV: {ev:d}"}
+{"at": 3000, "expect": "@ev[-1] == 1"}

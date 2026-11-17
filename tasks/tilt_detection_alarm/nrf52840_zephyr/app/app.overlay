@@ -1,0 +1,20 @@
+/ {
+    aliases {
+        ky020 = &ky020;
+        my-buzzer = &my_buzzer;
+    };
+
+    keypad_pins {
+        compatible = "gpio-keys";
+        ky020: ky020 {
+            gpios = <&gpio0 4 (GPIO_ACTIVE_HIGH)>;
+        };
+    };
+
+    buzzer_out {
+        compatible = "gpio-leds";
+        my_buzzer: my_buzzer {
+            gpios = <&gpio1 15 GPIO_ACTIVE_HIGH>;
+        };
+    };
+};

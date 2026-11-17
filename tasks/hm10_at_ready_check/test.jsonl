@@ -1,0 +1,18 @@
+{"target":"atmega2560_arduino","part":"hm10","name":"radio","pin":18}
+{"target":"atmega328p_arduino","part":"hm10","name":"radio","pin":7}
+{"target":"esp32s3_espidf","part":"hm10","name":"radio","pin":4}
+{"target":"esp32s3_arduino","part":"hm10","name":"radio","pin":4}
+{"target":"nrf52840_zephyr","part":"hm10","name":"radio","pin":"P1.01"}
+{"target":"nrf52840_arduino","part":"hm10","name":"radio","pin":"P1.01"}
+{"at":5000,"parse":"HM-10 Ready","as":"ready"}
+{"at":5000,"parse":"HM-10 Not Responding","as":"missing"}
+{"at":5000,"expect":"len(@ready) == 1 && len(@missing) == 0"}
+{"at":5000,"expect":"radio.uartRxHex contains '4154'"}
+{"at":5100,"do":"radio.remoteOn"}
+{"at":5100,"do":"radio.connect"}
+{"at":5100,"do":"radio.subscribe"}
+{"at":5500,"send":"radio.remote","bytes":[104,101,108,108,111,13,10]}
+{"at":9000,"expect":"serial.txHex contains '68656c6c6f'"}
+{"at":9000,"parse":"HM-10 Ready","as":"ready"}
+{"at":9000,"parse":"HM-10 Not Responding","as":"missing"}
+{"at":9000,"expect":"len(@ready) == 1 && len(@missing) == 0"}

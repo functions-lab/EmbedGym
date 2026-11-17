@@ -1,0 +1,9 @@
+{"target": "esp32s3_arduino", "part": "led", "name": "led", "pin": 10}
+{"at": 5, "expect": "led.value == false"}
+{"at": 15, "expect": "led.value == true"}
+{"at": 25, "expect": "led.value == false"}
+{"at": 35, "expect": "led.value == false"}
+{"at": 45, "expect": "led.value == true"}
+{"at": 75, "expect": "led.value == true"}
+{"at": 85, "expect": "led.value == false"}
+{"at": 200, "expect": "led.value == false"}

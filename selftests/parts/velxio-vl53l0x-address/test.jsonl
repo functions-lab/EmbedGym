@@ -1,0 +1,13 @@
+{"target": "nrf52840_zephyr", "part": "vl53l0x", "name": "tof", "pin": "P0.21"}
+{"at": 100, "parse": "A41 {first:d} mm"}
+{"at": 100, "expect": "len(@first) == 1 && @first[0] == 100"}
+{"at": 100, "parse": "OLD {old:d}"}
+{"at": 100, "expect": "len(@old) == 1 && @old[0] == 0"}
+{"at": 100, "parse": "ID {id:d}"}
+{"at": 100, "expect": "len(@id) == 1 && @id[0] == 238"}
+{"at": 100, "parse": "A48 {mm:d} mm"}
+{"at": 100, "expect": "len(@mm) == 1 && @mm[0] == 100"}
+{"at": 300, "set": "tof.distance = 640"}
+{"at": 700, "parse": "A48 {mm:d} mm"}
+{"at": 700, "expect": "len(@mm) == 4 && @mm[-1] == 640"}
+{"at": 700, "expect": "@mm.t[-1] > 300"}

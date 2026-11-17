@@ -1,0 +1,20 @@
+/ {
+    aliases {
+        line-left = &line_left;
+        line-middle = &line_middle;
+        line-right = &line_right;
+    };
+
+    line_pins {
+        compatible = "gpio-keys";
+        line_left: line_left {
+            gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>;
+        };
+        line_middle: line_middle {
+            gpios = <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        line_right: line_right {
+            gpios = <&gpio1 12 GPIO_ACTIVE_HIGH>;
+        };
+    };
+};

@@ -1,0 +1,13 @@
+/ {
+    aliases {
+        data-ds18b20 = &data_ds18b20;
+    };
+
+    sensors {
+        compatible = "gpio-keys";
+
+        data_ds18b20: data_ds18b20 {
+            gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>;
+        };
+    };
+};

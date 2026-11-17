@@ -1,0 +1,28 @@
+/ {
+    aliases {
+        my-buzzer = &buzzer_p0_04;
+        my-button = &button_p0_05;
+        my-led = &led_p0_30;
+    };
+
+    buttons {
+        compatible = "gpio-keys";
+        button_p0_05: button_p0_05 {
+            gpios = <&gpio1 11 GPIO_ACTIVE_HIGH>;
+        };
+    };
+
+    buzzers {
+        compatible = "gpio-leds";
+        buzzer_p0_04: buzzer_p0_04 {
+            gpios = <&gpio1 15 GPIO_ACTIVE_HIGH>;
+        };
+    };
+
+    my_led {
+        compatible = "gpio-leds";
+        led_p0_30: led_p0_30 {
+            gpios = <&gpio1 12 GPIO_ACTIVE_HIGH>;
+        };
+    };
+};

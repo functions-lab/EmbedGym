@@ -1,0 +1,24 @@
+{"target":"atmega2560_arduino","part":"hm10","name":"radio","pin":18}
+{"target":"atmega328p_arduino","part":"hm10","name":"radio","pin":7}
+{"target":"esp32s3_espidf","part":"hm10","name":"radio","pin":4}
+{"target":"nrf52840_zephyr","part":"hm10","name":"radio","pin":"P1.01"}
+{"at":100,"expect":"radio.remoteRxHex == ''"}
+{"at":300,"do":"radio.remoteOn"}
+{"at":300,"do":"radio.connect"}
+{"at":300,"do":"radio.subscribe"}
+{"at":400,"send":"radio.remote","bytes":[65,84,43,80,65,82,73,49]}
+{"at":450,"expect":"radio.remoteRxHex == '4f4b2b5365743a31'"}
+{"at":500,"send":"radio.remote","bytes":[65,84,43,83,84,79,80,49]}
+{"at":550,"expect":"radio.remoteRxHex == '4f4b2b5365743a314f4b2b5365743a31'"}
+{"at":600,"send":"radio.remote","bytes":[65,84,43,80,65,82,73,63]}
+{"at":650,"expect":"radio.remoteRxHex == '4f4b2b5365743a314f4b2b5365743a314f4b2b4765743a31'"}
+{"at":700,"send":"radio.remote","bytes":[65,84,43,83,84,79,80,63]}
+{"at":750,"expect":"radio.remoteRxHex == '4f4b2b5365743a314f4b2b5365743a314f4b2b4765743a314f4b2b4765743a31'"}
+{"at":800,"send":"radio.remote","bytes":[65,84,43,82,69,83,69,84]}
+{"at":850,"expect":"radio.remoteRxHex == '4f4b2b5365743a314f4b2b5365743a314f4b2b4765743a314f4b2b4765743a314f4b2b5245534554'"}
+{"at":900,"expect":"radio.connected == false"}
+{"at":1000,"do":"radio.connect"}
+{"at":1000,"do":"radio.subscribe"}
+{"at":1100,"send":"radio.remote","bytes":[85,170,255,0]}
+{"at":1200,"expect":"serial.txHex == '55aaff00'"}
+{"at":1200,"expect":"radio.remoteRxHex == '4f4b2b5365743a314f4b2b5365743a314f4b2b4765743a314f4b2b4765743a314f4b2b524553455455aaff00'"}

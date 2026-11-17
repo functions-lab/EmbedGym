@@ -1,0 +1,54 @@
+/ {
+    aliases {
+        d-7 = &D_7;
+        d-6 = &D_6;
+        d-5 = &D_5;
+        d-4 = &D_4;
+        rs = &RS;
+        e = &E;
+    };
+
+    zephyr,user {
+        io-channels = <&adc 2>;
+    };
+
+    keypad_pins {
+        compatible = "gpio-keys";
+        RS: RS {
+            gpios = <&gpio0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        E: E {
+            gpios = <&gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        D_7: D_7 {
+            gpios = <&gpio0 30 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        D_6: D_6 {
+            gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        D_5: D_5 {
+            gpios = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        D_4: D_4 {
+            gpios = <&gpio0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+        data_dht11: data_dht11 {
+            gpios = <&gpio1 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
+    };
+};
+
+&adc {
+    status = "okay";
+    #address-cells = <1>;
+    #size-cells = <0>;
+
+    channel@2 {
+        reg = <2>;
+        zephyr,gain = "ADC_GAIN_1_6";
+        zephyr,reference = "ADC_REF_INTERNAL";
+        zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+        zephyr,input-positive = <2>;
+        zephyr,resolution = <12>;
+    };
+};

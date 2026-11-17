@@ -1,0 +1,78 @@
+{"target": "nrf52840_zephyr", "part": "ble", "name": "ble"}
+{"target": "nrf52840_zephyr", "peer": "peer.py", "name": "phone"}
+{"at": 3000, "expect": "phone.links == 2"}
+{"at": 3000, "expect": "phone.strays == 0"}
+{"at": 3000, "expect": "phone.a_connections == 1"}
+{"at": 3000, "expect": "phone.b_connections == 1"}
+{"at": 3000, "expect": "phone.a_reads == 1"}
+{"at": 3000, "expect": "phone.b_reads == 1"}
+{"at": 3000, "expect": "phone.a_subscribed == true"}
+{"at": 3000, "expect": "phone.b_subscribed == true"}
+{"at": 3000, "parse": "CONNECTED A", "as": "conn_a"}
+{"at": 3000, "expect": "len(@conn_a) == 1"}
+{"at": 3000, "parse": "CONNECTED B", "as": "conn_b"}
+{"at": 3000, "expect": "len(@conn_b) == 1"}
+{"at": 3000, "parse": "READ A {read_a:d}"}
+{"at": 3000, "expect": "len(@read_a) == 1 && @read_a[0] == 11 && @read_a.t[0] > @conn_a.t[0]"}
+{"at": 3000, "parse": "READ B {read_b:d}"}
+{"at": 3000, "expect": "len(@read_b) == 1 && @read_b[0] == 22 && @read_b.t[0] > @conn_b.t[0]"}
+{"at": 3000, "parse": "SUBSCRIBED A", "as": "sub_a"}
+{"at": 3000, "expect": "len(@sub_a) == 1 && @sub_a.t[0] > @read_a.t[0]"}
+{"at": 3000, "parse": "SUBSCRIBED B", "as": "sub_b"}
+{"at": 3000, "expect": "len(@sub_b) == 1 && @sub_b.t[0] > @read_b.t[0]"}
+{"at": 3000, "parse": "NOTIFY A {level_a:d}"}
+{"at": 3000, "expect": "len(@level_a) == 0"}
+{"at": 3000, "parse": "NOTIFY B {level_b:d}"}
+{"at": 3000, "expect": "len(@level_b) == 0"}
+{"at": 3000, "parse": "DISCONNECTED A reason={reason_a:s}"}
+{"at": 3000, "expect": "len(@reason_a) == 0"}
+{"at": 3000, "do": "phone.bump_a"}
+{"at": 3000, "do": "phone.bump_b"}
+{"at": 3500, "expect": "phone.a_result == 'ok'"}
+{"at": 3500, "expect": "phone.b_result == 'ok'"}
+{"at": 3500, "parse": "NOTIFY A {level_a:d}"}
+{"at": 3500, "expect": "len(@level_a) == 1 && @level_a[0] == 12 && @level_a.t[0] > 3000"}
+{"at": 3500, "parse": "NOTIFY B {level_b:d}"}
+{"at": 3500, "expect": "len(@level_b) == 1 && @level_b[0] == 23 && @level_b.t[0] > 3000"}
+{"at": 3500, "do": "phone.drop_a"}
+{"at": 4000, "parse": "DISCONNECTED A reason={reason_a:s}"}
+{"at": 4000, "expect": "len(@reason_a) == 1 && @reason_a[0] == '0x13' && @reason_a.t[0] > 3500"}
+{"at": 4000, "expect": "phone.b_connected == true"}
+{"at": 4000, "do": "phone.bump_b"}
+{"at": 4500, "expect": "phone.b_result == 'ok'"}
+{"at": 4500, "parse": "NOTIFY B {level_b:d}"}
+{"at": 4500, "expect": "len(@level_b) == 2 && @level_b[1] == 24 && @level_b.t[1] > 4000"}
+{"at": 9500, "expect": "phone.a_result == 'ok'"}
+{"at": 9500, "expect": "phone.a_disconnects == 1"}
+{"at": 9500, "expect": "phone.a_connections == 2"}
+{"at": 9500, "expect": "phone.a_reads == 2"}
+{"at": 9500, "expect": "phone.a_subscribed == true"}
+{"at": 9500, "expect": "phone.links == 2"}
+{"at": 9500, "parse": "CONNECTED A", "as": "conn_a"}
+{"at": 9500, "expect": "len(@conn_a) == 2 && @conn_a.t[1] > @reason_a.t[0]"}
+{"at": 9500, "parse": "READ A {read_a:d}"}
+{"at": 9500, "expect": "len(@read_a) == 2 && @read_a[1] == 12 && @read_a.t[1] > @conn_a.t[1]"}
+{"at": 9500, "parse": "SUBSCRIBED A", "as": "sub_a"}
+{"at": 9500, "expect": "len(@sub_a) == 2 && @sub_a.t[1] > @read_a.t[1]"}
+{"at": 9500, "do": "phone.bump_a"}
+{"at": 9500, "do": "phone.bump_b"}
+{"at": 10000, "expect": "phone.a_result == 'ok'"}
+{"at": 10000, "expect": "phone.b_result == 'ok'"}
+{"at": 10000, "parse": "NOTIFY A {level_a:d}"}
+{"at": 10000, "expect": "len(@level_a) == 2 && @level_a[1] == 13 && @level_a.t[1] > 9500"}
+{"at": 10000, "parse": "NOTIFY B {level_b:d}"}
+{"at": 10000, "expect": "len(@level_b) == 3 && @level_b[2] == 25 && @level_b.t[2] > 9500"}
+{"at": 10000, "parse": "CONNECTED B", "as": "conn_b"}
+{"at": 10000, "expect": "len(@conn_b) == 1"}
+{"at": 10000, "parse": "READ B {read_b:d}"}
+{"at": 10000, "expect": "len(@read_b) == 1"}
+{"at": 10000, "parse": "DISCONNECTED B reason={reason_b:s}"}
+{"at": 10000, "expect": "len(@reason_b) == 0"}
+{"at": 10000, "parse": "DISCONNECTED A reason={reason_a:s}"}
+{"at": 10000, "expect": "len(@reason_a) == 1"}
+{"at": 10000, "expect": "phone.links == 2"}
+{"at": 10000, "expect": "phone.strays == 0"}
+{"at": 10000, "expect": "phone.a_disconnects == 1"}
+{"at": 10000, "expect": "phone.b_connections == 1"}
+{"at": 10000, "expect": "phone.b_disconnects == 0"}
+{"at": 10000, "expect": "phone.b_reads == 1"}

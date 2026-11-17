@@ -1,0 +1,13 @@
+/ {
+    aliases {
+        relay = &relay;
+    };
+
+    relays {
+        compatible = "gpio-leds";
+
+        relay: relay {
+            gpios = <&gpio1 15 GPIO_ACTIVE_HIGH>;
+        };
+    };
+};

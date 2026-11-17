@@ -1,0 +1,8 @@
+{"target": "atmega2560_arduino", "part": "relay-module", "name": "relay", "pin": 2}
+{"target": "esp32s3_espidf",     "part": "relay-module", "name": "relay", "pin": 10}
+{"target": "esp32s3_arduino",    "part": "relay-module", "name": "relay", "pin": 10}
+{"target": "nrf52840_zephyr", "part": "relay-module", "name": "relay", "pin": "P1.15"}
+{"at": 500, "expect": "relay.energized == true"}
+{"at": 1500, "expect": "relay.energized == false"}
+{"at": 2500, "expect": "relay.energized == true"}
+{"at": 3500, "expect": "relay.energized == false"}

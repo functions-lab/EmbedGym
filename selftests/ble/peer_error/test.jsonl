@@ -1,0 +1,4 @@
+{"target": "nrf52840_zephyr", "part": "ble", "name": "ble"}
+{"target": "nrf52840_zephyr", "peer": "peer.py", "name": "phone"}
+{"at": 500, "do": "phone.explode"}
+{"at": 1000, "expect": "phone.alive == true"}

@@ -1,0 +1,17 @@
+/ {
+    aliases {
+        my-buzzer = &buzzer_p1_15;
+    };
+
+    buzzers {
+        compatible = "gpio-leds";
+
+        buzzer_p1_15: buzzer_p1_15 {
+            gpios = <&gpio1 15 GPIO_ACTIVE_HIGH>;
+        };
+    };
+};
+
+&timer1 {
+    status = "okay";
+};
